@@ -25,7 +25,6 @@ body {
     color: #063B5C;
 }
 
-
 /* ================= NAVBAR ================= */
 
 nav {
@@ -78,22 +77,17 @@ nav ul li a.active {
     color: #063B5C;
 
     padding: 10px 18px;
-
     border-radius: 25px;
 
     text-decoration: none;
-
     font-weight: bold;
 }
-
 
 /* ================= HERO ================= */
 
 .hero {
-
     margin-top: 72px;
-
-    min-height: 420px;
+    min-height: 430px;
 
     padding: 85px 7%;
 
@@ -109,18 +103,14 @@ nav ul li a.active {
     text-align: center;
 
     position: relative;
-
     overflow: hidden;
 }
 
 .hero-icon {
-
     font-size: 75px;
-
     margin-bottom: 15px;
 
-    animation:
-        floating 3s ease-in-out infinite;
+    animation: floating 3s ease-in-out infinite;
 }
 
 @keyframes floating {
@@ -136,88 +126,68 @@ nav ul li a.active {
 }
 
 .hero h1 {
-
     font-size: 50px;
-
-    margin-bottom: 17px;
+    margin-bottom: 15px;
 }
 
 .hero h1 span {
-
     color: #20C7C9;
 }
 
 .hero p {
-
     max-width: 720px;
-
     margin: auto;
 
     color: #E0F4F7;
 
     line-height: 1.8;
-
-    font-size: 17px;
 }
-
 
 /* ================= SECTION ================= */
 
 section {
-
     padding: 75px 7%;
 }
 
 .section-title {
-
     text-align: center;
-
     margin-bottom: 45px;
 }
 
 .section-title h2 {
-
     font-size: 36px;
-
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .section-title p {
-
     color: #607D8B;
 }
 
-
-/* ================= SOLUTION GRID ================= */
+/* ================= SOLUTION CARDS ================= */
 
 .solution-grid {
 
-    max-width: 1150px;
-
+    max-width: 1100px;
     margin: auto;
 
     display: grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(3,1fr);
 
     gap: 22px;
 }
-
-
-/* ================= SOLUTION CARD ================= */
 
 .solution-card {
 
     background: white;
 
-    padding: 32px 27px;
+    padding: 30px 25px;
 
     border-radius: 23px;
 
     box-shadow:
-        0 8px 25px
-        rgba(6,59,92,.08);
+        0 8px 25px rgba(6,59,92,.08);
 
     position: relative;
 
@@ -228,12 +198,10 @@ section {
 
 .solution-card:hover {
 
-    transform:
-        translateY(-9px);
+    transform: translateY(-9px);
 
     box-shadow:
-        0 17px 35px
-        rgba(6,59,92,.14);
+        0 16px 35px rgba(6,59,92,.14);
 }
 
 .solution-card::after {
@@ -260,7 +228,6 @@ section {
     margin-bottom: 18px;
 
     position: relative;
-
     z-index: 2;
 }
 
@@ -280,17 +247,15 @@ section {
     font-size: 14px;
 }
 
-
 /* ================= FEATURE SECTION ================= */
 
 .feature-section {
-
     background: #EAF9F7;
 }
 
 .feature-container {
 
-    max-width: 1100px;
+    max-width: 1050px;
 
     margin: auto;
 
@@ -299,13 +264,10 @@ section {
     grid-template-columns:
         1fr 1fr;
 
-    gap: 45px;
+    gap: 35px;
 
     align-items: center;
 }
-
-
-/* ================= FEATURE TEXT ================= */
 
 .feature-text h2 {
 
@@ -319,17 +281,14 @@ section {
     color: #20AEB0;
 }
 
-.feature-text > p {
+.feature-text p {
 
     color: #607D8B;
 
     line-height: 1.8;
 
-    margin-bottom: 22px;
+    margin-bottom: 20px;
 }
-
-
-/* ================= FEATURE LIST ================= */
 
 .feature-list {
 
@@ -340,33 +299,23 @@ section {
 
     background: white;
 
-    padding: 15px;
+    padding: 14px 17px;
 
-    margin-bottom: 12px;
+    border-radius: 12px;
 
-    border-radius: 13px;
+    margin-bottom: 10px;
 
     box-shadow:
-        0 5px 15px
-        rgba(6,59,92,.05);
-
-    font-size: 14px;
-
-    transition: .3s;
+        0 4px 15px rgba(6,59,92,.05);
 }
-
-.feature-list li:hover {
-
-    transform:
-        translateX(6px);
-}
-
 
 /* ================= TECH VISUAL ================= */
 
 .tech-visual {
 
-    min-height: 400px;
+    min-height: 350px;
+
+    border-radius: 25px;
 
     background:
         linear-gradient(
@@ -375,70 +324,51 @@ section {
             #087A9A
         );
 
-    border-radius: 28px;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
 
     position: relative;
 
     overflow: hidden;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
 }
 
 .tech-circle {
 
-    width: 220px;
-    height: 220px;
-
-    border:
-        2px solid
-        rgba(255,255,255,.25);
+    width: 210px;
+    height: 210px;
 
     border-radius: 50%;
+
+    border: 3px solid #20C7C9;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
-    font-size: 80px;
+    font-size: 75px;
 
-    animation:
-        rotateCircle 12s linear infinite;
+    box-shadow:
+        0 0 0 25px rgba(32,199,201,.08),
+        0 0 0 50px rgba(32,199,201,.05);
+
+    animation: techPulse 3s infinite;
 }
 
-@keyframes rotateCircle {
+@keyframes techPulse {
 
-    from {
-        transform: rotate(0deg);
+    0%,100% {
+        transform: scale(1);
     }
 
-    to {
-        transform: rotate(360deg);
+    50% {
+        transform: scale(1.06);
     }
 
 }
-
-.tech-circle::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 290px;
-    height: 290px;
-
-    border:
-        1px solid
-        rgba(32,199,201,.35);
-
-    border-radius: 50%;
-}
-
 
 /* ================= PROCESS ================= */
 
@@ -460,15 +390,14 @@ section {
 
     text-align: center;
 
-    padding: 25px 15px;
+    padding: 25px 18px;
 
     background: white;
 
     border-radius: 20px;
 
     box-shadow:
-        0 7px 22px
-        rgba(6,59,92,.07);
+        0 7px 22px rgba(6,59,92,.07);
 }
 
 .process-number {
@@ -476,8 +405,7 @@ section {
     width: 45px;
     height: 45px;
 
-    margin:
-        0 auto 15px;
+    margin: 0 auto 15px;
 
     border-radius: 50%;
 
@@ -488,7 +416,6 @@ section {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     font-weight: bold;
@@ -508,6 +435,89 @@ section {
     line-height: 1.6;
 }
 
+/* ================= RESPONSIBILITY ================= */
+
+.responsibility {
+
+    background: #063B5C;
+
+    color: white;
+
+    text-align: center;
+}
+
+.responsibility h2 {
+
+    font-size: 36px;
+
+    margin-bottom: 15px;
+}
+
+.responsibility > p {
+
+    max-width: 700px;
+
+    margin: auto auto 40px;
+
+    color: #D4E9ED;
+
+    line-height: 1.8;
+}
+
+.responsibility-grid {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 20px;
+}
+
+.responsibility-card {
+
+    background:
+        rgba(255,255,255,.08);
+
+    padding: 28px 20px;
+
+    border-radius: 20px;
+
+    transition: .3s;
+}
+
+.responsibility-card:hover {
+
+    transform: translateY(-7px);
+
+    background:
+        rgba(255,255,255,.14);
+}
+
+.responsibility-card div {
+
+    font-size: 42px;
+
+    margin-bottom: 12px;
+}
+
+.responsibility-card h3 {
+
+    margin-bottom: 8px;
+}
+
+.responsibility-card p {
+
+    color: #D4E9ED;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
 
 /* ================= CTA ================= */
 
@@ -529,8 +539,7 @@ section {
 
     max-width: 650px;
 
-    margin:
-        auto auto 25px;
+    margin: auto auto 25px;
 
     color: #355968;
 
@@ -560,10 +569,8 @@ section {
 
     background: #20AEB0;
 
-    transform:
-        translateY(-3px);
+    transform: translateY(-3px);
 }
-
 
 /* ================= FOOTER ================= */
 
@@ -581,35 +588,31 @@ footer {
 }
 
 footer span {
-
     color: #20C7C9;
 }
 
-
 /* ================= RESPONSIVE ================= */
 
-@media(max-width:950px) {
+@media(max-width:900px) {
 
     nav ul {
         display: none;
     }
 
     .solution-grid {
-
-        grid-template-columns:
-            1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 
     .feature-container {
-
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
 
     .process {
+        grid-template-columns: 1fr 1fr;
+    }
 
-        grid-template-columns:
-            1fr 1fr;
+    .responsibility-grid {
+        grid-template-columns: 1fr;
     }
 
 }
@@ -617,28 +620,20 @@ footer span {
 @media(max-width:600px) {
 
     .hero h1 {
-
         font-size: 38px;
     }
 
     .solution-grid {
-
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
 
     .process {
-
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
 
     footer {
-
         flex-direction: column;
-
         gap: 15px;
-
         text-align: center;
     }
 
@@ -687,8 +682,7 @@ footer span {
         <li>
             <a
                 href="solutions.html"
-                class="active"
-            >
+                class="active">
                 Solutions
             </a>
         </li>
@@ -716,13 +710,13 @@ footer span {
 
     <a
         href="contact.html"
-        class="nav-btn"
-    >
+        class="nav-btn">
+
         Join Us 🌱
+
     </a>
 
 </nav>
-
 
 
 <!-- ================= HERO ================= -->
@@ -730,7 +724,7 @@ footer span {
 <header class="hero">
 
     <div class="hero-icon">
-        ♻️
+        ⚙️
     </div>
 
     <h1>
@@ -742,14 +736,13 @@ footer span {
 
     <p>
 
-        Discover how technology, smart design and
-        sustainable thinking can work together to
-        reduce ocean pollution and protect marine life.
+        Discover how technology, smart monitoring and
+        sustainable design can work together to reduce
+        marine pollution and protect aquatic ecosystems.
 
     </p>
 
 </header>
-
 
 
 <!-- ================= SOLUTIONS ================= -->
@@ -759,11 +752,11 @@ footer span {
     <div class="section-title">
 
         <h2>
-            🌊 Our Solutions
+            ♻️ Our Core Solutions
         </h2>
 
         <p>
-            Technology-inspired approaches for cleaner oceans.
+            Technology concepts designed for cleaner waterways.
         </p>
 
     </div>
@@ -775,7 +768,7 @@ footer span {
         <div class="solution-card">
 
             <div class="solution-icon">
-                🛶
+                🤖
             </div>
 
             <h3>
@@ -784,10 +777,8 @@ footer span {
 
             <p>
 
-                Floating collection systems can help
-                gather waste from waterways while
-                reducing the amount of pollution
-                reaching marine ecosystems.
+                An autonomous prototype concept designed
+                to collect floating waste from water surfaces.
 
             </p>
 
@@ -801,14 +792,13 @@ footer span {
             </div>
 
             <h3>
-                Environmental Monitoring
+                Sensor Monitoring
             </h3>
 
             <p>
 
-                Connected monitoring technology can
-                observe environmental conditions and
-                provide information for analysis.
+                Environmental sensors can provide information
+                about water conditions and system activity.
 
             </p>
 
@@ -818,18 +808,17 @@ footer span {
         <div class="solution-card">
 
             <div class="solution-icon">
-                🗺️
+                ♻️
             </div>
 
             <h3>
-                Smart Mapping
+                Waste Classification
             </h3>
 
             <p>
 
-                Digital maps can help visualize
-                monitoring zones, collection areas
-                and environmental information.
+                Future versions can explore ways to distinguish
+                different types of collected waste.
 
             </p>
 
@@ -848,9 +837,8 @@ footer span {
 
             <p>
 
-                Responsible system design can prioritize
-                marine-life safety and reduce unnecessary
-                disturbance to aquatic environments.
+                Safety systems can help the prototype avoid
+                operating near detected marine life.
 
             </p>
 
@@ -860,18 +848,17 @@ footer span {
         <div class="solution-card">
 
             <div class="solution-icon">
-                ♻️
+                🌊
             </div>
 
             <h3>
-                Waste Separation
+                Waterway Monitoring
             </h3>
 
             <p>
 
-                Sorting collected materials into suitable
-                categories can make responsible disposal
-                and recycling easier.
+                Monitoring zones can help visualize where
+                environmental observations are being made.
 
             </p>
 
@@ -890,9 +877,8 @@ footer span {
 
             <p>
 
-                Using reusable, durable and environmentally
-                conscious materials can make technology
-                more sustainable.
+                The project focuses on combining environmental
+                awareness with practical technology.
 
             </p>
 
@@ -903,8 +889,7 @@ footer span {
 </section>
 
 
-
-<!-- ================= FEATURE ================= -->
+<!-- ================= SMART SYSTEM ================= -->
 
 <section class="feature-section">
 
@@ -915,17 +900,18 @@ footer span {
 
             <h2>
 
-                Designed for
-                <span>Ocean Safety</span>
+                A
+                <span>Smarter Way</span>
+                to Monitor Water
 
             </h2>
 
 
             <p>
 
-                Our concept combines collection,
-                monitoring and responsible system
-                design into one eco-tech approach.
+                The Ocean × Eco-Tech concept combines
+                collection, monitoring and environmental
+                awareness into one connected system.
 
             </p>
 
@@ -933,23 +919,23 @@ footer span {
             <ul class="feature-list">
 
                 <li>
-                    🐬 Prioritize marine-life safety
+                    📡 Environmental monitoring
                 </li>
 
                 <li>
-                    ♻️ Separate collected waste
+                    ♻️ Floating-waste collection
                 </li>
 
                 <li>
-                    📡 Monitor environmental conditions
+                    🐠 Marine-life safety
                 </li>
 
                 <li>
-                    🗺️ Visualize collection zones
+                    🗺️ Monitoring-zone visualization
                 </li>
 
                 <li>
-                    🌱 Encourage sustainable practices
+                    📊 Future data analysis
                 </li>
 
             </ul>
@@ -960,7 +946,9 @@ footer span {
         <div class="tech-visual">
 
             <div class="tech-circle">
+
                 🌊
+
             </div>
 
         </div>
@@ -970,7 +958,6 @@ footer span {
 </section>
 
 
-
 <!-- ================= PROCESS ================= -->
 
 <section>
@@ -978,11 +965,11 @@ footer span {
     <div class="section-title">
 
         <h2>
-            ⚙️ How the Concept Works
+            🔄 How the Concept Works
         </h2>
 
         <p>
-            A simple four-stage eco-tech workflow.
+            A simple four-stage approach.
         </p>
 
     </div>
@@ -1002,8 +989,8 @@ footer span {
             </h3>
 
             <p>
-                Identify waste or environmental
-                conditions that need attention.
+                Identify floating waste and
+                environmental conditions.
             </p>
 
         </div>
@@ -1020,8 +1007,8 @@ footer span {
             </h3>
 
             <p>
-                Gather floating waste using a
-                responsible collection mechanism.
+                Move collected waste into
+                the prototype's collection area.
             </p>
 
         </div>
@@ -1034,12 +1021,12 @@ footer span {
             </div>
 
             <h3>
-                Separate
+                Monitor
             </h3>
 
             <p>
-                Organize collected materials into
-                appropriate waste categories.
+                Observe environmental information
+                through connected systems.
             </p>
 
         </div>
@@ -1056,8 +1043,8 @@ footer span {
             </h3>
 
             <p>
-                Use observations and information to
-                improve future environmental decisions.
+                Use observations to improve
+                future versions of the system.
             </p>
 
         </div>
@@ -1067,35 +1054,109 @@ footer span {
 </section>
 
 
+<!-- ================= RESPONSIBILITY ================= -->
+
+<section class="responsibility">
+
+    <h2>
+        🌍 Technology + Responsibility
+    </h2>
+
+    <p>
+
+        Technology alone cannot solve ocean pollution.
+        It works best when combined with responsible
+        waste management, awareness and sustainable habits.
+
+    </p>
+
+
+    <div class="responsibility-grid">
+
+
+        <div class="responsibility-card">
+
+            <div>
+                🧴
+            </div>
+
+            <h3>
+                Reduce Waste
+            </h3>
+
+            <p>
+                Reduce unnecessary plastic and
+                prevent waste from reaching waterways.
+            </p>
+
+        </div>
+
+
+        <div class="responsibility-card">
+
+            <div>
+                ♻️
+            </div>
+
+            <h3>
+                Reuse & Recycle
+            </h3>
+
+            <p>
+                Give materials a longer life and
+                dispose of waste responsibly.
+            </p>
+
+        </div>
+
+
+        <div class="responsibility-card">
+
+            <div>
+                📢
+            </div>
+
+            <h3>
+                Create Awareness
+            </h3>
+
+            <p>
+                Encourage communities to understand
+                the importance of healthy oceans.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
 
 <!-- ================= CTA ================= -->
 
 <section class="cta">
 
     <h2>
-        🌍 Technology Can Help Protect Our Oceans
+        📊 Explore the Monitoring System
     </h2>
 
     <p>
 
-        Explore the monitoring dashboard to see how
-        the digital side of our Ocean × Eco-Tech
-        concept could work.
+        See how a future sensor-connected system
+        could display environmental information.
 
     </p>
 
 
     <a
         href="dashboard.html"
-        class="cta-btn"
-    >
+        class="cta-btn">
 
-        Open Live Dashboard →
+        View Dashboard →
 
     </a>
 
 </section>
-
 
 
 <!-- ================= FOOTER ================= -->
@@ -1110,7 +1171,6 @@ footer span {
         </span>
 
     </div>
-
 
     <div>
 
