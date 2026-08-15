@@ -84,9 +84,10 @@ nav ul li a.active {
 
 .hero {
     margin-top: 72px;
-    min-height: 420px;
 
-    padding: 85px 7%;
+    min-height: 430px;
+
+    padding: 90px 7%;
 
     background:
         linear-gradient(
@@ -104,7 +105,8 @@ nav ul li a.active {
 }
 
 .hero-icon {
-    font-size: 75px;
+    font-size: 78px;
+
     margin-bottom: 15px;
 
     animation: floating 3s ease-in-out infinite;
@@ -123,8 +125,8 @@ nav ul li a.active {
 }
 
 .hero h1 {
-    font-size: 50px;
-    margin-bottom: 15px;
+    font-size: 52px;
+    margin-bottom: 16px;
 }
 
 .hero h1 span {
@@ -138,6 +140,8 @@ nav ul li a.active {
     color: #E0F4F7;
 
     line-height: 1.8;
+
+    font-size: 16px;
 }
 
 /* ================= SECTION ================= */
@@ -160,11 +164,16 @@ section {
     color: #607D8B;
 }
 
-/* ================= IMPACT STATS ================= */
+/* ================= STATS ================= */
+
+.stats-section {
+    background: #EAF9F7;
+}
 
 .stats-grid {
 
-    max-width: 1050px;
+    max-width: 1100px;
+
     margin: auto;
 
     display: grid;
@@ -181,14 +190,14 @@ section {
 
     padding: 30px 20px;
 
-    text-align: center;
-
     border-radius: 22px;
+
+    text-align: center;
 
     box-shadow:
         0 8px 25px rgba(6,59,92,.08);
 
-    transition: .35s;
+    transition: .3s;
 }
 
 .stat-card:hover {
@@ -200,110 +209,107 @@ section {
 }
 
 .stat-icon {
-    font-size: 40px;
+
+    font-size: 42px;
+
     margin-bottom: 12px;
 }
 
 .stat-number {
 
-    font-size: 36px;
+    font-size: 38px;
 
     font-weight: bold;
 
     color: #063B5C;
 
-    margin-bottom: 7px;
+    margin-bottom: 6px;
 }
 
 .stat-label {
 
     color: #607D8B;
 
-    font-size: 13px;
+    font-size: 14px;
 
     line-height: 1.5;
 }
 
-/* ================= PROGRESS ================= */
+/* ================= IMPACT CARDS ================= */
 
-.impact-section {
-    background: #EAF9F7;
-}
+.impact-grid {
 
-.impact-container {
-
-    max-width: 1050px;
+    max-width: 1100px;
 
     margin: auto;
 
     display: grid;
 
     grid-template-columns:
-        1fr 1fr;
+        repeat(3,1fr);
 
-    gap: 35px;
+    gap: 22px;
 }
 
-.impact-text h2 {
-
-    font-size: 34px;
-
-    margin-bottom: 15px;
-}
-
-.impact-text h2 span {
-    color: #20AEB0;
-}
-
-.impact-text p {
-
-    color: #607D8B;
-
-    line-height: 1.8;
-
-    margin-bottom: 22px;
-}
-
-.impact-list {
-    list-style: none;
-}
-
-.impact-list li {
+.impact-card {
 
     background: white;
 
-    padding: 14px 17px;
-
-    border-radius: 12px;
-
-    margin-bottom: 10px;
-
-    box-shadow:
-        0 4px 15px rgba(6,59,92,.05);
-}
-
-.progress-area {
-
-    background: white;
-
-    padding: 30px;
+    padding: 30px 25px;
 
     border-radius: 22px;
 
     box-shadow:
-        0 8px 25px rgba(6,59,92,.07);
+        0 8px 25px rgba(6,59,92,.08);
+
+    transition: .35s;
+}
+
+.impact-card:hover {
+
+    transform: translateY(-8px);
+}
+
+.impact-icon {
+
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+.impact-card h3 {
+
+    margin-bottom: 10px;
+}
+
+.impact-card p {
+
+    color: #607D8B;
+
+    line-height: 1.7;
+
+    font-size: 14px;
+}
+
+/* ================= PROGRESS ================= */
+
+.progress-section {
+    background: #FFFFFF;
+}
+
+.progress-container {
+
+    max-width: 950px;
+
+    margin: auto;
 }
 
 .progress-item {
 
-    margin-bottom: 23px;
+    margin-bottom: 25px;
 }
 
-.progress-item:last-child {
-    margin-bottom: 0;
-}
-
-.progress-header {
+.progress-top {
 
     display: flex;
 
@@ -318,9 +324,9 @@ section {
 
 .progress-bar {
 
-    height: 10px;
+    height: 12px;
 
-    background: #E2EEF0;
+    background: #E6F0F2;
 
     border-radius: 20px;
 
@@ -334,66 +340,44 @@ section {
     background:
         linear-gradient(
             90deg,
-            #063B5C,
+            #20AEB0,
             #20C7C9
         );
 
     border-radius: 20px;
+
+    animation: progressLoad 1.5s ease;
 }
 
-/* ================= BENEFITS ================= */
+@keyframes progressLoad {
 
-.benefit-grid {
+    from {
+        width: 0;
+    }
 
-    max-width: 1050px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap: 22px;
 }
 
-.benefit-card {
+/* ================= NOTE ================= */
 
-    padding: 30px 25px;
+.demo-note {
 
-    background: white;
+    max-width: 850px;
 
-    border-radius: 22px;
+    margin: 35px auto 0;
 
-    box-shadow:
-        0 8px 25px rgba(6,59,92,.07);
+    padding: 18px 22px;
 
-    transition: .3s;
-}
+    background: #FFF8E8;
 
-.benefit-card:hover {
-    transform: translateY(-8px);
-}
+    border-left: 5px solid #E8B84A;
 
-.benefit-icon {
+    border-radius: 12px;
 
-    font-size: 45px;
+    color: #6B5A32;
 
-    margin-bottom: 15px;
-}
+    line-height: 1.6;
 
-.benefit-card h3 {
-
-    margin-bottom: 10px;
-}
-
-.benefit-card p {
-
-    color: #607D8B;
-
-    font-size: 14px;
-
-    line-height: 1.7;
+    font-size: 13px;
 }
 
 /* ================= FUTURE IMPACT ================= */
@@ -554,26 +538,25 @@ footer span {
 
 /* ================= RESPONSIVE ================= */
 
-@media(max-width:900px) {
+@media(max-width:950px) {
 
     nav ul {
         display: none;
     }
 
     .stats-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+            1fr 1fr;
     }
 
-    .impact-container {
-        grid-template-columns: 1fr;
-    }
-
-    .benefit-grid {
-        grid-template-columns: 1fr 1fr;
+    .impact-grid {
+        grid-template-columns:
+            1fr 1fr;
     }
 
     .future-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
 }
@@ -584,12 +567,10 @@ footer span {
         font-size: 38px;
     }
 
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .benefit-grid {
-        grid-template-columns: 1fr;
+    .stats-grid,
+    .impact-grid {
+        grid-template-columns:
+            1fr;
     }
 
     footer {
@@ -690,16 +671,16 @@ footer span {
 
     <h1>
 
-        Our
+        Creating
         <span>Impact</span>
 
     </h1>
 
     <p>
 
-        Explore the environmental goals of Ocean × Eco-Tech
-        and how technology can support cleaner waterways,
-        responsible waste management and marine protection.
+        Ocean × Eco-Tech combines environmental awareness,
+        engineering and digital technology to imagine
+        practical solutions for cleaner waterways.
 
     </p>
 
@@ -708,16 +689,16 @@ footer span {
 
 <!-- ================= STATS ================= -->
 
-<section>
+<section class="stats-section">
 
     <div class="section-title">
 
         <h2>
-            📊 Project Impact Goals
+            📊 Project Impact
         </h2>
 
         <p>
-            Demonstration targets for our project concept.
+            Demonstration goals for our prototype.
         </p>
 
     </div>
@@ -733,12 +714,11 @@ footer span {
             </div>
 
             <div class="stat-number">
-                100%
+                0
             </div>
 
             <div class="stat-label">
-                Focus on responsible
-                waste management
+                Real waste collected
             </div>
 
         </div>
@@ -747,16 +727,15 @@ footer span {
         <div class="stat-card">
 
             <div class="stat-icon">
-                🌊
+                📡
             </div>
 
             <div class="stat-number">
-                24/7
+                0
             </div>
 
             <div class="stat-label">
-                Potential future
-                environmental monitoring
+                Physical sensors connected
             </div>
 
         </div>
@@ -765,16 +744,15 @@ footer span {
         <div class="stat-card">
 
             <div class="stat-icon">
-                🐠
+                🗺️
             </div>
 
             <div class="stat-number">
-                3+
+                6
             </div>
 
             <div class="stat-label">
-                Marine-protection
-                concepts
+                Demonstration monitoring zones
             </div>
 
         </div>
@@ -787,12 +765,11 @@ footer span {
             </div>
 
             <div class="stat-number">
-                ∞
+                100%
             </div>
 
             <div class="stat-label">
-                Opportunities for
-                future improvement
+                Focus on sustainable design
             </div>
 
         </div>
@@ -804,228 +781,48 @@ footer span {
 
 <!-- ================= IMPACT AREAS ================= -->
 
-<section class="impact-section">
-
-    <div class="impact-container">
-
-
-        <div class="impact-text">
-
-            <h2>
-
-                Measuring
-                <span>Progress</span>
-
-            </h2>
-
-            <p>
-
-                Because this is a prototype project, the values
-                below represent design goals rather than actual
-                measured environmental results.
-
-            </p>
-
-
-            <ul class="impact-list">
-
-                <li>
-                    🌊 Cleaner waterways
-                </li>
-
-                <li>
-                    ♻️ Better waste collection
-                </li>
-
-                <li>
-                    🐠 Safer marine environments
-                </li>
-
-                <li>
-                    📡 Better environmental monitoring
-                </li>
-
-            </ul>
-
-        </div>
-
-
-        <div class="progress-area">
-
-
-            <div class="progress-item">
-
-                <div class="progress-header">
-
-                    <span>
-                        Waste Reduction Goal
-                    </span>
-
-                    <span>
-                        80%
-                    </span>
-
-                </div>
-
-                <div class="progress-bar">
-
-                    <div
-                        class="progress-fill"
-                        style="width:80%">
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="progress-item">
-
-                <div class="progress-header">
-
-                    <span>
-                        Monitoring Coverage
-                    </span>
-
-                    <span>
-                        70%
-                    </span>
-
-                </div>
-
-                <div class="progress-bar">
-
-                    <div
-                        class="progress-fill"
-                        style="width:70%">
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="progress-item">
-
-                <div class="progress-header">
-
-                    <span>
-                        Marine Safety
-                    </span>
-
-                    <span>
-                        90%
-                    </span>
-
-                </div>
-
-                <div class="progress-bar">
-
-                    <div
-                        class="progress-fill"
-                        style="width:90%">
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="progress-item">
-
-                <div class="progress-header">
-
-                    <span>
-                        Sustainability
-                    </span>
-
-                    <span>
-                        85%
-                    </span>
-
-                </div>
-
-                <div class="progress-bar">
-
-                    <div
-                        class="progress-fill"
-                        style="width:85%">
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= BENEFITS ================= -->
-
 <section>
 
     <div class="section-title">
 
         <h2>
-            🌍 Areas of Positive Impact
+            🌊 Where We Can Make a Difference
         </h2>
 
         <p>
-            What the project is designed to support.
+            The project focuses on several environmental areas.
         </p>
 
     </div>
 
 
-    <div class="benefit-grid">
+    <div class="impact-grid">
 
 
-        <div class="benefit-card">
+        <div class="impact-card">
 
-            <div class="benefit-icon">
-                🌊
-            </div>
-
-            <h3>
-                Cleaner Water
-            </h3>
-
-            <p>
-
-                The waste-collection concept focuses on
-                reducing floating debris in waterways.
-
-            </p>
-
-        </div>
-
-
-        <div class="benefit-card">
-
-            <div class="benefit-icon">
+            <div class="impact-icon">
                 ♻️
             </div>
 
             <h3>
-                Waste Awareness
+                Waste Reduction
             </h3>
 
             <p>
 
-                The project encourages people to think
-                about where waste goes after disposal.
+                A smart collection system can help
+                demonstrate how floating waste could
+                be removed from waterways.
 
             </p>
 
         </div>
 
 
-        <div class="benefit-card">
+        <div class="impact-card">
 
-            <div class="benefit-icon">
+            <div class="impact-icon">
                 🐠
             </div>
 
@@ -1035,37 +832,39 @@ footer span {
 
             <p>
 
-                Safety features are designed around
-                protecting aquatic life during operation.
+                Future safety systems can be designed
+                to reduce interaction between the
+                collector and marine life.
 
             </p>
 
         </div>
 
 
-        <div class="benefit-card">
+        <div class="impact-card">
 
-            <div class="benefit-icon">
+            <div class="impact-icon">
                 📡
             </div>
 
             <h3>
-                Smart Monitoring
+                Environmental Monitoring
             </h3>
 
             <p>
 
-                Future sensors could help collect
-                useful environmental observations.
+                Sensors can eventually provide useful
+                information about water conditions and
+                environmental changes.
 
             </p>
 
         </div>
 
 
-        <div class="benefit-card">
+        <div class="impact-card">
 
-            <div class="benefit-icon">
+            <div class="impact-icon">
                 🌱
             </div>
 
@@ -1075,28 +874,50 @@ footer span {
 
             <p>
 
-                The project combines technology with
-                environmentally responsible thinking.
+                The project encourages responsible
+                technology and environmental thinking.
 
             </p>
 
         </div>
 
 
-        <div class="benefit-card">
+        <div class="impact-card">
 
-            <div class="benefit-icon">
-                💡
+            <div class="impact-icon">
+                📚
             </div>
 
             <h3>
-                Innovation
+                Education
             </h3>
 
             <p>
 
-                Student-led innovation can create
-                new ideas for environmental challenges.
+                Students can learn how coding,
+                electronics and environmental science
+                can work together.
+
+            </p>
+
+        </div>
+
+
+        <div class="impact-card">
+
+            <div class="impact-icon">
+                🤝
+            </div>
+
+            <h3>
+                Community Action
+            </h3>
+
+            <p>
+
+                Technology can support awareness and
+                encourage communities to make
+                sustainable choices.
 
             </p>
 
@@ -1107,18 +928,184 @@ footer span {
 </section>
 
 
-<!-- ================= FUTURE ================= -->
+<!-- ================= PROGRESS ================= -->
+
+<section class="progress-section">
+
+    <div class="section-title">
+
+        <h2>
+            🚀 Development Progress
+        </h2>
+
+        <p>
+            Current software-stage progress of the project.
+        </p>
+
+    </div>
+
+
+    <div class="progress-container">
+
+
+        <div class="progress-item">
+
+            <div class="progress-top">
+
+                <span>
+                    Website Interface
+                </span>
+
+                <span>
+                    90%
+                </span>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress-fill"
+                    style="width:90%">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="progress-item">
+
+            <div class="progress-top">
+
+                <span>
+                    Dashboard Concept
+                </span>
+
+                <span>
+                    80%
+                </span>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress-fill"
+                    style="width:80%">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="progress-item">
+
+            <div class="progress-top">
+
+                <span>
+                    Interactive Map
+                </span>
+
+                <span>
+                    75%
+                </span>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress-fill"
+                    style="width:75%">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="progress-item">
+
+            <div class="progress-top">
+
+                <span>
+                    Physical Hardware
+                </span>
+
+                <span>
+                    20%
+                </span>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress-fill"
+                    style="width:20%">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="progress-item">
+
+            <div class="progress-top">
+
+                <span>
+                    Sensor Integration
+                </span>
+
+                <span>
+                    0%
+                </span>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress-fill"
+                    style="width:0%">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="demo-note">
+
+            💡 <strong>Important:</strong>
+            The current website is a software prototype.
+            The statistics and progress indicators on this
+            page describe the project-development stage,
+            not real-world environmental measurements.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FUTURE IMPACT ================= -->
 
 <section class="future">
 
     <h2>
-        🚀 Future Possibilities
+        🔮 Future Possibilities
     </h2>
 
     <p>
 
-        As the prototype develops, additional technology
-        could make the system more useful and informative.
+        Once physical hardware is connected, the project
+        could move from a visual prototype toward a
+        real environmental monitoring system.
 
     </p>
 
@@ -1133,33 +1120,13 @@ footer span {
             </div>
 
             <h3>
-                Real Sensors
+                Real-Time Data
             </h3>
 
             <p>
 
-                Connect environmental sensors to
-                collect real measurements.
-
-            </p>
-
-        </div>
-
-
-        <div class="future-card">
-
-            <div>
-                🗺️
-            </div>
-
-            <h3>
-                Live Mapping
-            </h3>
-
-            <p>
-
-                Display actual monitoring locations
-                and environmental observations.
+                Physical sensors could send actual
+                measurements to the application.
 
             </p>
 
@@ -1173,13 +1140,34 @@ footer span {
             </div>
 
             <h3>
-                Autonomous Operation
+                Autonomous Collection
             </h3>
 
             <p>
 
-                Improve navigation and collection
-                using intelligent control systems.
+                Motors and control systems could help
+                the prototype navigate and collect waste.
+
+            </p>
+
+        </div>
+
+
+        <div class="future-card">
+
+            <div>
+                🌊
+            </div>
+
+            <h3>
+                Cleaner Waterways
+            </h3>
+
+            <p>
+
+                The long-term goal is to explore how
+                technology can support cleaner aquatic
+                environments.
 
             </p>
 
@@ -1195,13 +1183,13 @@ footer span {
 <section class="cta">
 
     <h2>
-        🌊 Explore the Technology
+        ⚙️ Explore the Technology
     </h2>
 
     <p>
 
-        Learn more about the eco-tech concepts
-        behind the Ocean × Eco-Tech project.
+        See the systems and ideas behind the
+        Ocean × Eco-Tech project.
 
     </p>
 
