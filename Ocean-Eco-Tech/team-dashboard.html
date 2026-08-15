@@ -1,0 +1,1830 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Team Dashboard | Ocean × Eco-Tech</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#F7FBFC;
+    color:#063B5C;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    height:72px;
+    background:#063B5C;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 5%;
+
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+}
+
+.logo{
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+.logo span{
+    color:#20C7C9;
+}
+
+nav ul{
+    display:flex;
+    gap:12px;
+    list-style:none;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:10px;
+    transition:.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+    color:#20C7C9;
+}
+
+.nav-btn{
+    background:#20C7C9;
+    color:#063B5C !important;
+
+    padding:10px 16px;
+    border-radius:25px;
+
+    text-decoration:none;
+    font-weight:bold;
+    font-size:11px;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    margin-top:72px;
+
+    padding:60px 7%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #063B5C,
+            #087A9A
+        );
+
+    color:white;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-content{
+    max-width:1100px;
+    margin:auto;
+}
+
+.hero-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.hero-icon{
+    font-size:60px;
+
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+}
+
+.hero h1{
+    font-size:42px;
+    margin-bottom:8px;
+}
+
+.hero h1 span{
+    color:#20C7C9;
+}
+
+.hero p{
+    color:#DDF1F4;
+    font-size:12px;
+    line-height:1.8;
+}
+
+.status{
+    background:rgba(255,255,255,.1);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    padding:15px 20px;
+
+    border-radius:18px;
+
+    min-width:180px;
+}
+
+.status-dot{
+    display:inline-block;
+
+    width:9px;
+    height:9px;
+
+    background:#4CAF83;
+
+    border-radius:50%;
+
+    margin-right:7px;
+
+    box-shadow:0 0 10px #4CAF83;
+}
+
+.status span{
+    font-size:10px;
+    color:#DDF1F4;
+}
+
+/* ================= BUBBLES ================= */
+
+.bubble{
+    position:absolute;
+
+    border:2px solid rgba(255,255,255,.1);
+
+    border-radius:50%;
+
+    animation:bubble 7s ease-in-out infinite;
+}
+
+.b1{
+    width:70px;
+    height:70px;
+    right:8%;
+    top:20px;
+}
+
+.b2{
+    width:30px;
+    height:30px;
+    left:8%;
+    bottom:20px;
+}
+
+@keyframes bubble{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-20px);
+    }
+
+}
+
+/* ================= MAIN ================= */
+
+main{
+    max-width:1150px;
+    margin:auto;
+
+    padding:45px 25px;
+}
+
+/* ================= SECTION TITLE ================= */
+
+.section-title{
+    margin-bottom:20px;
+}
+
+.section-title h2{
+    font-size:25px;
+}
+
+.section-title p{
+    color:#78909C;
+    font-size:10px;
+    margin-top:5px;
+}
+
+/* ================= QUICK STATS ================= */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:15px;
+
+    margin-bottom:45px;
+}
+
+.stat-card{
+
+    background:white;
+
+    padding:22px;
+
+    border-radius:20px;
+
+    box-shadow:
+        0 7px 22px rgba(6,59,92,.06);
+
+    transition:.3s;
+}
+
+.stat-card:hover{
+    transform:translateY(-5px);
+}
+
+.stat-icon{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.stat-card strong{
+
+    display:block;
+
+    font-size:25px;
+
+    margin-bottom:4px;
+}
+
+.stat-card span{
+
+    color:#78909C;
+
+    font-size:9px;
+}
+
+/* ================= TEAM ================= */
+
+.team-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:18px;
+
+    margin-bottom:45px;
+}
+
+.member{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:22px;
+
+    box-shadow:
+        0 7px 22px rgba(6,59,92,.06);
+
+    transition:.3s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.member:hover{
+    transform:translateY(-7px);
+}
+
+.member::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:80px;
+    height:80px;
+
+    background:#B9F3E4;
+
+    border-radius:50%;
+
+    right:-35px;
+    bottom:-35px;
+}
+
+.avatar{
+
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #20C7C9,
+            #4CAF83
+        );
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:white;
+
+    font-size:22px;
+    font-weight:bold;
+
+    margin-bottom:13px;
+
+    position:relative;
+    z-index:2;
+}
+
+.member h3{
+    font-size:15px;
+    margin-bottom:4px;
+}
+
+.role{
+
+    color:#087A9A;
+
+    font-size:9px;
+
+    font-weight:bold;
+
+    margin-bottom:10px;
+
+    position:relative;
+    z-index:2;
+}
+
+.member p{
+
+    color:#78909C;
+
+    font-size:10px;
+
+    line-height:1.6;
+
+    position:relative;
+    z-index:2;
+}
+
+.member-status{
+
+    display:inline-block;
+
+    margin-top:13px;
+
+    padding:6px 10px;
+
+    border-radius:15px;
+
+    background:#EAF9F7;
+
+    color:#087A9A;
+
+    font-size:8px;
+
+    font-weight:bold;
+
+    position:relative;
+    z-index:2;
+}
+
+/* ================= TWO COLUMN ================= */
+
+.two-column{
+
+    display:grid;
+
+    grid-template-columns:
+        1.4fr 1fr;
+
+    gap:22px;
+
+    margin-bottom:45px;
+}
+
+/* ================= TASKS ================= */
+
+.panel{
+
+    background:white;
+
+    padding:27px;
+
+    border-radius:22px;
+
+    box-shadow:
+        0 7px 22px rgba(6,59,92,.06);
+}
+
+.panel h2{
+
+    font-size:20px;
+
+    margin-bottom:20px;
+}
+
+.task{
+
+    margin-bottom:19px;
+}
+
+.task:last-child{
+    margin-bottom:0;
+}
+
+.task-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:7px;
+}
+
+.task-name{
+
+    font-size:10px;
+
+    font-weight:bold;
+}
+
+.task-percent{
+
+    font-size:9px;
+
+    color:#087A9A;
+
+    font-weight:bold;
+}
+
+.progress{
+
+    width:100%;
+
+    height:8px;
+
+    background:#E6F0F2;
+
+    border-radius:10px;
+
+    overflow:hidden;
+}
+
+.progress-bar{
+
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #20C7C9,
+            #4CAF83
+        );
+
+    border-radius:10px;
+
+    animation:progress 1.5s ease;
+}
+
+@keyframes progress{
+
+    from{
+        width:0;
+    }
+
+}
+
+/* ================= PROTOTYPE ================= */
+
+.prototype-status{
+
+    background:#063B5C;
+
+    color:white;
+
+    border-radius:22px;
+
+    padding:27px;
+}
+
+.prototype-status h2{
+    font-size:20px;
+    margin-bottom:18px;
+}
+
+.prototype-main{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-bottom:20px;
+}
+
+.prototype-icon{
+
+    width:70px;
+    height:70px;
+
+    border-radius:20px;
+
+    background:#20C7C9;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:35px;
+}
+
+.prototype-main h3{
+    font-size:17px;
+    margin-bottom:5px;
+}
+
+.prototype-main p{
+    color:#CBE5E9;
+    font-size:9px;
+}
+
+.prototype-progress{
+
+    height:9px;
+
+    background:rgba(255,255,255,.12);
+
+    border-radius:10px;
+
+    overflow:hidden;
+}
+
+.prototype-progress div{
+
+    width:78%;
+
+    height:100%;
+
+    background:#20C7C9;
+
+    border-radius:10px;
+
+    animation:load 1.5s ease;
+}
+
+@keyframes load{
+
+    from{
+        width:0;
+    }
+
+}
+
+.prototype-label{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:8px;
+
+    color:#CBE5E9;
+
+    font-size:9px;
+}
+
+/* ================= MILESTONES ================= */
+
+.milestones{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:15px;
+
+    margin-bottom:45px;
+}
+
+.milestone{
+
+    background:white;
+
+    padding:23px 18px;
+
+    border-radius:20px;
+
+    box-shadow:
+        0 7px 22px rgba(6,59,92,.06);
+
+    border-top:4px solid #20C7C9;
+}
+
+.milestone-icon{
+
+    font-size:27px;
+
+    margin-bottom:10px;
+}
+
+.milestone h3{
+
+    font-size:12px;
+
+    margin-bottom:5px;
+}
+
+.milestone p{
+
+    color:#78909C;
+
+    font-size:9px;
+
+    line-height:1.6;
+}
+
+/* ================= ACTIVITY ================= */
+
+.activity{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:22px;
+
+    margin-bottom:45px;
+}
+
+.activity-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+}
+
+.activity-item{
+
+    display:flex;
+
+    gap:12px;
+
+    align-items:flex-start;
+
+    padding-bottom:13px;
+
+    border-bottom:1px solid #EAF0F2;
+}
+
+.activity-item:last-child{
+    border-bottom:none;
+}
+
+.activity-icon{
+
+    width:35px;
+    height:35px;
+
+    min-width:35px;
+
+    background:#EAF9F7;
+
+    border-radius:12px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:16px;
+}
+
+.activity-item h3{
+
+    font-size:10px;
+
+    margin-bottom:4px;
+}
+
+.activity-item p{
+
+    color:#78909C;
+
+    font-size:9px;
+    line-height:1.5;
+}
+
+/* ================= ACHIEVEMENT ================= */
+
+.achievement{
+
+    background:
+        linear-gradient(
+            135deg,
+            #B9F3E4,
+            #EAF9F7
+        );
+
+    padding:30px;
+
+    border-radius:23px;
+
+    text-align:center;
+
+    margin-bottom:35px;
+}
+
+.achievement-icon{
+
+    font-size:48px;
+
+    margin-bottom:10px;
+
+    animation:float 3s ease-in-out infinite;
+}
+
+.achievement h2{
+
+    font-size:25px;
+
+    margin-bottom:7px;
+}
+
+.achievement p{
+
+    color:#45666D;
+
+    font-size:10px;
+
+    line-height:1.7;
+
+    max-width:650px;
+
+    margin:auto;
+}
+
+/* ================= CTA ================= */
+
+.cta{
+
+    background:#063B5C;
+
+    color:white;
+
+    padding:38px;
+
+    border-radius:25px;
+
+    text-align:center;
+}
+
+.cta h2{
+
+    font-size:25px;
+
+    margin-bottom:9px;
+}
+
+.cta p{
+
+    color:#CBE5E9;
+
+    font-size:10px;
+
+    line-height:1.7;
+
+    max-width:600px;
+
+    margin:0 auto 18px;
+}
+
+.btn{
+
+    display:inline-block;
+
+    background:#20C7C9;
+
+    color:#063B5C;
+
+    text-decoration:none;
+
+    padding:12px 22px;
+
+    border-radius:25px;
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.btn:hover{
+    background:white;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    background:#042D46;
+
+    color:white;
+
+    padding:35px 6%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    font-size:10px;
+}
+
+footer span{
+    color:#20C7C9;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1000px){
+
+    nav ul{
+        display:none;
+    }
+
+    .stats{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .team-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .milestones{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:700px){
+
+    .hero-top{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .two-column,
+    .activity{
+        grid-template-columns:1fr;
+    }
+
+    .team-grid,
+    .stats,
+    .milestones{
+        grid-template-columns:1fr;
+    }
+
+    footer{
+        flex-direction:column;
+        gap:12px;
+        text-align:center;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+<div class="logo">
+🌊 OCEAN <span>× ECO-TECH</span>
+</div>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+<li><a href="dashboard.html">Dashboard</a></li>
+<li><a href="data.html">Data</a></li>
+<li><a href="map.html">Map</a></li>
+<li><a href="solutions.html">Solutions</a></li>
+<li><a href="technology.html">Technology</a></li>
+<li><a href="prototype.html">Prototype</a></li>
+<li><a href="innovation.html">Innovation</a></li>
+<li><a href="sustainability.html">Sustainability</a></li>
+<li><a href="analytics.html">Analytics</a></li>
+<li><a href="reports.html">Reports</a></li>
+<li><a href="leaderboard.html">Leaderboard</a></li>
+<li><a href="impact.html">Impact</a></li>
+<li><a href="timeline.html">Timeline</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="mission.html">Mission</a></li>
+<li><a href="team-dashboard.html" class="active">Team</a></li>
+<li><a href="alerts.html">Alerts</a></li>
+<li><a href="documentation.html">Documentation</a></li>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="settings.html">Settings</a></li>
+
+</ul>
+
+<a href="dashboard.html" class="nav-btn">
+Dashboard →
+</a>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<header class="hero">
+
+<div class="bubble b1"></div>
+<div class="bubble b2"></div>
+
+<div class="hero-content">
+
+<div class="hero-top">
+
+<div>
+
+<div class="hero-icon">
+👥
+</div>
+
+<h1>
+Team <span>Dashboard</span>
+</h1>
+
+<p>
+The command center for the Waste Collector 2K26
+team — tracking progress, responsibilities,
+prototype development and project milestones.
+</p>
+
+</div>
+
+
+<div class="status">
+
+<span class="status-dot"></span>
+
+<span>
+PROJECT STATUS: ACTIVE
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+
+<main>
+
+
+<!-- ================= QUICK STATS ================= -->
+
+<div class="section-title">
+
+<h2>
+📊 Team Overview
+</h2>
+
+<p>
+A quick look at the current project status.
+</p>
+
+</div>
+
+
+<section class="stats">
+
+
+<div class="stat-card">
+
+<div class="stat-icon">
+👥
+</div>
+
+<strong>6</strong>
+
+<span>Team Members</span>
+
+</div>
+
+
+<div class="stat-card">
+
+<div class="stat-icon">
+🎯
+</div>
+
+<strong>82%</strong>
+
+<span>Project Progress</span>
+
+</div>
+
+
+<div class="stat-card">
+
+<div class="stat-icon">
+✅
+</div>
+
+<strong>18</strong>
+
+<span>Tasks Completed</span>
+
+</div>
+
+
+<div class="stat-card">
+
+<div class="stat-icon">
+🚀
+</div>
+
+<strong>78%</strong>
+
+<span>Prototype Progress</span>
+
+</div>
+
+
+</section>
+
+
+<!-- ================= TEAM ================= -->
+
+<div class="section-title">
+
+<h2>
+👥 Our Team
+</h2>
+
+<p>
+Different skills working toward one environmental goal.
+</p>
+
+</div>
+
+
+<section class="team-grid">
+
+
+<div class="member">
+
+<div class="avatar">
+S
+</div>
+
+<h3>
+Sandy
+</h3>
+
+<div class="role">
+PROJECT COORDINATOR
+</div>
+
+<p>
+Coordinates the project, website development
+and overall presentation.
+</p>
+
+<span class="member-status">
+● ACTIVE
+</span>
+
+</div>
+
+
+<div class="member">
+
+<div class="avatar">
+R
+</div>
+
+<h3>
+Rakshika
+</h3>
+
+<div class="role">
+RESEARCH & DESIGN
+</div>
+
+<p>
+Supports research, concept development and
+visual planning.
+</p>
+
+<span class="member-status">
+● ACTIVE
+</span>
+
+</div>
+
+
+<div class="member">
+
+<div class="avatar">
+J
+</div>
+
+<h3>
+Janvitha
+</h3>
+
+<div class="role">
+HARDWARE
+</div>
+
+<p>
+Works on prototype structure and hardware
+integration concepts.
+</p>
+
+<span class="member-status">
+● ACTIVE
+</span>
+
+</div>
+
+
+<div class="member">
+
+<div class="avatar">
+E
+</div>
+
+<h3>
+Esha
+</h3>
+
+<div class="role">
+DATA & ANALYSIS
+</div>
+
+<p>
+Supports environmental data, analytics and
+information presentation.
+</p>
+
+<span class="member-status">
+● ACTIVE
+</span>
+
+</div>
+
+
+<div class="member">
+
+<div class="avatar">
+K
+</div>
+
+<h3>
+Kavi
+</h3>
+
+<div class="role">
+TECHNOLOGY
+</div>
+
+<p>
+Works on sensors, technology concepts and
+system integration.
+</p>
+
+<span class="member-status">
+● ACTIVE
+</span>
+
+</div>
+
+
+<div class="member">
+
+<div class="avatar">
+T
+</div>
+
+<h3>
+Team Support
+</h3>
+
+<div class="role">
+DOCUMENTATION
+</div>
+
+<p>
+Supports documentation, testing records and
+project communication.
+</p>
+
+<span class="member-status">
+● ACTIVE
+</span>
+
+</div>
+
+
+</section>
+
+
+<!-- ================= TASKS + PROTOTYPE ================= -->
+
+<section class="two-column">
+
+
+<div class="panel">
+
+<h2>
+📋 Project Tasks
+</h2>
+
+
+<div class="task">
+
+<div class="task-top">
+
+<span class="task-name">
+Research & Problem Identification
+</span>
+
+<span class="task-percent">
+100%
+</span>
+
+</div>
+
+<div class="progress">
+<div class="progress-bar" style="width:100%"></div>
+</div>
+
+</div>
+
+
+<div class="task">
+
+<div class="task-top">
+
+<span class="task-name">
+Prototype Design
+</span>
+
+<span class="task-percent">
+90%
+</span>
+
+</div>
+
+<div class="progress">
+<div class="progress-bar" style="width:90%"></div>
+</div>
+
+</div>
+
+
+<div class="task">
+
+<div class="task-top">
+
+<span class="task-name">
+Sensor Integration
+</span>
+
+<span class="task-percent">
+75%
+</span>
+
+</div>
+
+<div class="progress">
+<div class="progress-bar" style="width:75%"></div>
+</div>
+
+</div>
+
+
+<div class="task">
+
+<div class="task-top">
+
+<span class="task-name">
+Website Development
+</span>
+
+<span class="task-percent">
+85%
+</span>
+
+</div>
+
+<div class="progress">
+<div class="progress-bar" style="width:85%"></div>
+</div>
+
+</div>
+
+
+<div class="task">
+
+<div class="task-top">
+
+<span class="task-name">
+Final Testing
+</span>
+
+<span class="task-percent">
+55%
+</span>
+
+</div>
+
+<div class="progress">
+<div class="progress-bar" style="width:55%"></div>
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="prototype-status">
+
+<h2>
+🛠️ Prototype Status
+</h2>
+
+
+<div class="prototype-main">
+
+<div class="prototype-icon">
+🚤
+</div>
+
+<div>
+
+<h3>
+Waste Collector 2K26
+</h3>
+
+<p>
+Current development stage
+</p>
+
+</div>
+
+</div>
+
+
+<div class="prototype-progress">
+
+<div></div>
+
+</div>
+
+<div class="prototype-label">
+
+<span>
+Prototype completion
+</span>
+
+<strong>
+78%
+</strong>
+
+</div>
+
+</div>
+
+
+</section>
+
+
+<!-- ================= MILESTONES ================= -->
+
+<div class="section-title">
+
+<h2>
+🏁 Project Milestones
+</h2>
+
+<p>
+Important stages completed by the team.
+</p>
+
+</div>
+
+
+<section class="milestones">
+
+
+<div class="milestone">
+
+<div class="milestone-icon">
+💡
+</div>
+
+<h3>
+Idea Selected
+</h3>
+
+<p>
+Environmental problem identified and project concept created.
+</p>
+
+</div>
+
+
+<div class="milestone">
+
+<div class="milestone-icon">
+🔍
+</div>
+
+<h3>
+Research Complete
+</h3>
+
+<p>
+Research and initial solution exploration completed.
+</p>
+
+</div>
+
+
+<div class="milestone">
+
+<div class="milestone-icon">
+🛠️
+</div>
+
+<h3>
+Prototype Built
+</h3>
+
+<p>
+Initial Waste Collector prototype developed.
+</p>
+
+</div>
+
+
+<div class="milestone">
+
+<div class="milestone-icon">
+🌊
+</div>
+
+<h3>
+Environmental Testing
+</h3>
+
+<p>
+Testing and improvement phase currently underway.
+</p>
+
+</div>
+
+
+</section>
+
+
+<!-- ================= ACTIVITY ================= -->
+
+<section class="activity">
+
+
+<div class="panel">
+
+<h2>
+⚡ Recent Team Activity
+</h2>
+
+
+<div class="activity-list">
+
+
+<div class="activity-item">
+
+<div class="activity-icon">
+🛠️
+</div>
+
+<div>
+
+<h3>
+Prototype updated
+</h3>
+
+<p>
+The collection mechanism was reviewed and improved.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="activity-item">
+
+<div class="activity-icon">
+📡
+</div>
+
+<div>
+
+<h3>
+Sensor concept added
+</h3>
+
+<p>
+Smart detection was included in the system design.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="activity-item">
+
+<div class="activity-icon">
+💻
+</div>
+
+<div>
+
+<h3>
+Website expanded
+</h3>
+
+<p>
+New project pages were added to the digital platform.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="activity-item">
+
+<div class="activity-icon">
+🌱
+</div>
+
+<div>
+
+<h3>
+Sustainability review
+</h3>
+
+<p>
+Environmental objectives were reviewed by the team.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="panel">
+
+<h2>
+🎯 Current Focus
+</h2>
+
+
+<div class="activity-list">
+
+
+<div class="activity-item">
+
+<div class="activity-icon">
+🔧
+</div>
+
+<div>
+
+<h3>
+Improve prototype
+</h3>
+
+<p>
+Refine the collection mechanism and structure.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="activity-item">
+
+<div class="activity-icon">
+📊
+</div>
+
+<div>
+
+<h3>
+Organise project data
+</h3>
+
+<p>
+Prepare environmental information for presentation.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="activity-item">
+
+<div class="activity-icon">
+🧪
+</div>
+
+<div>
+
+<h3>
+Testing
+</h3>
+
+<p>
+Evaluate the prototype and identify improvements.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="activity-item">
+
+<div class="activity-icon">
+🎤
+</div>
+
+<div>
+
+<h3>
+Final presentation
+</h3>
+
+<p>
+Prepare the project explanation and demonstration.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+</section>
+
+
+<!-- ================= ACHIEVEMENT ================= -->
+
+<section class="achievement">
+
+<div class="achievement-icon">
+🏆
+</div>
+
+<h2>
+Team Achievement
+</h2>
+
+<p>
+Waste Collector 2K26 brings together environmental
+awareness, engineering, digital technology and
+teamwork into one innovative project designed to
+address a real-world challenge.
+</p>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+<h2>
+🌊 One Team. One Mission.
+</h2>
+
+<p>
+Every contribution moves Waste Collector 2K26 one
+step closer to becoming a stronger environmental
+technology concept.
+</p>
+
+<a href="timeline.html" class="btn">
+View Project Journey →
+</a>
+
+</section>
+
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div>
+🌊 OCEAN <span>× ECO-TECH</span>
+</div>
+
+<div>
+© 2026 Ocean × Eco-Tech
+</div>
+
+</footer>
+
+
+</body>
+
+</html>

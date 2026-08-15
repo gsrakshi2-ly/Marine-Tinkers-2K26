@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Project Timeline | Ocean × Eco-Tech</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#F7FBFC;
+    color:#063B5C;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    height:72px;
+    background:#063B5C;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 6%;
+
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+}
+
+.logo{
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#20C7C9;
+}
+
+nav ul{
+    display:flex;
+    gap:13px;
+    list-style:none;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:11px;
+    transition:.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+    color:#20C7C9;
+}
+
+.nav-btn{
+    background:#20C7C9;
+    color:#063B5C !important;
+
+    padding:10px 17px;
+    border-radius:25px;
+
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    margin-top:72px;
+
+    padding:85px 7%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #063B5C,
+            #087A9A
+        );
+
+    color:white;
+    text-align:center;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-icon{
+    font-size:65px;
+    margin-bottom:12px;
+
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+}
+
+.hero h1{
+    font-size:48px;
+    margin-bottom:12px;
+}
+
+.hero h1 span{
+    color:#20C7C9;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+
+    color:#DDF1F4;
+
+    line-height:1.8;
+    font-size:12px;
+}
+
+/* ================= FLOATING BUBBLES ================= */
+
+.bubble{
+    position:absolute;
+
+    border:2px solid rgba(255,255,255,.13);
+
+    border-radius:50%;
+
+    animation:bubble 7s ease-in-out infinite;
+}
+
+.b1{
+    width:45px;
+    height:45px;
+    left:8%;
+    bottom:25px;
+}
+
+.b2{
+    width:75px;
+    height:75px;
+    right:9%;
+    top:35px;
+}
+
+.b3{
+    width:25px;
+    height:25px;
+    left:25%;
+    top:40px;
+}
+
+@keyframes bubble{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-25px);
+    }
+
+}
+
+/* ================= MAIN ================= */
+
+main{
+    max-width:1050px;
+    margin:auto;
+    padding:65px 25px;
+}
+
+/* ================= INTRO ================= */
+
+.intro{
+    text-align:center;
+    max-width:750px;
+    margin:0 auto 55px;
+}
+
+.intro h2{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.intro p{
+    color:#78909C;
+    font-size:11px;
+    line-height:1.8;
+}
+
+/* ================= TIMELINE ================= */
+
+.timeline{
+    position:relative;
+    padding:20px 0;
+}
+
+/* central line */
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    top:0;
+    bottom:0;
+
+    width:4px;
+
+    background:#B9F3E4;
+
+    border-radius:10px;
+}
+
+/* ================= TIMELINE ITEM ================= */
+
+.timeline-item{
+
+    width:50%;
+
+    padding:15px 45px;
+
+    position:relative;
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    animation:appear .8s forwards;
+}
+
+.timeline-item:nth-child(1){
+    animation-delay:.1s;
+}
+
+.timeline-item:nth-child(2){
+    animation-delay:.25s;
+}
+
+.timeline-item:nth-child(3){
+    animation-delay:.4s;
+}
+
+.timeline-item:nth-child(4){
+    animation-delay:.55s;
+}
+
+.timeline-item:nth-child(5){
+    animation-delay:.7s;
+}
+
+.timeline-item:nth-child(6){
+    animation-delay:.85s;
+}
+
+.timeline-item:nth-child(7){
+    animation-delay:1s;
+}
+
+@keyframes appear{
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.timeline-item.left{
+    left:0;
+    text-align:right;
+}
+
+.timeline-item.right{
+    left:50%;
+}
+
+/* ================= DOT ================= */
+
+.timeline-dot{
+
+    position:absolute;
+
+    width:20px;
+    height:20px;
+
+    background:#20C7C9;
+
+    border:5px solid #F7FBFC;
+
+    border-radius:50%;
+
+    top:35px;
+
+    box-shadow:
+        0 0 0 3px #20C7C9;
+
+    z-index:2;
+}
+
+.left .timeline-dot{
+    right:-10px;
+}
+
+.right .timeline-dot{
+    left:-10px;
+}
+
+/* ================= CARD ================= */
+
+.timeline-card{
+
+    background:white;
+
+    padding:27px;
+
+    border-radius:22px;
+
+    box-shadow:
+        0 8px 25px rgba(6,59,92,.06);
+
+    transition:.3s;
+
+    position:relative;
+}
+
+.timeline-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 12px 30px rgba(6,59,92,.11);
+}
+
+.timeline-icon{
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.timeline-date{
+
+    display:inline-block;
+
+    background:#EAF9F7;
+
+    color:#087A9A;
+
+    padding:6px 11px;
+
+    border-radius:20px;
+
+    font-size:9px;
+
+    font-weight:bold;
+
+    margin-bottom:10px;
+}
+
+.timeline-card h3{
+
+    font-size:17px;
+
+    margin-bottom:8px;
+}
+
+.timeline-card p{
+
+    color:#78909C;
+
+    font-size:11px;
+
+    line-height:1.7;
+}
+
+/* ================= MILESTONE ================= */
+
+.milestone{
+
+    background:#B9F3E4;
+
+    border-radius:25px;
+
+    padding:35px;
+
+    margin-top:60px;
+
+    text-align:center;
+}
+
+.milestone h2{
+
+    font-size:26px;
+
+    margin-bottom:10px;
+}
+
+.milestone p{
+
+    color:#45666D;
+
+    font-size:11px;
+
+    line-height:1.8;
+
+    max-width:650px;
+
+    margin:auto;
+}
+
+/* ================= FUTURE ================= */
+
+.future{
+
+    margin-top:30px;
+
+    background:#063B5C;
+
+    color:white;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    text-align:center;
+}
+
+.future h2{
+
+    font-size:27px;
+
+    margin-bottom:10px;
+}
+
+.future > p{
+
+    color:#CBE5E9;
+
+    font-size:11px;
+
+    line-height:1.8;
+
+    max-width:650px;
+
+    margin:0 auto 25px;
+}
+
+.future-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:15px;
+}
+
+.future-card{
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    padding:22px;
+
+    border-radius:18px;
+
+    transition:.3s;
+}
+
+.future-card:hover{
+
+    transform:translateY(-6px);
+
+    background:rgba(255,255,255,.14);
+}
+
+.future-card div{
+
+    font-size:30px;
+
+    margin-bottom:8px;
+}
+
+.future-card h3{
+
+    font-size:13px;
+
+    margin-bottom:7px;
+}
+
+.future-card p{
+
+    color:#CBE5E9;
+
+    font-size:10px;
+
+    line-height:1.6;
+}
+
+/* ================= CTA ================= */
+
+.cta{
+
+    margin-top:30px;
+
+    padding:35px;
+
+    text-align:center;
+
+    background:#EAF9F7;
+
+    border-radius:24px;
+}
+
+.cta h2{
+
+    font-size:25px;
+
+    margin-bottom:9px;
+}
+
+.cta p{
+
+    color:#607D8B;
+
+    font-size:11px;
+
+    line-height:1.8;
+
+    max-width:650px;
+
+    margin:0 auto 20px;
+}
+
+.btn{
+
+    display:inline-block;
+
+    background:#20C7C9;
+
+    color:#063B5C;
+
+    padding:13px 23px;
+
+    border-radius:25px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    font-size:12px;
+
+    transition:.3s;
+}
+
+.btn:hover{
+
+    background:#063B5C;
+
+    color:white;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    background:#042D46;
+
+    color:white;
+
+    padding:35px 6%;
+
+    display:flex;
+
+    justify-content:space-between;
+}
+
+footer span{
+    color:#20C7C9;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+    nav ul{
+        display:none;
+    }
+
+    .timeline::before{
+        left:20px;
+    }
+
+    .timeline-item,
+    .timeline-item.right,
+    .timeline-item.left{
+
+        width:100%;
+
+        left:0;
+
+        text-align:left;
+
+        padding-left:60px;
+
+        padding-right:5px;
+    }
+
+    .left .timeline-dot,
+    .right .timeline-dot{
+
+        left:10px;
+        right:auto;
+    }
+
+    .future-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:37px;
+    }
+
+    .future-grid{
+        grid-template-columns:1fr;
+    }
+
+    footer{
+        flex-direction:column;
+        gap:15px;
+        text-align:center;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+<div class="logo">
+🌊 OCEAN <span>× ECO-TECH</span>
+</div>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+<li><a href="dashboard.html">Dashboard</a></li>
+<li><a href="data.html">Data</a></li>
+<li><a href="map.html">Map</a></li>
+<li><a href="solutions.html">Solutions</a></li>
+<li><a href="technology.html">Technology</a></li>
+<li><a href="prototype.html">Prototype</a></li>
+<li><a href="innovation.html">Innovation</a></li>
+<li><a href="sustainability.html">Sustainability</a></li>
+<li><a href="analytics.html">Analytics</a></li>
+<li><a href="reports.html">Reports</a></li>
+<li><a href="leaderboard.html">Leaderboard</a></li>
+<li><a href="impact.html">Impact</a></li>
+<li><a href="timeline.html" class="active">Timeline</a></li>
+<li><a href="alerts.html">Alerts</a></li>
+<li><a href="documentation.html">Documentation</a></li>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="settings.html">Settings</a></li>
+
+</ul>
+
+<a href="dashboard.html" class="nav-btn">
+Dashboard →
+</a>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<header class="hero">
+
+<div class="bubble b1"></div>
+<div class="bubble b2"></div>
+<div class="bubble b3"></div>
+
+<div class="hero-icon">
+⏳
+</div>
+
+<h1>
+Our Project <span>Journey</span>
+</h1>
+
+<p>
+From identifying a real environmental problem to developing
+a smart technology concept — follow the journey of
+Waste Collector 2K26.
+</p>
+
+</header>
+
+
+<main>
+
+
+<!-- ================= INTRO ================= -->
+
+<section class="intro">
+
+<h2>
+🌱 From Idea to Innovation
+</h2>
+
+<p>
+Every project begins with a problem. Our journey started
+with the challenge of floating waste in water bodies and
+developed into an exploration of sensors, automation,
+data and sustainable engineering.
+</p>
+
+</section>
+
+
+<!-- ================= TIMELINE ================= -->
+
+<section class="timeline">
+
+
+<!-- 1 -->
+
+<div class="timeline-item left">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+<div class="timeline-icon">
+💡
+</div>
+
+<div class="timeline-date">
+STAGE 01
+</div>
+
+<h3>
+Identifying the Problem
+</h3>
+
+<p>
+We identified floating waste as an environmental challenge
+that can affect waterways and aquatic ecosystems.
+The first step was understanding why a smarter solution
+could be useful.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 2 -->
+
+<div class="timeline-item right">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+<div class="timeline-icon">
+🔍
+</div>
+
+<div class="timeline-date">
+STAGE 02
+</div>
+
+<h3>
+Research & Exploration
+</h3>
+
+<p>
+We explored existing waste-management approaches and
+studied how sensors, automation and environmental
+technology could be combined into one concept.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 3 -->
+
+<div class="timeline-item left">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+<div class="timeline-icon">
+📝
+</div>
+
+<div class="timeline-date">
+STAGE 03
+</div>
+
+<h3>
+Designing the Solution
+</h3>
+
+<p>
+The Waste Collector 2K26 concept was developed with
+the aim of detecting and collecting floating waste
+while keeping environmental impact in mind.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 4 -->
+
+<div class="timeline-item right">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+<div class="timeline-icon">
+🛠️
+</div>
+
+<div class="timeline-date">
+STAGE 04
+</div>
+
+<h3>
+Building the Prototype
+</h3>
+
+<p>
+The physical prototype helped us visualise how the
+collection mechanism, sensors and control system
+could work together.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 5 -->
+
+<div class="timeline-item left">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+<div class="timeline-icon">
+📡
+</div>
+
+<div class="timeline-date">
+STAGE 05
+</div>
+
+<h3>
+Sensor Integration
+</h3>
+
+<p>
+Sensors were introduced to demonstrate how the system
+could detect objects and collect useful environmental
+information.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 6 -->
+
+<div class="timeline-item right">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+<div class="timeline-icon">
+🧠
+</div>
+
+<div class="timeline-date">
+STAGE 06
+</div>
+
+<h3>
+Smart Analysis
+</h3>
+
+<p>
+The website interface was designed to demonstrate how
+sensor information could be transformed into dashboards,
+analytics, maps and environmental insights.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- 7 -->
+
+<div class="timeline-item left">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-card">
+
+<div class="timeline-icon">
+🚀
+</div>
+
+<div class="timeline-date">
+STAGE 07
+</div>
+
+<h3>
+Future Development
+</h3>
+
+<p>
+Future versions could explore IoT connectivity, AI-assisted
+waste identification, improved energy management and
+larger-scale testing.
+</p>
+
+</div>
+
+</div>
+
+
+</section>
+
+
+<!-- ================= MILESTONE ================= -->
+
+<section class="milestone">
+
+<h2>
+🏆 Where We Are Now
+</h2>
+
+<p>
+Waste Collector 2K26 has evolved from an environmental
+problem into a technology-based prototype concept.
+The project combines hardware, software, sustainability
+and teamwork to demonstrate a possible approach to
+waterway waste management.
+</p>
+
+</section>
+
+
+<!-- ================= FUTURE ================= -->
+
+<section class="future">
+
+<h2>
+🔮 What's Next?
+</h2>
+
+<p>
+The journey doesn't stop with the prototype. These are
+some areas that could make the system more capable in
+future development.
+</p>
+
+
+<div class="future-grid">
+
+
+<div class="future-card">
+
+<div>
+📶
+</div>
+
+<h3>
+IoT Connectivity
+</h3>
+
+<p>
+Connect the system to a remote monitoring platform.
+</p>
+
+</div>
+
+
+<div class="future-card">
+
+<div>
+🤖
+</div>
+
+<h3>
+AI Recognition
+</h3>
+
+<p>
+Explore automated classification of different waste types.
+</p>
+
+</div>
+
+
+<div class="future-card">
+
+<div>
+🔋
+</div>
+
+<h3>
+Energy Optimisation
+</h3>
+
+<p>
+Improve power efficiency for longer operating periods.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+<h2>
+🌊 Innovation Is a Journey
+</h2>
+
+<p>
+The goal is not simply to build a machine.
+It is to explore how technology and environmental
+responsibility can work together.
+</p>
+
+<a href="prototype.html" class="btn">
+View Prototype →
+</a>
+
+</section>
+
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div>
+🌊 OCEAN <span>× ECO-TECH</span>
+</div>
+
+<div>
+© 2026 Ocean × Eco-Tech
+</div>
+
+</footer>
+
+
+</body>
+
+</html>
