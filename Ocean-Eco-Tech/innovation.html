@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Innovation | Ocean × Eco-Tech</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#F7FBFC;
+    color:#063B5C;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    height:72px;
+    background:#063B5C;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 6%;
+
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+}
+
+.logo{
+    color:white;
+    font-size:21px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#20C7C9;
+}
+
+nav ul{
+    display:flex;
+    gap:14px;
+    list-style:none;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:11px;
+    transition:.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+    color:#20C7C9;
+}
+
+.nav-btn{
+    background:#20C7C9;
+    color:#063B5C !important;
+
+    padding:10px 17px;
+    border-radius:25px;
+
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    margin-top:72px;
+
+    min-height:470px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #063B5C,
+            #087A9A
+        );
+
+    color:white;
+    text-align:center;
+
+    padding:100px 7%;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-icon{
+    font-size:80px;
+    margin-bottom:15px;
+
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+}
+
+.hero h1{
+    font-size:52px;
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    color:#20C7C9;
+}
+
+.hero p{
+    max-width:760px;
+    margin:auto;
+
+    color:#DDF1F4;
+
+    line-height:1.9;
+}
+
+/* ================= BUBBLES ================= */
+
+.bubble{
+    position:absolute;
+
+    border:2px solid rgba(255,255,255,.18);
+
+    border-radius:50%;
+
+    animation:bubble 7s ease-in-out infinite;
+}
+
+.b1{
+    width:35px;
+    height:35px;
+    left:8%;
+    top:100px;
+}
+
+.b2{
+    width:75px;
+    height:75px;
+    right:10%;
+    top:70px;
+}
+
+.b3{
+    width:22px;
+    height:22px;
+    left:27%;
+    bottom:40px;
+}
+
+.b4{
+    width:45px;
+    height:45px;
+    right:26%;
+    bottom:35px;
+}
+
+@keyframes bubble{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-28px);
+    }
+
+}
+
+/* ================= GENERAL ================= */
+
+section{
+    padding:75px 7%;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.title h2{
+    font-size:36px;
+    margin-bottom:10px;
+}
+
+.title p{
+    color:#607D8B;
+}
+
+/* ================= BIG IDEA ================= */
+
+.big-idea{
+
+    max-width:1050px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:35px;
+
+    align-items:center;
+}
+
+.idea-text h2{
+    font-size:34px;
+    margin-bottom:15px;
+}
+
+.idea-text p{
+    color:#607D8B;
+    line-height:1.85;
+    font-size:14px;
+}
+
+.idea-visual{
+
+    min-height:330px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #063B5C,
+            #087A9A
+        );
+
+    border-radius:28px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.orbit{
+
+    position:absolute;
+
+    border:2px solid rgba(32,199,201,.45);
+
+    border-radius:50%;
+
+    animation:rotate 8s linear infinite;
+}
+
+.o1{
+    width:180px;
+    height:180px;
+}
+
+.o2{
+    width:260px;
+    height:260px;
+
+    animation-duration:12s;
+}
+
+.o3{
+    width:340px;
+    height:340px;
+
+    animation-duration:17s;
+}
+
+@keyframes rotate{
+
+    from{
+        transform:rotate(0);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+.idea-core{
+
+    width:105px;
+    height:105px;
+
+    border-radius:50%;
+
+    background:#20C7C9;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:50px;
+
+    z-index:2;
+
+    box-shadow:
+        0 0 35px rgba(32,199,201,.5);
+}
+
+/* ================= INNOVATION CARDS ================= */
+
+.innovation-grid{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:21px;
+}
+
+.innovation-card{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:23px;
+
+    box-shadow:
+        0 8px 27px rgba(6,59,92,.06);
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.innovation-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+        0 17px 35px rgba(6,59,92,.13);
+}
+
+.innovation-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:100px;
+    height:100px;
+
+    background:#B9F3E4;
+
+    border-radius:50%;
+
+    top:-45px;
+    right:-45px;
+
+    opacity:.6;
+}
+
+.innovation-icon{
+
+    font-size:43px;
+
+    margin-bottom:14px;
+
+    position:relative;
+    z-index:1;
+}
+
+.innovation-card h3{
+
+    font-size:19px;
+
+    margin-bottom:9px;
+}
+
+.innovation-card p{
+
+    color:#607D8B;
+
+    font-size:13px;
+
+    line-height:1.75;
+}
+
+/* ================= COMBINATION ================= */
+
+.combination{
+
+    background:#EAF9F7;
+}
+
+.combo-box{
+
+    max-width:1050px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    gap:12px;
+
+    align-items:center;
+}
+
+.combo{
+
+    background:white;
+
+    padding:24px 12px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    box-shadow:
+        0 6px 20px rgba(6,59,92,.05);
+
+    transition:.3s;
+}
+
+.combo:hover{
+
+    transform:translateY(-7px);
+}
+
+.combo-icon{
+
+    font-size:34px;
+
+    margin-bottom:9px;
+}
+
+.combo h3{
+
+    font-size:13px;
+
+    margin-bottom:5px;
+}
+
+.combo p{
+
+    color:#607D8B;
+
+    font-size:10px;
+
+    line-height:1.5;
+}
+
+.plus{
+
+    font-size:23px;
+
+    color:#20AEB0;
+
+    text-align:center;
+}
+
+/* ================= PROBLEM VS IDEA ================= */
+
+.compare{
+
+    max-width:1050px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
+}
+
+.compare-box{
+
+    padding:35px;
+
+    border-radius:23px;
+}
+
+.problem{
+
+    background:#FFF3F1;
+
+    border-left:5px solid #E47A6C;
+}
+
+.innovation{
+
+    background:#EAF9F7;
+
+    border-left:5px solid #20C7C9;
+}
+
+.compare-box h3{
+
+    font-size:23px;
+
+    margin-bottom:15px;
+}
+
+.compare-box ul{
+
+    list-style:none;
+
+    display:grid;
+
+    gap:12px;
+}
+
+.compare-box li{
+
+    color:#607D8B;
+
+    font-size:13px;
+
+    line-height:1.6;
+}
+
+/* ================= FUTURE ================= */
+
+.future{
+
+    background:#063B5C;
+
+    color:white;
+}
+
+.future .title p{
+    color:#B9DDE2;
+}
+
+.future-grid{
+
+    max-width:1050px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:17px;
+}
+
+.future-card{
+
+    background:
+        rgba(255,255,255,.08);
+
+    padding:27px 17px;
+
+    border-radius:19px;
+
+    text-align:center;
+
+    transition:.3s;
+}
+
+.future-card:hover{
+
+    transform:translateY(-8px);
+
+    background:
+        rgba(32,199,201,.12);
+}
+
+.future-icon{
+
+    font-size:35px;
+
+    margin-bottom:11px;
+}
+
+.future-card h3{
+
+    font-size:15px;
+
+    margin-bottom:7px;
+}
+
+.future-card p{
+
+    color:#B9DDE2;
+
+    font-size:11px;
+
+    line-height:1.6;
+}
+
+/* ================= CTA ================= */
+
+.cta{
+
+    background:#B9F3E4;
+
+    text-align:center;
+}
+
+.cta h2{
+
+    font-size:37px;
+
+    margin-bottom:13px;
+}
+
+.cta p{
+
+    max-width:700px;
+
+    margin:auto auto 25px;
+
+    color:#355968;
+
+    line-height:1.8;
+}
+
+.btn{
+
+    display:inline-block;
+
+    background:#063B5C;
+
+    color:white;
+
+    padding:14px 27px;
+
+    border-radius:27px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.btn:hover{
+
+    background:#20AEB0;
+
+    transform:translateY(-3px);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    background:#042D46;
+
+    color:white;
+
+    padding:35px 6%;
+
+    display:flex;
+
+    justify-content:space-between;
+}
+
+footer span{
+    color:#20C7C9;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1000px){
+
+    nav ul{
+        display:none;
+    }
+
+    .innovation-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .combo-box{
+        grid-template-columns:
+            repeat(3,1fr);
+    }
+
+    .future-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:700px){
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .big-idea,
+    .compare{
+        grid-template-columns:1fr;
+    }
+
+    .innovation-grid,
+    .combo-box,
+    .future-grid{
+        grid-template-columns:1fr;
+    }
+
+    .plus{
+        display:none;
+    }
+
+    footer{
+        flex-direction:column;
+        gap:15px;
+        text-align:center;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+<div class="logo">
+🌊 OCEAN <span>× ECO-TECH</span>
+</div>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+<li><a href="dashboard.html">Dashboard</a></li>
+<li><a href="data.html">Data</a></li>
+<li><a href="map.html">Map</a></li>
+<li><a href="solutions.html">Solutions</a></li>
+<li><a href="technology.html">Technology</a></li>
+<li><a href="how-it-works.html">How It Works</a></li>
+<li><a href="prototype.html">Prototype</a></li>
+<li><a href="innovation.html" class="active">Innovation</a></li>
+<li><a href="alerts.html">Alerts</a></li>
+<li><a href="impact.html">Impact</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="team.html">Team</a></li>
+<li><a href="future.html">Future</a></li>
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+<a href="future.html" class="nav-btn">
+Future →
+</a>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<header class="hero">
+
+<div class="bubble b1"></div>
+<div class="bubble b2"></div>
+<div class="bubble b3"></div>
+<div class="bubble b4"></div>
+
+<div class="hero-icon">
+💡
+</div>
+
+<h1>
+The <span>Innovation</span>
+</h1>
+
+<p>
+Ocean × Eco-Tech brings environmental awareness,
+smart sensing, waste collection and digital technology
+together to create a technology-focused approach to
+water pollution.
+</p>
+
+</header>
+
+
+<!-- ================= BIG IDEA ================= -->
+
+<section>
+
+<div class="big-idea">
+
+
+<div class="idea-text">
+
+<h2>
+🌊 One Problem. Multiple Technologies.
+</h2>
+
+<p>
+Marine pollution is a complex problem, so our approach
+does not depend on a single technology. Instead, the
+concept combines sensing, control, mechanical collection
+and digital monitoring into one connected system.
+
+The goal is to demonstrate how different technologies
+can work together to support environmental action.
+</p>
+
+</div>
+
+
+<div class="idea-visual">
+
+<div class="orbit o3"></div>
+<div class="orbit o2"></div>
+<div class="orbit o1"></div>
+
+<div class="idea-core">
+🌱
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= INNOVATION AREAS ================= -->
+
+<section>
+
+<div class="title">
+
+<h2>
+🚀 What Makes It Innovative?
+</h2>
+
+<p>
+The project combines several ideas into one environmental concept.
+</p>
+
+</div>
+
+
+<div class="innovation-grid">
+
+
+<div class="innovation-card">
+
+<div class="innovation-icon">
+📡
+</div>
+
+<h3>
+Smart Detection
+</h3>
+
+<p>
+Sensors can provide information about objects or
+conditions around the prototype, creating a bridge
+between the physical environment and electronics.
+</p>
+
+</div>
+
+
+<div class="innovation-card">
+
+<div class="innovation-icon">
+⚙️
+</div>
+
+<h3>
+Automated Response
+</h3>
+
+<p>
+A controller can use programmed logic to respond
+to sensor inputs and coordinate connected components.
+</p>
+
+</div>
+
+
+<div class="innovation-card">
+
+<div class="innovation-icon">
+♻️
+</div>
+
+<h3>
+Waste Collection
+</h3>
+
+<p>
+A dedicated collection mechanism gives the system
+a practical environmental purpose beyond monitoring.
+</p>
+
+</div>
+
+
+<div class="innovation-card">
+
+<div class="innovation-icon">
+📊
+</div>
+
+<h3>
+Digital Monitoring
+</h3>
+
+<p>
+Information can be represented through dashboards,
+maps and data cards to make the project easier to understand.
+</p>
+
+</div>
+
+
+<div class="innovation-card">
+
+<div class="innovation-icon">
+🌱
+</div>
+
+<h3>
+Eco-Focused Design
+</h3>
+
+<p>
+The entire concept is designed around reducing the
+impact of floating waste on water environments.
+</p>
+
+</div>
+
+
+<div class="innovation-card">
+
+<div class="innovation-icon">
+🔮
+</div>
+
+<h3>
+Future Expansion
+</h3>
+
+<p>
+The concept can be developed further with improved
+sensors, IoT connectivity, AI-assisted analysis and
+more advanced automation.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= COMBINATION ================= -->
+
+<section class="combination">
+
+<div class="title">
+
+<h2>
+🧩 The Innovation Stack
+</h2>
+
+<p>
+Different technologies combine to create one connected concept.
+</p>
+
+</div>
+
+
+<div class="combo-box">
+
+
+<div class="combo">
+
+<div class="combo-icon">
+📡
+</div>
+
+<h3>
+Sensors
+</h3>
+
+<p>
+Collect physical inputs.
+</p>
+
+</div>
+
+
+<div class="plus">
++
+</div>
+
+
+<div class="combo">
+
+<div class="combo-icon">
+🧠
+</div>
+
+<h3>
+Control
+</h3>
+
+<p>
+Processes the inputs.
+</p>
+
+</div>
+
+
+<div class="plus">
++
+</div>
+
+
+<div class="combo">
+
+<div class="combo-icon">
+⚙️
+</div>
+
+<h3>
+Mechanics
+</h3>
+
+<p>
+Creates physical action.
+</p>
+
+</div>
+
+
+<div class="plus">
++
+</div>
+
+
+<div class="combo">
+
+<div class="combo-icon">
+📊
+</div>
+
+<h3>
+Data
+</h3>
+
+<p>
+Makes information visible.
+</p>
+
+</div>
+
+
+<div class="plus">
+=
+</div>
+
+
+<div class="combo">
+
+<div class="combo-icon">
+🌊
+</div>
+
+<h3>
+Eco-Tech System
+</h3>
+
+<p>
+Technology with an environmental purpose.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= COMPARISON ================= -->
+
+<section>
+
+<div class="title">
+
+<h2>
+🔄 From Problem to Innovation
+</h2>
+
+<p>
+The project begins with a real environmental challenge.
+</p>
+
+</div>
+
+
+<div class="compare">
+
+
+<div class="compare-box problem">
+
+<h3>
+⚠️ The Challenge
+</h3>
+
+<ul>
+
+<li>
+🌊 Floating waste can accumulate in water bodies.
+</li>
+
+<li>
+🔍 Manual observation can provide limited information.
+</li>
+
+<li>
+♻️ Waste needs to be physically collected and removed.
+</li>
+
+<li>
+📊 Environmental information can be difficult to visualize.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="compare-box innovation">
+
+<h3>
+💡 Our Approach
+</h3>
+
+<ul>
+
+<li>
+📡 Explore sensor-based detection.
+</li>
+
+<li>
+🧠 Connect sensors with programmable control.
+</li>
+
+<li>
+⚙️ Combine detection with a collection mechanism.
+</li>
+
+<li>
+📊 Present project information through digital tools.
+</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= FUTURE ================= -->
+
+<section class="future">
+
+<div class="title">
+
+<h2>
+🔮 Where Innovation Can Go Next
+</h2>
+
+<p>
+The prototype is a starting point, not the final destination.
+</p>
+
+</div>
+
+
+<div class="future-grid">
+
+
+<div class="future-card">
+
+<div class="future-icon">
+🤖
+</div>
+
+<h3>
+AI Analysis
+</h3>
+
+<p>
+Future systems could analyze collected data
+and identify patterns automatically.
+</p>
+
+</div>
+
+
+<div class="future-card">
+
+<div class="future-icon">
+📶
+</div>
+
+<h3>
+IoT Connectivity
+</h3>
+
+<p>
+Connected devices could share environmental
+information with a central platform.
+</p>
+
+</div>
+
+
+<div class="future-card">
+
+<div class="future-icon">
+🛰️
+</div>
+
+<h3>
+Remote Monitoring
+</h3>
+
+<p>
+Users could monitor multiple locations
+from a single digital interface.
+</p>
+
+</div>
+
+
+<div class="future-card">
+
+<div class="future-icon">
+🌍
+</div>
+
+<h3>
+Larger Scale
+</h3>
+
+<p>
+Future versions could explore larger
+and more efficient environmental systems.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+<h2>
+🌱 Innovation With a Purpose
+</h2>
+
+<p>
+The most important part of innovation is not simply
+adding technology. It is using technology to solve
+meaningful problems and create positive environmental impact.
+</p>
+
+<a href="impact.html" class="btn">
+See Our Impact →
+</a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div>
+🌊 OCEAN <span>× ECO-TECH</span>
+</div>
+
+<div>
+© 2026 Ocean × Eco-Tech
+</div>
+
+</footer>
+
+
+</body>
+
+</html>

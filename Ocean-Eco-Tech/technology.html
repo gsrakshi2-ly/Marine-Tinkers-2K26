@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Technology | Ocean × Eco-Tech</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#F7FBFC;
+    color:#063B5C;
+}
+
+
+/* ================= NAVBAR ================= */
+
+nav{
+    height:72px;
+    background:#063B5C;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 6%;
+
+    position:fixed;
+    top:0;
+    width:100%;
+
+    z-index:1000;
+}
+
+.logo{
+    color:white;
+    font-size:21px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#20C7C9;
+}
+
+nav ul{
+    display:flex;
+    gap:16px;
+    list-style:none;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:12px;
+    transition:.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+    color:#20C7C9;
+}
+
+.nav-btn{
+    background:#20C7C9;
+    color:#063B5C !important;
+
+    padding:10px 17px;
+    border-radius:25px;
+
+    text-decoration:none;
+    font-weight:bold;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+    margin-top:72px;
+
+    min-height:470px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #063B5C,
+            #087A9A
+        );
+
+    color:white;
+    text-align:center;
+
+    padding:95px 7%;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-icon{
+    font-size:76px;
+    margin-bottom:18px;
+
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+}
+
+.hero h1{
+    font-size:52px;
+    margin-bottom:17px;
+}
+
+.hero h1 span{
+    color:#20C7C9;
+}
+
+.hero p{
+    max-width:760px;
+    margin:auto;
+
+    color:#DDF1F4;
+
+    line-height:1.9;
+}
+
+
+/* ================= BUBBLES ================= */
+
+.bubble{
+    position:absolute;
+
+    border:2px solid rgba(255,255,255,.18);
+
+    border-radius:50%;
+
+    animation:bubble 7s ease-in-out infinite;
+}
+
+.b1{
+    width:35px;
+    height:35px;
+    left:9%;
+    top:100px;
+}
+
+.b2{
+    width:75px;
+    height:75px;
+    right:10%;
+    top:70px;
+}
+
+.b3{
+    width:20px;
+    height:20px;
+    left:28%;
+    bottom:45px;
+}
+
+.b4{
+    width:45px;
+    height:45px;
+    right:27%;
+    bottom:35px;
+}
+
+@keyframes bubble{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-28px);
+    }
+
+}
+
+
+/* ================= SECTION ================= */
+
+section{
+    padding:75px 7%;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.title h2{
+    font-size:36px;
+    margin-bottom:10px;
+}
+
+.title p{
+    color:#607D8B;
+}
+
+
+/* ================= TECH CARDS ================= */
+
+.tech-grid{
+
+    max-width:1100px;
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:22px;
+}
+
+.tech-card{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:24px;
+
+    box-shadow:
+        0 9px 28px rgba(6,59,92,.07);
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.tech-card:hover{
+
+    transform:translateY(-9px);
+
+    box-shadow:
+        0 17px 35px rgba(6,59,92,.13);
+}
+
+.tech-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:90px;
+    height:90px;
+
+    border-radius:50%;
+
+    background:#B9F3E4;
+
+    right:-35px;
+    top:-35px;
+
+    opacity:.6;
+}
+
+.tech-icon{
+
+    font-size:43px;
+
+    margin-bottom:15px;
+
+    position:relative;
+    z-index:1;
+}
+
+.tech-card h3{
+
+    font-size:19px;
+
+    margin-bottom:10px;
+}
+
+.tech-card p{
+
+    color:#607D8B;
+
+    line-height:1.7;
+
+    font-size:13px;
+}
+
+.tech-tag{
+
+    display:inline-block;
+
+    margin-top:16px;
+
+    padding:6px 11px;
+
+    border-radius:15px;
+
+    background:#E4F8F4;
+
+    color:#31816E;
+
+    font-size:10px;
+
+    font-weight:bold;
+}
+
+
+/* ================= SENSOR SECTION ================= */
+
+.sensor-section{
+    background:#EAF9F7;
+}
+
+.sensor-box{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    background:white;
+
+    border-radius:27px;
+
+    padding:40px;
+
+    box-shadow:
+        0 10px 30px rgba(6,59,92,.07);
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:40px;
+
+    align-items:center;
+}
+
+.sensor-visual{
+
+    min-height:300px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #063B5C,
+            #087A9A
+        );
+
+    border-radius:22px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.sensor-core{
+
+    width:145px;
+    height:145px;
+
+    border-radius:50%;
+
+    border:3px solid #20C7C9;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:55px;
+
+    position:relative;
+
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+    0%{
+        box-shadow:
+            0 0 0 0 rgba(32,199,201,.5);
+    }
+
+    70%{
+        box-shadow:
+            0 0 0 35px rgba(32,199,201,0);
+    }
+
+    100%{
+        box-shadow:
+            0 0 0 0 rgba(32,199,201,0);
+    }
+
+}
+
+.signal{
+
+    position:absolute;
+
+    border:2px solid rgba(32,199,201,.4);
+
+    border-radius:50%;
+
+    animation:signal 2s infinite;
+}
+
+.s1{
+    width:190px;
+    height:190px;
+}
+
+.s2{
+    width:250px;
+    height:250px;
+
+    animation-delay:.5s;
+}
+
+.s3{
+    width:320px;
+    height:320px;
+
+    animation-delay:1s;
+}
+
+@keyframes signal{
+
+    0%{
+        opacity:1;
+        transform:scale(.7);
+    }
+
+    100%{
+        opacity:0;
+        transform:scale(1);
+    }
+
+}
+
+.sensor-text h2{
+
+    font-size:31px;
+
+    margin-bottom:13px;
+}
+
+.sensor-text p{
+
+    color:#607D8B;
+
+    line-height:1.8;
+
+    font-size:14px;
+
+    margin-bottom:20px;
+}
+
+.sensor-list{
+
+    display:grid;
+
+    gap:11px;
+}
+
+.sensor-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:12px;
+
+    background:#F2F9FA;
+
+    border-radius:12px;
+
+    font-size:13px;
+}
+
+.sensor-item span{
+
+    font-size:20px;
+}
+
+
+/* ================= SYSTEM FLOW ================= */
+
+.flow-section{
+    background:#063B5C;
+    color:white;
+}
+
+.flow-section .title p{
+    color:#B9DDE2;
+}
+
+.flow{
+
+    max-width:1050px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    gap:10px;
+
+    align-items:center;
+}
+
+.flow-card{
+
+    background:
+        rgba(255,255,255,.08);
+
+    padding:22px 12px;
+
+    border-radius:17px;
+
+    text-align:center;
+
+    transition:.3s;
+}
+
+.flow-card:hover{
+
+    transform:translateY(-8px);
+
+    background:
+        rgba(32,199,201,.12);
+}
+
+.flow-icon{
+
+    font-size:35px;
+
+    margin-bottom:10px;
+}
+
+.flow-card h3{
+
+    font-size:14px;
+
+    margin-bottom:6px;
+}
+
+.flow-card p{
+
+    color:#B9DDE2;
+
+    font-size:10px;
+
+    line-height:1.5;
+}
+
+.arrow{
+
+    font-size:25px;
+
+    color:#20C7C9;
+
+    text-align:center;
+}
+
+
+/* ================= WASTE COLLECTOR ================= */
+
+.collector{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:30px;
+
+    align-items:center;
+}
+
+.collector-info h2{
+
+    font-size:34px;
+
+    margin-bottom:14px;
+}
+
+.collector-info > p{
+
+    color:#607D8B;
+
+    line-height:1.8;
+
+    font-size:14px;
+
+    margin-bottom:22px;
+}
+
+.collector-list{
+
+    display:grid;
+
+    gap:12px;
+}
+
+.collector-item{
+
+    display:flex;
+
+    gap:12px;
+
+    align-items:center;
+
+    padding:14px;
+
+    background:white;
+
+    border-radius:14px;
+
+    box-shadow:
+        0 5px 17px rgba(6,59,92,.05);
+
+    transition:.3s;
+}
+
+.collector-item:hover{
+
+    transform:translateX(7px);
+}
+
+.collector-item span{
+
+    font-size:25px;
+}
+
+.collector-item p{
+
+    font-size:13px;
+
+    color:#456A78;
+}
+
+
+/* ================= DEVICE VISUAL ================= */
+
+.device{
+
+    height:350px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #087A9A 0%,
+            #063B5C 100%
+        );
+
+    border-radius:27px;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.device-water{
+
+    position:absolute;
+
+    bottom:0;
+
+    left:0;
+
+    width:100%;
+
+    height:52%;
+
+    background:
+        rgba(32,199,201,.13);
+
+    border-top:
+        2px solid rgba(185,243,228,.5);
+}
+
+.device-body{
+
+    position:absolute;
+
+    width:230px;
+    height:75px;
+
+    background:#F1E2C3;
+
+    border-radius:45px;
+
+    left:50%;
+
+    top:42%;
+
+    transform:translate(-50%,-50%);
+
+    box-shadow:
+        0 12px 25px rgba(0,0,0,.2);
+
+    animation:boat 3s ease-in-out infinite;
+}
+
+@keyframes boat{
+
+    0%,100%{
+        transform:translate(-50%,-50%) rotate(0deg);
+    }
+
+    50%{
+        transform:translate(-50%,-55%) rotate(2deg);
+    }
+
+}
+
+.device-panel{
+
+    position:absolute;
+
+    width:65px;
+    height:35px;
+
+    background:#063B5C;
+
+    border:3px solid #20C7C9;
+
+    border-radius:7px;
+
+    left:50%;
+
+    top:20%;
+
+    transform:translateX(-50%);
+}
+
+.collector-net{
+
+    position:absolute;
+
+    width:95px;
+    height:55px;
+
+    border:3px dashed #B9F3E4;
+
+    bottom:17%;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    border-radius:5px;
+}
+
+.waste{
+
+    position:absolute;
+
+    font-size:20px;
+
+    animation:wasteFloat 3s ease-in-out infinite;
+}
+
+.w1{
+    left:20%;
+    bottom:20%;
+}
+
+.w2{
+    left:75%;
+    bottom:28%;
+    animation-delay:.7s;
+}
+
+.w3{
+    left:34%;
+    bottom:10%;
+    animation-delay:1.2s;
+}
+
+@keyframes wasteFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-9px);
+    }
+
+}
+
+
+/* ================= BENEFITS ================= */
+
+.benefits{
+
+    background:#EAF9F7;
+}
+
+.benefit-grid{
+
+    max-width:1050px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:17px;
+}
+
+.benefit{
+
+    background:white;
+
+    padding:25px 18px;
+
+    border-radius:19px;
+
+    text-align:center;
+
+    box-shadow:
+        0 6px 20px rgba(6,59,92,.05);
+
+    transition:.3s;
+}
+
+.benefit:hover{
+
+    transform:translateY(-7px);
+}
+
+.benefit-icon{
+
+    font-size:36px;
+
+    margin-bottom:11px;
+}
+
+.benefit h3{
+
+    font-size:15px;
+
+    margin-bottom:7px;
+}
+
+.benefit p{
+
+    color:#607D8B;
+
+    font-size:11px;
+
+    line-height:1.6;
+}
+
+
+/* ================= CTA ================= */
+
+.cta{
+
+    text-align:center;
+
+    background:#B9F3E4;
+}
+
+.cta h2{
+
+    font-size:37px;
+
+    margin-bottom:13px;
+}
+
+.cta p{
+
+    max-width:700px;
+
+    margin:auto auto 25px;
+
+    color:#355968;
+
+    line-height:1.8;
+}
+
+.btn{
+
+    display:inline-block;
+
+    background:#063B5C;
+
+    color:white;
+
+    padding:14px 27px;
+
+    border-radius:27px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.btn:hover{
+
+    background:#20AEB0;
+
+    transform:translateY(-3px);
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    background:#042D46;
+
+    color:white;
+
+    padding:35px 6%;
+
+    display:flex;
+
+    justify-content:space-between;
+}
+
+footer span{
+    color:#20C7C9;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1000px){
+
+    nav ul{
+        display:none;
+    }
+
+    .tech-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .flow{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .benefit-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:700px){
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .tech-grid,
+    .flow,
+    .benefit-grid{
+        grid-template-columns:1fr;
+    }
+
+    .sensor-box,
+    .collector{
+        grid-template-columns:1fr;
+    }
+
+    .arrow{
+        transform:rotate(90deg);
+    }
+
+    footer{
+        flex-direction:column;
+        gap:15px;
+        text-align:center;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+<div class="logo">
+🌊 OCEAN <span>× ECO-TECH</span>
+</div>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="dashboard.html">Dashboard</a></li>
+
+<li><a href="data.html">Data</a></li>
+
+<li><a href="map.html">Map</a></li>
+
+<li><a href="solutions.html">Solutions</a></li>
+
+<li><a href="technology.html" class="active">Technology</a></li>
+
+<li><a href="alerts.html">Alerts</a></li>
+
+<li><a href="impact.html">Impact</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="team.html">Team</a></li>
+
+<li><a href="future.html">Future</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+<a href="dashboard.html" class="nav-btn">
+Dashboard →
+</a>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<header class="hero">
+
+<div class="bubble b1"></div>
+<div class="bubble b2"></div>
+<div class="bubble b3"></div>
+<div class="bubble b4"></div>
+
+<div class="hero-icon">
+⚙️
+</div>
+
+<h1>
+Technology Behind <span>the Mission</span>
+</h1>
+
+<p>
+Ocean × Eco-Tech combines sensors, electronics,
+data processing and smart waste collection ideas
+to create a technology-driven approach to marine
+environmental protection.
+</p>
+
+</header>
+
+
+<!-- ================= CORE TECHNOLOGIES ================= -->
+
+<section>
+
+<div class="title">
+
+<h2>
+🔧 Core Technologies
+</h2>
+
+<p>
+The main technological building blocks behind the concept.
+</p>
+
+</div>
+
+
+<div class="tech-grid">
+
+
+<div class="tech-card">
+
+<div class="tech-icon">
+📡
+</div>
+
+<h3>
+Capacitive Sensor
+</h3>
+
+<p>
+A capacitive proximity sensor can be used to detect
+the presence of suitable nearby materials without
+requiring direct physical contact.
+</p>
+
+<span class="tech-tag">
+DETECTION
+</span>
+
+</div>
+
+
+<div class="tech-card">
+
+<div class="tech-icon">
+🧠
+</div>
+
+<h3>
+Microcontroller
+</h3>
+
+<p>
+A microcontroller can receive sensor signals,
+process instructions and control connected
+components within the prototype.
+</p>
+
+<span class="tech-tag">
+CONTROL
+</span>
+
+</div>
+
+
+<div class="tech-card">
+
+<div class="tech-icon">
+⚙️
+</div>
+
+<h3>
+Motor System
+</h3>
+
+<p>
+Motors can provide movement for the prototype
+and support mechanisms used for navigating or
+collecting floating waste.
+</p>
+
+<span class="tech-tag">
+MOVEMENT
+</span>
+
+</div>
+
+
+<div class="tech-card">
+
+<div class="tech-icon">
+🔋
+</div>
+
+<h3>
+Power System
+</h3>
+
+<p>
+A suitable power source supplies energy to the
+controller, sensors and other electronic parts
+of the prototype.
+</p>
+
+<span class="tech-tag">
+ENERGY
+</span>
+
+</div>
+
+
+<div class="tech-card">
+
+<div class="tech-icon">
+💻
+</div>
+
+<h3>
+Data Platform
+</h3>
+
+<p>
+Collected information can be displayed through
+a digital dashboard where environmental readings
+can be monitored and interpreted.
+</p>
+
+<span class="tech-tag">
+DATA
+</span>
+
+</div>
+
+
+<div class="tech-card">
+
+<div class="tech-icon">
+♻️
+</div>
+
+<h3>
+Collection Mechanism
+</h3>
+
+<p>
+A physical collection system can guide floating
+waste toward a designated collection area for
+later removal and disposal.
+</p>
+
+<span class="tech-tag">
+CLEANUP
+</span>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= SENSOR ================= -->
+
+<section class="sensor-section">
+
+<div class="title">
+
+<h2>
+📡 Smart Detection
+</h2>
+
+<p>
+Sensors form the connection between the physical environment
+and the digital monitoring system.
+</p>
+
+</div>
+
+
+<div class="sensor-box">
+
+
+<div class="sensor-visual">
+
+<div class="signal s3"></div>
+<div class="signal s2"></div>
+<div class="signal s1"></div>
+
+<div class="sensor-core">
+📡
+</div>
+
+</div>
+
+
+<div class="sensor-text">
+
+<h2>
+Sensor → Signal → Action
+</h2>
+
+<p>
+A sensor-based system can continuously monitor
+specific conditions and send signals to a controller.
+The controller can then determine what action
+should happen next.
+</p>
+
+
+<div class="sensor-list">
+
+
+<div class="sensor-item">
+
+<span>🔍</span>
+
+<p>
+Detect a nearby target or environmental condition
+</p>
+
+</div>
+
+
+<div class="sensor-item">
+
+<span>⚡</span>
+
+<p>
+Convert the detection into an electrical signal
+</p>
+
+</div>
+
+
+<div class="sensor-item">
+
+<span>🧠</span>
+
+<p>
+Controller processes the incoming signal
+</p>
+
+</div>
+
+
+<div class="sensor-item">
+
+<span>⚙️</span>
+
+<p>
+System responds according to programmed logic
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= SYSTEM FLOW ================= -->
+
+<section class="flow-section">
+
+<div class="title">
+
+<h2>
+🔄 How the System Works
+</h2>
+
+<p>
+A simplified technology flow for the Ocean × Eco-Tech concept.
+</p>
+
+</div>
+
+
+<div class="flow">
+
+
+<div class="flow-card">
+
+<div class="flow-icon">
+🌊
+</div>
+
+<h3>
+Environment
+</h3>
+
+<p>
+Floating waste and environmental conditions
+are present in the monitored area.
+</p>
+
+</div>
+
+
+<div class="arrow">
+→
+</div>
+
+
+<div class="flow-card">
+
+<div class="flow-icon">
+📡
+</div>
+
+<h3>
+Sensor
+</h3>
+
+<p>
+Sensors detect relevant objects or conditions.
+</p>
+
+</div>
+
+
+<div class="arrow">
+→
+</div>
+
+
+<div class="flow-card">
+
+<div class="flow-icon">
+🧠
+</div>
+
+<h3>
+Controller
+</h3>
+
+<p>
+The controller processes the sensor signal.
+</p>
+
+</div>
+
+
+<div class="arrow">
+→
+</div>
+
+
+<div class="flow-card">
+
+<div class="flow-icon">
+⚙️
+</div>
+
+<h3>
+Mechanism
+</h3>
+
+<p>
+The system can activate an appropriate response.
+</p>
+
+</div>
+
+
+<div class="arrow">
+→
+</div>
+
+
+<div class="flow-card">
+
+<div class="flow-icon">
+♻️
+</div>
+
+<h3>
+Collection
+</h3>
+
+<p>
+Waste can be directed toward a collection area.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= WASTE COLLECTOR ================= -->
+
+<section>
+
+<div class="title">
+
+<h2>
+♻️ Smart Waste Collector
+</h2>
+
+<p>
+Technology can transform a simple collection mechanism
+into a smarter environmental prototype.
+</p>
+
+</div>
+
+
+<div class="collector">
+
+
+<div class="collector-info">
+
+<h2>
+From Detection to Collection
+</h2>
+
+<p>
+The Waste Collector concept combines detection,
+movement and collection into one system. The exact
+hardware implementation can be adapted depending
+on the prototype design.
+</p>
+
+
+<div class="collector-list">
+
+
+<div class="collector-item">
+
+<span>
+📡
+</span>
+
+<p>
+Detect floating material
+</p>
+
+</div>
+
+
+<div class="collector-item">
+
+<span>
+🧠
+</span>
+
+<p>
+Process sensor information
+</p>
+
+</div>
+
+
+<div class="collector-item">
+
+<span>
+⚙️
+</span>
+
+<p>
+Control the movement mechanism
+</p>
+
+</div>
+
+
+<div class="collector-item">
+
+<span>
+🕸️
+</span>
+
+<p>
+Guide waste into the collection area
+</p>
+
+</div>
+
+
+<div class="collector-item">
+
+<span>
+🌱
+</span>
+
+<p>
+Remove collected waste responsibly
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="device">
+
+<div class="device-panel"></div>
+
+<div class="device-body"></div>
+
+<div class="collector-net"></div>
+
+<div class="device-water"></div>
+
+<div class="waste w1">
+🧴
+</div>
+
+<div class="waste w2">
+🥤
+</div>
+
+<div class="waste w3">
+🛍️
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= BENEFITS ================= -->
+
+<section class="benefits">
+
+<div class="title">
+
+<h2>
+🌱 Why This Technology Matters
+</h2>
+
+<p>
+The concept connects technology with environmental action.
+</p>
+
+</div>
+
+
+<div class="benefit-grid">
+
+
+<div class="benefit">
+
+<div class="benefit-icon">
+🔍
+</div>
+
+<h3>
+Early Detection
+</h3>
+
+<p>
+Technology can help identify changes
+before they become larger problems.
+</p>
+
+</div>
+
+
+<div class="benefit">
+
+<div class="benefit-icon">
+📊
+</div>
+
+<h3>
+Better Data
+</h3>
+
+<p>
+Digital monitoring can organize information
+for easier analysis.
+</p>
+
+</div>
+
+
+<div class="benefit">
+
+<div class="benefit-icon">
+♻️
+</div>
+
+<h3>
+Cleaner Water
+</h3>
+
+<p>
+Waste collection mechanisms can help
+remove floating waste from monitored areas.
+</p>
+
+</div>
+
+
+<div class="benefit">
+
+<div class="benefit-icon">
+🚀
+</div>
+
+<h3>
+Future Ready
+</h3>
+
+<p>
+The concept can later be expanded with
+AI, IoT and autonomous technology.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+<h2>
+🌊 Technology With a Purpose
+</h2>
+
+<p>
+The goal is not simply to build a machine.
+It is to use technology as a tool for understanding,
+protecting and improving our environment.
+</p>
+
+<a href="future.html" class="btn">
+Explore Future Technology →
+</a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div>
+🌊 OCEAN <span>× ECO-TECH</span>
+</div>
+
+<div>
+© 2026 Ocean × Eco-Tech
+</div>
+
+</footer>
+
+
+</body>
+
+</html>

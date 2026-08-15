@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gallery | Ocean × Eco-Tech</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#F7FBFC;
+    color:#063B5C;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    height:72px;
+    background:#063B5C;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 6%;
+
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+}
+
+.logo{
+    color:white;
+    font-size:21px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#20C7C9;
+}
+
+nav ul{
+    display:flex;
+    gap:13px;
+    list-style:none;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:11px;
+    transition:.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+    color:#20C7C9;
+}
+
+.nav-btn{
+    background:#20C7C9;
+    color:#063B5C !important;
+
+    padding:10px 17px;
+    border-radius:25px;
+
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    margin-top:72px;
+
+    min-height:440px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #063B5C,
+            #087A9A
+        );
+
+    color:white;
+    text-align:center;
+
+    padding:95px 7%;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-icon{
+    font-size:78px;
+    margin-bottom:15px;
+
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+}
+
+.hero h1{
+    font-size:52px;
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    color:#20C7C9;
+}
+
+.hero p{
+    max-width:750px;
+    margin:auto;
+
+    color:#DDF1F4;
+
+    line-height:1.9;
+}
+
+/* ================= BUBBLES ================= */
+
+.bubble{
+    position:absolute;
+
+    border:2px solid rgba(255,255,255,.18);
+
+    border-radius:50%;
+
+    animation:bubble 7s ease-in-out infinite;
+}
+
+.b1{
+    width:35px;
+    height:35px;
+    left:8%;
+    top:100px;
+}
+
+.b2{
+    width:75px;
+    height:75px;
+    right:10%;
+    top:65px;
+}
+
+.b3{
+    width:22px;
+    height:22px;
+    left:27%;
+    bottom:40px;
+}
+
+.b4{
+    width:45px;
+    height:45px;
+    right:26%;
+    bottom:35px;
+}
+
+@keyframes bubble{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-28px);
+    }
+
+}
+
+/* ================= SECTION ================= */
+
+section{
+    padding:75px 7%;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.title h2{
+    font-size:36px;
+    margin-bottom:10px;
+}
+
+.title p{
+    color:#607D8B;
+}
+
+/* ================= FILTER ================= */
+
+.filters{
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:35px;
+}
+
+.filter{
+    border:none;
+
+    padding:10px 18px;
+
+    border-radius:22px;
+
+    background:white;
+
+    color:#063B5C;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    box-shadow:
+        0 5px 15px rgba(6,59,92,.06);
+
+    transition:.3s;
+}
+
+.filter:hover,
+.filter.active{
+    background:#20C7C9;
+    color:#063B5C;
+}
+
+/* ================= GALLERY ================= */
+
+.gallery{
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+}
+
+.card{
+
+    height:280px;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    cursor:pointer;
+
+    background:#063B5C;
+
+    box-shadow:
+        0 8px 25px rgba(6,59,92,.08);
+
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 18px 35px rgba(6,59,92,.15);
+}
+
+/* ================= ARTWORK ================= */
+
+.art{
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:75px;
+
+    position:relative;
+
+    transition:.4s;
+}
+
+.card:hover .art{
+    transform:scale(1.08);
+}
+
+.ocean{
+    background:
+        linear-gradient(
+            160deg,
+            #063B5C,
+            #087A9A
+        );
+}
+
+.eco{
+    background:
+        linear-gradient(
+            160deg,
+            #4CAF83,
+            #B9F3E4
+        );
+}
+
+.tech{
+    background:
+        linear-gradient(
+            160deg,
+            #063B5C,
+            #20C7C9
+        );
+}
+
+.sand{
+    background:
+        linear-gradient(
+            160deg,
+            #F1E2C3,
+            #B9F3E4
+        );
+}
+
+.white{
+    background:
+        linear-gradient(
+            160deg,
+            #F7FBFC,
+            #B9F3E4
+        );
+}
+
+.deep{
+    background:
+        linear-gradient(
+            160deg,
+            #042D46,
+            #063B5C
+        );
+}
+
+/* ================= CARD INFO ================= */
+
+.card-info{
+
+    position:absolute;
+
+    bottom:0;
+    left:0;
+
+    width:100%;
+
+    padding:25px 20px 18px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,.8)
+        );
+
+    color:white;
+}
+
+.card-info h3{
+    font-size:18px;
+    margin-bottom:5px;
+}
+
+.card-info p{
+    font-size:11px;
+    color:#D9EEF1;
+}
+
+/* ================= FEATURE ================= */
+
+.feature{
+
+    max-width:1100px;
+
+    margin:65px auto 0;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
+}
+
+.feature-box{
+
+    min-height:280px;
+
+    border-radius:25px;
+
+    padding:35px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.feature-box:first-child{
+
+    background:#063B5C;
+
+    color:white;
+}
+
+.feature-box:last-child{
+
+    background:#B9F3E4;
+}
+
+.feature-box h2{
+    font-size:29px;
+    margin-bottom:12px;
+}
+
+.feature-box p{
+    line-height:1.8;
+    font-size:13px;
+}
+
+.feature-box:first-child p{
+    color:#CBE5E9;
+}
+
+.feature-icon{
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+/* ================= JOURNEY ================= */
+
+.journey{
+    background:#EAF9F7;
+}
+
+.timeline{
+
+    max-width:950px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    gap:15px;
+}
+
+.timeline-card{
+
+    background:white;
+
+    padding:25px 15px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    box-shadow:
+        0 6px 20px rgba(6,59,92,.05);
+
+    transition:.3s;
+}
+
+.timeline-card:hover{
+    transform:translateY(-7px);
+}
+
+.timeline-icon{
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.timeline-card h3{
+    font-size:14px;
+    margin-bottom:7px;
+}
+
+.timeline-card p{
+    color:#607D8B;
+    font-size:10px;
+    line-height:1.6;
+}
+
+/* ================= NOTE ================= */
+
+.note{
+
+    max-width:850px;
+
+    margin:40px auto 0;
+
+    background:#FFF8E8;
+
+    border-left:5px solid #20C7C9;
+
+    padding:20px;
+
+    border-radius:12px;
+}
+
+.note strong{
+    display:block;
+    margin-bottom:7px;
+}
+
+.note p{
+    color:#607D8B;
+
+    font-size:12px;
+
+    line-height:1.7;
+}
+
+/* ================= CTA ================= */
+
+.cta{
+    background:#B9F3E4;
+    text-align:center;
+}
+
+.cta h2{
+    font-size:37px;
+    margin-bottom:13px;
+}
+
+.cta p{
+    max-width:700px;
+    margin:auto auto 25px;
+
+    color:#355968;
+
+    line-height:1.8;
+}
+
+.btn{
+    display:inline-block;
+
+    background:#063B5C;
+    color:white;
+
+    padding:14px 27px;
+
+    border-radius:27px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#20AEB0;
+    transform:translateY(-3px);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    background:#042D46;
+
+    color:white;
+
+    padding:35px 6%;
+
+    display:flex;
+
+    justify-content:space-between;
+}
+
+footer span{
+    color:#20C7C9;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1000px){
+
+    nav ul{
+        display:none;
+    }
+
+    .gallery{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .timeline{
+        grid-template-columns:
+            repeat(3,1fr);
+    }
+
+}
+
+@media(max-width:700px){
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .gallery,
+    .feature,
+    .timeline{
+        grid-template-columns:1fr;
+    }
+
+    footer{
+        flex-direction:column;
+        gap:15px;
+        text-align:center;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+<div class="logo">
+🌊 OCEAN <span>× ECO-TECH</span>
+</div>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="dashboard.html">Dashboard</a></li>
+
+<li><a href="data.html">Data</a></li>
+
+<li><a href="map.html">Map</a></li>
+
+<li><a href="solutions.html">Solutions</a></li>
+
+<li><a href="technology.html">Technology</a></li>
+
+<li><a href="how-it-works.html">How It Works</a></li>
+
+<li><a href="prototype.html">Prototype</a></li>
+
+<li><a href="innovation.html">Innovation</a></li>
+
+<li><a href="sustainability.html">Sustainability</a></li>
+
+<li><a href="gallery.html" class="active">
+Gallery
+</a></li>
+
+<li><a href="alerts.html">Alerts</a></li>
+
+<li><a href="impact.html">Impact</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="team.html">Team</a></li>
+
+<li><a href="future.html">Future</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+<a href="prototype.html" class="nav-btn">
+Prototype →
+</a>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<header class="hero">
+
+<div class="bubble b1"></div>
+<div class="bubble b2"></div>
+<div class="bubble b3"></div>
+<div class="bubble b4"></div>
+
+<div class="hero-icon">
+📸
+</div>
+
+<h1>
+Project <span>Gallery</span>
+</h1>
+
+<p>
+Explore the visual world of Ocean × Eco-Tech —
+from our ocean-inspired design and sensor technology
+to the Waste Collector 2K26 concept.
+</p>
+
+</header>
+
+
+<!-- ================= GALLERY ================= -->
+
+<section>
+
+<div class="title">
+
+<h2>
+🌊 Explore the Project
+</h2>
+
+<p>
+A visual showcase of the ideas behind our innovation.
+</p>
+
+</div>
+
+
+<div class="filters">
+
+<button class="filter active" onclick="filterCards('all')">
+All
+</button>
+
+<button class="filter" onclick="filterCards('prototype')">
+Prototype
+</button>
+
+<button class="filter" onclick="filterCards('technology')">
+Technology
+</button>
+
+<button class="filter" onclick="filterCards('environment')">
+Environment
+</button>
+
+<button class="filter" onclick="filterCards('future')">
+Future
+</button>
+
+</div>
+
+
+<div class="gallery">
+
+
+<div class="card prototype">
+
+<div class="art ocean">
+🚤
+</div>
+
+<div class="card-info">
+
+<h3>
+Waste Collector 2K26
+</h3>
+
+<p>
+Our floating waste collection concept.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card technology">
+
+<div class="art tech">
+📡
+</div>
+
+<div class="card-info">
+
+<h3>
+Smart Sensor
+</h3>
+
+<p>
+Sensor technology for environmental monitoring.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card environment">
+
+<div class="art eco">
+🌊
+</div>
+
+<div class="card-info">
+
+<h3>
+Cleaner Water
+</h3>
+
+<p>
+Technology designed around aquatic environments.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card prototype">
+
+<div class="art sand">
+♻️
+</div>
+
+<div class="card-info">
+
+<h3>
+Waste Collection
+</h3>
+
+<p>
+Guiding suitable floating material toward collection.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card technology">
+
+<div class="art deep">
+🧠
+</div>
+
+<div class="card-info">
+
+<h3>
+Smart Control
+</h3>
+
+<p>
+Processing sensor inputs through programmed logic.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card environment">
+
+<div class="art eco">
+🐟
+</div>
+
+<div class="card-info">
+
+<h3>
+Marine Protection
+</h3>
+
+<p>
+Raising awareness about aquatic pollution.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card future">
+
+<div class="art tech">
+🤖
+</div>
+
+<div class="card-info">
+
+<h3>
+AI Possibilities
+</h3>
+
+<p>
+Exploring future intelligent environmental systems.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card future">
+
+<div class="art ocean">
+🛰️
+</div>
+
+<div class="card-info">
+
+<h3>
+Remote Monitoring
+</h3>
+
+<p>
+A possible future for connected environmental systems.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="card future">
+
+<div class="art white">
+🌍
+</div>
+
+<div class="card-info">
+
+<h3>
+Global Vision
+</h3>
+
+<p>
+Small innovations can inspire larger environmental ideas.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="note">
+
+<strong>📌 Gallery Note</strong>
+
+<p>
+The visual cards on this page are concept illustrations
+created using CSS and emoji so the website remains fully
+self-contained. Replace them with your actual prototype,
+team and project photographs whenever you have them.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ================= FEATURE ================= -->
+
+<section>
+
+<div class="feature">
+
+
+<div class="feature-box">
+
+<div class="feature-icon">
+🚤
+</div>
+
+<h2>
+See the Prototype
+</h2>
+
+<p>
+Want to understand the physical system in more detail?
+Explore the prototype page to see its major components,
+assembly concept and testing approach.
+</p>
+
+<br>
+
+<a href="prototype.html" class="btn">
+View Prototype →
+</a>
+
+</div>
+
+
+<div class="feature-box">
+
+<div class="feature-icon">
+💡
+</div>
+
+<h2>
+Explore the Innovation
+</h2>
+
+<p>
+Discover how sensors, control systems, mechanics and
+digital tools come together to create the Ocean × Eco-Tech
+concept.
+</p>
+
+<br>
+
+<a href="innovation.html" class="btn">
+View Innovation →
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= JOURNEY ================= -->
+
+<section class="journey">
+
+<div class="title">
+
+<h2>
+🚀 Our Project Journey
+</h2>
+
+<p>
+From an environmental problem to a technology concept.
+</p>
+
+</div>
+
+
+<div class="timeline">
+
+
+<div class="timeline-card">
+
+<div class="timeline-icon">
+🔍
+</div>
+
+<h3>
+Identify
+</h3>
+
+<p>
+Understand the problem of floating waste.
+</p>
+
+</div>
+
+
+<div class="timeline-card">
+
+<div class="timeline-icon">
+💡
+</div>
+
+<h3>
+Imagine
+</h3>
+
+<p>
+Develop a technology-based solution.
+</p>
+
+</div>
+
+
+<div class="timeline-card">
+
+<div class="timeline-icon">
+🛠️
+</div>
+
+<h3>
+Build
+</h3>
+
+<p>
+Create and assemble the prototype.
+</p>
+
+</div>
+
+
+<div class="timeline-card">
+
+<div class="timeline-icon">
+🧪
+</div>
+
+<h3>
+Test
+</h3>
+
+<p>
+Observe performance and improve the design.
+</p>
+
+</div>
+
+
+<div class="timeline-card">
+
+<div class="timeline-icon">
+🌍
+</div>
+
+<h3>
+Impact
+</h3>
+
+<p>
+Connect innovation with environmental awareness.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+<h2>
+🌱 Every Prototype Tells a Story
+</h2>
+
+<p>
+Our project is more than a collection of components.
+It represents a journey of identifying a problem,
+experimenting with technology and imagining a cleaner future.
+</p>
+
+<a href="future.html" class="btn">
+Explore the Future →
+</a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div>
+🌊 OCEAN <span>× ECO-TECH</span>
+</div>
+
+<div>
+© 2026 Ocean × Eco-Tech
+</div>
+
+</footer>
+
+
+<script>
+
+/* ================= FILTER ================= */
+
+function filterCards(category){
+
+    const cards =
+        document.querySelectorAll(".card");
+
+    const buttons =
+        document.querySelectorAll(".filter");
+
+    buttons.forEach(button => {
+        button.classList.remove("active");
+    });
+
+    event.target.classList.add("active");
+
+    cards.forEach(card => {
+
+        if(category === "all"){
+
+            card.style.display = "block";
+
+        }
+        else if(card.classList.contains(category)){
+
+            card.style.display = "block";
+
+        }
+        else{
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+}
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login | Ocean × Eco-Tech</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    min-height:100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #042D46,
+            #063B5C,
+            #087A9A
+        );
+
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+}
+
+/* ================= OCEAN BACKGROUND ================= */
+
+.ocean{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:0;
+}
+
+.bubble{
+    position:absolute;
+
+    border:2px solid rgba(255,255,255,.2);
+
+    border-radius:50%;
+
+    animation:rise linear infinite;
+}
+
+.b1{
+    width:25px;
+    height:25px;
+    left:8%;
+    bottom:-40px;
+    animation-duration:8s;
+}
+
+.b2{
+    width:55px;
+    height:55px;
+    left:25%;
+    bottom:-80px;
+    animation-duration:11s;
+}
+
+.b3{
+    width:18px;
+    height:18px;
+    left:48%;
+    bottom:-40px;
+    animation-duration:7s;
+}
+
+.b4{
+    width:70px;
+    height:70px;
+    left:70%;
+    bottom:-100px;
+    animation-duration:12s;
+}
+
+.b5{
+    width:30px;
+    height:30px;
+    left:88%;
+    bottom:-50px;
+    animation-duration:9s;
+}
+
+@keyframes rise{
+
+    0%{
+        transform:translateY(0);
+        opacity:0;
+    }
+
+    20%{
+        opacity:.7;
+    }
+
+    100%{
+        transform:translateY(-110vh);
+        opacity:0;
+    }
+
+}
+
+/* ================= WAVES ================= */
+
+.wave{
+    position:absolute;
+
+    bottom:-80px;
+    left:-10%;
+
+    width:120%;
+
+    height:180px;
+
+    background:rgba(32,199,201,.12);
+
+    border-radius:50% 50% 0 0;
+
+    animation:wave 5s ease-in-out infinite;
+}
+
+.wave.two{
+
+    bottom:-110px;
+
+    background:rgba(185,243,228,.08);
+
+    animation-delay:1.5s;
+
+}
+
+@keyframes wave{
+
+    0%,100%{
+        transform:translateX(-2%);
+    }
+
+    50%{
+        transform:translateX(2%);
+    }
+
+}
+
+/* ================= LOGIN CARD ================= */
+
+.container{
+
+    width:100%;
+    max-width:460px;
+
+    padding:20px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.card{
+
+    background:rgba(255,255,255,.96);
+
+    color:#063B5C;
+
+    padding:42px;
+
+    border-radius:30px;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.25);
+
+    backdrop-filter:blur(10px);
+
+    animation:appear .7s ease;
+}
+
+@keyframes appear{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ================= LOGO ================= */
+
+.logo{
+
+    text-align:center;
+
+    margin-bottom:28px;
+}
+
+.logo-icon{
+
+    font-size:55px;
+
+    margin-bottom:8px;
+
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+}
+
+.logo h1{
+
+    font-size:25px;
+
+    color:#063B5C;
+}
+
+.logo h1 span{
+    color:#20C7C9;
+}
+
+.logo p{
+
+    margin-top:7px;
+
+    color:#607D8B;
+
+    font-size:11px;
+}
+
+/* ================= FORM ================= */
+
+.form-group{
+
+    margin-bottom:18px;
+}
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:7px;
+
+    font-size:12px;
+
+    font-weight:bold;
+}
+
+.input-wrap{
+    position:relative;
+}
+
+.input-icon{
+
+    position:absolute;
+
+    left:14px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    font-size:16px;
+}
+
+input{
+
+    width:100%;
+
+    padding:14px 15px 14px 43px;
+
+    border:2px solid #E0ECEE;
+
+    border-radius:13px;
+
+    outline:none;
+
+    color:#063B5C;
+
+    background:#F7FBFC;
+
+    transition:.3s;
+}
+
+input:focus{
+
+    border-color:#20C7C9;
+
+    background:white;
+
+    box-shadow:
+        0 0 0 4px rgba(32,199,201,.1);
+}
+
+/* ================= PASSWORD ================= */
+
+.password-toggle{
+
+    position:absolute;
+
+    right:12px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    font-size:15px;
+}
+
+/* ================= OPTIONS ================= */
+
+.options{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin:4px 0 22px;
+
+    font-size:11px;
+}
+
+.remember{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    color:#607D8B;
+}
+
+.remember input{
+
+    width:auto;
+
+    accent-color:#20C7C9;
+}
+
+.options a{
+
+    color:#087A9A;
+
+    text-decoration:none;
+}
+
+/* ================= BUTTON ================= */
+
+.login-btn{
+
+    width:100%;
+
+    border:none;
+
+    padding:15px;
+
+    border-radius:25px;
+
+    background:#063B5C;
+
+    color:white;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.login-btn:hover{
+
+    background:#20AEB0;
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(32,174,176,.25);
+}
+
+/* ================= DEMO NOTICE ================= */
+
+.demo{
+
+    margin-top:20px;
+
+    padding:13px;
+
+    background:#EAF9F7;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    color:#355968;
+
+    font-size:10px;
+
+    line-height:1.6;
+}
+
+/* ================= DIVIDER ================= */
+
+.divider{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin:24px 0;
+
+    color:#90A4AE;
+
+    font-size:10px;
+}
+
+.divider::before,
+.divider::after{
+
+    content:"";
+
+    height:1px;
+
+    background:#DCEBED;
+
+    flex:1;
+}
+
+/* ================= GUEST BUTTON ================= */
+
+.guest{
+
+    display:block;
+
+    width:100%;
+
+    text-align:center;
+
+    padding:13px;
+
+    border:2px solid #DCEBED;
+
+    border-radius:25px;
+
+    text-decoration:none;
+
+    color:#063B5C;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.guest:hover{
+
+    border-color:#20C7C9;
+
+    background:#F0FCFC;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+
+    text-align:center;
+
+    margin-top:20px;
+
+    color:rgba(255,255,255,.7);
+
+    font-size:10px;
+}
+
+.footer span{
+    color:#20C7C9;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:500px){
+
+    .card{
+        padding:30px 22px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= BACKGROUND ================= -->
+
+<div class="ocean">
+
+    <div class="bubble b1"></div>
+    <div class="bubble b2"></div>
+    <div class="bubble b3"></div>
+    <div class="bubble b4"></div>
+    <div class="bubble b5"></div>
+
+    <div class="wave"></div>
+    <div class="wave two"></div>
+
+</div>
+
+
+<!-- ================= LOGIN ================= -->
+
+<div class="container">
+
+<div class="card">
+
+
+<div class="logo">
+
+<div class="logo-icon">
+🌊
+</div>
+
+<h1>
+OCEAN <span>× ECO-TECH</span>
+</h1>
+
+<p>
+Smart technology for a cleaner future
+</p>
+
+</div>
+
+
+<form id="loginForm">
+
+
+<div class="form-group">
+
+<label for="email">
+Email
+</label>
+
+<div class="input-wrap">
+
+<span class="input-icon">
+📧
+</span>
+
+<input
+type="email"
+id="email"
+placeholder="Enter your email"
+required
+>
+
+</div>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="password">
+Password
+</label>
+
+<div class="input-wrap">
+
+<span class="input-icon">
+🔒
+</span>
+
+<input
+type="password"
+id="password"
+placeholder="Enter your password"
+required
+>
+
+<button
+type="button"
+class="password-toggle"
+onclick="togglePassword()"
+>
+👁️
+</button>
+
+</div>
+
+</div>
+
+
+<div class="options">
+
+<label class="remember">
+
+<input type="checkbox">
+
+Remember me
+
+</label>
+
+<a href="#"
+onclick="forgotPassword(); return false;">
+Forgot password?
+</a>
+
+</div>
+
+
+<button
+type="submit"
+class="login-btn">
+Login to Dashboard →
+</button>
+
+
+</form>
+
+
+<div class="demo">
+
+<strong>🌱 Demo Website</strong><br>
+
+This login is a front-end demonstration.
+No real account or password is stored.
+
+</div>
+
+
+<div class="divider">
+OR
+</div>
+
+
+<a href="dashboard.html" class="guest">
+Continue as Guest
+</a>
+
+
+</div>
+
+
+<div class="footer">
+
+🌊 Ocean × Eco-Tech
+<br>
+<span>Waste Collector 2K26</span>
+
+</div>
+
+
+</div>
+
+
+<script>
+
+/* ================= PASSWORD ================= */
+
+function togglePassword(){
+
+    const password =
+    document.getElementById("password");
+
+    const button =
+    document.querySelector(".password-toggle");
+
+    if(password.type === "password"){
+
+        password.type = "text";
+
+        button.textContent = "🙈";
+
+    }else{
+
+        password.type = "password";
+
+        button.textContent = "👁️";
+
+    }
+
+}
+
+
+/* ================= LOGIN ================= */
+
+document
+.getElementById("loginForm")
+.addEventListener("submit",function(event){
+
+    event.preventDefault();
+
+    const email =
+    document.getElementById("email").value.trim();
+
+    const password =
+    document.getElementById("password").value.trim();
+
+    if(email === "" || password === ""){
+
+        alert("Please enter your email and password.");
+
+        return;
+
+    }
+
+    alert(
+        "🌊 Demo login successful! Welcome to Ocean × Eco-Tech."
+    );
+
+    window.location.href="dashboard.html";
+
+});
+
+
+/* ================= FORGOT PASSWORD ================= */
+
+function forgotPassword(){
+
+    alert(
+        "This is a demo website, so password recovery is not connected yet."
+    );
+
+}
+
+</script>
+
+
+</body>
+
+</html>

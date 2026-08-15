@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Prototype | Ocean × Eco-Tech</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#F7FBFC;
+    color:#063B5C;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    height:72px;
+    background:#063B5C;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 6%;
+
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+}
+
+.logo{
+    color:white;
+    font-size:21px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#20C7C9;
+}
+
+nav ul{
+    display:flex;
+    gap:14px;
+    list-style:none;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:11px;
+    transition:.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+    color:#20C7C9;
+}
+
+.nav-btn{
+    background:#20C7C9;
+    color:#063B5C !important;
+    padding:10px 17px;
+    border-radius:25px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    margin-top:72px;
+
+    min-height:450px;
+
+    background:
+        linear-gradient(135deg,#063B5C,#087A9A);
+
+    color:white;
+    text-align:center;
+
+    padding:90px 7%;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-icon{
+    font-size:78px;
+    margin-bottom:15px;
+
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-14px);
+    }
+
+}
+
+.hero h1{
+    font-size:52px;
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    color:#20C7C9;
+}
+
+.hero p{
+    max-width:750px;
+    margin:auto;
+    color:#DDF1F4;
+    line-height:1.9;
+}
+
+/* ================= BUBBLES ================= */
+
+.bubble{
+    position:absolute;
+    border:2px solid rgba(255,255,255,.18);
+    border-radius:50%;
+    animation:bubble 7s ease-in-out infinite;
+}
+
+.b1{
+    width:35px;
+    height:35px;
+    left:8%;
+    top:100px;
+}
+
+.b2{
+    width:75px;
+    height:75px;
+    right:10%;
+    top:65px;
+}
+
+.b3{
+    width:20px;
+    height:20px;
+    left:27%;
+    bottom:40px;
+}
+
+.b4{
+    width:45px;
+    height:45px;
+    right:25%;
+    bottom:30px;
+}
+
+@keyframes bubble{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-27px);
+    }
+
+}
+
+/* ================= GENERAL ================= */
+
+section{
+    padding:75px 7%;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.title h2{
+    font-size:36px;
+    margin-bottom:10px;
+}
+
+.title p{
+    color:#607D8B;
+}
+
+/* ================= PROTOTYPE DISPLAY ================= */
+
+.prototype-section{
+    background:#EAF9F7;
+}
+
+.prototype-display{
+    max-width:1100px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:40px;
+
+    align-items:center;
+}
+
+.prototype-visual{
+
+    height:400px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #087A9A,
+            #063B5C
+        );
+
+    border-radius:28px;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+/* Water */
+
+.water{
+    position:absolute;
+
+    bottom:0;
+    left:0;
+
+    width:100%;
+    height:55%;
+
+    background:
+        rgba(32,199,201,.14);
+
+    border-top:
+        2px solid rgba(185,243,228,.5);
+}
+
+/* Main body */
+
+.collector-body{
+
+    position:absolute;
+
+    width:260px;
+    height:82px;
+
+    background:#F1E2C3;
+
+    border-radius:45px;
+
+    left:50%;
+    top:45%;
+
+    transform:translate(-50%,-50%);
+
+    box-shadow:
+        0 14px 28px rgba(0,0,0,.25);
+
+    animation:boat 3s ease-in-out infinite;
+}
+
+@keyframes boat{
+
+    0%,100%{
+        transform:translate(-50%,-50%) rotate(0);
+    }
+
+    50%{
+        transform:translate(-50%,-55%) rotate(2deg);
+    }
+
+}
+
+/* Solar panel / top panel */
+
+.top-panel{
+
+    position:absolute;
+
+    width:85px;
+    height:42px;
+
+    left:50%;
+    top:25%;
+
+    transform:translateX(-50%);
+
+    background:#063B5C;
+
+    border:3px solid #20C7C9;
+
+    border-radius:8px;
+}
+
+/* Sensor */
+
+.sensor{
+
+    position:absolute;
+
+    width:35px;
+    height:35px;
+
+    background:#20C7C9;
+
+    border:4px solid white;
+
+    border-radius:50%;
+
+    left:50%;
+    top:41%;
+
+    transform:translate(-50%,-50%);
+
+    z-index:5;
+
+    animation:sensorPulse 2s infinite;
+}
+
+@keyframes sensorPulse{
+
+    0%,100%{
+        box-shadow:0 0 0 0 rgba(32,199,201,.6);
+    }
+
+    70%{
+        box-shadow:0 0 0 22px rgba(32,199,201,0);
+    }
+
+}
+
+/* Collection net */
+
+.net{
+
+    position:absolute;
+
+    width:110px;
+    height:65px;
+
+    border:3px dashed #B9F3E4;
+
+    left:50%;
+
+    bottom:14%;
+
+    transform:translateX(-50%);
+
+    border-radius:6px;
+}
+
+/* Floating waste */
+
+.waste{
+    position:absolute;
+    font-size:22px;
+
+    animation:waste 3s ease-in-out infinite;
+}
+
+.w1{
+    left:17%;
+    bottom:22%;
+}
+
+.w2{
+    right:18%;
+    bottom:30%;
+    animation-delay:.7s;
+}
+
+.w3{
+    left:32%;
+    bottom:9%;
+    animation-delay:1.2s;
+}
+
+@keyframes waste{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-9px);
+    }
+
+}
+
+/* Prototype text */
+
+.prototype-info h2{
+    font-size:34px;
+    margin-bottom:14px;
+}
+
+.prototype-info > p{
+    color:#607D8B;
+    line-height:1.8;
+    margin-bottom:22px;
+}
+
+.specs{
+    display:grid;
+    gap:11px;
+}
+
+.spec{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    padding:13px;
+
+    background:white;
+
+    border-radius:13px;
+
+    box-shadow:
+        0 5px 16px rgba(6,59,92,.05);
+}
+
+.spec-icon{
+    font-size:23px;
+}
+
+.spec h3{
+    font-size:13px;
+    margin-bottom:3px;
+}
+
+.spec p{
+    font-size:11px;
+    color:#607D8B;
+}
+
+/* ================= COMPONENTS ================= */
+
+.components{
+    max-width:1100px;
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+}
+
+.component{
+
+    background:white;
+
+    padding:28px;
+
+    border-radius:22px;
+
+    box-shadow:
+        0 8px 26px rgba(6,59,92,.06);
+
+    transition:.35s;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.component:hover{
+    transform:translateY(-9px);
+
+    box-shadow:
+        0 16px 34px rgba(6,59,92,.12);
+}
+
+.component::after{
+    content:"";
+
+    position:absolute;
+
+    width:90px;
+    height:90px;
+
+    border-radius:50%;
+
+    background:#B9F3E4;
+
+    right:-35px;
+    top:-35px;
+
+    opacity:.55;
+}
+
+.component-icon{
+    font-size:42px;
+    margin-bottom:13px;
+
+    position:relative;
+    z-index:1;
+}
+
+.component h3{
+    font-size:18px;
+    margin-bottom:9px;
+}
+
+.component p{
+    color:#607D8B;
+    font-size:13px;
+    line-height:1.7;
+}
+
+.tag{
+
+    display:inline-block;
+
+    margin-top:15px;
+
+    background:#E4F8F4;
+
+    color:#31816E;
+
+    padding:6px 11px;
+
+    border-radius:15px;
+
+    font-size:9px;
+
+    font-weight:bold;
+}
+
+/* ================= ASSEMBLY ================= */
+
+.assembly{
+    background:#063B5C;
+    color:white;
+}
+
+.assembly .title p{
+    color:#B9DDE2;
+}
+
+.assembly-grid{
+
+    max-width:1050px;
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:17px;
+}
+
+.assembly-card{
+
+    background:
+        rgba(255,255,255,.08);
+
+    padding:25px 17px;
+
+    border-radius:19px;
+
+    text-align:center;
+
+    transition:.3s;
+}
+
+.assembly-card:hover{
+
+    transform:translateY(-8px);
+
+    background:
+        rgba(32,199,201,.12);
+}
+
+.assembly-number{
+
+    width:40px;
+    height:40px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin:0 auto 12px;
+
+    border-radius:50%;
+
+    background:#20C7C9;
+
+    color:#063B5C;
+
+    font-weight:bold;
+}
+
+.assembly-card h3{
+    font-size:15px;
+    margin-bottom:7px;
+}
+
+.assembly-card p{
+    color:#B9DDE2;
+    font-size:11px;
+    line-height:1.6;
+}
+
+/* ================= TESTING ================= */
+
+.testing{
+    background:#EAF9F7;
+}
+
+.testing-grid{
+
+    max-width:1000px;
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+}
+
+.test{
+
+    background:white;
+
+    padding:28px;
+
+    border-radius:21px;
+
+    text-align:center;
+
+    box-shadow:
+        0 7px 23px rgba(6,59,92,.05);
+
+    transition:.3s;
+}
+
+.test:hover{
+    transform:translateY(-7px);
+}
+
+.test-icon{
+    font-size:40px;
+    margin-bottom:12px;
+}
+
+.test h3{
+    font-size:17px;
+    margin-bottom:8px;
+}
+
+.test p{
+    color:#607D8B;
+    font-size:12px;
+    line-height:1.7;
+}
+
+/* ================= DISCLAIMER ================= */
+
+.note{
+
+    max-width:900px;
+
+    margin:45px auto 0;
+
+    background:#FFF8E8;
+
+    border-left:5px solid #20C7C9;
+
+    padding:20px;
+
+    border-radius:12px;
+}
+
+.note strong{
+    display:block;
+    margin-bottom:7px;
+}
+
+.note p{
+    color:#607D8B;
+    font-size:12px;
+    line-height:1.7;
+}
+
+/* ================= CTA ================= */
+
+.cta{
+
+    text-align:center;
+
+    background:#B9F3E4;
+}
+
+.cta h2{
+    font-size:37px;
+    margin-bottom:13px;
+}
+
+.cta p{
+    max-width:700px;
+
+    margin:auto auto 25px;
+
+    color:#355968;
+
+    line-height:1.8;
+}
+
+.btn{
+
+    display:inline-block;
+
+    background:#063B5C;
+    color:white;
+
+    padding:14px 27px;
+
+    border-radius:27px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.btn:hover{
+
+    background:#20AEB0;
+
+    transform:translateY(-3px);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    background:#042D46;
+
+    color:white;
+
+    padding:35px 6%;
+
+    display:flex;
+
+    justify-content:space-between;
+}
+
+footer span{
+    color:#20C7C9;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1000px){
+
+    nav ul{
+        display:none;
+    }
+
+    .components{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .assembly-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .testing-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:700px){
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .prototype-display{
+        grid-template-columns:1fr;
+    }
+
+    .components,
+    .assembly-grid,
+    .testing-grid{
+        grid-template-columns:1fr;
+    }
+
+    footer{
+        flex-direction:column;
+        gap:15px;
+        text-align:center;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+<div class="logo">
+🌊 OCEAN <span>× ECO-TECH</span>
+</div>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="dashboard.html">Dashboard</a></li>
+
+<li><a href="data.html">Data</a></li>
+
+<li><a href="map.html">Map</a></li>
+
+<li><a href="solutions.html">Solutions</a></li>
+
+<li><a href="technology.html">Technology</a></li>
+
+<li><a href="how-it-works.html">How It Works</a></li>
+
+<li><a href="prototype.html" class="active">Prototype</a></li>
+
+<li><a href="alerts.html">Alerts</a></li>
+
+<li><a href="impact.html">Impact</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="team.html">Team</a></li>
+
+<li><a href="future.html">Future</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+<a href="dashboard.html" class="nav-btn">
+Dashboard →
+</a>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<header class="hero">
+
+<div class="bubble b1"></div>
+<div class="bubble b2"></div>
+<div class="bubble b3"></div>
+<div class="bubble b4"></div>
+
+<div class="hero-icon">
+🤖
+</div>
+
+<h1>
+Our <span>Prototype</span>
+</h1>
+
+<p>
+Waste Collector 2K26 brings our environmental idea
+into the physical world by combining a collection
+mechanism with sensors, electronics and smart control.
+</p>
+
+</header>
+
+
+<!-- ================= PROTOTYPE DISPLAY ================= -->
+
+<section class="prototype-section">
+
+<div class="title">
+
+<h2>
+🚤 Waste Collector 2K26
+</h2>
+
+<p>
+A conceptual view of the physical prototype.
+</p>
+
+</div>
+
+
+<div class="prototype-display">
+
+
+<div class="prototype-visual">
+
+<div class="top-panel"></div>
+
+<div class="sensor"></div>
+
+<div class="collector-body"></div>
+
+<div class="net"></div>
+
+<div class="water"></div>
+
+<div class="waste w1">🧴</div>
+<div class="waste w2">🥤</div>
+<div class="waste w3">🛍️</div>
+
+</div>
+
+
+<div class="prototype-info">
+
+<h2>
+Designed for Cleaner Water
+</h2>
+
+<p>
+The prototype is designed around a simple idea:
+detect relevant material, respond through a controlled
+mechanism and guide floating waste toward a collection
+area.
+</p>
+
+
+<div class="specs">
+
+<div class="spec">
+
+<div class="spec-icon">📡</div>
+
+<div>
+
+<h3>Detection</h3>
+
+<p>
+Sensor-based object detection concept
+</p>
+
+</div>
+
+</div>
+
+
+<div class="spec">
+
+<div class="spec-icon">⚙️</div>
+
+<div>
+
+<h3>Movement</h3>
+
+<p>
+Motor-driven movement can support operation
+</p>
+
+</div>
+
+</div>
+
+
+<div class="spec">
+
+<div class="spec-icon">🕸️</div>
+
+<div>
+
+<h3>Collection</h3>
+
+<p>
+Waste is guided toward a collection area
+</p>
+
+</div>
+
+</div>
+
+
+<div class="spec">
+
+<div class="spec-icon">🧠</div>
+
+<div>
+
+<h3>Control</h3>
+
+<p>
+A controller coordinates connected components
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= COMPONENTS ================= -->
+
+<section>
+
+<div class="title">
+
+<h2>
+🔩 Main Components
+</h2>
+
+<p>
+The important parts that contribute to the prototype.
+</p>
+
+</div>
+
+
+<div class="components">
+
+
+<div class="component">
+
+<div class="component-icon">
+📡
+</div>
+
+<h3>
+Capacitive Sensor
+</h3>
+
+<p>
+A proximity sensor can be used to detect changes
+in its sensing field and provide an input signal
+to the controller.
+</p>
+
+<span class="tag">
+SENSING
+</span>
+
+</div>
+
+
+<div class="component">
+
+<div class="component-icon">
+🧠
+</div>
+
+<h3>
+Microcontroller
+</h3>
+
+<p>
+The controller receives inputs and executes the
+programmed instructions that coordinate the system.
+</p>
+
+<span class="tag">
+CONTROL
+</span>
+
+</div>
+
+
+<div class="component">
+
+<div class="component-icon">
+⚙️
+</div>
+
+<h3>
+Motor
+</h3>
+
+<p>
+A motor can provide mechanical movement for the
+prototype depending on the final design.
+</p>
+
+<span class="tag">
+MOVEMENT
+</span>
+
+</div>
+
+
+<div class="component">
+
+<div class="component-icon">
+🔋
+</div>
+
+<h3>
+Power Source
+</h3>
+
+<p>
+Provides the electrical energy required by the
+electronic components and motors.
+</p>
+
+<span class="tag">
+POWER
+</span>
+
+</div>
+
+
+<div class="component">
+
+<div class="component-icon">
+🕸️
+</div>
+
+<h3>
+Collection Unit
+</h3>
+
+<p>
+A net, basket or similar structure can guide and
+hold floating waste for later removal.
+</p>
+
+<span class="tag">
+COLLECTION
+</span>
+
+</div>
+
+
+<div class="component">
+
+<div class="component-icon">
+💻
+</div>
+
+<h3>
+Digital Interface
+</h3>
+
+<p>
+A website or dashboard can present system information
+and project data in an accessible format.
+</p>
+
+<span class="tag">
+MONITORING
+</span>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= ASSEMBLY ================= -->
+
+<section class="assembly">
+
+<div class="title">
+
+<h2>
+🛠️ Prototype Assembly
+</h2>
+
+<p>
+A simplified sequence for putting the system together.
+</p>
+
+</div>
+
+
+<div class="assembly-grid">
+
+
+<div class="assembly-card">
+
+<div class="assembly-number">
+01
+</div>
+
+<h3>
+Build the Frame
+</h3>
+
+<p>
+Create a stable floating structure capable of
+supporting the required components.
+</p>
+
+</div>
+
+
+<div class="assembly-card">
+
+<div class="assembly-number">
+02
+</div>
+
+<h3>
+Install Electronics
+</h3>
+
+<p>
+Mount the controller, sensor and supporting
+electronic components securely.
+</p>
+
+</div>
+
+
+<div class="assembly-card">
+
+<div class="assembly-number">
+03
+</div>
+
+<h3>
+Add Collection System
+</h3>
+
+<p>
+Attach the collection mechanism to the prototype
+according to the design.
+</p>
+
+</div>
+
+
+<div class="assembly-card">
+
+<div class="assembly-number">
+04
+</div>
+
+<h3>
+Program & Test
+</h3>
+
+<p>
+Test sensor input, motor response and collection
+behavior in a controlled environment.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= TESTING ================= -->
+
+<section class="testing">
+
+<div class="title">
+
+<h2>
+🧪 Prototype Testing
+</h2>
+
+<p>
+Testing helps identify problems before real-world deployment.
+</p>
+
+</div>
+
+
+<div class="testing-grid">
+
+
+<div class="test">
+
+<div class="test-icon">
+📡
+</div>
+
+<h3>
+Sensor Test
+</h3>
+
+<p>
+Check whether the sensor responds consistently
+to the intended test conditions.
+</p>
+
+</div>
+
+
+<div class="test">
+
+<div class="test-icon">
+⚙️
+</div>
+
+<h3>
+Movement Test
+</h3>
+
+<p>
+Check whether the motor and mechanical system
+operate as expected.
+</p>
+
+</div>
+
+
+<div class="test">
+
+<div class="test-icon">
+♻️
+</div>
+
+<h3>
+Collection Test
+</h3>
+
+<p>
+Test whether the collection mechanism can
+guide and hold the intended floating material.
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="note">
+
+<strong>⚠️ Prototype Note</strong>
+
+<p>
+The website represents the project concept and prototype
+architecture. Actual component behavior, detection range,
+motor performance and collection efficiency should be
+determined through physical testing rather than assumed
+from the website.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+<h2>
+🌊 From Prototype to Possibility
+</h2>
+
+<p>
+A working prototype is the first step. With further testing,
+better sensing, improved mechanics and responsible design,
+the concept could continue evolving.
+</p>
+
+<a href="future.html" class="btn">
+Explore Future Vision →
+</a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div>
+🌊 OCEAN <span>× ECO-TECH</span>
+</div>
+
+<div>
+© 2026 Ocean × Eco-Tech
+</div>
+
+</footer>
+
+
+</body>
+
+</html>

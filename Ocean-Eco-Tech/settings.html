@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Settings | Ocean × Eco-Tech</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#F7FBFC;
+    color:#063B5C;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    height:72px;
+    background:#063B5C;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 6%;
+
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+}
+
+.logo{
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#20C7C9;
+}
+
+nav ul{
+    display:flex;
+    gap:13px;
+    list-style:none;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:11px;
+    transition:.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+    color:#20C7C9;
+}
+
+.nav-btn{
+    background:#20C7C9;
+    color:#063B5C !important;
+    padding:10px 17px;
+    border-radius:25px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    margin-top:72px;
+
+    padding:75px 7%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #063B5C,
+            #087A9A
+        );
+
+    color:white;
+
+    text-align:center;
+}
+
+.hero-icon{
+    font-size:65px;
+    margin-bottom:12px;
+
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+}
+
+.hero h1{
+    font-size:46px;
+    margin-bottom:12px;
+}
+
+.hero h1 span{
+    color:#20C7C9;
+}
+
+.hero p{
+    max-width:650px;
+    margin:auto;
+
+    color:#DDF1F4;
+
+    line-height:1.8;
+}
+
+/* ================= MAIN ================= */
+
+main{
+    max-width:1000px;
+    margin:auto;
+    padding:65px 25px;
+}
+
+/* ================= SETTINGS LAYOUT ================= */
+
+.settings-layout{
+
+    display:grid;
+
+    grid-template-columns:220px 1fr;
+
+    gap:25px;
+
+    align-items:start;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar{
+
+    background:white;
+
+    padding:15px;
+
+    border-radius:20px;
+
+    box-shadow:
+        0 7px 22px rgba(6,59,92,.06);
+
+    position:sticky;
+    top:95px;
+}
+
+.sidebar button{
+
+    width:100%;
+
+    border:none;
+
+    background:transparent;
+
+    color:#607D8B;
+
+    padding:13px;
+
+    border-radius:12px;
+
+    text-align:left;
+
+    cursor:pointer;
+
+    font-size:12px;
+
+    transition:.3s;
+}
+
+.sidebar button:hover,
+.sidebar button.active{
+
+    background:#EAF9F7;
+
+    color:#063B5C;
+
+    font-weight:bold;
+}
+
+/* ================= CONTENT ================= */
+
+.content{
+
+    display:grid;
+    gap:20px;
+}
+
+.settings-section{
+
+    display:none;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:22px;
+
+    box-shadow:
+        0 7px 22px rgba(6,59,92,.06);
+
+    animation:fade .35s ease;
+}
+
+.settings-section.active{
+    display:block;
+}
+
+@keyframes fade{
+
+    from{
+        opacity:0;
+        transform:translateY(8px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.section-heading{
+
+    margin-bottom:25px;
+
+    border-bottom:1px solid #E3EFF1;
+
+    padding-bottom:17px;
+}
+
+.section-heading h2{
+    font-size:23px;
+    margin-bottom:6px;
+}
+
+.section-heading p{
+
+    color:#607D8B;
+    font-size:11px;
+}
+
+/* ================= SETTING ROW ================= */
+
+.setting-row{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    padding:18px 0;
+
+    border-bottom:1px solid #EEF4F5;
+}
+
+.setting-row:last-child{
+    border-bottom:none;
+}
+
+.setting-info h3{
+
+    font-size:13px;
+    margin-bottom:5px;
+}
+
+.setting-info p{
+
+    color:#78909C;
+    font-size:10px;
+    line-height:1.5;
+}
+
+/* ================= TOGGLE ================= */
+
+.toggle{
+
+    position:relative;
+
+    width:48px;
+    height:26px;
+
+    flex-shrink:0;
+}
+
+.toggle input{
+    display:none;
+}
+
+.slider{
+
+    position:absolute;
+
+    inset:0;
+
+    background:#CFDDE0;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.slider:before{
+
+    content:"";
+
+    position:absolute;
+
+    width:20px;
+    height:20px;
+
+    left:3px;
+    top:3px;
+
+    background:white;
+
+    border-radius:50%;
+
+    transition:.3s;
+
+    box-shadow:0 2px 5px rgba(0,0,0,.15);
+}
+
+.toggle input:checked + .slider{
+    background:#20C7C9;
+}
+
+.toggle input:checked + .slider:before{
+    transform:translateX(22px);
+}
+
+/* ================= SELECT ================= */
+
+select{
+
+    padding:10px 14px;
+
+    border:2px solid #E0ECEE;
+
+    border-radius:10px;
+
+    background:#F7FBFC;
+
+    color:#063B5C;
+
+    outline:none;
+
+    cursor:pointer;
+
+    font-size:11px;
+}
+
+/* ================= BUTTON ================= */
+
+.save-btn{
+
+    margin-top:25px;
+
+    padding:12px 22px;
+
+    border:none;
+
+    border-radius:25px;
+
+    background:#063B5C;
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.save-btn:hover{
+
+    background:#20AEB0;
+
+    transform:translateY(-2px);
+}
+
+/* ================= PROFILE ================= */
+
+.profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding-bottom:22px;
+
+    margin-bottom:10px;
+
+    border-bottom:1px solid #E3EFF1;
+}
+
+.profile-icon{
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    background:#B9F3E4;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:28px;
+}
+
+.profile h3{
+    font-size:17px;
+}
+
+.profile p{
+
+    color:#78909C;
+
+    font-size:10px;
+
+    margin-top:5px;
+}
+
+/* ================= DANGER ================= */
+
+.danger{
+
+    border:2px solid #FFE0E0;
+
+    background:#FFF8F8;
+}
+
+.danger h2{
+    color:#B33A3A;
+}
+
+.danger-btn{
+
+    margin-top:20px;
+
+    padding:11px 20px;
+
+    border:none;
+
+    border-radius:20px;
+
+    background:#B33A3A;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:11px;
+
+    font-weight:bold;
+}
+
+/* ================= STATUS ================= */
+
+.status{
+
+    margin-top:20px;
+
+    padding:13px;
+
+    background:#EAF9F7;
+
+    color:#35656A;
+
+    border-radius:12px;
+
+    font-size:11px;
+
+    display:none;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    background:#042D46;
+
+    color:white;
+
+    padding:35px 6%;
+
+    display:flex;
+
+    justify-content:space-between;
+}
+
+footer span{
+    color:#20C7C9;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:850px){
+
+    nav ul{
+        display:none;
+    }
+
+    .settings-layout{
+        grid-template-columns:1fr;
+    }
+
+    .sidebar{
+        position:static;
+
+        display:grid;
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:5px;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .sidebar{
+        grid-template-columns:1fr;
+    }
+
+    .setting-row{
+        align-items:flex-start;
+    }
+
+    footer{
+        flex-direction:column;
+        gap:15px;
+        text-align:center;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+<div class="logo">
+🌊 OCEAN <span>× ECO-TECH</span>
+</div>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+<li><a href="dashboard.html">Dashboard</a></li>
+<li><a href="data.html">Data</a></li>
+<li><a href="map.html">Map</a></li>
+<li><a href="solutions.html">Solutions</a></li>
+<li><a href="technology.html">Technology</a></li>
+<li><a href="prototype.html">Prototype</a></li>
+<li><a href="alerts.html">Alerts</a></li>
+<li><a href="documentation.html">Documentation</a></li>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="settings.html" class="active">Settings</a></li>
+
+</ul>
+
+<a href="dashboard.html" class="nav-btn">
+Dashboard →
+</a>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<header class="hero">
+
+<div class="hero-icon">
+⚙️
+</div>
+
+<h1>
+System <span>Settings</span>
+</h1>
+
+<p>
+Customize your Ocean × Eco-Tech dashboard,
+notifications and display preferences.
+</p>
+
+</header>
+
+
+<!-- ================= MAIN ================= -->
+
+<main>
+
+<div class="settings-layout">
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+<button class="tab active" data-tab="general">
+⚙️ General
+</button>
+
+<button class="tab" data-tab="notifications">
+🔔 Notifications
+</button>
+
+<button class="tab" data-tab="display">
+🎨 Display
+</button>
+
+<button class="tab" data-tab="system">
+📡 System
+</button>
+
+<button class="tab" data-tab="about-settings">
+ℹ️ About
+</button>
+
+</aside>
+
+
+<!-- CONTENT -->
+
+<div class="content">
+
+
+<!-- GENERAL -->
+
+<section class="settings-section active" id="general">
+
+<div class="section-heading">
+
+<h2>
+⚙️ General Settings
+</h2>
+
+<p>
+Basic preferences for your project dashboard.
+</p>
+
+</div>
+
+
+<div class="profile">
+
+<div class="profile-icon">
+🌊
+</div>
+
+<div>
+
+<h3>
+Ocean × Eco-Tech
+</h3>
+
+<p>
+Waste Collector 2K26 Project Dashboard
+</p>
+
+</div>
+
+</div>
+
+
+<div class="setting-row">
+
+<div class="setting-info">
+
+<h3>
+Automatic Updates
+</h3>
+
+<p>
+Refresh dashboard information automatically.
+</p>
+
+</div>
+
+<label class="toggle">
+
+<input type="checkbox" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+
+<div class="setting-row">
+
+<div class="setting-info">
+
+<h3>
+Data Refresh Rate</h3>
+
+<p>
+Choose how frequently demonstration data updates.
+</p>
+
+</div>
+
+<select id="refreshRate">
+
+<option>10 seconds</option>
+<option>30 seconds</option>
+<option selected>60 seconds</option>
+<option>5 minutes</option>
+
+</select>
+
+</div>
+
+
+<button class="save-btn" onclick="saveSettings()">
+Save Changes
+</button>
+
+<div class="status" id="status">
+✅ Settings saved successfully!
+</div>
+
+</section>
+
+
+<!-- NOTIFICATIONS -->
+
+<section class="settings-section" id="notifications">
+
+<div class="section-heading">
+
+<h2>
+🔔 Notifications
+</h2>
+
+<p>
+Choose which project alerts you want to receive.
+</p>
+
+</div>
+
+
+<div class="setting-row">
+
+<div class="setting-info">
+
+<h3>
+Sensor Alerts
+</h3>
+
+<p>
+Receive alerts when sensor readings change significantly.
+</p>
+
+</div>
+
+<label class="toggle">
+
+<input type="checkbox" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+
+<div class="setting-row">
+
+<div class="setting-info">
+
+<h3>
+Waste Detection Alerts
+</h3>
+
+<p>
+Notify when a waste detection event occurs.
+</p>
+
+</div>
+
+<label class="toggle">
+
+<input type="checkbox" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+
+<div class="setting-row">
+
+<div class="setting-info">
+
+<h3>
+System Status Alerts
+</h3>
+
+<p>
+Receive notifications about system availability.
+</p>
+
+</div>
+
+<label class="toggle">
+
+<input type="checkbox" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+
+<div class="setting-row">
+
+<div class="setting-info">
+
+<h3>
+Sound Alerts</h3>
+
+<p>
+Play a sound when an important alert appears.
+</p>
+
+</div>
+
+<label class="toggle">
+
+<input type="checkbox">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+
+<button class="save-btn" onclick="saveSettings()">
+Save Notification Settings
+</button>
+
+</section>
+
+
+<!-- DISPLAY -->
+
+<section class="settings-section" id="display">
+
+<div class="section-heading">
+
+<h2>
+🎨 Display
+</h2>
+
+<p>
+Customize how information appears on the website.
+</p>
+
+</div>
+
+
+<div class="setting-row">
+
+<div class="setting-info">
+
+<h3>
+Interface Mode
+</h3>
+
+<p>
+Choose your preferred interface appearance.
+</p>
+
+</div>
+
+<select id="theme">
+
+<option selected>Ocean Light</option>
+<option>Ocean Dark</option>
+</select>
+
+</div>
+
+
+<div class="setting-row">
+
+<div class="setting-info">
+
+<h3>
+Animations
+</h3>
+
+<p>
+Enable floating bubbles and interface animations.
+</p>
+
+</div>
+
+<label class="toggle">
+
+<input type="checkbox" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+
+<div class="setting-row">
+
+<div class="setting-info">
+
+<h3>
+Compact Data Cards
+</h3>
+
+<p>
+Use smaller cards to display more information.
+</p>
+
+</div>
+
+<label class="toggle">
+
+<input type="checkbox">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+
+<button class="save-btn" onclick="saveSettings()">
+Save Display Settings
+</button>
+
+</section>
+
+
+<!-- SYSTEM -->
+
+<section class="settings-section" id="system">
+
+<div class="section-heading">
+
+<h2>
+📡 System Settings
+</h2>
+
+<p>
+Information about the connected project system.
+</p>
+
+</div>
+
+
+<div class="setting-row">
+
+<div class="setting-info">
+
+<h3>
+Sensor Connection
+</h3>
+
+<p>
+Current demonstration sensor connection state.
+</p>
+
+</div>
+
+<strong style="color:#4CAF83;">
+● Online
+</strong>
+
+</div>
+
+
+<div class="setting-row">
+
+<div class="setting-info">
+
+<h3>
+Data Mode
+</h3>
+
+<p>
+The current interface uses demonstration data.
+</p>
+
+</div>
+
+<strong>
+Demo
+</strong>
+
+</div>
+
+
+<div class="setting-row">
+
+<div class="setting-info">
+
+<h3>
+System Version
+</h3>
+
+<p>
+Current Ocean × Eco-Tech interface version.
+</p>
+
+</div>
+
+<strong>
+2K26
+</strong>
+
+</div>
+
+
+<div class="setting-row">
+
+<div class="setting-info">
+
+<h3>
+Connection Type
+</h3>
+
+<p>
+Future versions can support IoT connectivity.
+</p>
+
+</div>
+
+<strong>
+IoT Ready
+</strong>
+
+</div>
+
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="settings-section" id="about-settings">
+
+<div class="section-heading">
+
+<h2>
+ℹ️ About This System
+</h2>
+
+<p>
+Ocean × Eco-Tech project information.
+</p>
+
+</div>
+
+
+<div class="setting-row">
+
+<div class="setting-info">
+
+<h3>
+Project
+</h3>
+
+<p>
+Ocean × Eco-Tech
+</p>
+
+</div>
+
+<strong>
+Waste Collector 2K26
+</strong>
+
+</div>
+
+
+<div class="setting-row">
+
+<div class="setting-info">
+
+<h3>
+Purpose
+</h3>
+
+<p>
+Demonstrating technology-driven environmental innovation.
+</p>
+
+</div>
+
+<strong>
+🌱 Sustainability
+</strong>
+
+</div>
+
+
+<div class="setting-row">
+
+<div class="setting-info">
+
+<h3>
+Website Version
+</h3>
+
+<p>
+Current interface release.
+</p>
+
+</div>
+
+<strong>
+v1.0
+</strong>
+
+</div>
+
+
+<div class="setting-row">
+
+<div class="setting-info">
+
+<h3>
+Technology Focus
+</h3>
+
+<p>
+Sensors, automation, data and environmental monitoring.
+</p>
+
+</div>
+
+<strong>
+🌊 Eco-Tech
+</strong>
+
+</div>
+
+
+</section>
+
+
+</div>
+
+</div>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div>
+🌊 OCEAN <span>× ECO-TECH</span>
+</div>
+
+<div>
+© 2026 Ocean × Eco-Tech
+</div>
+
+</footer>
+
+
+<script>
+
+/* ================= TABS ================= */
+
+const tabs =
+document.querySelectorAll(".tab");
+
+const sections =
+document.querySelectorAll(".settings-section");
+
+tabs.forEach(tab => {
+
+    tab.addEventListener("click", () => {
+
+        tabs.forEach(item =>
+            item.classList.remove("active")
+        );
+
+        sections.forEach(section =>
+            section.classList.remove("active")
+        );
+
+        tab.classList.add("active");
+
+        document
+        .getElementById(tab.dataset.tab)
+        .classList.add("active");
+
+    });
+
+});
+
+
+/* ================= SAVE ================= */
+
+function saveSettings(){
+
+    const status =
+    document.getElementById("status");
+
+    if(status){
+
+        status.style.display="block";
+
+        setTimeout(() => {
+
+            status.style.display="none";
+
+        },3000);
+
+    }else{
+
+        alert("✅ Settings saved!");
+
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>

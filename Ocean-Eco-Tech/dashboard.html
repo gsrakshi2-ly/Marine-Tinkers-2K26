@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Live Dashboard | Ocean × Eco-Tech</title>
+
+<style>
+
+/* ================= BASIC ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #F7FBFC;
+    color: #063B5C;
+}
+
+
+/* ================= NAVBAR ================= */
+
+nav {
+    height: 72px;
+    width: 100%;
+
+    background: #063B5C;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #20C7C9;
+}
+
+nav ul {
+    display: flex;
+    gap: 22px;
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+
+    transition: .3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #20C7C9;
+}
+
+.nav-btn {
+    background: #20C7C9;
+    color: #063B5C;
+
+    padding: 10px 18px;
+
+    border-radius: 25px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    margin-top: 72px;
+
+    min-height: 390px;
+
+    padding: 80px 7%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #063B5C,
+            #087A9A
+        );
+
+    color: white;
+
+    text-align: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.hero-icon {
+    font-size: 70px;
+
+    margin-bottom: 12px;
+
+    animation:
+        float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: #20C7C9;
+}
+
+.hero p {
+    max-width: 700px;
+
+    margin: auto;
+
+    line-height: 1.7;
+
+    color: #E0F4F7;
+}
+
+
+/* ================= STATUS ================= */
+
+.live-status {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 25px;
+
+    padding: 9px 18px;
+
+    border-radius: 25px;
+
+    background: rgba(255,255,255,.12);
+
+    font-size: 14px;
+}
+
+.status-dot {
+
+    width: 9px;
+    height: 9px;
+
+    background: #4CAF83;
+
+    border-radius: 50%;
+
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+
+    0% {
+        box-shadow: 0 0 0 0 rgba(76,175,131,.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 9px rgba(76,175,131,0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(76,175,131,0);
+    }
+
+}
+
+
+/* ================= BUBBLES ================= */
+
+.bubble {
+
+    position: absolute;
+
+    border: 2px solid rgba(255,255,255,.2);
+
+    border-radius: 50%;
+
+    animation: bubble 6s infinite ease-in-out;
+}
+
+.bubble1 {
+    width: 30px;
+    height: 30px;
+
+    left: 10%;
+    top: 90px;
+}
+
+.bubble2 {
+    width: 65px;
+    height: 65px;
+
+    right: 12%;
+    top: 80px;
+}
+
+.bubble3 {
+    width: 20px;
+    height: 20px;
+
+    left: 30%;
+    bottom: 50px;
+}
+
+@keyframes bubble {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-25px);
+    }
+
+}
+
+
+/* ================= SECTION ================= */
+
+section {
+    padding: 70px 7%;
+}
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 36px;
+
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #607D8B;
+}
+
+
+/* ================= SENSOR CARDS ================= */
+
+.sensor-grid {
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.sensor-card {
+
+    background: white;
+
+    padding: 27px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 8px 25px rgba(6,59,92,.08);
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition: .35s;
+}
+
+.sensor-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 35px rgba(6,59,92,.13);
+}
+
+.sensor-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 80px;
+    height: 80px;
+
+    border-radius: 50%;
+
+    background: #EAF9F7;
+
+    right: -30px;
+    top: -30px;
+}
+
+.sensor-icon {
+
+    font-size: 40px;
+
+    margin-bottom: 15px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.sensor-card h3 {
+
+    font-size: 15px;
+
+    color: #607D8B;
+
+    margin-bottom: 8px;
+}
+
+.sensor-value {
+
+    font-size: 34px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+.sensor-unit {
+
+    color: #20AEB0;
+
+    font-size: 13px;
+}
+
+
+/* ================= STATUS BAR ================= */
+
+.progress-box {
+
+    margin-top: 15px;
+}
+
+.progress-label {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 12px;
+
+    color: #607D8B;
+
+    margin-bottom: 6px;
+}
+
+.progress {
+
+    height: 7px;
+
+    background: #E6F0F2;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.progress-fill {
+
+    height: 100%;
+
+    background: #20C7C9;
+
+    border-radius: 10px;
+
+    animation: load 1.5s ease;
+}
+
+@keyframes load {
+
+    from {
+        width: 0;
+    }
+
+}
+
+
+/* ================= MAIN DASHBOARD ================= */
+
+.dashboard {
+
+    background: #EAF9F7;
+}
+
+.dashboard-grid {
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.4fr .6fr;
+
+    gap: 25px;
+}
+
+
+/* ================= DATA GRAPH ================= */
+
+.graph-card {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 23px;
+
+    box-shadow:
+        0 8px 25px rgba(6,59,92,.07);
+}
+
+.graph-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.graph-header h3 {
+    font-size: 21px;
+}
+
+.graph-label {
+    color: #20AEB0;
+    font-size: 13px;
+}
+
+
+/* GRAPH */
+
+.graph {
+
+    height: 250px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    padding-top: 20px;
+}
+
+.bar {
+
+    flex: 1;
+
+    background:
+        linear-gradient(
+            to top,
+            #063B5C,
+            #20C7C9
+        );
+
+    border-radius: 7px 7px 0 0;
+
+    min-height: 25px;
+
+    animation:
+        grow 1s ease;
+}
+
+@keyframes grow {
+
+    from {
+        height: 0;
+    }
+
+}
+
+
+/* ================= ALERTS ================= */
+
+.alert-card {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 23px;
+
+    box-shadow:
+        0 8px 25px rgba(6,59,92,.07);
+}
+
+.alert-card h3 {
+
+    margin-bottom: 20px;
+
+    font-size: 21px;
+}
+
+.alert {
+
+    display: flex;
+
+    gap: 13px;
+
+    padding: 14px;
+
+    margin-bottom: 12px;
+
+    border-radius: 13px;
+
+    background: #F7FBFC;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+.alert-icon {
+    font-size: 22px;
+}
+
+.alert strong {
+    display: block;
+
+    margin-bottom: 3px;
+}
+
+
+/* ================= SENSOR NETWORK ================= */
+
+.network {
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    background: #063B5C;
+
+    color: white;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.network h2 {
+
+    margin-bottom: 10px;
+
+    font-size: 27px;
+}
+
+.network > p {
+
+    color: #D4E9ED;
+
+    margin-bottom: 30px;
+}
+
+.network-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 18px;
+}
+
+.node {
+
+    background:
+        rgba(255,255,255,.08);
+
+    padding: 20px;
+
+    border-radius: 17px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    transition: .3s;
+}
+
+.node:hover {
+
+    background:
+        rgba(255,255,255,.14);
+
+    transform: translateY(-5px);
+}
+
+.node-icon {
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: #20C7C9;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #063B5C;
+
+    font-size: 20px;
+}
+
+.node h4 {
+    margin-bottom: 4px;
+}
+
+.node p {
+
+    color: #B9DDE2;
+
+    font-size: 12px;
+}
+
+
+/* ================= CTA ================= */
+
+.cta {
+
+    text-align: center;
+
+    background: #B9F3E4;
+}
+
+.cta h2 {
+
+    font-size: 36px;
+
+    margin-bottom: 15px;
+}
+
+.cta p {
+
+    max-width: 650px;
+
+    margin: auto auto 25px;
+
+    color: #355968;
+
+    line-height: 1.7;
+}
+
+.cta-btn {
+
+    display: inline-block;
+
+    background: #063B5C;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 14px 25px;
+
+    border-radius: 27px;
+
+    font-weight: bold;
+
+    transition: .3s;
+}
+
+.cta-btn:hover {
+
+    background: #20AEB0;
+
+    transform: translateY(-3px);
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+
+    background: #042D46;
+
+    color: white;
+
+    padding: 35px 6%;
+
+    display: flex;
+
+    justify-content: space-between;
+}
+
+footer span {
+    color: #20C7C9;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width: 950px) {
+
+    nav ul {
+        display: none;
+    }
+
+    .sensor-grid {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media(max-width: 600px) {
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .sensor-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .network-grid {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo">
+        🌊 OCEAN <span>× ECO-TECH</span>
+    </div>
+
+    <ul>
+
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="dashboard.html"
+               class="active">
+                Dashboard
+            </a>
+        </li>
+
+        <li>
+            <a href="map.html">
+                Map
+            </a>
+        </li>
+
+        <li>
+            <a href="solutions.html">
+                Solutions
+            </a>
+        </li>
+
+        <li>
+            <a href="impact.html">
+                Impact
+            </a>
+        </li>
+
+        <li>
+            <a href="about.html">
+                About
+            </a>
+        </li>
+
+        <li>
+            <a href="contact.html">
+                Contact
+            </a>
+        </li>
+
+    </ul>
+
+    <a href="map.html" class="nav-btn">
+        View Map 🗺️
+    </a>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<header class="hero">
+
+    <div class="bubble bubble1"></div>
+    <div class="bubble bubble2"></div>
+    <div class="bubble bubble3"></div>
+
+    <div class="hero-icon">
+        📡
+    </div>
+
+    <h1>
+        Live Ocean
+        <span>Dashboard</span>
+    </h1>
+
+    <p>
+        Monitor environmental conditions, sensor activity
+        and ocean pollution indicators through one connected
+        eco-tech dashboard.
+    </p>
+
+    <div class="live-status">
+
+        <span class="status-dot"></span>
+
+        System Online
+
+    </div>
+
+</header>
+
+
+<!-- ================= SENSOR CARDS ================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <h2>
+            📊 Environmental Sensors
+        </h2>
+
+        <p>
+            Current demo readings from the Ocean × Eco-Tech network.
+        </p>
+
+    </div>
+
+
+    <div class="sensor-grid">
+
+
+        <!-- TEMPERATURE -->
+
+        <div class="sensor-card">
+
+            <div class="sensor-icon">
+                🌡️
+            </div>
+
+            <h3>
+                Water Temperature
+            </h3>
+
+            <div class="sensor-value">
+                <span id="temperature">
+                    26.4
+                </span>°C
+            </div>
+
+            <div class="sensor-unit">
+                Normal range
+            </div>
+
+            <div class="progress-box">
+
+                <div class="progress-label">
+                    <span>Condition</span>
+                    <span>82%</span>
+                </div>
+
+                <div class="progress">
+                    <div
+                        class="progress-fill"
+                        style="width:82%">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PH -->
+
+        <div class="sensor-card">
+
+            <div class="sensor-icon">
+                💧
+            </div>
+
+            <h3>
+                Water pH
+            </h3>
+
+            <div class="sensor-value">
+                <span id="ph">
+                    7.8
+                </span>
+            </div>
+
+            <div class="sensor-unit">
+                Healthy range
+            </div>
+
+            <div class="progress-box">
+
+                <div class="progress-label">
+                    <span>Quality</span>
+                    <span>91%</span>
+                </div>
+
+                <div class="progress">
+                    <div
+                        class="progress-fill"
+                        style="width:91%">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- WASTE -->
+
+        <div class="sensor-card">
+
+            <div class="sensor-icon">
+                ♻️
+            </div>
+
+            <h3>
+                Floating Waste
+            </h3>
+
+            <div class="sensor-value">
+                <span id="waste">
+                    18
+                </span>
+            </div>
+
+            <div class="sensor-unit">
+                kg detected today
+            </div>
+
+            <div class="progress-box">
+
+                <div class="progress-label">
+                    <span>Collection</span>
+                    <span>68%</span>
+                </div>
+
+                <div class="progress">
+                    <div
+                        class="progress-fill"
+                        style="width:68%">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- OXYGEN -->
+
+        <div class="sensor-card">
+
+            <div class="sensor-icon">
+                🫧
+            </div>
+
+            <h3>
+                Dissolved Oxygen
+            </h3>
+
+            <div class="sensor-value">
+                <span id="oxygen">
+                    6.8
+                </span>
+            </div>
+
+            <div class="sensor-unit">
+                mg/L
+            </div>
+
+            <div class="progress-box">
+
+                <div class="progress-label">
+                    <span>Level</span>
+                    <span>88%</span>
+                </div>
+
+                <div class="progress">
+                    <div
+                        class="progress-fill"
+                        style="width:88%">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DATA ================= -->
+
+<section class="dashboard">
+
+    <div class="section-title">
+
+        <h2>
+            📈 Environmental Data
+        </h2>
+
+        <p>
+            Example sensor activity over the last 12 hours.
+        </p>
+
+    </div>
+
+
+    <div class="dashboard-grid">
+
+
+        <!-- GRAPH -->
+
+        <div class="graph-card">
+
+            <div class="graph-header">
+
+                <h3>
+                    Water Quality Index
+                </h3>
+
+                <span class="graph-label">
+                    LIVE DEMO
+                </span>
+
+            </div>
+
+
+            <div class="graph">
+
+                <div class="bar" style="height:48%"></div>
+                <div class="bar" style="height:58%"></div>
+                <div class="bar" style="height:51%"></div>
+                <div class="bar" style="height:68%"></div>
+                <div class="bar" style="height:73%"></div>
+                <div class="bar" style="height:65%"></div>
+                <div class="bar" style="height:80%"></div>
+                <div class="bar" style="height:76%"></div>
+                <div class="bar" style="height:85%"></div>
+                <div class="bar" style="height:78%"></div>
+                <div class="bar" style="height:88%"></div>
+                <div class="bar" style="height:91%"></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ALERTS -->
+
+        <div class="alert-card">
+
+            <h3>
+                ⚠️ Environmental Alerts
+            </h3>
+
+
+            <div class="alert">
+
+                <div class="alert-icon">
+                    🟢
+                </div>
+
+                <div>
+
+                    <strong>
+                        Water Quality Stable
+                    </strong>
+
+                    Current readings are within the
+                    monitored range.
+
+                </div>
+
+            </div>
+
+
+            <div class="alert">
+
+                <div class="alert-icon">
+                    🟡
+                </div>
+
+                <div>
+
+                    <strong>
+                        Waste Detected
+                    </strong>
+
+                    Floating waste has been detected
+                    near Monitoring Zone 03.
+
+                </div>
+
+            </div>
+
+
+            <div class="alert">
+
+                <div class="alert-icon">
+                    🔵
+                </div>
+
+                <div>
+
+                    <strong>
+                        Sensors Connected
+                    </strong>
+
+                    All active monitoring nodes are
+                    currently responding.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= NETWORK ================= -->
+
+<section>
+
+    <div class="network">
+
+        <h2>
+            📡 Smart Sensor Network
+        </h2>
+
+        <p>
+            Connected monitoring nodes continuously collect
+            environmental information for analysis.
+        </p>
+
+
+        <div class="network-grid">
+
+
+            <div class="node">
+
+                <div class="node-icon">
+                    01
+                </div>
+
+                <div>
+
+                    <h4>
+                        Zone Alpha
+                    </h4>
+
+                    <p>
+                        ● Online · Water Quality
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="node">
+
+                <div class="node-icon">
+                    02
+                </div>
+
+                <div>
+
+                    <h4>
+                        Zone Beta
+                    </h4>
+
+                    <p>
+                        ● Online · Waste Monitor
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="node">
+
+                <div class="node-icon">
+                    03
+                </div>
+
+                <div>
+
+                    <h4>
+                        Zone Gamma
+                    </h4>
+
+                    <p>
+                        ● Online · pH Sensor
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="node">
+
+                <div class="node-icon">
+                    04
+                </div>
+
+                <div>
+
+                    <h4>
+                        Zone Delta
+                    </h4>
+
+                    <p>
+                        ● Online · Temperature
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="node">
+
+                <div class="node-icon">
+                    05
+                </div>
+
+                <div>
+
+                    <h4>
+                        Zone Epsilon
+                    </h4>
+
+                    <p>
+                        ● Online · Oxygen Sensor
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="node">
+
+                <div class="node-icon">
+                    06
+                </div>
+
+                <div>
+
+                    <h4>
+                        Zone Zeta
+                    </h4>
+
+                    <p>
+                        ● Online · Waste Monitor
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+    <h2>
+        🗺️ Explore the Ocean Map
+    </h2>
+
+    <p>
+        View monitoring zones and explore how smart sensors
+        could help us understand our water bodies.
+    </p>
+
+    <a
+        href="map.html"
+        class="cta-btn"
+    >
+        Open Ocean Map →
+    </a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div>
+        🌊 OCEAN <span>× ECO-TECH</span>
+    </div>
+
+    <div>
+        © 2026 Ocean × Eco-Tech
+    </div>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+/* ================= LIVE DEMO VALUES ================= */
+
+function updateDashboard() {
+
+    let temperature =
+        (26 + Math.random() * 1.2).toFixed(1);
+
+    let ph =
+        (7.6 + Math.random() * .5).toFixed(1);
+
+    let waste =
+        Math.floor(15 + Math.random() * 8);
+
+    let oxygen =
+        (6.5 + Math.random() * .7).toFixed(1);
+
+
+    document.getElementById("temperature")
+        .textContent = temperature;
+
+    document.getElementById("ph")
+        .textContent = ph;
+
+    document.getElementById("waste")
+        .textContent = waste;
+
+    document.getElementById("oxygen")
+        .textContent = oxygen;
+
+}
+
+
+/* Update demo values every 4 seconds */
+
+setInterval(
+    updateDashboard,
+    4000
+);
+
+</script>
+
+
+</body>
+</html>
