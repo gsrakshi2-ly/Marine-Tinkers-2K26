@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Us | Ocean × Eco-Tech</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #F7FBFC;
+    color: #063B5C;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* ================= NAVBAR ================= */
+
+nav {
+    height: 72px;
+    width: 100%;
+
+    background: #063B5C;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #20C7C9;
+}
+
+nav ul {
+    display: flex;
+    gap: 22px;
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 14px;
+    transition: .3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #20C7C9;
+}
+
+.nav-btn {
+    background: #20C7C9;
+    color: #063B5C;
+
+    padding: 10px 18px;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+
+    margin-top: 72px;
+
+    min-height: 450px;
+
+    padding: 85px 7%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #063B5C,
+            #087A9A
+        );
+
+    color: white;
+
+    text-align: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.hero-icon {
+
+    font-size: 75px;
+
+    margin-bottom: 15px;
+
+    animation:
+        floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+}
+
+.hero h1 {
+
+    font-size: 52px;
+
+    margin-bottom: 18px;
+}
+
+.hero h1 span {
+
+    color: #20C7C9;
+}
+
+.hero p {
+
+    max-width: 720px;
+
+    margin: auto;
+
+    color: #E0F4F7;
+
+    line-height: 1.8;
+
+    font-size: 17px;
+}
+
+
+/* ================= SECTION ================= */
+
+section {
+    padding: 80px 7%;
+}
+
+.section-title {
+
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+
+    font-size: 38px;
+
+    margin-bottom: 12px;
+}
+
+.section-title p {
+
+    color: #607D8B;
+
+    line-height: 1.6;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about-container {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 45px;
+
+    align-items: center;
+}
+
+.about-text h2 {
+
+    font-size: 35px;
+
+    margin-bottom: 18px;
+}
+
+.about-text h2 span {
+
+    color: #20AEB0;
+}
+
+.about-text p {
+
+    color: #607D8B;
+
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+.about-list {
+
+    list-style: none;
+}
+
+.about-list li {
+
+    padding: 10px 0;
+
+    color: #355968;
+}
+
+
+/* ================= OCEAN VISUAL ================= */
+
+.ocean-visual {
+
+    min-height: 350px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #063B5C,
+            #087A9A
+        );
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-shadow:
+        0 12px 35px
+        rgba(6,59,92,.15);
+}
+
+.sun {
+
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: #B9F3E4;
+
+    position: absolute;
+
+    top: 45px;
+    right: 55px;
+
+    box-shadow:
+        0 0 35px
+        rgba(185,243,228,.4);
+}
+
+.fish {
+
+    position: absolute;
+
+    font-size: 38px;
+
+    animation:
+        swim 5s ease-in-out infinite;
+}
+
+.fish1 {
+    left: 15%;
+    top: 40%;
+}
+
+.fish2 {
+    right: 15%;
+    bottom: 25%;
+    animation-delay: 1.5s;
+}
+
+@keyframes swim {
+
+    0%,100% {
+        transform:
+            translateX(0);
+    }
+
+    50% {
+        transform:
+            translateX(30px);
+    }
+}
+
+.ocean-text {
+
+    color: white;
+
+    font-size: 42px;
+
+    font-weight: bold;
+
+    z-index: 2;
+}
+
+
+/* ================= VALUES ================= */
+
+.values {
+
+    background: #EAF9F7;
+}
+
+.values-grid {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 22px;
+}
+
+.value-card {
+
+    background: white;
+
+    padding: 30px 25px;
+
+    border-radius: 22px;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 25px
+        rgba(6,59,92,.07);
+
+    transition: .3s;
+}
+
+.value-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 15px 32px
+        rgba(6,59,92,.13);
+}
+
+.value-icon {
+
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+.value-card h3 {
+
+    margin-bottom: 10px;
+}
+
+.value-card p {
+
+    color: #607D8B;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* ================= PROJECT ================= */
+
+.project {
+
+    background: white;
+}
+
+.project-container {
+
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 20px;
+}
+
+.project-card {
+
+    padding: 28px;
+
+    background: #F7FBFC;
+
+    border-radius: 20px;
+
+    border:
+        1px solid #DCECEF;
+
+    transition: .3s;
+}
+
+.project-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color: #20C7C9;
+}
+
+.project-card div {
+
+    font-size: 35px;
+
+    margin-bottom: 13px;
+}
+
+.project-card h3 {
+
+    margin-bottom: 9px;
+}
+
+.project-card p {
+
+    color: #607D8B;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* ================= TEAM ================= */
+
+.team {
+
+    background: #063B5C;
+
+    color: white;
+
+    text-align: center;
+}
+
+.team h2 {
+
+    font-size: 36px;
+
+    margin-bottom: 15px;
+}
+
+.team > p {
+
+    max-width: 700px;
+
+    margin:
+        auto auto 35px;
+
+    color: #D4E9ED;
+
+    line-height: 1.8;
+}
+
+.team-grid {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 20px;
+}
+
+.team-card {
+
+    background:
+        rgba(255,255,255,.08);
+
+    padding: 28px 20px;
+
+    border-radius: 20px;
+
+    transition: .3s;
+}
+
+.team-card:hover {
+
+    background:
+        rgba(255,255,255,.14);
+
+    transform:
+        translateY(-6px);
+}
+
+.team-icon {
+
+    width: 70px;
+    height: 70px;
+
+    margin:
+        0 auto 15px;
+
+    border-radius: 50%;
+
+    background: #20C7C9;
+
+    color: #063B5C;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 32px;
+}
+
+.team-card h3 {
+
+    margin-bottom: 8px;
+}
+
+.team-card p {
+
+    color: #B9DDE2;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* ================= VISION ================= */
+
+.vision {
+
+    background: #B9F3E4;
+
+    text-align: center;
+}
+
+.vision h2 {
+
+    font-size: 36px;
+
+    margin-bottom: 15px;
+}
+
+.vision p {
+
+    max-width: 720px;
+
+    margin: auto;
+
+    color: #355968;
+
+    line-height: 1.8;
+}
+
+
+/* ================= CTA ================= */
+
+.cta {
+
+    text-align: center;
+
+    background: white;
+}
+
+.cta h2 {
+
+    font-size: 34px;
+
+    margin-bottom: 15px;
+}
+
+.cta p {
+
+    max-width: 650px;
+
+    margin:
+        auto auto 25px;
+
+    color: #607D8B;
+
+    line-height: 1.7;
+}
+
+.cta-btn {
+
+    display: inline-block;
+
+    background: #063B5C;
+
+    color: white;
+
+    padding: 14px 26px;
+
+    border-radius: 28px;
+
+    font-weight: bold;
+
+    transition: .3s;
+}
+
+.cta-btn:hover {
+
+    background: #20AEB0;
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+
+    background: #042D46;
+
+    color: white;
+
+    padding: 35px 6%;
+
+    display: flex;
+
+    justify-content: space-between;
+}
+
+footer span {
+
+    color: #20C7C9;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:950px) {
+
+    nav ul {
+        display: none;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+
+    .values-grid {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .project-container {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .team-grid {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+}
+
+@media(max-width:600px) {
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .values-grid,
+    .project-container,
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo">
+        🌊 OCEAN <span>× ECO-TECH</span>
+    </div>
+
+
+    <ul>
+
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="dashboard.html">
+                Live Data
+            </a>
+        </li>
+
+        <li>
+            <a href="map.html">
+                Map
+            </a>
+        </li>
+
+        <li>
+            <a href="solutions.html">
+                Solutions
+            </a>
+        </li>
+
+        <li>
+            <a href="impact.html">
+                Impact
+            </a>
+        </li>
+
+        <li>
+            <a
+                href="about.html"
+                class="active"
+            >
+                About
+            </a>
+        </li>
+
+        <li>
+            <a href="contact.html">
+                Get Involved
+            </a>
+        </li>
+
+    </ul>
+
+
+    <a
+        href="contact.html"
+        class="nav-btn"
+    >
+        Join Us 🌱
+    </a>
+
+</nav>
+
+
+
+<!-- ================= HERO ================= -->
+
+<header class="hero">
+
+    <div class="hero-icon">
+        🌊
+    </div>
+
+
+    <h1>
+
+        About
+        <span>Our Mission</span>
+
+    </h1>
+
+
+    <p>
+
+        Ocean × Eco-Tech is a student-driven project exploring
+        how technology, environmental awareness and creative
+        engineering can come together to tackle aquatic waste.
+
+    </p>
+
+</header>
+
+
+
+<!-- ================= ABOUT ================= -->
+
+<section>
+
+
+    <div class="about-container">
+
+
+        <div class="about-text">
+
+            <h2>
+
+                Technology for a
+                <span>Cleaner Ocean</span>
+
+            </h2>
+
+
+            <p>
+
+                Our project focuses on creating a marine waste
+                collection concept that combines a physical
+                prototype with a digital application.
+
+            </p>
+
+
+            <p>
+
+                The goal is to explore how engineering,
+                electronics and software can work together
+                to address an environmental challenge.
+
+            </p>
+
+
+            <ul class="about-list">
+
+                <li>
+                    🌊 Ocean-focused innovation
+                </li>
+
+                <li>
+                    ♻️ Responsible waste management
+                </li>
+
+                <li>
+                    🤖 Eco-tech and automation
+                </li>
+
+                <li>
+                    🐠 Marine-life awareness
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <div class="ocean-visual">
+
+            <div class="sun"></div>
+
+            <div class="fish fish1">
+                🐟
+            </div>
+
+            <div class="fish fish2">
+                🐠
+            </div>
+
+            <div class="ocean-text">
+                🌊 ECO
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= VALUES ================= -->
+
+<section class="values">
+
+
+    <div class="section-title">
+
+        <h2>
+            💙 What We Believe In
+        </h2>
+
+
+        <p>
+            The principles behind Ocean × Eco-Tech.
+        </p>
+
+    </div>
+
+
+    <div class="values-grid">
+
+
+        <div class="value-card">
+
+            <div class="value-icon">
+                🌱
+            </div>
+
+            <h3>
+                Sustainability
+            </h3>
+
+            <p>
+                Technology should help us think about
+                environmental problems responsibly.
+            </p>
+
+        </div>
+
+
+
+        <div class="value-card">
+
+            <div class="value-icon">
+                💡
+            </div>
+
+            <h3>
+                Innovation
+            </h3>
+
+            <p>
+                Creative ideas can turn everyday problems
+                into opportunities for learning and invention.
+            </p>
+
+        </div>
+
+
+
+        <div class="value-card">
+
+            <div class="value-icon">
+                🤝
+            </div>
+
+            <h3>
+                Collaboration
+            </h3>
+
+            <p>
+                Combining different skills can make
+                environmental projects stronger and smarter.
+            </p>
+
+        </div>
+
+
+
+        <div class="value-card">
+
+            <div class="value-icon">
+                🐠
+            </div>
+
+            <h3>
+                Marine Protection
+            </h3>
+
+            <p>
+                Technology operating around water should
+                consider the safety of aquatic ecosystems.
+            </p>
+
+        </div>
+
+
+
+        <div class="value-card">
+
+            <div class="value-icon">
+                📚
+            </div>
+
+            <h3>
+                Learning
+            </h3>
+
+            <p>
+                The project is an opportunity to learn
+                coding, electronics, design and science.
+            </p>
+
+        </div>
+
+
+
+        <div class="value-card">
+
+            <div class="value-icon">
+                🌍
+            </div>
+
+            <h3>
+                Responsibility
+            </h3>
+
+            <p>
+                Environmental innovation should be guided
+                by awareness and responsible choices.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PROJECT ================= -->
+
+<section class="project">
+
+
+    <div class="section-title">
+
+        <h2>
+            🔧 What We're Building
+        </h2>
+
+
+        <p>
+            The project combines several areas of technology.
+        </p>
+
+    </div>
+
+
+    <div class="project-container">
+
+
+        <div class="project-card">
+
+            <div>
+                🚤
+            </div>
+
+            <h3>
+                Floating Prototype
+            </h3>
+
+            <p>
+                A prototype designed to move across water
+                and collect floating waste.
+            </p>
+
+        </div>
+
+
+
+        <div class="project-card">
+
+            <div>
+                ⚙️
+            </div>
+
+            <h3>
+                Electronics
+            </h3>
+
+            <p>
+                A future hardware layer can use a
+                microcontroller and sensors.
+            </p>
+
+        </div>
+
+
+
+        <div class="project-card">
+
+            <div>
+                💻
+            </div>
+
+            <h3>
+                Web Application
+            </h3>
+
+            <p>
+                A digital interface designed to display
+                information and interact with the project.
+            </p>
+
+        </div>
+
+
+
+        <div class="project-card">
+
+            <div>
+                🗺️
+            </div>
+
+            <h3>
+                Mapping
+            </h3>
+
+            <p>
+                Future location information can help
+                visualize collection and monitoring areas.
+            </p>
+
+        </div>
+
+
+
+        <div class="project-card">
+
+            <div>
+                📊
+            </div>
+
+            <h3>
+                Data Analysis
+            </h3>
+
+            <p>
+                Sensor data can eventually be transformed
+                into useful environmental information.
+            </p>
+
+        </div>
+
+
+
+        <div class="project-card">
+
+            <div>
+                🐠
+            </div>
+
+            <h3>
+                Safety Systems
+            </h3>
+
+            <p>
+                Future detection systems can be explored
+                to help protect marine life.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= TEAM ================= -->
+
+<section class="team">
+
+
+    <h2>
+        👥 Built Through Collaboration
+    </h2>
+
+
+    <p>
+
+        Projects like this bring together creativity,
+        engineering, environmental thinking and coding.
+
+    </p>
+
+
+    <div class="team-grid">
+
+
+        <div class="team-card">
+
+            <div class="team-icon">
+                💻
+            </div>
+
+            <h3>
+                Coding
+            </h3>
+
+            <p>
+                Building the digital interface and
+                future application features.
+            </p>
+
+        </div>
+
+
+
+        <div class="team-card">
+
+            <div class="team-icon">
+                ⚙️
+            </div>
+
+            <h3>
+                Engineering
+            </h3>
+
+            <p>
+                Designing the physical structure,
+                movement and collection system.
+            </p>
+
+        </div>
+
+
+
+        <div class="team-card">
+
+            <div class="team-icon">
+                🌱
+            </div>
+
+            <h3>
+                Environmental Thinking
+            </h3>
+
+            <p>
+                Keeping sustainability and marine
+                protection at the center of the project.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= VISION ================= -->
+
+<section class="vision">
+
+
+    <h2>
+        🌍 Our Vision
+    </h2>
+
+
+    <p>
+
+        We imagine a future where environmental problems
+        become opportunities for young innovators to learn,
+        experiment and create meaningful solutions.
+
+    </p>
+
+</section>
+
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+
+    <h2>
+        🌱 Want to Be Part of the Mission?
+    </h2>
+
+
+    <p>
+
+        Explore the project, learn about the technology
+        and share your ideas for a cleaner ocean.
+
+    </p>
+
+
+    <a
+        href="contact.html"
+        class="cta-btn"
+    >
+        Get Involved →
+    </a>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div>
+
+        🌊 OCEAN
+        <span>
+            × ECO-TECH
+        </span>
+
+    </div>
+
+
+    <div>
+
+        © 2026 Ocean × Eco-Tech
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>

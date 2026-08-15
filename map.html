@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Ocean Map | Ocean × Eco-Tech</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #F7FBFC;
+    color: #063B5C;
+}
+
+
+/* ================= NAVBAR ================= */
+
+nav {
+    height: 72px;
+    width: 100%;
+
+    background: #063B5C;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    position: fixed;
+    top: 0;
+
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #20C7C9;
+}
+
+nav ul {
+    display: flex;
+    gap: 22px;
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: .3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #20C7C9;
+}
+
+.nav-btn {
+    background: #20C7C9;
+    color: #063B5C;
+
+    padding: 10px 18px;
+
+    border-radius: 25px;
+
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+
+    margin-top: 72px;
+
+    min-height: 360px;
+
+    padding: 75px 7%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #063B5C,
+            #087A9A
+        );
+
+    color: white;
+
+    text-align: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.hero-icon {
+    font-size: 70px;
+
+    margin-bottom: 12px;
+
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: #20C7C9;
+}
+
+.hero p {
+    max-width: 720px;
+    margin: auto;
+
+    color: #E0F4F7;
+
+    line-height: 1.8;
+}
+
+
+/* ================= MAP SECTION ================= */
+
+.map-section {
+    padding: 70px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #607D8B;
+}
+
+
+/* ================= MAP ================= */
+
+.map-container {
+
+    max-width: 1150px;
+
+    height: 560px;
+
+    margin: auto;
+
+    border-radius: 28px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at 30% 35%,
+            #087A9A,
+            #07506E 45%,
+            #063B5C 100%
+        );
+
+    box-shadow:
+        0 12px 35px rgba(6,59,92,.15);
+}
+
+
+/* MAP GRID */
+
+.map-container::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.08) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+
+    pointer-events: none;
+}
+
+
+/* OCEAN TEXT */
+
+.ocean-label {
+
+    position: absolute;
+
+    color: rgba(255,255,255,.15);
+
+    font-size: 45px;
+
+    font-weight: bold;
+
+    letter-spacing: 8px;
+
+    transform: rotate(-12deg);
+}
+
+
+/* LAND SHAPES */
+
+.land {
+    position: absolute;
+
+    background: #B9D69A;
+
+    opacity: .9;
+
+    box-shadow:
+        inset 0 0 15px
+        rgba(0,0,0,.12);
+}
+
+.land1 {
+
+    width: 280px;
+    height: 160px;
+
+    left: -70px;
+    top: 60px;
+
+    border-radius:
+        70% 30% 45% 55%;
+}
+
+.land2 {
+
+    width: 180px;
+    height: 260px;
+
+    right: 30px;
+    bottom: -80px;
+
+    border-radius:
+        45% 55% 30% 70%;
+}
+
+.land3 {
+
+    width: 100px;
+    height: 70px;
+
+    left: 45%;
+    top: 70px;
+
+    border-radius: 50%;
+}
+
+
+/* ================= MARKERS ================= */
+
+.marker {
+
+    position: absolute;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    background: #20C7C9;
+
+    border: 4px solid white;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.25);
+
+    transition: .3s;
+
+    z-index: 5;
+}
+
+.marker:hover {
+
+    transform:
+        scale(1.2);
+
+    background: #B9F3E4;
+}
+
+
+/* MARKER POSITIONS */
+
+.marker1 {
+    left: 28%;
+    top: 30%;
+}
+
+.marker2 {
+    left: 53%;
+    top: 45%;
+}
+
+.marker3 {
+    right: 20%;
+    top: 25%;
+}
+
+.marker4 {
+    left: 40%;
+    bottom: 22%;
+}
+
+
+/* ================= INFO BOX ================= */
+
+.map-info {
+
+    position: absolute;
+
+    bottom: 25px;
+    left: 25px;
+
+    background:
+        rgba(255,255,255,.95);
+
+    padding: 18px 22px;
+
+    border-radius: 16px;
+
+    width: 270px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.15);
+
+    z-index: 10;
+}
+
+.map-info h3 {
+    margin-bottom: 7px;
+}
+
+.map-info p {
+
+    color: #607D8B;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* ================= LEGEND ================= */
+
+.legend {
+
+    position: absolute;
+
+    right: 25px;
+    bottom: 25px;
+
+    background:
+        rgba(255,255,255,.95);
+
+    padding: 18px;
+
+    border-radius: 16px;
+
+    z-index: 10;
+}
+
+.legend h3 {
+    margin-bottom: 12px;
+}
+
+.legend-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    font-size: 13px;
+
+    margin-bottom: 8px;
+}
+
+.legend-dot {
+
+    width: 13px;
+    height: 13px;
+
+    border-radius: 50%;
+
+    background: #20C7C9;
+}
+
+
+/* ================= ZONES ================= */
+
+.zones {
+
+    background: #EAF9F7;
+}
+
+.zone-grid {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 22px;
+}
+
+.zone-card {
+
+    background: white;
+
+    padding: 28px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 8px 25px rgba(6,59,92,.08);
+
+    transition: .3s;
+}
+
+.zone-card:hover {
+
+    transform:
+        translateY(-7px);
+}
+
+.zone-icon {
+
+    font-size: 40px;
+
+    margin-bottom: 14px;
+}
+
+.zone-card h3 {
+
+    margin-bottom: 9px;
+}
+
+.zone-card p {
+
+    color: #607D8B;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+.status {
+
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 6px 11px;
+
+    border-radius: 12px;
+
+    background: #FFF7E8;
+
+    color: #946C27;
+
+    font-size: 11px;
+
+    font-weight: bold;
+}
+
+
+/* ================= CTA ================= */
+
+.cta {
+
+    background: #B9F3E4;
+
+    text-align: center;
+}
+
+.cta h2 {
+
+    font-size: 35px;
+
+    margin-bottom: 15px;
+}
+
+.cta p {
+
+    max-width: 650px;
+
+    margin: auto auto 25px;
+
+    color: #355968;
+
+    line-height: 1.7;
+}
+
+.cta-btn {
+
+    display: inline-block;
+
+    background: #063B5C;
+
+    color: white;
+
+    padding: 14px 25px;
+
+    border-radius: 27px;
+
+    font-weight: bold;
+
+    transition: .3s;
+}
+
+.cta-btn:hover {
+
+    background: #20AEB0;
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+
+    background: #042D46;
+
+    color: white;
+
+    padding: 35px 6%;
+
+    display: flex;
+
+    justify-content: space-between;
+}
+
+footer span {
+    color: #20C7C9;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px) {
+
+    nav ul {
+        display: none;
+    }
+
+    .zone-grid {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+}
+
+@media(max-width:600px) {
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .map-container {
+        height: 470px;
+    }
+
+    .zone-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .map-info {
+        width: 220px;
+    }
+
+    .legend {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo">
+        🌊 OCEAN <span>× ECO-TECH</span>
+    </div>
+
+
+    <ul>
+
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="dashboard.html">
+                Live Data
+            </a>
+        </li>
+
+        <li>
+            <a
+                href="map.html"
+                class="active"
+            >
+                Map
+            </a>
+        </li>
+
+        <li>
+            <a href="solutions.html">
+                Solutions
+            </a>
+        </li>
+
+        <li>
+            <a href="impact.html">
+                Impact
+            </a>
+        </li>
+
+        <li>
+            <a href="about.html">
+                About
+            </a>
+        </li>
+
+        <li>
+            <a href="contact.html">
+                Get Involved
+            </a>
+        </li>
+
+    </ul>
+
+
+    <a
+        href="dashboard.html"
+        class="nav-btn"
+    >
+        Live Data 📡
+    </a>
+
+</nav>
+
+
+
+<!-- ================= HERO ================= -->
+
+<header class="hero">
+
+    <div class="hero-icon">
+        🗺️
+    </div>
+
+
+    <h1>
+
+        Interactive Ocean
+        <span>Map</span>
+
+    </h1>
+
+
+    <p>
+
+        Explore planned monitoring zones and visualize
+        how Ocean × Eco-Tech could monitor and protect
+        aquatic environments.
+
+    </p>
+
+</header>
+
+
+
+<!-- ================= MAP ================= -->
+
+<section class="map-section">
+
+
+    <div class="section-title">
+
+        <h2>
+            🌊 Monitoring Environment
+        </h2>
+
+
+        <p>
+            These are demonstration zones for the prototype.
+            They are not live GPS locations.
+        </p>
+
+    </div>
+
+
+    <div class="map-container">
+
+
+        <div class="ocean-label">
+            OCEAN
+        </div>
+
+
+        <!-- LAND -->
+
+        <div class="land land1"></div>
+
+        <div class="land land2"></div>
+
+        <div class="land land3"></div>
+
+
+        <!-- MARKERS -->
+
+        <div
+            class="marker marker1"
+            title="Zone Alpha"
+        >
+            📡
+        </div>
+
+
+        <div
+            class="marker marker2"
+            title="Zone Beta"
+        >
+            ♻️
+        </div>
+
+
+        <div
+            class="marker marker3"
+            title="Zone Gamma"
+        >
+            🐠
+        </div>
+
+
+        <div
+            class="marker marker4"
+            title="Zone Delta"
+        >
+            🌱
+        </div>
+
+
+        <!-- INFO -->
+
+        <div class="map-info">
+
+            <h3>
+                📍 Demo Monitoring Area
+            </h3>
+
+
+            <p>
+
+                Prototype monitoring zones are
+                shown here for visualization.
+                Real GPS positions will be added
+                after hardware integration.
+
+            </p>
+
+        </div>
+
+
+        <!-- LEGEND -->
+
+        <div class="legend">
+
+            <h3>
+                Legend
+            </h3>
+
+
+            <div class="legend-item">
+
+                <span class="legend-dot"></span>
+
+                Planned Zone
+
+            </div>
+
+
+            <div class="legend-item">
+
+                📡 Sensor Node
+
+            </div>
+
+
+            <div class="legend-item">
+
+                ♻️ Waste Area
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ZONES ================= -->
+
+<section class="zones">
+
+
+    <div class="section-title">
+
+        <h2>
+            📍 Monitoring Zones
+        </h2>
+
+
+        <p>
+            Planned areas for future sensor deployment.
+        </p>
+
+    </div>
+
+
+    <div class="zone-grid">
+
+
+        <div class="zone-card">
+
+            <div class="zone-icon">
+                📡
+            </div>
+
+
+            <h3>
+                Zone Alpha
+            </h3>
+
+
+            <p>
+
+                Planned area for environmental
+                monitoring and sensor testing.
+
+            </p>
+
+
+            <span class="status">
+                PLANNED
+            </span>
+
+        </div>
+
+
+
+        <div class="zone-card">
+
+            <div class="zone-icon">
+                ♻️
+            </div>
+
+
+            <h3>
+                Zone Beta
+            </h3>
+
+
+            <p>
+
+                Planned waste-collection monitoring
+                area for the prototype.
+
+            </p>
+
+
+            <span class="status">
+                PLANNED
+            </span>
+
+        </div>
+
+
+
+        <div class="zone-card">
+
+            <div class="zone-icon">
+                🐠
+            </div>
+
+
+            <h3>
+                Zone Gamma
+            </h3>
+
+
+            <p>
+
+                Marine-life safety zone where the
+                system could monitor nearby activity.
+
+            </p>
+
+
+            <span class="status">
+                PLANNED
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+
+    <h2>
+        📡 Want to See the Data?
+    </h2>
+
+
+    <p>
+
+        Visit the dashboard to see where real sensor
+        readings will appear once the prototype
+        hardware is connected.
+
+    </p>
+
+
+    <a
+        href="dashboard.html"
+        class="cta-btn"
+    >
+        Open Live Dashboard →
+    </a>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+
+    <div>
+
+        🌊 OCEAN
+        <span>
+            × ECO-TECH
+        </span>
+
+    </div>
+
+
+    <div>
+
+        © 2026 Ocean × Eco-Tech
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>
