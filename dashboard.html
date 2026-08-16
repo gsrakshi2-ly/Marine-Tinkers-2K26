@@ -3,758 +3,905 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<title>Live Data | Ocean × Eco-Tech</title>
 
-    <title>Live Data | Ocean × Eco-Tech</title>
+<style>
 
+/* =====================================================
+   GLOBAL
+===================================================== */
 
-    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+body {
+    background: #F7FBFC;
+    color: #063B5C;
+}
 
-            font-family: Arial, sans-serif;
+a {
+    text-decoration: none;
+}
 
-            scroll-behavior: smooth;
-        }
 
+/* =====================================================
+   NAVBAR
+===================================================== */
 
-        body {
-            background: #F7FBFC;
-            color: #063B5C;
-        }
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
 
+    width: 100%;
+    height: 72px;
 
-        a {
-            text-decoration: none;
-        }
+    padding: 0 6%;
 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-        /* ================= NAVBAR ================= */
+    background: rgba(6, 59, 92, 0.96);
 
-        nav {
+    backdrop-filter: blur(12px);
 
-            height: 72px;
-            width: 100%;
+    z-index: 1000;
 
-            background: #063B5C;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
 
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+.logo {
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: .5px;
+}
 
-            padding: 0 6%;
+.logo span {
+    color: #20C7C9;
+}
 
-            position: fixed;
-            top: 0;
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
 
-            z-index: 1000;
-        }
+nav ul li a {
+    color: #D8F1F4;
+    font-size: 14px;
+    transition: .3s;
+}
 
+nav ul li a:hover,
+nav ul li a.active {
+    color: #20C7C9;
+}
 
-        .logo {
+.nav-btn {
+    padding: 11px 20px;
 
-            color: white;
+    background: #20C7C9;
+    color: #063B5C;
 
-            font-size: 21px;
+    border-radius: 30px;
 
-            font-weight: bold;
-        }
+    font-size: 13px;
+    font-weight: bold;
 
+    transition: .3s;
+}
 
-        .logo span {
-            color: #20C7C9;
-        }
+.nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(32,199,201,.25);
+}
 
 
-        nav ul {
+/* =====================================================
+   HERO
+===================================================== */
 
-            display: flex;
+.hero {
+    margin-top: 72px;
 
-            gap: 22px;
+    min-height: 500px;
 
-            list-style: none;
-        }
+    padding: 100px 7%;
 
+    position: relative;
+    overflow: hidden;
 
-        nav ul li a {
+    text-align: center;
+    color: white;
 
-            color: white;
+    background:
+        radial-gradient(
+            circle at 15% 30%,
+            rgba(32,199,201,.18),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(185,243,228,.12),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #042D46,
+            #063B5C,
+            #087A9A
+        );
+}
 
-            font-size: 14px;
+.hero::after {
+    content: "";
 
-            transition: .3s;
-        }
+    position: absolute;
 
+    left: -10%;
+    bottom: -150px;
 
-        nav ul li a:hover,
-        nav ul li a.active {
+    width: 120%;
+    height: 250px;
 
-            color: #20C7C9;
-        }
+    border-radius: 50%;
 
+    background: rgba(32,199,201,.08);
+}
 
-        .nav-btn {
 
-            background: #20C7C9;
+/* =====================================================
+   BUBBLES
+===================================================== */
 
-            color: #063B5C;
+.bubble {
+    position: absolute;
 
-            padding: 10px 18px;
+    border: 1px solid rgba(255,255,255,.18);
 
-            border-radius: 25px;
+    border-radius: 50%;
 
-            font-weight: bold;
-        }
+    animation: floatBubble 6s ease-in-out infinite;
+}
 
+.bubble1 {
+    width: 45px;
+    height: 45px;
 
-        /* ================= HERO ================= */
+    left: 12%;
+    top: 110px;
+}
 
-        .hero {
+.bubble2 {
+    width: 90px;
+    height: 90px;
 
-            margin-top: 72px;
+    right: 10%;
+    top: 100px;
 
-            min-height: 470px;
+    animation-delay: 1s;
+}
 
-            padding: 90px 7%;
+.bubble3 {
+    width: 25px;
+    height: 25px;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #063B5C,
-                    #087A9A
-                );
+    left: 25%;
+    bottom: 100px;
 
-            color: white;
+    animation-delay: 2s;
+}
 
-            text-align: center;
+.bubble4 {
+    width: 55px;
+    height: 55px;
 
-            position: relative;
+    right: 25%;
+    bottom: 70px;
 
-            overflow: hidden;
-        }
+    animation-delay: 3s;
+}
 
+@keyframes floatBubble {
 
-        .hero-icon {
+    0%,100% {
+        transform: translateY(0);
+    }
 
-            font-size: 75px;
+    50% {
+        transform: translateY(-25px);
+    }
 
-            margin-bottom: 15px;
+}
 
-            animation:
-                floating 3s ease-in-out infinite;
-        }
 
+/* =====================================================
+   HERO CONTENT
+===================================================== */
 
-        @keyframes floating {
+.hero-content {
+    position: relative;
+    z-index: 2;
 
-            0%,100% {
-                transform: translateY(0);
-            }
+    max-width: 850px;
 
-            50% {
-                transform: translateY(-15px);
-            }
+    margin: auto;
+}
 
-        }
+.hero-icon {
+    width: 90px;
+    height: 90px;
 
+    margin: 0 auto 25px;
 
-        .hero h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-            font-size: 52px;
+    border-radius: 50%;
 
-            margin-bottom: 18px;
-        }
+    background: rgba(32,199,201,.12);
 
+    border: 1px solid rgba(32,199,201,.35);
 
-        .hero h1 span {
+    font-size: 45px;
 
-            color: #20C7C9;
-        }
+    box-shadow:
+        0 0 40px rgba(32,199,201,.12);
 
+    animation: floating 3s ease-in-out infinite;
+}
 
-        .hero p {
+@keyframes floating {
 
-            max-width: 720px;
+    0%,100% {
+        transform: translateY(0);
+    }
 
-            margin: auto;
+    50% {
+        transform: translateY(-10px);
+    }
 
-            color: #E0F4F7;
+}
 
-            line-height: 1.8;
+.hero h1 {
+    font-size: clamp(40px, 6vw, 62px);
 
-            font-size: 17px;
-        }
+    line-height: 1.1;
 
+    margin-bottom: 20px;
+}
 
-        /* ================= BUBBLES ================= */
+.hero h1 span {
+    color: #20C7C9;
+}
 
-        .bubble {
+.hero p {
+    max-width: 700px;
 
-            position: absolute;
+    margin: auto;
 
-            border: 2px solid
-                rgba(255,255,255,.2);
+    color: #D7EEF1;
 
-            border-radius: 50%;
+    line-height: 1.8;
 
-            animation:
-                bubbleFloat 6s ease-in-out infinite;
-        }
+    font-size: 16px;
+}
 
 
-        .bubble1 {
+/* =====================================================
+   SYSTEM STATUS
+===================================================== */
 
-            width: 35px;
-            height: 35px;
+.system-status {
 
-            left: 12%;
-            top: 110px;
-        }
+    display: inline-flex;
 
+    align-items: center;
+    gap: 10px;
 
-        .bubble2 {
+    margin-top: 28px;
 
-            width: 75px;
-            height: 75px;
+    padding: 11px 18px;
 
-            right: 12%;
-            top: 90px;
-        }
+    border-radius: 30px;
 
+    background: rgba(255,255,255,.08);
 
-        .bubble3 {
+    border: 1px solid rgba(255,255,255,.12);
 
-            width: 20px;
-            height: 20px;
+    color: #DFF9F5;
 
-            left: 28%;
-            bottom: 55px;
-        }
+    font-size: 13px;
+}
 
+.status-dot {
 
-        @keyframes bubbleFloat {
+    width: 9px;
+    height: 9px;
 
-            0%,100% {
-                transform: translateY(0);
-            }
+    border-radius: 50%;
 
-            50% {
-                transform: translateY(-25px);
-            }
+    background: #E3A72F;
 
-        }
+    box-shadow:
+        0 0 12px rgba(227,167,47,.5);
+}
 
 
-        /* ================= STATUS ================= */
+/* =====================================================
+   SECTIONS
+===================================================== */
 
-        .system-status {
+section {
+    padding: 85px 7%;
+}
 
-            display: inline-flex;
+.section-title {
+    max-width: 700px;
 
-            align-items: center;
+    margin: 0 auto 45px;
 
-            gap: 9px;
+    text-align: center;
+}
 
-            margin-top: 25px;
+.section-title h2 {
+    font-size: 36px;
 
-            padding: 10px 18px;
+    margin-bottom: 12px;
+}
 
-            border-radius: 25px;
+.section-title p {
+    color: #607D8B;
 
-            background:
-                rgba(255,255,255,.12);
+    line-height: 1.7;
+}
 
-            color: #DFF9F5;
 
-            font-size: 14px;
-        }
+/* =====================================================
+   SENSOR CARDS
+===================================================== */
 
+.sensor-grid {
 
-        .status-dot {
+    max-width: 1150px;
 
-            width: 9px;
-            height: 9px;
+    margin: auto;
 
-            background: #E3A72F;
+    display: grid;
 
-            border-radius: 50%;
-        }
+    grid-template-columns:
+        repeat(4, 1fr);
 
+    gap: 20px;
+}
 
-        /* ================= SECTION ================= */
+.sensor-card {
 
-        section {
+    position: relative;
 
-            padding: 80px 7%;
-        }
+    padding: 30px;
 
+    background: white;
 
-        .section-title {
+    border-radius: 24px;
 
-            text-align: center;
+    border: 1px solid #E3EEF1;
 
-            margin-bottom: 45px;
-        }
+    box-shadow:
+        0 10px 30px rgba(6,59,92,.06);
 
+    overflow: hidden;
 
-        .section-title h2 {
+    transition: .3s;
+}
 
-            font-size: 38px;
+.sensor-card::before {
 
-            margin-bottom: 12px;
-        }
+    content: "";
 
+    position: absolute;
 
-        .section-title p {
+    top: 0;
+    left: 0;
 
-            color: #607D8B;
-        }
+    width: 100%;
+    height: 4px;
 
+    background:
+        linear-gradient(
+            90deg,
+            #20C7C9,
+            #B9F3E4
+        );
+}
 
-        /* ================= SENSOR GRID ================= */
+.sensor-card:hover {
 
-        .sensor-grid {
+    transform: translateY(-8px);
 
-            max-width: 1150px;
+    box-shadow:
+        0 18px 40px rgba(6,59,92,.12);
+}
 
-            margin: auto;
+.sensor-icon {
 
-            display: grid;
+    width: 55px;
+    height: 55px;
 
-            grid-template-columns:
-                repeat(4, 1fr);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-            gap: 20px;
-        }
+    margin-bottom: 20px;
 
+    border-radius: 16px;
 
-        .sensor-card {
+    background: #EAF9F7;
 
-            background: white;
+    font-size: 27px;
+}
 
-            padding: 28px;
+.sensor-card h3 {
 
-            border-radius: 22px;
+    color: #607D8B;
 
-            box-shadow:
-                0 8px 25px
-                rgba(6,59,92,.08);
+    font-size: 14px;
 
-            transition: .3s;
-        }
+    margin-bottom: 13px;
+}
 
+.sensor-value {
 
-        .sensor-card:hover {
+    font-size: 19px;
 
-            transform:
-                translateY(-7px);
+    font-weight: bold;
 
-            box-shadow:
-                0 15px 35px
-                rgba(6,59,92,.13);
-        }
+    margin-bottom: 16px;
 
+    color: #063B5C;
+}
 
-        .sensor-icon {
+.waiting {
 
-            font-size: 42px;
+    display: inline-flex;
 
-            margin-bottom: 15px;
-        }
+    padding: 7px 11px;
 
+    border-radius: 20px;
 
-        .sensor-card h3 {
+    background: #FFF7E8;
 
-            font-size: 16px;
+    color: #946C27;
 
-            margin-bottom: 12px;
+    font-size: 10px;
 
-            color: #607D8B;
-        }
+    font-weight: bold;
 
+    letter-spacing: .5px;
+}
 
-        .sensor-value {
 
-            font-size: 20px;
+/* =====================================================
+   DATA SECTION
+===================================================== */
 
-            font-weight: bold;
+.data-section {
 
-            margin-bottom: 12px;
-        }
+    background:
+        linear-gradient(
+            180deg,
+            #EAF9F7,
+            #F3FBFA
+        );
+}
 
+.data-container {
 
-        .waiting {
+    max-width: 1150px;
 
-            display: inline-block;
+    margin: auto;
 
-            padding: 6px 10px;
+    display: grid;
 
-            border-radius: 10px;
+    grid-template-columns:
+        1fr 1fr;
 
-            background: #FFF7E8;
+    gap: 25px;
+}
 
-            color: #946C27;
+.data-card {
 
-            font-size: 11px;
+    background: white;
 
-            font-weight: bold;
-        }
+    padding: 32px;
 
+    border-radius: 25px;
 
-        /* ================= DATA SECTION ================= */
+    border: 1px solid #DDECEE;
 
-        .data-section {
+    box-shadow:
+        0 10px 30px rgba(6,59,92,.06);
+}
 
-            background: #EAF9F7;
-        }
+.data-card h3 {
 
+    font-size: 21px;
 
-        .data-container {
+    margin-bottom: 12px;
+}
 
-            max-width: 1050px;
+.data-card > p {
 
-            margin: auto;
+    color: #607D8B;
 
-            display: grid;
+    line-height: 1.7;
 
-            grid-template-columns:
-                1fr 1fr;
+    font-size: 14px;
+}
 
-            gap: 25px;
-        }
 
+/* =====================================================
+   EMPTY DATA BOX
+===================================================== */
 
-        .data-card {
+.empty-graph {
 
-            background: white;
+    height: 240px;
 
-            padding: 30px;
+    margin-top: 25px;
 
-            border-radius: 23px;
+    display: flex;
 
-            box-shadow:
-                0 8px 25px
-                rgba(6,59,92,.07);
-        }
+    align-items: center;
+    justify-content: center;
 
+    text-align: center;
 
-        .data-card h3 {
+    border-radius: 18px;
 
-            font-size: 21px;
+    border: 2px dashed #C8E1E5;
 
-            margin-bottom: 15px;
-        }
+    background:
+        radial-gradient(
+            circle at center,
+            #F0FAF9,
+            #F9FCFD
+        );
 
+    color: #607D8B;
+}
 
-        .data-card p {
+.empty-content {
 
-            color: #607D8B;
+    max-width: 330px;
+}
 
-            line-height: 1.7;
+.empty-icon {
 
-            font-size: 14px;
-        }
+    width: 65px;
+    height: 65px;
 
+    margin: 0 auto 15px;
 
-        /* ================= EMPTY GRAPH ================= */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-        .empty-graph {
+    border-radius: 50%;
 
-            height: 220px;
+    background: #EAF9F7;
 
-            margin-top: 20px;
+    font-size: 30px;
+}
 
-            border: 2px dashed #C9E1E5;
+.empty-content strong {
 
-            border-radius: 15px;
+    display: block;
 
-            display: flex;
+    margin-bottom: 8px;
 
-            align-items: center;
+    color: #063B5C;
 
-            justify-content: center;
+    font-size: 15px;
+}
 
-            text-align: center;
+.empty-content span {
 
-            color: #607D8B;
+    font-size: 12px;
 
-            background: #F9FCFD;
-        }
+    line-height: 1.6;
+}
 
 
-        .empty-graph div {
+/* =====================================================
+   NETWORK
+===================================================== */
 
-            max-width: 350px;
-        }
+.network {
 
+    max-width: 1150px;
 
-        .empty-icon {
+    margin: auto;
 
-            font-size: 45px;
+    padding: 40px;
 
-            margin-bottom: 10px;
-        }
+    border-radius: 28px;
 
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(32,199,201,.15),
+            transparent 30%
+        ),
+        #063B5C;
 
-        /* ================= NETWORK ================= */
+    color: white;
 
-        .network {
+    box-shadow:
+        0 15px 40px rgba(6,59,92,.12);
+}
 
-            max-width: 1100px;
+.network h2 {
 
-            margin: auto;
+    font-size: 29px;
 
-            background: #063B5C;
+    margin-bottom: 10px;
+}
 
-            color: white;
+.network > p {
 
-            padding: 35px;
+    color: #C9E5E9;
 
-            border-radius: 25px;
-        }
+    margin-bottom: 30px;
 
+    line-height: 1.6;
+}
 
-        .network h2 {
+.network-grid {
 
-            font-size: 28px;
+    display: grid;
 
-            margin-bottom: 10px;
-        }
+    grid-template-columns:
+        repeat(3, 1fr);
 
+    gap: 17px;
+}
 
-        .network > p {
+.node {
 
-            color: #D4E9ED;
+    padding: 22px;
 
-            margin-bottom: 28px;
-        }
+    border-radius: 18px;
 
+    background:
+        rgba(255,255,255,.07);
 
-        .network-grid {
+    border: 1px solid
+        rgba(255,255,255,.08);
 
-            display: grid;
+    transition: .3s;
+}
 
-            grid-template-columns:
-                repeat(3,1fr);
+.node:hover {
 
-            gap: 18px;
-        }
+    transform: translateY(-5px);
 
+    background:
+        rgba(255,255,255,.11);
+}
 
-        .node {
+.node-number {
 
-            background:
-                rgba(255,255,255,.08);
+    width: 42px;
+    height: 42px;
 
-            padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-            border-radius: 17px;
+    margin-bottom: 15px;
 
-            transition: .3s;
-        }
+    border-radius: 50%;
 
+    background: #20C7C9;
 
-        .node:hover {
+    color: #063B5C;
 
-            background:
-                rgba(255,255,255,.14);
+    font-size: 12px;
 
-            transform:
-                translateY(-5px);
-        }
+    font-weight: bold;
+}
 
+.node h4 {
 
-        .node-number {
+    margin-bottom: 7px;
 
-            width: 42px;
-            height: 42px;
+    font-size: 15px;
+}
 
-            border-radius: 50%;
+.node p {
 
-            background: #20C7C9;
+    color: #B9DDE2;
 
-            color: #063B5C;
+    font-size: 12px;
 
-            display: flex;
+    line-height: 1.5;
+}
 
-            align-items: center;
+.node-status {
 
-            justify-content: center;
+    display: inline-block;
 
-            font-weight: bold;
+    margin-top: 12px;
 
-            margin-bottom: 12px;
-        }
+    padding: 5px 9px;
 
+    border-radius: 12px;
 
-        .node h4 {
+    background: rgba(227,167,47,.12);
 
-            margin-bottom: 5px;
-        }
+    color: #F0C96B;
 
+    font-size: 9px;
 
-        .node p {
+    font-weight: bold;
+}
 
-            color: #B9DDE2;
 
-            font-size: 12px;
-        }
+/* =====================================================
+   CTA
+===================================================== */
 
+.cta {
 
-        /* ================= CTA ================= */
+    text-align: center;
 
-        .cta {
+    background:
+        linear-gradient(
+            135deg,
+            #B9F3E4,
+            #EAF9F7
+        );
+}
 
-            background: #B9F3E4;
+.cta h2 {
 
-            text-align: center;
-        }
+    font-size: 36px;
 
+    margin-bottom: 15px;
+}
 
-        .cta h2 {
+.cta p {
 
-            font-size: 36px;
+    max-width: 650px;
 
-            margin-bottom: 15px;
-        }
+    margin: auto auto 28px;
 
+    color: #355968;
 
-        .cta p {
+    line-height: 1.7;
+}
 
-            max-width: 650px;
+.cta-btn {
 
-            margin:
-                auto auto 25px;
+    display: inline-block;
 
-            color: #355968;
+    padding: 14px 26px;
 
-            line-height: 1.7;
-        }
+    border-radius: 30px;
 
+    background: #063B5C;
 
-        .cta-btn {
+    color: white;
 
-            display: inline-block;
+    font-weight: bold;
 
-            background: #063B5C;
+    transition: .3s;
+}
 
-            color: white;
+.cta-btn:hover {
 
-            padding: 14px 26px;
+    transform: translateY(-3px);
 
-            border-radius: 28px;
+    background: #087A9A;
 
-            font-weight: bold;
+    box-shadow:
+        0 10px 25px rgba(6,59,92,.2);
+}
 
-            transition: .3s;
-        }
 
+/* =====================================================
+   FOOTER
+===================================================== */
 
-        .cta-btn:hover {
+footer {
 
-            background: #20AEB0;
+    padding: 35px 6%;
 
-            transform:
-                translateY(-3px);
-        }
+    display: flex;
 
+    justify-content: space-between;
 
-        /* ================= FOOTER ================= */
+    background: #042D46;
 
-        footer {
+    color: white;
 
-            background: #042D46;
+    font-size: 13px;
+}
 
-            color: white;
+footer span {
+    color: #20C7C9;
+}
 
-            padding: 35px 6%;
 
-            display: flex;
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 
-            justify-content: space-between;
-        }
+@media(max-width: 1000px) {
 
+    nav ul {
+        display: none;
+    }
 
-        footer span {
+    .sensor-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
 
-            color: #20C7C9;
-        }
+    .network-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
 
+}
 
-        /* ================= RESPONSIVE ================= */
 
-        @media(max-width: 950px) {
+@media(max-width: 650px) {
 
-            nav ul {
-                display: none;
-            }
+    .hero {
+        min-height: 450px;
+        padding: 80px 6%;
+    }
 
+    .hero h1 {
+        font-size: 40px;
+    }
 
-            .sensor-grid {
+    section {
+        padding: 65px 6%;
+    }
 
-                grid-template-columns:
-                    repeat(2,1fr);
-            }
+    .sensor-grid,
+    .data-container,
+    .network-grid {
+        grid-template-columns: 1fr;
+    }
 
+    .network {
+        padding: 28px 22px;
+    }
 
-            .data-container {
+    footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
 
-                grid-template-columns:
-                    1fr;
-            }
+}
 
-
-            .network-grid {
-
-                grid-template-columns:
-                    1fr 1fr;
-            }
-
-        }
-
-
-        @media(max-width: 600px) {
-
-            .hero h1 {
-
-                font-size: 38px;
-            }
-
-
-            .sensor-grid {
-
-                grid-template-columns:
-                    1fr;
-            }
-
-
-            .network-grid {
-
-                grid-template-columns:
-                    1fr;
-            }
-
-
-            footer {
-
-                flex-direction: column;
-
-                gap: 15px;
-
-                text-align: center;
-            }
-
-        }
-
-    </style>
+</style>
 
 </head>
 
@@ -762,14 +909,15 @@
 <body>
 
 
-<!-- ================= NAVBAR ================= -->
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
 
 <nav>
 
     <div class="logo">
         🌊 OCEAN <span>× ECO-TECH</span>
     </div>
-
 
     <ul>
 
@@ -779,16 +927,11 @@
             </a>
         </li>
 
-
         <li>
-            <a
-                href="dashboard.html"
-                class="active"
-            >
+            <a href="dashboard.html" class="active">
                 Live Data
             </a>
         </li>
-
 
         <li>
             <a href="map.html">
@@ -796,13 +939,11 @@
             </a>
         </li>
 
-
         <li>
             <a href="solutions.html">
                 Solutions
             </a>
         </li>
-
 
         <li>
             <a href="impact.html">
@@ -810,13 +951,11 @@
             </a>
         </li>
 
-
         <li>
             <a href="about.html">
                 About
             </a>
         </li>
-
 
         <li>
             <a href="contact.html">
@@ -826,68 +965,58 @@
 
     </ul>
 
-
-    <a
-        href="map.html"
-        class="nav-btn"
-    >
+    <a href="map.html" class="nav-btn">
         View Map 🗺️
     </a>
 
 </nav>
 
 
-
-<!-- ================= HERO ================= -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <header class="hero">
-
 
     <div class="bubble bubble1"></div>
     <div class="bubble bubble2"></div>
     <div class="bubble bubble3"></div>
+    <div class="bubble bubble4"></div>
 
+    <div class="hero-content">
 
-    <div class="hero-icon">
-        📡
-    </div>
+        <div class="hero-icon">
+            📡
+        </div>
 
+        <h1>
+            Live Ocean <span>Data</span>
+        </h1>
 
-    <h1>
+        <p>
+            A smart environmental monitoring interface
+            designed to receive real information from the
+            Ocean × Eco-Tech prototype.
+        </p>
 
-        Live Ocean
-        <span>
-            Data
-        </span>
+        <div class="system-status">
 
-    </h1>
+            <span class="status-dot"></span>
 
+            Hardware Not Connected
 
-    <p>
-
-        This dashboard will display real environmental
-        information collected by the Ocean × Eco-Tech
-        prototype when the physical sensors are connected.
-
-    </p>
-
-
-    <div class="system-status">
-
-        <span class="status-dot"></span>
-
-        Hardware Not Connected
+        </div>
 
     </div>
 
 </header>
 
 
-
-<!-- ================= SENSOR SECTION ================= -->
+<!-- =====================================================
+     SENSOR MONITORING
+===================================================== -->
 
 <section>
-
 
     <div class="section-title">
 
@@ -895,9 +1024,9 @@
             📊 Sensor Monitoring
         </h2>
 
-
         <p>
-            Real readings will appear here after hardware integration.
+            Real readings will appear here when the
+            physical hardware is connected.
         </p>
 
     </div>
@@ -914,16 +1043,13 @@
                 ♻️
             </div>
 
-
             <h3>
                 Waste Detection
             </h3>
 
-
             <div class="sensor-value">
                 Awaiting Data
             </div>
-
 
             <span class="waiting">
                 SENSOR REQUIRED
@@ -932,8 +1058,7 @@
         </div>
 
 
-
-        <!-- DEPTH -->
+        <!-- DISTANCE -->
 
         <div class="sensor-card">
 
@@ -941,23 +1066,19 @@
                 📏
             </div>
 
-
             <h3>
-                Water / Object Distance
+                Object / Water Distance
             </h3>
-
 
             <div class="sensor-value">
                 Awaiting Data
             </div>
-
 
             <span class="waiting">
                 SENSOR REQUIRED
             </span>
 
         </div>
-
 
 
         <!-- MARINE LIFE -->
@@ -968,23 +1089,19 @@
                 🐠
             </div>
 
-
             <h3>
                 Marine-Life Detection
             </h3>
 
-
             <div class="sensor-value">
                 Awaiting Data
             </div>
-
 
             <span class="waiting">
                 SENSOR REQUIRED
             </span>
 
         </div>
-
 
 
         <!-- GPS -->
@@ -995,16 +1112,13 @@
                 📍
             </div>
 
-
             <h3>
                 Collector Location
             </h3>
 
-
             <div class="sensor-value">
                 GPS Unavailable
             </div>
-
 
             <span class="waiting">
                 GPS REQUIRED
@@ -1017,11 +1131,11 @@
 </section>
 
 
-
-<!-- ================= ENVIRONMENTAL DATA ================= -->
+<!-- =====================================================
+     ENVIRONMENTAL DATA
+===================================================== -->
 
 <section class="data-section">
-
 
     <div class="section-title">
 
@@ -1029,10 +1143,9 @@
             📈 Environmental Data
         </h2>
 
-
         <p>
-            Graphs will become active when real sensor
-            measurements are available.
+            Data visualization will activate after
+            real sensor measurements are received.
         </p>
 
     </div>
@@ -1049,18 +1162,14 @@
                 🌊 Sensor Readings
             </h3>
 
-
             <p>
-                No measurements have been received yet.
-                This area is intentionally empty so that
-                the application never displays invented
-                environmental data.
+                No environmental measurements have been
+                received yet.
             </p>
-
 
             <div class="empty-graph">
 
-                <div>
+                <div class="empty-content">
 
                     <div class="empty-icon">
                         📊
@@ -1070,10 +1179,10 @@
                         Awaiting Real Sensor Data
                     </strong>
 
-                    <br>
-
-                    Connect the prototype to begin
-                    collecting measurements.
+                    <span>
+                        Connect the prototype hardware
+                        to begin collecting measurements.
+                    </span>
 
                 </div>
 
@@ -1082,39 +1191,35 @@
         </div>
 
 
-
         <!-- ALERTS -->
 
         <div class="data-card">
 
             <h3>
-                ⚠️ Alerts
+                ⚠️ System Alerts
             </h3>
-
 
             <p>
                 Alerts will be generated from actual
-                sensor information after hardware
-                integration.
+                hardware readings.
             </p>
-
 
             <div class="empty-graph">
 
-                <div>
+                <div class="empty-content">
 
                     <div class="empty-icon">
                         🔔
                     </div>
 
                     <strong>
-                        No Active Alerts
+                        No Sensor Alerts
                     </strong>
 
-                    <br>
-
-                    The system is waiting for
-                    hardware data.
+                    <span>
+                        The system is currently waiting
+                        for hardware information.
+                    </span>
 
                 </div>
 
@@ -1127,11 +1232,11 @@
 </section>
 
 
-
-<!-- ================= SENSOR NETWORK ================= -->
+<!-- =====================================================
+     SENSOR NETWORK
+===================================================== -->
 
 <section>
-
 
     <div class="network">
 
@@ -1139,13 +1244,9 @@
             📡 Smart Sensor Network
         </h2>
 
-
         <p>
-
-            The future hardware network will allow
-            the application to receive information
-            from different parts of the prototype.
-
+            These components represent the future
+            hardware-to-application connection.
         </p>
 
 
@@ -1158,18 +1259,20 @@
                     01
                 </div>
 
-
                 <h4>
                     Waste Detection
                 </h4>
 
-
                 <p>
-                    Waiting for sensor integration
+                    Detect and classify collected
+                    waste.
                 </p>
 
-            </div>
+                <span class="node-status">
+                    WAITING FOR HARDWARE
+                </span>
 
+            </div>
 
 
             <div class="node">
@@ -1178,18 +1281,20 @@
                     02
                 </div>
 
-
                 <h4>
                     Distance Detection
                 </h4>
 
-
                 <p>
-                    Waiting for sensor integration
+                    Detect objects and measure
+                    distance.
                 </p>
 
-            </div>
+                <span class="node-status">
+                    WAITING FOR HARDWARE
+                </span>
 
+            </div>
 
 
             <div class="node">
@@ -1198,18 +1303,20 @@
                     03
                 </div>
 
-
                 <h4>
                     Marine-Life Safety
                 </h4>
 
-
                 <p>
-                    Waiting for sensor integration
+                    Support safe operation around
+                    marine life.
                 </p>
 
-            </div>
+                <span class="node-status">
+                    WAITING FOR HARDWARE
+                </span>
 
+            </div>
 
 
             <div class="node">
@@ -1218,18 +1325,20 @@
                     04
                 </div>
 
-
                 <h4>
                     GPS Location
                 </h4>
 
-
                 <p>
-                    Waiting for GPS integration
+                    Track the prototype's position
+                    when GPS is connected.
                 </p>
 
-            </div>
+                <span class="node-status">
+                    GPS NOT CONNECTED
+                </span>
 
+            </div>
 
 
             <div class="node">
@@ -1238,18 +1347,20 @@
                     05
                 </div>
 
-
                 <h4>
                     Microcontroller
                 </h4>
 
-
                 <p>
-                    Arduino connection planned
+                    Arduino can act as the bridge
+                    between sensors and application.
                 </p>
 
-            </div>
+                <span class="node-status">
+                    NOT CONNECTED
+                </span>
 
+            </div>
 
 
             <div class="node">
@@ -1258,17 +1369,21 @@
                     06
                 </div>
 
-
                 <h4>
                     Application
                 </h4>
 
-
                 <p>
-                    Ready for future data connection
+                    Dashboard interface prepared
+                    for future sensor data.
                 </p>
 
+                <span class="node-status">
+                    INTERFACE READY
+                </span>
+
             </div>
+
 
         </div>
 
@@ -1277,56 +1392,41 @@
 </section>
 
 
-
-<!-- ================= CTA ================= -->
+<!-- =====================================================
+     CTA
+===================================================== -->
 
 <section class="cta">
-
 
     <h2>
         🗺️ Explore the Ocean Map
     </h2>
 
-
     <p>
-
         Explore the planned monitoring environment
-        and visualize where the Ocean × Eco-Tech
-        system could operate.
-
+        and visualize how the Ocean × Eco-Tech system
+        could operate.
     </p>
 
-
-    <a
-        href="map.html"
-        class="cta-btn"
-    >
+    <a href="map.html" class="cta-btn">
         Open Ocean Map →
     </a>
 
 </section>
 
 
-
-<!-- ================= FOOTER ================= -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
-
     <div>
-
-        🌊 OCEAN
-        <span>
-            × ECO-TECH
-        </span>
-
+        🌊 OCEAN <span>× ECO-TECH</span>
     </div>
 
-
     <div>
-
         © 2026 Ocean × Eco-Tech
-
     </div>
 
 </footer>
