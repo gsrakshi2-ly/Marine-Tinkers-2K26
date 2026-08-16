@@ -2,221 +2,681 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ocean × Eco-Tech | Live Data</title>
+    <title>Live Data | Ocean × Eco-Tech</title>
 
-    <link rel="stylesheet"
-          href="style.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- =========================
+     NAVBAR
+========================= -->
 
-<header class="site-header">
+<nav class="navbar">
 
-    <a href="index.html"
-       class="logo">
-        🌊 Ocean × Eco-Tech
+    <a href="index.html" class="logo">
+        🌊 OCEAN <span>× ECO-TECH</span>
     </a>
 
-    <button class="menu-toggle"
-            aria-label="Open navigation"
-            aria-expanded="false">
-        ☰
-    </button>
+    <ul class="nav-links">
 
-    <nav>
+        <li>
+            <a href="index.html">Home</a>
+        </li>
 
-        <div class="nav-links">
+        <li>
+            <a href="dashboard.html" class="active">Live Data</a>
+        </li>
 
-            <a href="index.html">🏠 Home</a>
-            <a href="dashboard.html">📡 Live Data</a>
-            <a href="map.html">🗺️ Map</a>
-            <a href="prototype.html">🤖 Prototype</a>
-            <a href="technology.html">⚙️ Technology</a>
-            <a href="analytics.html">📊 Analytics</a>
+        <li>
+            <a href="map.html">Map</a>
+        </li>
+
+        <li>
+            <a href="solutions.html">Solutions</a>
+        </li>
+
+        <li>
+            <a href="impact.html">Impact</a>
+        </li>
+
+        <li>
+            <a href="about.html">About</a>
+        </li>
+
+        <li>
+            <a href="contact.html">Get Involved</a>
+        </li>
+
+    </ul>
+
+    <a href="map.html" class="nav-button">
+        Explore Map →
+    </a>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="page-hero">
+
+    <div class="hero-glow glow-one"></div>
+    <div class="hero-glow glow-two"></div>
+
+    <div class="page-hero-content">
+
+        <div class="hero-badge">
+            📡 REAL-TIME MONITORING
+        </div>
+
+        <h1>
+            Live Ocean <span>Data</span>
+        </h1>
+
+        <p>
+            A monitoring interface prepared to receive information
+            from the Ocean × Eco-Tech prototype when the hardware
+            and sensors are connected.
+        </p>
+
+        <div class="connection-status">
+
+            <span class="status-indicator"></span>
+
+            Hardware not connected
 
         </div>
 
-    </nav>
+    </div>
 
 </header>
 
 
-<main>
+<!-- =========================
+     MONITORING INTRO
+========================= -->
 
+<section class="dashboard-intro">
 
-<section class="page-hero">
-
-    <div class="reveal">
+    <div class="section-heading">
 
         <span class="eyebrow">
-            📡 LIVE MONITORING
+            📊 SENSOR MONITORING
         </span>
 
-        <h1>
-            Live Data
-        </h1>
+        <h2>
+            Your ocean monitoring dashboard.
+        </h2>
 
         <p>
-            View environmental and prototype information
-            received directly from the connected hardware.
+            This dashboard is ready for real measurements from
+            the prototype. Since the sensors are not connected yet,
+            no readings are being displayed or simulated.
         </p>
 
     </div>
 
-</section>
+
+    <!-- =========================
+         SENSOR CARDS
+    ========================= -->
+
+    <div class="sensor-grid">
+
+        <article class="sensor-card">
+
+            <div class="sensor-icon">
+                ♻️
+            </div>
+
+            <div class="sensor-card-top">
+
+                <span class="sensor-label">
+                    WASTE DETECTION
+                </span>
+
+                <span class="sensor-state">
+                    WAITING
+                </span>
+
+            </div>
+
+            <h3>
+                Awaiting Data
+            </h3>
+
+            <p>
+                Waste detection information will appear here
+                when the required hardware is connected.
+            </p>
+
+            <div class="data-placeholder">
+                <span>—</span>
+                <small>No reading available</small>
+            </div>
+
+        </article>
 
 
-<section class="section">
+        <article class="sensor-card">
+
+            <div class="sensor-icon">
+                📏
+            </div>
+
+            <div class="sensor-card-top">
+
+                <span class="sensor-label">
+                    DISTANCE
+                </span>
+
+                <span class="sensor-state">
+                    WAITING
+                </span>
+
+            </div>
+
+            <h3>
+                Awaiting Data
+            </h3>
+
+            <p>
+                Object or water-distance measurements will be
+                shown here once a compatible sensor is connected.
+            </p>
+
+            <div class="data-placeholder">
+                <span>—</span>
+                <small>No reading available</small>
+            </div>
+
+        </article>
 
 
-<div class="section-heading reveal">
+        <article class="sensor-card">
 
-    <span>🔌 HARDWARE STATUS</span>
+            <div class="sensor-icon">
+                🐠
+            </div>
 
-    <h2>
-        Prototype connection
-    </h2>
+            <div class="sensor-card-top">
 
-</div>
+                <span class="sensor-label">
+                    MARINE-LIFE SAFETY
+                </span>
+
+                <span class="sensor-state">
+                    WAITING
+                </span>
+
+            </div>
+
+            <h3>
+                Awaiting Data
+            </h3>
+
+            <p>
+                Marine-life detection information will only be
+                displayed when the relevant hardware provides data.
+            </p>
+
+            <div class="data-placeholder">
+                <span>—</span>
+                <small>No reading available</small>
+            </div>
+
+        </article>
 
 
-<div class="awaiting-card reveal">
+        <article class="sensor-card">
 
-    <div class="status-icon">
-        📡
+            <div class="sensor-icon">
+                📍
+            </div>
+
+            <div class="sensor-card-top">
+
+                <span class="sensor-label">
+                    GPS LOCATION
+                </span>
+
+                <span class="sensor-state">
+                    OFFLINE
+                </span>
+
+            </div>
+
+            <h3>
+                Location Unavailable
+            </h3>
+
+            <p>
+                The collector's location will be displayed
+                when a GPS module is connected and providing data.
+            </p>
+
+            <div class="data-placeholder">
+                <span>—</span>
+                <small>GPS unavailable</small>
+            </div>
+
+        </article>
+
     </div>
 
-    <h3 data-hardware-status>
-        📡 Awaiting Hardware
-    </h3>
+</section>
 
-    <p data-awaiting-message>
-        This feature will become available when the
-        prototype's sensors are connected.
-    </p>
 
-</div>
+<!-- =========================
+     ENVIRONMENTAL DATA
+========================= -->
 
+<section class="dashboard-data-section">
+
+    <div class="section-heading">
+
+        <span class="eyebrow">
+            🌊 ENVIRONMENTAL DATA
+        </span>
+
+        <h2>
+            Measurements will appear here.
+        </h2>
+
+        <p>
+            Charts and environmental measurements are intentionally
+            empty until real sensor information becomes available.
+        </p>
+
+    </div>
+
+
+    <div class="dashboard-panels">
+
+        <!-- SENSOR GRAPH -->
+
+        <article class="data-panel">
+
+            <div class="panel-heading">
+
+                <div>
+
+                    <span class="panel-icon">
+                        📈
+                    </span>
+
+                    <div>
+                        <h3>
+                            Sensor Readings
+                        </h3>
+
+                        <p>
+                            Real measurements
+                        </p>
+                    </div>
+
+                </div>
+
+                <span class="panel-status">
+                    NO DATA
+                </span>
+
+            </div>
+
+
+            <div class="empty-data">
+
+                <div class="empty-data-icon">
+                    📊
+                </div>
+
+                <h4>
+                    Awaiting Real Sensor Data
+                </h4>
+
+                <p>
+                    Connect the prototype hardware to begin
+                    receiving measurements.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <!-- ALERTS -->
+
+        <article class="data-panel">
+
+            <div class="panel-heading">
+
+                <div>
+
+                    <span class="panel-icon">
+                        🔔
+                    </span>
+
+                    <div>
+                        <h3>
+                            Smart Alerts
+                        </h3>
+
+                        <p>
+                            Hardware-based notifications
+                        </p>
+                    </div>
+
+                </div>
+
+                <span class="panel-status">
+                    INACTIVE
+                </span>
+
+            </div>
+
+
+            <div class="empty-data">
+
+                <div class="empty-data-icon">
+                    🔕
+                </div>
+
+                <h4>
+                    No Alerts Available
+                </h4>
+
+                <p>
+                    Alerts will only appear when actual
+                    monitoring data is received.
+                </p>
+
+            </div>
+
+        </article>
+
+    </div>
 
 </section>
 
 
-<section class="section">
+<!-- =========================
+     SYSTEM CONNECTION
+========================= -->
+
+<section class="connection-section">
+
+    <div class="connection-card">
+
+        <div class="connection-main">
+
+            <span class="eyebrow light">
+                🔌 SYSTEM CONNECTION
+            </span>
+
+            <h2>
+                Ready for the prototype.
+            </h2>
+
+            <p>
+                The application interface has been prepared for
+                the future connection between the microcontroller,
+                sensors and web application.
+            </p>
+
+        </div>
 
 
-<div class="section-heading reveal">
+        <div class="connection-steps">
 
-    <span>📊 SENSOR DASHBOARD</span>
+            <div class="connection-step">
 
-    <h2>
-        Real measurements
-    </h2>
+                <span>
+                    01
+                </span>
 
-    <p>
-        No values are displayed until genuine sensor
-        measurements are received.
-    </p>
+                <div>
 
-</div>
+                    <h3>
+                        Sensors
+                    </h3>
 
+                    <p>
+                        Collect real measurements.
+                    </p>
 
-<div class="cards three-column">
+                </div>
 
-
-<article class="data-card reveal">
-
-    <span>📏</span>
-
-    <h3>
-        Distance
-    </h3>
-
-    <strong data-sensor="distance">
-        Awaiting Data
-    </strong>
-
-</article>
+            </div>
 
 
-<article class="data-card reveal">
-
-    <span>🌡️</span>
-
-    <h3>
-        Temperature
-    </h3>
-
-    <strong data-sensor="temperature">
-        Awaiting Data
-    </strong>
-
-</article>
+            <div class="connection-line"></div>
 
 
-<article class="data-card reveal">
+            <div class="connection-step">
 
-    <span>🐠</span>
+                <span>
+                    02
+                </span>
 
-    <h3>
-        Marine-Life Detection
-    </h3>
+                <div>
 
-    <strong data-sensor="marineLifeDetected">
-        Awaiting Data
-    </strong>
+                    <h3>
+                        Microcontroller
+                    </h3>
 
-</article>
+                    <p>
+                        Processes sensor information.
+                    </p>
+
+                </div>
+
+            </div>
 
 
-</div>
+            <div class="connection-line"></div>
+
+
+            <div class="connection-step">
+
+                <span>
+                    03
+                </span>
+
+                <div>
+
+                    <h3>
+                        Application
+                    </h3>
+
+                    <p>
+                        Displays real information.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 
-<section class="section soft-section">
+<!-- =========================
+     WHAT WILL APPEAR
+========================= -->
+
+<section class="future-section">
+
+    <div class="section-heading">
+
+        <span class="eyebrow">
+            🔭 FUTURE MONITORING
+        </span>
+
+        <h2>
+            What the dashboard can display.
+        </h2>
+
+        <p>
+            These are interface capabilities, not current measurements.
+            Nothing below represents real data until the corresponding
+            hardware is connected.
+        </p>
+
+    </div>
 
 
-<div class="section-heading reveal">
+    <div class="future-grid">
 
-    <span>🚨 SMART ALERTS</span>
+        <div class="future-card">
 
-    <h2>
-        Hardware-based warnings
-    </h2>
+            <span>
+                ♻️
+            </span>
 
-</div>
+            <h3>
+                Waste Detection
+            </h3>
+
+            <p>
+                Information about detected waste from compatible
+                prototype hardware.
+            </p>
+
+        </div>
 
 
-<div class="awaiting-card reveal"
-     data-smart-alert>
+        <div class="future-card">
 
-    📡 No sensor-based alerts are available.
+            <span>
+                📏
+            </span>
 
-</div>
+            <h3>
+                Distance
+            </h3>
 
+            <p>
+                Distance measurements from connected sensors.
+            </p>
+
+        </div>
+
+
+        <div class="future-card">
+
+            <span>
+                🐠
+            </span>
+
+            <h3>
+                Marine Safety
+            </h3>
+
+            <p>
+                Safety information based on actual detection
+                hardware.
+            </p>
+
+        </div>
+
+
+        <div class="future-card">
+
+            <span>
+                📍
+            </span>
+
+            <h3>
+                Collector Location
+            </h3>
+
+            <p>
+                Real GPS information when the GPS module
+                becomes available.
+            </p>
+
+        </div>
+
+    </div>
 
 </section>
 
 
-</main>
+<!-- =========================
+     MAP CTA
+========================= -->
+
+<section class="dashboard-cta">
+
+    <div>
+
+        <span class="eyebrow light">
+            🗺️ GLOBAL MONITORING
+        </span>
+
+        <h2>
+            Explore the Ocean × Eco-Tech map.
+        </h2>
+
+        <p>
+            Visit the world map to explore the project's global
+            monitoring concept.
+        </p>
+
+        <a href="map.html" class="light-button">
+            Open World Map →
+        </a>
+
+    </div>
+
+</section>
 
 
-<footer class="site-footer">
+<!-- =========================
+     FOOTER
+========================= -->
 
-    <h3>
-        🌊 Ocean × Eco-Tech
-    </h3>
+<footer>
 
-    <p>
-        Real data. Responsible technology.
-    </p>
+    <div class="footer-brand">
+
+        🌊 OCEAN <span>× ECO-TECH</span>
+
+        <p>
+            Student-driven innovation for cleaner oceans.
+        </p>
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Live Data</a>
+        <a href="map.html">Map</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="impact.html">Impact</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Get Involved</a>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Ocean × Eco-Tech
+
+    </div>
 
 </footer>
 

@@ -4,78 +4,158 @@
 <head>
 
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <title>World Map | Ocean × Eco-Tech</title>
 
-    <title>
-        Ocean × Eco-Tech | World Map
-    </title>
+    <link rel="stylesheet" href="style.css">
 
-    <link rel="stylesheet"
-          href="style.css">
-
-    <!-- MapLibre -->
-
+    <!-- Leaflet -->
     <link
-        href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css"
-        rel="stylesheet">
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIINfQ3y0h7Y0R6z2lJ8bK7Jv0xV6sL5V5s="
+        crossorigin=""
+    >
 
 </head>
+
 
 <body>
 
 
-<header class="site-header">
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
 
-    <a href="index.html"
-       class="logo">
-        🌊 Ocean × Eco-Tech
+<nav class="navbar">
+
+    <a href="index.html" class="logo">
+        🌊 OCEAN <span>× ECO-TECH</span>
     </a>
 
-    <button class="menu-toggle"
-            aria-label="Open navigation"
-            aria-expanded="false">
-        ☰
-    </button>
 
-    <nav>
+    <ul class="nav-links">
 
-        <div class="nav-links">
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
 
-            <a href="index.html">🏠 Home</a>
-            <a href="dashboard.html">📡 Live Data</a>
-            <a href="map.html">🗺️ Map</a>
-            <a href="prototype.html">🤖 Prototype</a>
-            <a href="technology.html">⚙️ Technology</a>
-            <a href="analytics.html">📊 Analytics</a>
+        <li>
+            <a href="dashboard.html">
+                Live Data
+            </a>
+        </li>
+
+        <li>
+            <a href="map.html" class="active">
+                Map
+            </a>
+        </li>
+
+        <li>
+            <a href="solutions.html">
+                Solutions
+            </a>
+        </li>
+
+        <li>
+            <a href="impact.html">
+                Impact
+            </a>
+        </li>
+
+        <li>
+            <a href="about.html">
+                About
+            </a>
+        </li>
+
+        <li>
+            <a href="contact.html">
+                Get Involved
+            </a>
+        </li>
+
+    </ul>
+
+
+    <a href="contact.html" class="nav-button">
+        Report Waste →
+    </a>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="page-hero map-hero">
+
+    <div class="hero-glow glow-one"></div>
+    <div class="hero-glow glow-two"></div>
+
+
+    <div class="page-hero-content">
+
+        <div class="hero-badge">
+            🌍 GLOBAL OCEAN VIEW
+        </div>
+
+
+        <h1>
+            Explore the <span>Ocean</span>
+        </h1>
+
+
+        <p>
+            Explore the world's oceans and continents through
+            an interactive global map. The map provides the
+            geographical foundation for future Ocean × Eco-Tech
+            monitoring.
+        </p>
+
+
+        <div class="map-status">
+
+            <span class="status-indicator"></span>
+
+            Monitoring data not connected
 
         </div>
 
-    </nav>
+    </div>
 
 </header>
 
 
-<main>
 
+<!-- =====================================================
+     MAP INTRO
+===================================================== -->
 
-<section class="page-hero">
+<section class="map-intro">
 
-    <div class="reveal">
+    <div class="section-heading">
 
         <span class="eyebrow">
-            🗺️ GLOBAL OCEAN VIEW
+            🗺️ WORLD MAP
         </span>
 
-        <h1>
-            World Map
-        </h1>
+
+        <h2>
+            One planet. One connected ocean.
+        </h2>
+
 
         <p>
-            Explore the global map using English place and
-            street labels. Verified monitoring points will
-            appear only when genuine location data is available.
+            Use the map to explore the global marine environment.
+            Monitoring points will only represent real or verified
+            locations when actual project data becomes available.
         </p>
 
     </div>
@@ -83,149 +163,606 @@
 </section>
 
 
+
+<!-- =====================================================
+     MAP AREA
+===================================================== -->
+
 <section class="map-section">
 
+    <div class="map-wrapper">
 
-<div class="map-information reveal">
 
-    <div>
+        <!-- MAP HEADER -->
 
-        <span>
-            🌍 GLOBAL MONITORING
-        </span>
+        <div class="map-header">
 
-        <h2>
-            Explore the world
-        </h2>
+            <div>
+
+                <span class="map-eyebrow">
+                    🌊 GLOBAL OCEAN MONITOR
+                </span>
+
+                <h2>
+                    World Ocean Map
+                </h2>
+
+            </div>
+
+
+            <div class="map-connection">
+
+                <span class="map-dot"></span>
+
+                No live monitoring data
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTUAL MAP -->
+
+        <div id="worldMap"></div>
+
+
+        <!-- MAP LEGEND -->
+
+        <div class="map-legend">
+
+            <div class="legend-title">
+                MAP LEGEND
+            </div>
+
+
+            <div class="legend-item">
+
+                <span class="legend-symbol ocean-symbol"></span>
+
+                <span>
+                    Ocean
+                </span>
+
+            </div>
+
+
+            <div class="legend-item">
+
+                <span class="legend-symbol land-symbol"></span>
+
+                <span>
+                    Land
+                </span>
+
+            </div>
+
+
+            <div class="legend-item">
+
+                <span class="legend-symbol monitoring-symbol"></span>
+
+                <span>
+                    Verified monitoring point
+                </span>
+
+            </div>
+
+
+            <div class="legend-item">
+
+                <span class="legend-symbol empty-symbol"></span>
+
+                <span>
+                    No monitoring data
+                </span>
+
+            </div>
+
+        </div>
+
 
     </div>
-
-    <p>
-        Zoom, pan and explore the map. The map itself is
-        geographical reference information; monitoring
-        markers are not invented.
-    </p>
-
-</div>
-
-
-<div id="ocean-map"
-     class="world-map reveal">
-
-    <div class="map-loading">
-
-        🗺️ Loading map...
-
-    </div>
-
-</div>
-
-
-<div class="awaiting-card reveal">
-
-    <div class="status-icon">
-        📍
-    </div>
-
-    <h3>
-        No Verified Monitoring Points
-    </h3>
-
-    <p>
-        Monitoring locations will appear when genuine
-        GPS or verified location information is available.
-    </p>
-
-</div>
-
 
 </section>
 
 
-</main>
+
+<!-- =====================================================
+     OCEAN REGIONS
+===================================================== -->
+
+<section class="ocean-regions">
+
+    <div class="section-heading">
+
+        <span class="eyebrow">
+            🌊 OCEAN REGIONS
+        </span>
 
 
-<footer class="site-footer">
+        <h2>
+            The world's major oceans.
+        </h2>
 
-    <h3>
-        🌊 Ocean × Eco-Tech
-    </h3>
 
-    <p>
-        Explore. Understand. Protect. 💙
-    </p>
+        <p>
+            The map covers the major ocean regions of our planet.
+            These names provide geographical context rather than
+            representing current sensor measurements.
+        </p>
+
+    </div>
+
+
+    <div class="ocean-grid">
+
+
+        <article class="ocean-card">
+
+            <div class="ocean-icon">
+                🌊
+            </div>
+
+            <h3>
+                Pacific Ocean
+            </h3>
+
+            <p>
+                The largest ocean on Earth, extending between
+                Asia, Oceania and the Americas.
+            </p>
+
+        </article>
+
+
+        <article class="ocean-card">
+
+            <div class="ocean-icon">
+                🌊
+            </div>
+
+            <h3>
+                Atlantic Ocean
+            </h3>
+
+            <p>
+                A major ocean separating the Americas from
+                Europe and Africa.
+            </p>
+
+        </article>
+
+
+        <article class="ocean-card">
+
+            <div class="ocean-icon">
+                🌊
+            </div>
+
+            <h3>
+                Indian Ocean
+            </h3>
+
+            <p>
+                An important ocean region bordered by Africa,
+                Asia and Australia.
+            </p>
+
+        </article>
+
+
+        <article class="ocean-card">
+
+            <div class="ocean-icon">
+                ❄️
+            </div>
+
+            <h3>
+                Arctic Ocean
+            </h3>
+
+            <p>
+                The northern polar ocean surrounding the
+                Arctic region.
+            </p>
+
+        </article>
+
+
+        <article class="ocean-card">
+
+            <div class="ocean-icon">
+                🧊
+            </div>
+
+            <h3>
+                Southern Ocean
+            </h3>
+
+            <p>
+                The ocean surrounding Antarctica and connecting
+                the southern portions of the world's oceans.
+            </p>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MONITORING STATUS
+===================================================== -->
+
+<section class="map-status-section">
+
+    <div class="monitoring-card">
+
+
+        <div class="monitoring-icon">
+            📡
+        </div>
+
+
+        <div class="monitoring-content">
+
+            <span class="eyebrow light">
+                LIVE MONITORING
+            </span>
+
+
+            <h2>
+                No monitoring points yet.
+            </h2>
+
+
+            <p>
+                The map is ready for real monitoring locations.
+                Because the project's sensors are not connected,
+                no artificial monitoring points are being displayed.
+            </p>
+
+        </div>
+
+
+        <a
+            href="dashboard.html"
+            class="light-button"
+        >
+            View Live Data →
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MAP INFORMATION
+===================================================== -->
+
+<section class="map-info">
+
+    <div class="section-heading">
+
+        <span class="eyebrow">
+            📍 HOW IT WILL WORK
+        </span>
+
+
+        <h2>
+            From prototype to global monitoring.
+        </h2>
+
+
+        <p>
+            Once the system is connected to real hardware,
+            verified location information can be used to
+            represent the prototype's position on the map.
+        </p>
+
+    </div>
+
+
+    <div class="map-info-grid">
+
+
+        <div class="map-info-card">
+
+            <span>
+                01
+            </span>
+
+            <h3>
+                📡 Collect
+            </h3>
+
+            <p>
+                Sensors and the prototype collect real
+                environmental information.
+            </p>
+
+        </div>
+
+
+        <div class="map-info-card">
+
+            <span>
+                02
+            </span>
+
+            <h3>
+                📍 Locate
+            </h3>
+
+            <p>
+                A connected GPS system can provide the
+                prototype's actual location.
+            </p>
+
+        </div>
+
+
+        <div class="map-info-card">
+
+            <span>
+                03
+            </span>
+
+            <h3>
+                🗺️ Display
+            </h3>
+
+            <p>
+                Verified information can then be represented
+                on the global map.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="map-cta">
+
+    <div>
+
+        <span class="eyebrow light">
+            ♻️ HELP DOCUMENT MARINE WASTE
+        </span>
+
+
+        <h2>
+            See waste? Report it.
+        </h2>
+
+
+        <p>
+            You can use the reporting system to document
+            marine waste observations and contribute information
+            to the project's future collection records.
+        </p>
+
+
+        <a
+            href="contact.html"
+            class="light-button"
+        >
+            📸 Report Waste →
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-brand">
+
+        🌊 OCEAN <span>× ECO-TECH</span>
+
+        <p>
+            Student-driven innovation for cleaner oceans.
+        </p>
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="dashboard.html">
+            Live Data
+        </a>
+
+        <a href="map.html">
+            Map
+        </a>
+
+        <a href="solutions.html">
+            Solutions
+        </a>
+
+        <a href="impact.html">
+            Impact
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="contact.html">
+            Get Involved
+        </a>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Ocean × Eco-Tech
+
+    </div>
 
 </footer>
 
 
-<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+
+<!-- =====================================================
+     LEAFLET JS
+===================================================== -->
+
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin="">
+</script>
+
+
 
 <script>
 
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
+/* =====================================================
+   WORLD MAP
+===================================================== */
 
-        const mapElement =
-            document.getElementById(
-                "ocean-map"
-            );
+const map = L.map("worldMap", {
 
+    center: [20, 0],
 
-        if (
-            !mapElement ||
-            typeof maplibregl === "undefined"
-        ) {
-            return;
-        }
+    zoom: 2,
 
+    minZoom: 2,
 
-        mapElement.innerHTML = "";
+    maxZoom: 7,
 
+    worldCopyJump: true,
 
-        const map =
-            new maplibregl.Map({
+    zoomControl: true
 
-                container: "ocean-map",
-
-                style:
-                    "https://demotiles.maplibre.org/style.json",
-
-                center: [
-                    0,
-                    20
-                ],
-
-                zoom: 1.3,
-
-                minZoom: 1,
-
-                maxZoom: 18
-
-            });
+});
 
 
-        map.addControl(
-            new maplibregl.NavigationControl(),
-            "top-right"
-        );
+/*
+   Real geographic basemap.
 
+   No fake monitoring locations are added.
+*/
 
-        if (
-            window.OceanEcoTechAPI
-        ) {
+L.tileLayer(
+    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    {
+        attribution:
+            '&copy; OpenStreetMap contributors',
 
-            window.OceanEcoTechAPI
-                .registerMap(map);
-
-        }
-
+        maxZoom: 19
     }
-);
+).addTo(map);
+
+
+
+/* =====================================================
+   EMPTY MONITORING STATE
+===================================================== */
+
+/*
+   IMPORTANT:
+
+   There are currently no sensor readings and no verified
+   project monitoring coordinates.
+
+   Therefore we intentionally do NOT create fake markers.
+*/
+
+
+const monitoringData = [];
+
+
+
+/* =====================================================
+   FUTURE MONITORING MARKERS
+===================================================== */
+
+monitoringData.forEach(point => {
+
+    const marker = L.circleMarker(
+        [point.lat, point.lng],
+        {
+            radius: 8,
+
+            fillColor: "#20C7C9",
+
+            color: "#FFFFFF",
+
+            weight: 2,
+
+            opacity: 1,
+
+            fillOpacity: 0.95
+        }
+    );
+
+
+    marker.bindPopup(`
+
+        <div class="map-popup">
+
+            <strong>
+                ${point.name}
+            </strong>
+
+            <p>
+                ${point.description}
+            </p>
+
+        </div>
+
+    `);
+
+
+    marker.addTo(map);
+
+});
+
+
+
+/* =====================================================
+   MAP RESIZE
+===================================================== */
+
+setTimeout(() => {
+
+    map.invalidateSize();
+
+}, 300);
 
 </script>
+
+
 
 <script src="app.js"></script>
 
 </body>
+
 </html>
