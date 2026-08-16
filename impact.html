@@ -4,90 +4,54 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Impact | Ocean × Eco-Tech</title>
+<title>Our Impact | Ocean × Eco-Tech</title>
 
 <style>
-
-/* =========================================================
-   OCEAN × ECO-TECH — IMPACT PAGE
-   Deep Blue × Aqua × Seafoam × White
-   NO GOLD
-========================================================= */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
-
-/* =========================================================
-   GLOBAL
-========================================================= */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-html {
+    font-family: Arial, sans-serif;
     scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Inter', Arial, sans-serif;
-    background: #F6FBFC;
+    background: #F7FBFC;
     color: #063B5C;
-    overflow-x: hidden;
 }
 
 a {
     text-decoration: none;
-    color: inherit;
-}
-
-::selection {
-    background: #20C7C9;
-    color: #063B5C;
 }
 
 
-/* =========================================================
-   NAVBAR
-========================================================= */
+/* ================= NAVBAR ================= */
 
 nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-
+    height: 72px;
     width: 100%;
-    height: 74px;
 
-    padding: 0 6%;
+    background: #063B5C;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    background: rgba(4, 45, 70, 0.92);
+    padding: 0 6%;
 
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-
+    position: fixed;
+    top: 0;
     z-index: 1000;
 }
 
 .logo {
-    color: #FFFFFF;
-
-    font-size: 19px;
-    font-weight: 800;
-
-    letter-spacing: .4px;
-
-    white-space: nowrap;
+    color: white;
+    font-size: 21px;
+    font-weight: bold;
 }
 
 .logo span {
@@ -96,40 +60,14 @@ nav {
 
 nav ul {
     display: flex;
-    align-items: center;
-
-    gap: 24px;
-
+    gap: 22px;
     list-style: none;
 }
 
 nav ul li a {
-    position: relative;
-
-    color: #D7EEF1;
-
-    font-size: 13px;
-    font-weight: 500;
-
-    transition: .3s ease;
-}
-
-nav ul li a::after {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    bottom: -8px;
-
-    width: 0;
-    height: 2px;
-
-    background: #20C7C9;
-
-    transform: translateX(-50%);
-
-    transition: .3s ease;
+    color: white;
+    font-size: 14px;
+    transition: .3s;
 }
 
 nav ul li a:hover,
@@ -137,1060 +75,634 @@ nav ul li a.active {
     color: #20C7C9;
 }
 
-nav ul li a:hover::after,
-nav ul li a.active::after {
-    width: 100%;
-}
-
 .nav-btn {
-    padding: 11px 20px;
-
-    border-radius: 30px;
-
     background: #20C7C9;
-
     color: #063B5C;
 
-    font-size: 12px;
-    font-weight: 800;
+    padding: 10px 18px;
 
-    transition: .3s ease;
+    border-radius: 25px;
 
-    box-shadow:
-        0 5px 20px rgba(32,199,201,.15);
-}
-
-.nav-btn:hover {
-    transform: translateY(-2px);
-
-    background: #B9F3E4;
-
-    box-shadow:
-        0 10px 30px rgba(32,199,201,.25);
+    font-weight: bold;
 }
 
 
-/* =========================================================
-   HERO
-========================================================= */
+/* ================= HERO ================= */
 
 .hero {
-    position: relative;
 
-    min-height: 560px;
+    margin-top: 72px;
 
-    margin-top: 74px;
+    min-height: 450px;
 
-    padding: 110px 7% 100px;
+    padding: 85px 7%;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    overflow: hidden;
+    background:
+        linear-gradient(
+            135deg,
+            #063B5C,
+            #087A9A
+        );
 
     color: white;
 
-    background:
-        radial-gradient(
-            circle at 15% 25%,
-            rgba(32,199,201,.18),
-            transparent 27%
-        ),
-        radial-gradient(
-            circle at 85% 20%,
-            rgba(185,243,228,.10),
-            transparent 25%
-        ),
-        radial-gradient(
-            circle at 50% 100%,
-            rgba(32,199,201,.12),
-            transparent 35%
-        ),
-        linear-gradient(
-            145deg,
-            #021F32,
-            #063B5C 48%,
-            #087A9A
-        );
-}
+    text-align: center;
 
-
-/* =========================================================
-   HERO DECORATION
-========================================================= */
-
-.hero::before {
-    content: "";
-
-    position: absolute;
-
-    width: 650px;
-    height: 650px;
-
-    left: 50%;
-    bottom: -550px;
-
-    transform: translateX(-50%);
-
-    border-radius: 50%;
-
-    border: 1px solid rgba(32,199,201,.18);
-
-    box-shadow:
-        0 0 0 35px rgba(32,199,201,.035),
-        0 0 0 70px rgba(32,199,201,.025);
-}
-
-.hero::after {
-    content: "";
-
-    position: absolute;
-
-    left: -5%;
-    bottom: -130px;
-
-    width: 110%;
-    height: 220px;
-
-    border-radius: 50% 50% 0 0;
-
-    background: #F6FBFC;
-
-    opacity: .07;
-}
-
-
-/* =========================================================
-   BUBBLES
-========================================================= */
-
-.bubble {
-    position: absolute;
-
-    border-radius: 50%;
-
-    border: 1px solid rgba(255,255,255,.14);
-
-    background:
-        radial-gradient(
-            circle at 30% 25%,
-            rgba(255,255,255,.15),
-            transparent 45%
-        );
-
-    animation: bubbleFloat 7s ease-in-out infinite;
-
-    z-index: 1;
-}
-
-.bubble1 {
-    width: 45px;
-    height: 45px;
-
-    left: 10%;
-    top: 125px;
-}
-
-.bubble2 {
-    width: 90px;
-    height: 90px;
-
-    right: 9%;
-    top: 105px;
-
-    animation-delay: 1.5s;
-}
-
-.bubble3 {
-    width: 24px;
-    height: 24px;
-
-    left: 23%;
-    bottom: 100px;
-
-    animation-delay: 2.5s;
-}
-
-.bubble4 {
-    width: 55px;
-    height: 55px;
-
-    right: 24%;
-    bottom: 85px;
-
-    animation-delay: 3.5s;
-}
-
-@keyframes bubbleFloat {
-
-    0%,100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-22px);
-    }
-}
-
-
-/* =========================================================
-   HERO CONTENT
-========================================================= */
-
-.hero-content {
     position: relative;
 
-    z-index: 5;
-
-    max-width: 850px;
+    overflow: hidden;
 }
 
 .hero-icon {
-    width: 94px;
-    height: 94px;
 
-    margin: 0 auto 28px;
+    font-size: 75px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-bottom: 15px;
 
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(32,199,201,.18),
-            rgba(185,243,228,.06)
-        );
-
-    border: 1px solid rgba(32,199,201,.4);
-
-    font-size: 44px;
-
-    box-shadow:
-        0 0 40px rgba(32,199,201,.12),
-        inset 0 0 25px rgba(255,255,255,.03);
-
-    animation: heroFloat 4s ease-in-out infinite;
+    animation:
+        floating 3s ease-in-out infinite;
 }
 
-@keyframes heroFloat {
+@keyframes floating {
 
     0%,100% {
         transform: translateY(0);
     }
 
     50% {
-        transform: translateY(-9px);
+        transform: translateY(-15px);
     }
+
 }
 
 .hero h1 {
-    font-size: clamp(42px, 6vw, 65px);
 
-    line-height: 1.05;
+    font-size: 52px;
 
-    letter-spacing: -2px;
-
-    margin-bottom: 22px;
+    margin-bottom: 18px;
 }
 
 .hero h1 span {
-    color: #20C7C9;
 
-    text-shadow:
-        0 0 25px rgba(32,199,201,.25);
+    color: #20C7C9;
 }
 
 .hero p {
+
     max-width: 720px;
 
     margin: auto;
 
-    color: #D5EDF1;
+    color: #E0F4F7;
 
-    line-height: 1.85;
+    line-height: 1.8;
 
-    font-size: 15px;
+    font-size: 17px;
 }
 
 
-/* =========================================================
-   SECTION
-========================================================= */
+/* ================= SECTION ================= */
 
 section {
-    padding: 90px 7%;
+    padding: 80px 7%;
 }
 
 .section-title {
-    max-width: 760px;
-
-    margin: 0 auto 50px;
 
     text-align: center;
+
+    margin-bottom: 45px;
 }
 
 .section-title h2 {
-    font-size: clamp(28px,4vw,38px);
 
-    letter-spacing: -1px;
+    font-size: 38px;
 
-    margin-bottom: 13px;
-
-    color: #063B5C;
+    margin-bottom: 12px;
 }
 
 .section-title p {
-    color: #66808B;
 
-    font-size: 14px;
+    color: #607D8B;
 
-    line-height: 1.8;
+    line-height: 1.6;
 }
 
 
-/* =========================================================
-   IMPACT OVERVIEW
-========================================================= */
+/* ================= IMPACT CARDS ================= */
 
 .impact-grid {
-    max-width: 1150px;
+
+    max-width: 1100px;
 
     margin: auto;
 
     display: grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(4,1fr);
 
     gap: 20px;
 }
 
 .impact-card {
-    position: relative;
 
-    padding: 32px 28px;
+    background: white;
 
-    background:
-        linear-gradient(
-            145deg,
-            #FFFFFF,
-            #F9FDFD
-        );
-
-    border: 1px solid #DCECEE;
-
-    border-radius: 25px;
-
-    box-shadow:
-        0 12px 35px rgba(6,59,92,.055);
-
-    overflow: hidden;
-
-    transition:
-        transform .35s ease,
-        box-shadow .35s ease,
-        border-color .35s ease;
-}
-
-.impact-card::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 3px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #20C7C9,
-            #B9F3E4
-        );
-}
-
-.impact-card:hover {
-    transform: translateY(-8px);
-
-    border-color: rgba(32,199,201,.35);
-
-    box-shadow:
-        0 20px 45px rgba(6,59,92,.11);
-}
-
-.impact-icon {
-    width: 58px;
-    height: 58px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin-bottom: 21px;
-
-    border-radius: 17px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #E7F9F7,
-            #F3FCFB
-        );
-
-    border: 1px solid #D4EFEB;
-
-    font-size: 28px;
-}
-
-.impact-card h3 {
-    color: #063B5C;
-
-    font-size: 18px;
-
-    margin-bottom: 11px;
-}
-
-.impact-card p {
-    color: #69818B;
-
-    font-size: 13px;
-
-    line-height: 1.75;
-}
-
-
-/* =========================================================
-   IMPACT STORY
-========================================================= */
-
-.story-section {
-    position: relative;
-
-    background:
-        radial-gradient(
-            circle at 10% 20%,
-            rgba(32,199,201,.07),
-            transparent 25%
-        ),
-        linear-gradient(
-            180deg,
-            #EAF9F7,
-            #F7FCFC
-        );
-}
-
-.story-container {
-    max-width: 1150px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns:
-        1.05fr .95fr;
-
-    gap: 30px;
-
-    align-items: stretch;
-}
-
-.story-card {
-    padding: 38px;
-
-    background: rgba(255,255,255,.90);
-
-    border: 1px solid #DCECEE;
-
-    border-radius: 27px;
-
-    box-shadow:
-        0 15px 40px rgba(6,59,92,.06);
-}
-
-.story-card h3 {
-    color: #063B5C;
-
-    font-size: 25px;
-
-    margin-bottom: 17px;
-}
-
-.story-card p {
-    color: #617D88;
-
-    font-size: 14px;
-
-    line-height: 1.85;
-
-    margin-bottom: 17px;
-}
-
-.story-highlight {
-    margin-top: 25px;
-
-    padding: 20px;
-
-    border-radius: 18px;
-
-    background: #E8F8F6;
-
-    border: 1px solid #D0ECE8;
-
-    color: #063B5C;
-
-    font-size: 13px;
-
-    line-height: 1.7;
-
-    font-weight: 600;
-}
-
-
-/* =========================================================
-   IMPACT AREAS
-========================================================= */
-
-.areas {
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap: 18px;
-
-    height: 100%;
-}
-
-.area-card {
-    padding: 25px;
+    padding: 30px 20px;
 
     border-radius: 22px;
 
-    background:
-        linear-gradient(
-            145deg,
-            #FFFFFF,
-            #F8FCFC
-        );
-
-    border: 1px solid #DCECEE;
-
-    transition: .3s ease;
-}
-
-.area-card:hover {
-    transform: translateY(-5px);
-
-    border-color: rgba(32,199,201,.30);
-}
-
-.area-icon {
-    font-size: 26px;
-
-    margin-bottom: 14px;
-}
-
-.area-card h4 {
-    color: #063B5C;
-
-    font-size: 15px;
-
-    margin-bottom: 8px;
-}
-
-.area-card p {
-    color: #70858C;
-
-    font-size: 11px;
-
-    line-height: 1.65;
-}
-
-
-/* =========================================================
-   ACHIEVEMENTS
-========================================================= */
-
-.achievement-section {
-    background: #FFFFFF;
-}
-
-.achievement-grid {
-    max-width: 1150px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 18px;
-}
-
-.achievement-card {
-    padding: 29px 22px;
-
     text-align: center;
 
-    border-radius: 23px;
+    box-shadow:
+        0 8px 25px
+        rgba(6,59,92,.08);
 
-    background:
-        linear-gradient(
-            145deg,
-            #F9FDFC,
-            #FFFFFF
-        );
-
-    border: 1px solid #DCECEE;
-
-    transition: .3s ease;
+    transition: .35s;
 }
 
-.achievement-card:hover {
-    transform: translateY(-7px);
+.impact-card:hover {
+
+    transform:
+        translateY(-9px);
 
     box-shadow:
-        0 15px 35px rgba(6,59,92,.08);
-
-    border-color: rgba(32,199,201,.3);
+        0 16px 35px
+        rgba(6,59,92,.14);
 }
 
-.achievement-icon {
-    font-size: 35px;
+.impact-icon {
+
+    font-size: 42px;
 
     margin-bottom: 15px;
 }
 
-.achievement-card h3 {
-    color: #063B5C;
+.impact-number {
 
-    font-size: 15px;
+    font-size: 36px;
 
-    margin-bottom: 9px;
-}
+    font-weight: bold;
 
-.achievement-card p {
-    color: #70858C;
-
-    font-size: 11px;
-
-    line-height: 1.65;
-}
-
-
-/* =========================================================
-   PROJECT JOURNEY
-========================================================= */
-
-.journey-section {
-    background:
-        linear-gradient(
-            180deg,
-            #F6FBFC,
-            #EAF9F7
-        );
-}
-
-.journey {
-    max-width: 900px;
-
-    margin: auto;
-
-    position: relative;
-}
-
-.journey::before {
-    content: "";
-
-    position: absolute;
-
-    left: 24px;
-    top: 10px;
-    bottom: 10px;
-
-    width: 2px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #20C7C9,
-            #B9F3E4
-        );
-}
-
-.journey-item {
-    position: relative;
-
-    padding-left: 70px;
-
-    margin-bottom: 35px;
-}
-
-.journey-item:last-child {
-    margin-bottom: 0;
-}
-
-.journey-dot {
-    position: absolute;
-
-    left: 9px;
-    top: 4px;
-
-    width: 31px;
-    height: 31px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background: #20C7C9;
-
-    border: 6px solid #EAF9F7;
-
-    color: #063B5C;
-
-    font-size: 10px;
-    font-weight: 800;
-
-    box-shadow:
-        0 0 0 1px rgba(32,199,201,.25);
-}
-
-.journey-item h3 {
-    color: #063B5C;
-
-    font-size: 17px;
+    color: #087A9A;
 
     margin-bottom: 7px;
 }
 
-.journey-item p {
-    color: #6B828B;
+.impact-card h3 {
 
-    font-size: 12px;
+    font-size: 15px;
+
+    color: #607D8B;
+}
+
+
+/* ================= MISSION ================= */
+
+.mission {
+
+    background: #EAF9F7;
+}
+
+.mission-container {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 45px;
+
+    align-items: center;
+}
+
+.mission-text h2 {
+
+    font-size: 35px;
+
+    margin-bottom: 18px;
+}
+
+.mission-text h2 span {
+
+    color: #20AEB0;
+}
+
+.mission-text p {
+
+    color: #607D8B;
+
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+.mission-list {
+
+    list-style: none;
+}
+
+.mission-list li {
+
+    padding: 10px 0;
+
+    color: #355968;
+}
+
+
+/* ================= IMPACT VISUAL ================= */
+
+.impact-visual {
+
+    min-height: 350px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #063B5C,
+            #087A9A
+        );
+
+    border-radius: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.earth {
+
+    width: 190px;
+    height: 190px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 35%,
+            #B9F3E4,
+            #20C7C9,
+            #087A9A
+        );
+
+    box-shadow:
+        0 0 50px
+        rgba(32,199,201,.4);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 75px;
+
+    animation:
+        earthFloat 4s ease-in-out infinite;
+}
+
+@keyframes earthFloat {
+
+    0%,100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(4deg);
+    }
+}
+
+.orbit {
+
+    position: absolute;
+
+    width: 280px;
+    height: 100px;
+
+    border: 2px solid
+        rgba(255,255,255,.25);
+
+    border-radius: 50%;
+
+    transform: rotate(-25deg);
+}
+
+
+/* ================= GOALS ================= */
+
+.goals {
+
+    background: white;
+}
+
+.goal-grid {
+
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 22px;
+}
+
+.goal-card {
+
+    padding: 28px;
+
+    border-radius: 20px;
+
+    background: #F7FBFC;
+
+    border:
+        1px solid #DCECEF;
+
+    transition: .3s;
+}
+
+.goal-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color: #20C7C9;
+}
+
+.goal-card div {
+
+    font-size: 35px;
+
+    margin-bottom: 13px;
+}
+
+.goal-card h3 {
+
+    margin-bottom: 9px;
+}
+
+.goal-card p {
+
+    color: #607D8B;
+
+    font-size: 13px;
 
     line-height: 1.7;
 }
 
 
-/* =========================================================
-   CURRENT STATUS
-========================================================= */
+/* ================= NOTE ================= */
 
-.status-section {
-    background: #FFFFFF;
-}
+.note {
 
-.status-box {
-    max-width: 1050px;
+    max-width: 850px;
 
-    margin: auto;
+    margin: 40px auto 0;
 
-    padding: 38px;
+    padding: 18px 22px;
 
-    border-radius: 28px;
+    border-radius: 15px;
 
-    background:
-        radial-gradient(
-            circle at 90% 10%,
-            rgba(32,199,201,.13),
-            transparent 30%
-        ),
-        linear-gradient(
-            145deg,
-            #042D46,
-            #063B5C
-        );
+    background: #FFF8E7;
 
-    color: white;
+    color: #6D5A2B;
 
-    box-shadow:
-        0 20px 50px rgba(6,59,92,.14);
-}
-
-.status-box h2 {
-    font-size: 27px;
-
-    margin-bottom: 12px;
-}
-
-.status-box > p {
-    color: #C7E2E6;
-
-    font-size: 13px;
-
-    line-height: 1.75;
-
-    max-width: 750px;
-
-    margin-bottom: 27px;
-}
-
-.status-items {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 15px;
-}
-
-.status-item {
-    padding: 20px;
-
-    border-radius: 18px;
-
-    background: rgba(255,255,255,.055);
-
-    border: 1px solid rgba(255,255,255,.09);
-}
-
-.status-item span {
-    display: block;
-
-    color: #8FBAC3;
-
-    font-size: 10px;
-
-    margin-bottom: 8px;
-
-    text-transform: uppercase;
-
-    letter-spacing: .5px;
-}
-
-.status-item strong {
-    color: #DFF9F5;
-
-    font-size: 13px;
-}
-
-
-/* =========================================================
-   CTA
-========================================================= */
-
-.cta {
     text-align: center;
 
-    background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(32,199,201,.10),
-            transparent 35%
-        ),
-        linear-gradient(
-            135deg,
-            #B9F3E4,
-            #EAF9F7
-        );
+    font-size: 13px;
+
+    line-height: 1.6;
 }
 
-.cta h2 {
-    color: #063B5C;
 
-    font-size: 35px;
+/* ================= FUTURE IMPACT ================= */
 
-    margin-bottom: 15px;
-}
-
-.cta p {
-    max-width: 650px;
-
-    margin: auto auto 28px;
-
-    color: #416674;
-
-    font-size: 14px;
-
-    line-height: 1.8;
-}
-
-.cta-btn {
-    display: inline-flex;
-    align-items: center;
-
-    padding: 14px 27px;
-
-    border-radius: 30px;
+.future-impact {
 
     background: #063B5C;
 
     color: white;
 
+    text-align: center;
+}
+
+.future-impact h2 {
+
+    font-size: 36px;
+
+    margin-bottom: 15px;
+}
+
+.future-impact > p {
+
+    max-width: 700px;
+
+    margin:
+        auto auto 35px;
+
+    color: #D4E9ED;
+
+    line-height: 1.8;
+}
+
+.future-grid {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 20px;
+}
+
+.future-card {
+
+    background:
+        rgba(255,255,255,.08);
+
+    padding: 28px 20px;
+
+    border-radius: 20px;
+
+    transition: .3s;
+}
+
+.future-card:hover {
+
+    background:
+        rgba(255,255,255,.14);
+
+    transform:
+        translateY(-6px);
+}
+
+.future-card div {
+
+    font-size: 38px;
+
+    margin-bottom: 12px;
+}
+
+.future-card h3 {
+
+    margin-bottom: 8px;
+}
+
+.future-card p {
+
+    color: #B9DDE2;
+
     font-size: 13px;
-    font-weight: 700;
 
-    box-shadow:
-        0 10px 25px rgba(6,59,92,.12);
+    line-height: 1.6;
+}
 
-    transition: .3s ease;
+
+/* ================= CTA ================= */
+
+.cta {
+
+    background: #B9F3E4;
+
+    text-align: center;
+}
+
+.cta h2 {
+
+    font-size: 36px;
+
+    margin-bottom: 15px;
+}
+
+.cta p {
+
+    max-width: 650px;
+
+    margin:
+        auto auto 25px;
+
+    color: #355968;
+
+    line-height: 1.7;
+}
+
+.cta-btn {
+
+    display: inline-block;
+
+    background: #063B5C;
+
+    color: white;
+
+    padding: 14px 26px;
+
+    border-radius: 28px;
+
+    font-weight: bold;
+
+    transition: .3s;
 }
 
 .cta-btn:hover {
-    transform: translateY(-4px);
 
-    background: #087A9A;
+    background: #20AEB0;
 
-    box-shadow:
-        0 15px 30px rgba(6,59,92,.18);
+    transform:
+        translateY(-3px);
 }
 
 
-/* =========================================================
-   FOOTER
-========================================================= */
+/* ================= FOOTER ================= */
 
 footer {
-    min-height: 85px;
 
-    padding: 32px 6%;
+    background: #042D46;
+
+    color: white;
+
+    padding: 35px 6%;
 
     display: flex;
-    align-items: center;
+
     justify-content: space-between;
-
-    background: #021F32;
-
-    color: #D6E8EB;
-
-    font-size: 12px;
-
-    border-top: 1px solid rgba(32,199,201,.08);
 }
 
 footer span {
+
     color: #20C7C9;
 }
 
 
-/* =========================================================
-   RESPONSIVE
-========================================================= */
+/* ================= RESPONSIVE ================= */
 
-@media (max-width: 1050px) {
-
-    nav ul {
-        gap: 14px;
-    }
-
-    .impact-grid {
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-    .achievement-grid {
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-    .story-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-@media (max-width: 800px) {
+@media(max-width:950px) {
 
     nav ul {
         display: none;
     }
 
-    .nav-btn {
-        padding: 10px 15px;
+    .impact-grid {
+        grid-template-columns:
+            1fr 1fr;
     }
 
-    .status-items {
+    .mission-container {
         grid-template-columns: 1fr;
     }
+
+    .goal-grid {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .future-grid {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
 }
 
-
-@media (max-width: 600px) {
-
-    .hero {
-        min-height: 490px;
-
-        padding:
-            85px 6%
-            75px;
-    }
+@media(max-width:600px) {
 
     .hero h1 {
-        font-size: 40px;
-
-        letter-spacing: -1px;
+        font-size: 38px;
     }
 
-    .hero p {
-        font-size: 14px;
-    }
-
-    section {
-        padding: 65px 6%;
-    }
-
-    .impact-grid,
-    .achievement-grid,
-    .areas {
+    .impact-grid {
         grid-template-columns: 1fr;
     }
 
-    .story-card {
-        padding: 27px;
+    .goal-grid {
+        grid-template-columns: 1fr;
     }
 
-    .status-box {
-        padding: 28px 22px;
-    }
-
-    .journey-item {
-        padding-left: 58px;
-    }
-
-    .journey::before {
-        left: 19px;
-    }
-
-    .journey-dot {
-        left: 4px;
+    .future-grid {
+        grid-template-columns: 1fr;
     }
 
     footer {
         flex-direction: column;
-
-        gap: 12px;
-
+        gap: 15px;
         text-align: center;
     }
-}
 
-
-@media (max-width: 400px) {
-
-    .logo {
-        font-size: 15px;
-    }
-
-    .nav-btn {
-        font-size: 10px;
-        padding: 9px 12px;
-    }
-
-    .hero h1 {
-        font-size: 34px;
-    }
 }
 
 </style>
@@ -1201,15 +713,14 @@ footer span {
 <body>
 
 
-<!-- =====================================================
-     NAVBAR
-===================================================== -->
+<!-- ================= NAVBAR ================= -->
 
 <nav>
 
     <div class="logo">
         🌊 OCEAN <span>× ECO-TECH</span>
     </div>
+
 
     <ul>
 
@@ -1238,7 +749,10 @@ footer span {
         </li>
 
         <li>
-            <a href="impact.html" class="active">
+            <a
+                href="impact.html"
+                class="active"
+            >
                 Impact
             </a>
         </li>
@@ -1257,61 +771,62 @@ footer span {
 
     </ul>
 
-    <a href="map.html" class="nav-btn">
-        View Map 🗺️
+
+    <a
+        href="dashboard.html"
+        class="nav-btn"
+    >
+        View Data 📡
     </a>
 
 </nav>
 
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+
+<!-- ================= HERO ================= -->
 
 <header class="hero">
 
-    <div class="bubble bubble1"></div>
-    <div class="bubble bubble2"></div>
-    <div class="bubble bubble3"></div>
-    <div class="bubble bubble4"></div>
-
-    <div class="hero-content">
-
-        <div class="hero-icon">
-            🌊
-        </div>
-
-        <h1>
-            Our <span>Impact</span>
-        </h1>
-
-        <p>
-            Ocean × Eco-Tech is designed to explore how
-            technology, responsible innovation and student
-            creativity can contribute to cleaner and safer oceans.
-        </p>
-
+    <div class="hero-icon">
+        🌍
     </div>
+
+
+    <h1>
+
+        Our
+        <span>Impact</span>
+
+    </h1>
+
+
+    <p>
+
+        Ocean × Eco-Tech explores how student innovation,
+        responsible engineering and environmental awareness
+        can contribute to cleaner waterways and healthier
+        marine ecosystems.
+
+    </p>
 
 </header>
 
 
-<!-- =====================================================
-     IMPACT OVERVIEW
-===================================================== -->
+
+<!-- ================= IMPACT STATS ================= -->
 
 <section>
+
 
     <div class="section-title">
 
         <h2>
-            🌍 Why This Project Matters
+            🌱 What We Aim to Achieve
         </h2>
 
+
         <p>
-            Marine waste affects ecosystems, wildlife and coastal
-            environments. Our project explores a practical
-            technology-based approach to addressing this challenge.
+            These are project goals, not live measurements.
         </p>
 
     </div>
@@ -1326,17 +841,34 @@ footer span {
                 ♻️
             </div>
 
+            <div class="impact-number">
+                01
+            </div>
+
             <h3>
-                Cleaner Waters
+                Waste Collection
             </h3>
 
-            <p>
-                The proposed collector is designed to help identify
-                and collect floating waste from aquatic environments,
-                supporting cleaner waterways.
-            </p>
+        </div>
+
+
+
+        <div class="impact-card">
+
+            <div class="impact-icon">
+                🌊
+            </div>
+
+            <div class="impact-number">
+                02
+            </div>
+
+            <h3>
+                Cleaner Waterways
+            </h3>
 
         </div>
+
 
 
         <div class="impact-card">
@@ -1345,17 +877,16 @@ footer span {
                 🐠
             </div>
 
+            <div class="impact-number">
+                03
+            </div>
+
             <h3>
-                Marine-Life Safety
+                Marine Protection
             </h3>
 
-            <p>
-                The system concept includes safety-focused sensing
-                intended to help reduce the risk of operating near
-                marine life.
-            </p>
-
         </div>
+
 
 
         <div class="impact-card">
@@ -1364,442 +895,323 @@ footer span {
                 🌱
             </div>
 
-            <h3>
-                Sustainable Thinking
-            </h3>
-
-            <p>
-                The project encourages the use of technology to
-                address environmental challenges while considering
-                responsible and sustainable design.
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     IMPACT STORY
-===================================================== -->
-
-<section class="story-section">
-
-    <div class="section-title">
-
-        <h2>
-            🌊 From Idea to Environmental Innovation
-        </h2>
-
-        <p>
-            The project combines environmental awareness,
-            engineering concepts and software development
-            into one student-built system.
-        </p>
-
-    </div>
-
-
-    <div class="story-container">
-
-
-        <div class="story-card">
-
-            <h3>
-                💡 The Vision
-            </h3>
-
-            <p>
-                Ocean × Eco-Tech began with a simple question:
-                how can technology help us respond to the growing
-                problem of marine waste?
-            </p>
-
-            <p>
-                The answer we are exploring is a smart floating
-                waste-collection system that can eventually connect
-                physical hardware with a digital monitoring platform.
-            </p>
-
-            <p>
-                Instead of treating the prototype as only a
-                mechanical device, the project brings together
-                hardware, sensors, software, mapping and
-                environmental thinking.
-            </p>
-
-            <div class="story-highlight">
-                🌱 Our goal is to turn a student idea into a
-                meaningful environmental technology concept.
-            </div>
-
-        </div>
-
-
-        <div class="areas">
-
-
-            <div class="area-card">
-
-                <div class="area-icon">
-                    🌊
-                </div>
-
-                <h4>
-                    Ocean Protection
-                </h4>
-
-                <p>
-                    Explore technology that can support cleaner
-                    aquatic environments.
-                </p>
-
-            </div>
-
-
-            <div class="area-card">
-
-                <div class="area-icon">
-                    ♻️
-                </div>
-
-                <h4>
-                    Waste Management
-                </h4>
-
-                <p>
-                    Focus on identifying and collecting floating
-                    waste responsibly.
-                </p>
-
-            </div>
-
-
-            <div class="area-card">
-
-                <div class="area-icon">
-                    🐬
-                </div>
-
-                <h4>
-                    Wildlife Awareness
-                </h4>
-
-                <p>
-                    Consider marine-life safety during the design
-                    of autonomous operation.
-                </p>
-
-            </div>
-
-
-            <div class="area-card">
-
-                <div class="area-icon">
-                    💻
-                </div>
-
-                <h4>
-                    Technology
-                </h4>
-
-                <p>
-                    Connect a future hardware system with a
-                    dedicated digital interface.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     ACHIEVEMENTS
-===================================================== -->
-
-<section class="achievement-section">
-
-    <div class="section-title">
-
-        <h2>
-            🏆 Achievements
-        </h2>
-
-        <p>
-            Key milestones reached during the development
-            of the Ocean × Eco-Tech project.
-        </p>
-
-    </div>
-
-
-    <div class="achievement-grid">
-
-
-        <div class="achievement-card">
-
-            <div class="achievement-icon">
-                💡
-            </div>
-
-            <h3>
-                Concept Developed
-            </h3>
-
-            <p>
-                Developed the concept for a smart marine
-                waste-collection system.
-            </p>
-
-        </div>
-
-
-        <div class="achievement-card">
-
-            <div class="achievement-icon">
-                🛠️
-            </div>
-
-            <h3>
-                Prototype Planning
-            </h3>
-
-            <p>
-                Planned the physical structure, collection
-                mechanism and future sensor integration.
-            </p>
-
-        </div>
-
-
-        <div class="achievement-card">
-
-            <div class="achievement-icon">
-                💻
-            </div>
-
-            <h3>
-                Web Platform
-            </h3>
-
-            <p>
-                Developed a dedicated digital platform for
-                monitoring and presenting the project.
-            </p>
-
-        </div>
-
-
-        <div class="achievement-card">
-
-            <div class="achievement-icon">
-                🌍
-            </div>
-
-            <h3>
-                Global Map Concept
-            </h3>
-
-            <p>
-                Created a world-map interface to represent
-                the future monitoring environment.
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     PROJECT JOURNEY
-===================================================== -->
-
-<section class="journey-section">
-
-    <div class="section-title">
-
-        <h2>
-            🚀 Project Journey
-        </h2>
-
-        <p>
-            The development process is being built step by step,
-            from an initial idea toward a functional prototype.
-        </p>
-
-    </div>
-
-
-    <div class="journey">
-
-
-        <div class="journey-item">
-
-            <div class="journey-dot">
-                01
-            </div>
-
-            <h3>
-                💡 Idea & Research
-            </h3>
-
-            <p>
-                Identify the marine-waste problem and explore
-                possible technological solutions.
-            </p>
-
-        </div>
-
-
-        <div class="journey-item">
-
-            <div class="journey-dot">
-                02
-            </div>
-
-            <h3>
-                🧩 System Design
-            </h3>
-
-            <p>
-                Plan the collector structure, waste collection
-                system, safety features and digital platform.
-            </p>
-
-        </div>
-
-
-        <div class="journey-item">
-
-            <div class="journey-dot">
-                03
-            </div>
-
-            <h3>
-                🛠️ Prototype Development
-            </h3>
-
-            <p>
-                Build and test the physical prototype and
-                prepare the hardware architecture.
-            </p>
-
-        </div>
-
-
-        <div class="journey-item">
-
-            <div class="journey-dot">
+            <div class="impact-number">
                 04
             </div>
 
             <h3>
-                📡 Sensor Integration
+                Sustainable Innovation
             </h3>
 
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= MISSION ================= -->
+
+<section class="mission">
+
+
+    <div class="mission-container">
+
+
+        <div class="mission-text">
+
+            <h2>
+
+                Technology With a
+                <span>Purpose</span>
+
+            </h2>
+
+
             <p>
-                Future sensors can provide real measurements
-                to the application once the hardware is connected.
+
+                Ocean pollution is not only an environmental
+                challenge. It is also an opportunity to explore
+                how technology can help communities understand
+                and address problems around them.
+
             </p>
+
+
+            <p>
+
+                Our project combines a physical marine waste
+                collector with a digital interface designed
+                for future monitoring and analysis.
+
+            </p>
+
+
+            <ul class="mission-list">
+
+                <li>
+                    🌊 Reduce floating waste
+                </li>
+
+                <li>
+                    ♻️ Encourage responsible waste management
+                </li>
+
+                <li>
+                    🐠 Consider marine-life safety
+                </li>
+
+                <li>
+                    💡 Encourage student innovation
+                </li>
+
+            </ul>
 
         </div>
 
 
-        <div class="journey-item">
 
-            <div class="journey-dot">
-                05
+        <div class="impact-visual">
+
+            <div class="orbit"></div>
+
+            <div class="earth">
+                🌍
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= GOALS ================= -->
+
+<section class="goals">
+
+
+    <div class="section-title">
+
+        <h2>
+            🎯 Our Environmental Goals
+        </h2>
+
+
+        <p>
+            The areas where the project hopes to create value.
+        </p>
+
+    </div>
+
+
+    <div class="goal-grid">
+
+
+        <div class="goal-card">
+
+            <div>
+                🧴
             </div>
 
             <h3>
-                🌊 Real-World Testing
+                Reduce Plastic Pollution
             </h3>
 
             <p>
-                Future testing can evaluate the prototype's
-                operation, safety and environmental performance.
+                Explore ways to intercept floating waste
+                before it travels further through waterways.
             </p>
 
         </div>
 
 
+
+        <div class="goal-card">
+
+            <div>
+                🐟
+            </div>
+
+            <h3>
+                Protect Marine Life
+            </h3>
+
+            <p>
+                Include safety considerations when designing
+                technology that operates around aquatic life.
+            </p>
+
+        </div>
+
+
+
+        <div class="goal-card">
+
+            <div>
+                📚
+            </div>
+
+            <h3>
+                Educate & Inspire
+            </h3>
+
+            <p>
+                Show how environmental science, electronics
+                and coding can work together in a student project.
+            </p>
+
+        </div>
+
+
+
+        <div class="goal-card">
+
+            <div>
+                🤖
+            </div>
+
+            <h3>
+                Explore Automation
+            </h3>
+
+            <p>
+                Investigate how future sensors and
+                microcontrollers could make collection smarter.
+            </p>
+
+        </div>
+
+
+
+        <div class="goal-card">
+
+            <div>
+                📱
+            </div>
+
+            <h3>
+                Connect Physical & Digital
+            </h3>
+
+            <p>
+                Create a digital interface that can eventually
+                display information from the physical prototype.
+            </p>
+
+        </div>
+
+
+
+        <div class="goal-card">
+
+            <div>
+                🌱
+            </div>
+
+            <h3>
+                Encourage Sustainability
+            </h3>
+
+            <p>
+                Promote practical environmental awareness
+                through technology and community participation.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="note">
+
+        ℹ️ <strong>Important:</strong>
+        The project is currently a prototype concept.
+        The impact figures shown here are goals rather than
+        measured real-world results.
+
     </div>
 
 </section>
 
 
-<!-- =====================================================
-     CURRENT STATUS
-===================================================== -->
 
-<section class="status-section">
+<!-- ================= FUTURE IMPACT ================= -->
 
-    <div class="status-box">
-
-        <h2>
-            📡 Current Project Status
-        </h2>
-
-        <p>
-            The digital platform is being developed alongside
-            the physical prototype. Since the sensors are not
-            connected yet, this website does not display
-            fabricated measurements or simulated environmental data.
-        </p>
+<section class="future-impact">
 
 
-        <div class="status-items">
+    <h2>
+        🔮 Measuring Impact in the Future
+    </h2>
 
 
-            <div class="status-item">
+    <p>
 
-                <span>
-                    Hardware
-                </span>
+        Once the physical system is developed and tested,
+        real measurements can replace the current
+        project goals and demonstrations.
 
-                <strong>
-                    🔧 In Development
-                </strong>
+    </p>
 
+
+    <div class="future-grid">
+
+
+        <div class="future-card">
+
+            <div>
+                ♻️
             </div>
 
+            <h3>
+                Waste Collected
+            </h3>
 
-            <div class="status-item">
+            <p>
+                Future hardware could record the amount
+                of waste collected during operation.
+            </p>
 
-                <span>
-                    Sensor Data
-                </span>
+        </div>
 
-                <strong>
-                    ⏳ Awaiting Hardware
-                </strong>
 
+
+        <div class="future-card">
+
+            <div>
+                📊
             </div>
 
+            <h3>
+                Environmental Data
+            </h3>
 
-            <div class="status-item">
+            <p>
+                Connected sensors could provide
+                environmental measurements for analysis.
+            </p>
 
-                <span>
-                    Web Platform
-                </span>
+        </div>
 
-                <strong>
-                    🌐 Interface Ready
-                </strong>
 
+
+        <div class="future-card">
+
+            <div>
+                🗺️
             </div>
 
+            <h3>
+                Collection Zones
+            </h3>
+
+            <p>
+                Future location data could help identify
+                areas where waste collection is most useful.
+            </p>
 
         </div>
 
@@ -1808,41 +1220,55 @@ footer span {
 </section>
 
 
-<!-- =====================================================
-     CTA
-===================================================== -->
+
+<!-- ================= CTA ================= -->
 
 <section class="cta">
 
+
     <h2>
-        🗺️ Explore the Ocean
+        📡 See the Technology
     </h2>
 
+
     <p>
-        Explore the world map and see how the Ocean × Eco-Tech
-        platform is being designed for future environmental
-        monitoring.
+
+        Explore the solution behind the project
+        and discover how the physical prototype
+        could connect with future technology.
+
     </p>
 
-    <a href="map.html" class="cta-btn">
-        Open World Map →
+
+    <a
+        href="solutions.html"
+        class="cta-btn"
+    >
+        Explore Solutions →
     </a>
 
 </section>
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
     <div>
-        🌊 OCEAN <span>× ECO-TECH</span>
+
+        🌊 OCEAN
+        <span>
+            × ECO-TECH
+        </span>
+
     </div>
 
+
     <div>
+
         © 2026 Ocean × Eco-Tech
+
     </div>
 
 </footer>

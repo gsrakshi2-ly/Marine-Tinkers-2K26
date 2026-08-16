@@ -1,668 +1,715 @@
-
-```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Get Involved | Ocean × Eco-Tech</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* ================= BASIC ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
 }
 
-html{
-    scroll-behavior:smooth;
+body {
+    background: #F7FBFC;
+    color: #063B5C;
 }
 
-body{
-    font-family:'Inter',Arial,sans-serif;
-    background:#F6FBFC;
-    color:#063B5C;
-    overflow-x:hidden;
+a {
+    text-decoration: none;
 }
 
-a{
-    text-decoration:none;
-    color:inherit;
-}
 
 /* ================= NAVBAR ================= */
 
-nav{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:74px;
-    padding:0 6%;
+nav {
+    height: 72px;
+    width: 100%;
 
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+    background: #063B5C;
 
-    background:rgba(4,45,70,.94);
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    border-bottom:1px solid rgba(255,255,255,.08);
-    z-index:1000;
+    padding: 0 6%;
+
+    position: fixed;
+    top: 0;
+    z-index: 1000;
 }
 
-.logo{
-    color:#fff;
-    font-size:19px;
-    font-weight:800;
-    letter-spacing:.4px;
-    white-space:nowrap;
+.logo {
+    color: white;
+    font-size: 21px;
+    font-weight: bold;
 }
 
-.logo span{
-    color:#20C7C9;
+.logo span {
+    color: #20C7C9;
 }
 
-nav ul{
-    display:flex;
-    align-items:center;
-    gap:24px;
-    list-style:none;
+nav ul {
+    display: flex;
+    gap: 22px;
+    list-style: none;
 }
 
-nav ul li a{
-    position:relative;
-    color:#D7EEF1;
-    font-size:13px;
-    font-weight:500;
-    transition:.3s ease;
-}
-
-nav ul li a::after{
-    content:"";
-    position:absolute;
-    left:50%;
-    bottom:-8px;
-    width:0;
-    height:2px;
-    background:#20C7C9;
-    transform:translateX(-50%);
-    transition:.3s ease;
+nav ul li a {
+    color: white;
+    font-size: 14px;
+    transition: .3s;
 }
 
 nav ul li a:hover,
-nav ul li a.active{
-    color:#20C7C9;
+nav ul li a.active {
+    color: #20C7C9;
 }
 
-nav ul li a:hover::after,
-nav ul li a.active::after{
-    width:100%;
+.nav-btn {
+    background: #20C7C9;
+    color: #063B5C;
+
+    padding: 10px 18px;
+
+    border-radius: 25px;
+
+    font-weight: bold;
 }
 
-.nav-btn{
-    padding:11px 20px;
-    border-radius:30px;
-    background:#20C7C9;
-    color:#063B5C;
-    font-size:12px;
-    font-weight:800;
-    transition:.3s ease;
-}
-
-.nav-btn:hover{
-    transform:translateY(-2px);
-    background:#B9F3E4;
-}
 
 /* ================= HERO ================= */
 
-.hero{
-    position:relative;
-    min-height:500px;
-    margin-top:74px;
-    padding:100px 7% 90px;
+.hero {
+    margin-top: 72px;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    min-height: 450px;
 
-    text-align:center;
-    overflow:hidden;
-    color:white;
+    padding: 90px 7%;
 
     background:
-        radial-gradient(
-            circle at 15% 25%,
-            rgba(32,199,201,.18),
-            transparent 27%
-        ),
-        radial-gradient(
-            circle at 85% 20%,
-            rgba(185,243,228,.10),
-            transparent 25%
-        ),
         linear-gradient(
-            145deg,
-            #021F32,
-            #063B5C 50%,
+            135deg,
+            #063B5C,
             #087A9A
         );
+
+    color: white;
+
+    text-align: center;
+
+    position: relative;
+
+    overflow: hidden;
 }
 
-.hero::after{
-    content:"";
-    position:absolute;
-    left:-5%;
-    bottom:-130px;
-    width:110%;
-    height:220px;
-    border-radius:50%;
-    background:#F6FBFC;
-    opacity:.07;
+.hero-icon {
+    font-size: 78px;
+
+    margin-bottom: 15px;
+
+    animation:
+        floating 3s ease-in-out infinite;
 }
 
-.hero-content{
-    position:relative;
-    z-index:5;
-    max-width:850px;
+@keyframes floating {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
 }
 
-.hero-icon{
-    width:92px;
-    height:92px;
-    margin:0 auto 28px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:50%;
-
-    background:rgba(32,199,201,.12);
-    border:1px solid rgba(32,199,201,.4);
-
-    font-size:43px;
-
-    box-shadow:
-        0 0 40px rgba(32,199,201,.12);
-
-    animation:floatIcon 4s ease-in-out infinite;
+.hero h1 {
+    font-size: 52px;
+    margin-bottom: 18px;
 }
 
-@keyframes floatIcon{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-9px);}
+.hero h1 span {
+    color: #20C7C9;
 }
 
-.hero h1{
-    font-size:clamp(42px,6vw,65px);
-    line-height:1.05;
-    letter-spacing:-2px;
-    margin-bottom:22px;
+.hero p {
+    max-width: 720px;
+
+    margin: auto;
+
+    color: #E0F4F7;
+
+    line-height: 1.8;
+
+    font-size: 17px;
 }
 
-.hero h1 span{
-    color:#20C7C9;
-}
-
-.hero p{
-    max-width:700px;
-    margin:auto;
-    color:#D5EDF1;
-    line-height:1.85;
-    font-size:15px;
-}
 
 /* ================= BUBBLES ================= */
 
-.bubble{
-    position:absolute;
-    border-radius:50%;
-    border:1px solid rgba(255,255,255,.14);
+.bubble {
+    position: absolute;
 
-    background:
-        radial-gradient(
-            circle at 30% 25%,
-            rgba(255,255,255,.15),
-            transparent 45%
-        );
+    border: 2px solid rgba(255,255,255,.22);
 
-    animation:bubbleFloat 7s ease-in-out infinite;
+    border-radius: 50%;
+
+    animation:
+        bubbleFloat 6s ease-in-out infinite;
 }
 
-.bubble1{
-    width:45px;
-    height:45px;
-    left:10%;
-    top:125px;
+.bubble1 {
+    width: 35px;
+    height: 35px;
+
+    left: 12%;
+    top: 100px;
 }
 
-.bubble2{
-    width:90px;
-    height:90px;
-    right:9%;
-    top:105px;
-    animation-delay:1.5s;
+.bubble2 {
+    width: 70px;
+    height: 70px;
+
+    right: 12%;
+    top: 90px;
 }
 
-.bubble3{
-    width:24px;
-    height:24px;
-    left:23%;
-    bottom:100px;
-    animation-delay:2.5s;
+.bubble3 {
+    width: 20px;
+    height: 20px;
+
+    left: 25%;
+    bottom: 60px;
 }
 
-.bubble4{
-    width:55px;
-    height:55px;
-    right:24%;
-    bottom:85px;
-    animation-delay:3.5s;
+.bubble4 {
+    width: 45px;
+    height: 45px;
+
+    right: 28%;
+    bottom: 45px;
 }
 
-@keyframes bubbleFloat{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-22px);}
+@keyframes bubbleFloat {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-25px);
+    }
+
 }
 
-/* ================= SECTIONS ================= */
 
-section{
-    padding:90px 7%;
+/* ================= SECTION ================= */
+
+section {
+    padding: 80px 7%;
 }
 
-.section-title{
-    max-width:720px;
-    margin:0 auto 50px;
-    text-align:center;
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
 }
 
-.section-title h2{
-    font-size:clamp(28px,4vw,38px);
-    letter-spacing:-1px;
-    margin-bottom:13px;
+.section-title h2 {
+    font-size: 38px;
+    margin-bottom: 12px;
 }
 
-.section-title p{
-    color:#66808B;
-    font-size:14px;
-    line-height:1.8;
+.section-title p {
+    color: #607D8B;
 }
 
-/* ================= CONTACT GRID ================= */
 
-.contact-grid{
-    max-width:1150px;
-    margin:auto;
+/* ================= CONTACT CARDS ================= */
 
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:25px;
+.contact-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 22px;
 }
 
-.card{
-    padding:32px;
+.contact-card {
+    background: white;
 
-    background:#fff;
+    padding: 30px 25px;
 
-    border:1px solid #DCECEE;
-    border-radius:26px;
+    border-radius: 22px;
+
+    text-align: center;
 
     box-shadow:
-        0 12px 35px rgba(6,59,92,.055);
+        0 8px 25px
+        rgba(6,59,92,.08);
 
-    transition:.3s ease;
+    transition: .35s;
 }
 
-.card:hover{
-    transform:translateY(-6px);
-    border-color:rgba(32,199,201,.35);
-    box-shadow:
-        0 20px 45px rgba(6,59,92,.10);
-}
+.contact-card:hover {
 
-.card h3{
-    font-size:21px;
-    margin-bottom:12px;
-}
-
-.card > p{
-    color:#69818B;
-    font-size:13px;
-    line-height:1.8;
-}
-
-/* ================= WASTE REPORTING ================= */
-
-.report-card{
-    max-width:1150px;
-    margin:25px auto 0;
-
-    padding:38px;
-
-    border-radius:28px;
-
-    background:
-        radial-gradient(
-            circle at 90% 10%,
-            rgba(32,199,201,.12),
-            transparent 30%
-        ),
-        linear-gradient(
-            145deg,
-            #EAF9F7,
-            #F8FCFC
-        );
-
-    border:1px solid #D3ECE9;
-}
-
-.report-card h2{
-    font-size:27px;
-    margin-bottom:10px;
-}
-
-.report-card > p{
-    color:#5F7882;
-    font-size:14px;
-    line-height:1.8;
-    max-width:750px;
-    margin-bottom:28px;
-}
-
-.report-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
-}
-
-.report-item{
-    padding:23px;
-
-    background:#fff;
-
-    border:1px solid #DCECEE;
-    border-radius:20px;
-
-    transition:.3s ease;
-}
-
-.report-item:hover{
-    transform:translateY(-5px);
-    border-color:#20C7C9;
-}
-
-.report-icon{
-    width:52px;
-    height:52px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    margin-bottom:15px;
-
-    border-radius:15px;
-
-    background:#E8F8F6;
-
-    font-size:25px;
-}
-
-.report-item h4{
-    margin-bottom:8px;
-    font-size:15px;
-}
-
-.report-item p{
-    color:#70858C;
-    font-size:11px;
-    line-height:1.7;
-}
-
-/* ================= MESSAGE ================= */
-
-.message-section{
-    background:
-        linear-gradient(
-            180deg,
-            #EAF9F7,
-            #F7FCFC
-        );
-}
-
-.message-box{
-    max-width:850px;
-    margin:auto;
-
-    padding:38px;
-
-    background:#fff;
-
-    border:1px solid #DCECEE;
-    border-radius:27px;
+    transform:
+        translateY(-10px);
 
     box-shadow:
-        0 15px 40px rgba(6,59,92,.06);
+        0 17px 35px
+        rgba(6,59,92,.14);
 }
 
-.form-group{
-    margin-bottom:20px;
+.contact-icon {
+    font-size: 45px;
+
+    margin-bottom: 15px;
 }
 
-.form-group label{
-    display:block;
-    margin-bottom:8px;
+.contact-card h3 {
+    margin-bottom: 10px;
+}
 
-    color:#063B5C;
+.contact-card p {
+    color: #607D8B;
 
-    font-size:12px;
-    font-weight:700;
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+
+
+/* ================= FORM ================= */
+
+.form-section {
+    background: #EAF9F7;
+}
+
+.form-container {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        .8fr 1.2fr;
+
+    gap: 40px;
+
+    align-items: start;
+}
+
+
+/* LEFT SIDE */
+
+.form-info {
+    padding: 20px;
+}
+
+.form-info h2 {
+
+    font-size: 34px;
+
+    margin-bottom: 18px;
+}
+
+.form-info h2 span {
+    color: #20AEB0;
+}
+
+.form-info p {
+
+    color: #607D8B;
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+.form-info ul {
+    list-style: none;
+}
+
+.form-info li {
+
+    padding: 12px 0;
+
+    color: #355968;
+}
+
+
+/* ================= FORM BOX ================= */
+
+.contact-form {
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(6,59,92,.08);
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-weight: bold;
+
+    font-size: 14px;
 }
 
 .form-group input,
 .form-group textarea,
-.form-group select{
-    width:100%;
+.form-group select {
 
-    padding:14px 15px;
+    width: 100%;
 
-    border:1px solid #D5E6E9;
-    border-radius:13px;
+    border: 1px solid #D5E7EA;
 
-    background:#F9FDFC;
+    padding: 13px 15px;
 
-    color:#063B5C;
+    border-radius: 12px;
 
-    font-family:inherit;
-    font-size:13px;
+    outline: none;
 
-    outline:none;
+    font-size: 14px;
 
-    transition:.3s ease;
+    color: #063B5C;
+
+    background: #F9FCFD;
+
+    transition: .3s;
 }
 
 .form-group input:focus,
 .form-group textarea:focus,
-.form-group select:focus{
-    border-color:#20C7C9;
-    box-shadow:0 0 0 3px rgba(32,199,201,.08);
+.form-group select:focus {
+
+    border-color: #20C7C9;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(32,199,201,.12);
 }
 
-.form-group textarea{
-    min-height:140px;
-    resize:vertical;
+.form-group textarea {
+
+    height: 130px;
+
+    resize: vertical;
 }
 
-.submit-btn{
-    border:none;
 
-    padding:14px 27px;
+/* ================= BUTTON ================= */
 
-    border-radius:30px;
+.submit-btn {
 
-    background:#063B5C;
-    color:white;
+    width: 100%;
 
-    font-family:inherit;
-    font-size:13px;
-    font-weight:700;
+    border: none;
 
-    cursor:pointer;
+    padding: 14px;
 
-    transition:.3s ease;
+    border-radius: 25px;
+
+    background: #063B5C;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .3s;
 }
 
-.submit-btn:hover{
-    transform:translateY(-3px);
-    background:#087A9A;
+.submit-btn:hover {
+
+    background: #20AEB0;
+
+    transform:
+        translateY(-2px);
 }
 
-/* ================= INFO ================= */
 
-.info-grid{
-    max-width:1150px;
-    margin:30px auto 0;
+/* ================= SUCCESS ================= */
 
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
+.success {
+
+    display: none;
+
+    margin-top: 18px;
+
+    padding: 14px;
+
+    background: #EAF9F7;
+
+    color: #087A70;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    font-weight: bold;
 }
 
-.info-card{
-    padding:28px;
 
-    background:white;
+/* ================= JOIN ================= */
 
-    border:1px solid #DCECEE;
-    border-radius:22px;
+.join {
 
-    text-align:center;
+    background: #063B5C;
+
+    color: white;
+
+    text-align: center;
 }
 
-.info-icon{
-    font-size:29px;
-    margin-bottom:13px;
+.join h2 {
+
+    font-size: 38px;
+
+    margin-bottom: 15px;
 }
 
-.info-card h3{
-    font-size:15px;
-    margin-bottom:8px;
+.join > p {
+
+    max-width: 700px;
+
+    margin:
+        auto auto 40px;
+
+    color: #D4E9ED;
+
+    line-height: 1.8;
 }
 
-.info-card p{
-    color:#70858C;
-    font-size:11px;
-    line-height:1.7;
+.join-grid {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 20px;
 }
+
+.join-card {
+
+    background:
+        rgba(255,255,255,.08);
+
+    padding: 30px 20px;
+
+    border-radius: 20px;
+
+    transition: .3s;
+}
+
+.join-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    background:
+        rgba(255,255,255,.14);
+}
+
+.join-card div {
+
+    font-size: 42px;
+
+    margin-bottom: 13px;
+}
+
+.join-card h3 {
+
+    margin-bottom: 8px;
+}
+
+.join-card p {
+
+    color: #D4E9ED;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* ================= FINAL CTA ================= */
+
+.final-cta {
+
+    background: #B9F3E4;
+
+    text-align: center;
+}
+
+.final-cta h2 {
+
+    font-size: 36px;
+
+    margin-bottom: 15px;
+}
+
+.final-cta p {
+
+    max-width: 650px;
+
+    margin:
+        auto auto 25px;
+
+    color: #355968;
+
+    line-height: 1.7;
+}
+
+.home-btn {
+
+    display: inline-block;
+
+    padding: 14px 26px;
+
+    background: #063B5C;
+
+    color: white;
+
+    border-radius: 28px;
+
+    font-weight: bold;
+
+    transition: .3s;
+}
+
+.home-btn:hover {
+
+    background: #20AEB0;
+
+    transform:
+        translateY(-3px);
+}
+
 
 /* ================= FOOTER ================= */
 
-footer{
-    min-height:85px;
-    padding:32px 6%;
+footer {
 
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+    background: #042D46;
 
-    background:#021F32;
-    color:#D6E8EB;
+    color: white;
 
-    font-size:12px;
+    padding: 35px 6%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
 }
 
-footer span{
-    color:#20C7C9;
+footer span {
+    color: #20C7C9;
 }
+
 
 /* ================= RESPONSIVE ================= */
 
-@media(max-width:1000px){
+@media(max-width:900px) {
 
-    nav ul{
-        gap:14px;
+    nav ul {
+        display: none;
     }
 
-    .contact-grid{
-        grid-template-columns:1fr;
+    .contact-grid {
+        grid-template-columns:
+            1fr 1fr;
     }
 
-    .report-grid,
-    .info-grid{
-        grid-template-columns:repeat(2,1fr);
+    .form-container {
+        grid-template-columns:
+            1fr;
     }
+
+    .join-grid {
+        grid-template-columns:
+            1fr;
+    }
+
 }
 
-@media(max-width:800px){
+@media(max-width:600px) {
 
-    nav ul{
-        display:none;
+    .hero h1 {
+        font-size: 38px;
     }
 
-    .nav-btn{
-        padding:10px 15px;
+    .contact-grid {
+        grid-template-columns:
+            1fr;
     }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+
+    .form-info h2 {
+        font-size: 30px;
+    }
+
+    footer {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+    }
+
 }
 
-@media(max-width:600px){
-
-    .hero{
-        min-height:470px;
-        padding:85px 6% 75px;
-    }
-
-    .hero h1{
-        font-size:40px;
-        letter-spacing:-1px;
-    }
-
-    section{
-        padding:65px 6%;
-    }
-
-    .report-grid,
-    .info-grid{
-        grid-template-columns:1fr;
-    }
-
-    .report-card,
-    .message-box{
-        padding:25px 21px;
-    }
-
-    footer{
-        flex-direction:column;
-        gap:12px;
-        text-align:center;
-    }
-}
-
-@media(max-width:400px){
-
-    .logo{
-        font-size:15px;
-    }
-
-    .nav-btn{
-        font-size:10px;
-        padding:9px 12px;
-    }
-
-    .hero h1{
-        font-size:34px;
-    }
-}
 </style>
+
 </head>
 
+
 <body>
+
 
 <!-- ================= NAVBAR ================= -->
 
@@ -672,43 +719,66 @@ footer span{
         🌊 OCEAN <span>× ECO-TECH</span>
     </div>
 
+
     <ul>
 
         <li>
-            <a href="index.html">Home</a>
+            <a href="index.html">
+                Home
+            </a>
         </li>
 
         <li>
-            <a href="dashboard.html">Live Data</a>
+            <a href="dashboard.html">
+                Live Data
+            </a>
         </li>
 
         <li>
-            <a href="map.html">Map</a>
+            <a href="map.html">
+                Map
+            </a>
         </li>
 
         <li>
-            <a href="solutions.html">Solutions</a>
+            <a href="solutions.html">
+                Solutions
+            </a>
         </li>
 
         <li>
-            <a href="impact.html">Impact</a>
+            <a href="impact.html">
+                Impact
+            </a>
         </li>
 
         <li>
-            <a href="about.html">About</a>
+            <a href="about.html">
+                About
+            </a>
         </li>
 
         <li>
-            <a href="contact.html" class="active">Get Involved</a>
+            <a
+                href="contact.html"
+                class="active"
+            >
+                Get Involved
+            </a>
         </li>
 
     </ul>
 
-    <a href="map.html" class="nav-btn">
-        View Map 🗺️
+
+    <a
+        href="#message"
+        class="nav-btn"
+    >
+        Join Us 🌱
     </a>
 
 </nav>
+
 
 
 <!-- ================= HERO ================= -->
@@ -716,45 +786,55 @@ footer span{
 <header class="hero">
 
     <div class="bubble bubble1"></div>
+
     <div class="bubble bubble2"></div>
+
     <div class="bubble bubble3"></div>
+
     <div class="bubble bubble4"></div>
 
-    <div class="hero-content">
 
-        <div class="hero-icon">
-            🌊
-        </div>
-
-        <h1>
-            Get <span>Involved</span>
-        </h1>
-
-        <p>
-            Help us build awareness around ocean pollution,
-            share observations, and support the development
-            of smarter and more sustainable marine solutions.
-        </p>
-
+    <div class="hero-icon">
+        🌊
     </div>
+
+
+    <h1>
+
+        Join the
+        <span>Mission</span>
+
+    </h1>
+
+
+    <p>
+
+        Have an idea, suggestion or question about
+        Ocean × Eco-Tech?
+
+        Share it with us and become part of the journey
+        toward cleaner and healthier oceans.
+
+    </p>
 
 </header>
 
 
-<!-- ================= CONTACT CARDS ================= -->
+
+<!-- ================= CONTACT OPTIONS ================= -->
 
 <section>
+
 
     <div class="section-title">
 
         <h2>
-            🤝 Connect With the Project
+            💬 Connect With the Project
         </h2>
 
+
         <p>
-            Ocean × Eco-Tech is designed as a student-led
-            environmental technology project focused on
-            practical ideas for reducing marine waste.
+            There are many ways to contribute to ocean conservation.
         </p>
 
     </div>
@@ -762,111 +842,60 @@ footer span{
 
     <div class="contact-grid">
 
-        <div class="card">
+
+        <div class="contact-card">
+
+            <div class="contact-icon">
+                💡
+            </div>
 
             <h3>
-                🌱 Support the Mission
+                Share an Idea
             </h3>
 
             <p>
-                Share ideas, observations, suggestions, or
-                useful information that could help improve
-                the project and its approach to marine
-                waste management.
+                Have a creative idea for improving our
+                project? We'd love to hear it.
             </p>
 
         </div>
 
 
-        <div class="card">
+
+        <div class="contact-card">
+
+            <div class="contact-icon">
+                🌱
+            </div>
 
             <h3>
-                🌊 Share an Ocean Observation
+                Support the Mission
             </h3>
 
             <p>
-                If you notice marine litter or other
-                environmental concerns, you can use the
-                reporting section below to record the
-                information for future project analysis.
+                Learn about sustainable habits and
+                ways to help protect our oceans.
             </p>
 
         </div>
 
-    </div>
 
 
-    <!-- ================= WASTE REPORTING ================= -->
+        <div class="contact-card">
 
-    <div class="report-card">
-
-        <h2>
-            📸 Waste Reporting
-        </h2>
-
-        <p>
-            Record observations of marine waste to help
-            document environmental problems and understand
-            where future cleanup and monitoring efforts
-            could be useful.
-        </p>
-
-
-        <div class="report-grid">
-
-            <div class="report-item">
-
-                <div class="report-icon">
-                    📷
-                </div>
-
-                <h4>
-                    Waste Photo
-                </h4>
-
-                <p>
-                    Add a photograph of the waste you
-                    observed for documentation.
-                </p>
-
+            <div class="contact-icon">
+                🤝
             </div>
 
+            <h3>
+                Collaborate
+            </h3>
 
-            <div class="report-item">
-
-                <div class="report-icon">
-                    📍
-                </div>
-
-                <h4>
-                    Observation Location
-                </h4>
-
-                <p>
-                    Record where the waste was observed
-                    when location information is available.
-                </p>
-
-            </div>
-
-
-            <div class="report-item">
-
-                <div class="report-icon">
-                    ♻️
-                </div>
-
-                <h4>
-                    Waste Type
-                </h4>
-
-                <p>
-                    Describe the type of waste observed,
-                    such as plastic, fishing material, or
-                    other marine debris.
-                </p>
-
-            </div>
+            <p>
+                Work together with students,
+                communities and innovators
+                on environmental ideas.
+            </p>
 
         </div>
 
@@ -875,42 +904,82 @@ footer span{
 </section>
 
 
-<!-- ================= MESSAGE ================= -->
 
-<section class="message-section">
+<!-- ================= FORM ================= -->
 
-    <div class="section-title">
-
-        <h2>
-            ✉️ Send a Message
-        </h2>
-
-        <p>
-            Have an idea, suggestion, project question,
-            or observation to share? Use the form below.
-        </p>
-
-    </div>
+<section
+    class="form-section"
+    id="message"
+>
 
 
-    <div class="message-box">
+    <div class="form-container">
 
-        <form>
+
+        <div class="form-info">
+
+            <h2>
+
+                Let's Make a
+                <span>Difference</span>
+
+            </h2>
+
+
+            <p>
+
+                Your feedback can help us improve
+                the project and explore new ideas
+                for protecting our oceans.
+
+            </p>
+
+
+            <ul>
+
+                <li>
+                    🌊 Explore ocean technology
+                </li>
+
+                <li>
+                    ♻️ Share environmental ideas
+                </li>
+
+                <li>
+                    🐠 Support marine protection
+                </li>
+
+                <li>
+                    🌱 Encourage sustainable choices
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <form
+            class="contact-form"
+            id="contactForm"
+        >
+
 
             <div class="form-group">
 
                 <label for="name">
-                    Name
+                    Your Name
                 </label>
 
                 <input
                     type="text"
                     id="name"
-                    name="name"
                     placeholder="Enter your name"
+                    required
                 >
 
             </div>
+
 
 
             <div class="form-group">
@@ -922,31 +991,29 @@ footer span{
                 <input
                     type="email"
                     id="email"
-                    name="email"
                     placeholder="Enter your email"
+                    required
                 >
 
             </div>
 
 
+
             <div class="form-group">
 
-                <label for="type">
-                    Message Type
+                <label for="topic">
+                    Topic
                 </label>
 
-                <select id="type" name="type">
 
-                    <option value="">
-                        Select an option
+                <select id="topic">
+
+                    <option>
+                        Project Feedback
                     </option>
 
                     <option>
-                        Project Suggestion
-                    </option>
-
-                    <option>
-                        Waste Observation
+                        Environmental Idea
                     </option>
 
                     <option>
@@ -954,7 +1021,7 @@ footer span{
                     </option>
 
                     <option>
-                        General Message
+                        General Question
                     </option>
 
                 </select>
@@ -962,27 +1029,43 @@ footer span{
             </div>
 
 
+
             <div class="form-group">
 
-                <label for="message">
+                <label for="messageText">
                     Message
                 </label>
 
+
                 <textarea
-                    id="message"
-                    name="message"
+                    id="messageText"
                     placeholder="Write your message..."
+                    required
                 ></textarea>
 
             </div>
+
 
 
             <button
                 type="submit"
                 class="submit-btn"
             >
-                Send Message →
+
+                🌊 Send Message
+
             </button>
+
+
+            <div
+                class="success"
+                id="successMessage"
+            >
+
+                ✅ Thank you! Your message has been
+                recorded for this demo.
+
+            </div>
 
         </form>
 
@@ -991,76 +1074,83 @@ footer span{
 </section>
 
 
-<!-- ================= PROJECT INFO ================= -->
 
-<section>
+<!-- ================= JOIN ================= -->
 
-    <div class="section-title">
-
-        <h2>
-            🌍 Be Part of the Change
-        </h2>
-
-        <p>
-            Small observations and ideas can contribute
-            to a better understanding of marine pollution
-            and inspire practical environmental solutions.
-        </p>
-
-    </div>
+<section class="join">
 
 
-    <div class="info-grid">
+    <h2>
+        🌍 Everyone Can Help
+    </h2>
 
-        <div class="info-card">
 
-            <div class="info-icon">
-                🌊
+    <p>
+
+        Protecting the ocean isn't only the responsibility
+        of scientists and engineers.
+
+        Students, families, communities and organizations
+        can all contribute.
+
+    </p>
+
+
+    <div class="join-grid">
+
+
+        <div class="join-card">
+
+            <div>
+                🧴
             </div>
 
             <h3>
-                Protect Our Oceans
+                Reduce Plastic
             </h3>
 
             <p>
-                Support awareness and responsible action
-                around marine environments.
+                Choose reusable alternatives and avoid
+                unnecessary single-use plastic.
             </p>
 
         </div>
 
 
-        <div class="info-card">
 
-            <div class="info-icon">
+        <div class="join-card">
+
+            <div>
                 ♻️
             </div>
 
             <h3>
-                Reduce Waste
+                Recycle
             </h3>
 
             <p>
-                Help document marine waste and encourage
-                better waste-management practices.
+                Dispose of waste responsibly so that
+                less material reaches waterways.
             </p>
 
         </div>
 
 
-        <div class="info-card">
 
-            <div class="info-icon">
-                💡
+        <div class="join-card">
+
+            <div>
+                📢
             </div>
 
             <h3>
-                Share Ideas
+                Spread Awareness
             </h3>
 
             <p>
-                New ideas can help us improve the concept
-                and make the project more useful.
+                Share knowledge about ocean pollution
+                and encourage others to make sustainable
+                choices.
             </p>
 
         </div>
@@ -1070,20 +1160,102 @@ footer span{
 </section>
 
 
+
+<!-- ================= FINAL CTA ================= -->
+
+<section class="final-cta">
+
+
+    <h2>
+
+        🐠 Together, We Can Protect Our Oceans
+
+    </h2>
+
+
+    <p>
+
+        Innovation gives us new tools.
+        Awareness gives us direction.
+        Working together gives us the power
+        to create meaningful change.
+
+    </p>
+
+
+    <a
+        href="index.html"
+        class="home-btn"
+    >
+
+        🌊 Back to Home
+
+    </a>
+
+</section>
+
+
+
 <!-- ================= FOOTER ================= -->
 
 <footer>
 
     <div>
-        🌊 OCEAN <span>× ECO-TECH</span>
+
+        🌊 OCEAN
+        <span>
+            × ECO-TECH
+        </span>
+
     </div>
 
+
     <div>
+
         © 2026 Ocean × Eco-Tech
+
     </div>
 
 </footer>
 
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+const form =
+    document.getElementById("contactForm");
+
+const success =
+    document.getElementById("successMessage");
+
+
+form.addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+        success.style.display = "block";
+
+        form.reset();
+
+        setTimeout(
+            function() {
+
+                success.style.display = "none";
+
+            },
+            5000
+        );
+
+    }
+);
+
+</script>
+
+
 </body>
+
 </html>
-```
