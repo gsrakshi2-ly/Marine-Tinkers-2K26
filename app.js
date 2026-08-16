@@ -1,74 +1,93 @@
-/* =========================================
+/* =========================================================
    OCEAN × ECO-TECH
-   LAYER 1 JAVASCRIPT
-   ========================================= */
+   GLOBAL WEBSITE JAVASCRIPT
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* -----------------------------------------------------
+       CURRENT PAGE NAVIGATION
+    ----------------------------------------------------- */
+
+    const currentPage =
+        window.location.pathname.split("/").pop() || "index.html";
+
+    document.querySelectorAll("nav a").forEach(link => {
+
+        const href = link.getAttribute("href");
+
+        if (href === currentPage) {
+            link.classList.add("active");
+        }
+
+    });
 
 
-/* =========================================
-   CURRENT YEAR
-   ========================================= */
+    /* -----------------------------------------------------
+       MOBILE MENU
+    ----------------------------------------------------- */
 
-const yearElements =
-    document.querySelectorAll("[data-year]");
+    const menuButton =
+        document.querySelector(".menu-toggle");
 
-yearElements.forEach(function(element) {
+    const navList =
+        document.querySelector("nav ul");
 
-    element.textContent =
-        new Date().getFullYear();
+    if (menuButton && navList) {
+
+        menuButton.addEventListener("click", () => {
+
+            navList.classList.toggle("mobile-open");
+
+        });
+
+    }
+
+
+    /* -----------------------------------------------------
+       LIVE CLOCK
+    ----------------------------------------------------- */
+
+    const clock =
+        document.querySelector("#liveClock");
+
+    if (clock) {
+
+        function updateClock() {
+
+            const now = new Date();
+
+            clock.textContent =
+                now.toLocaleTimeString();
+
+        }
+
+        updateClock();
+
+        setInterval(updateClock, 1000);
+
+    }
+
+
+    /* -----------------------------------------------------
+       DEMO SENSOR ANIMATION
+    ----------------------------------------------------- */
+
+    const sensorValues =
+        document.querySelectorAll("[data-sensor]");
+
+    sensorValues.forEach(value => {
+
+        value.addEventListener("click", () => {
+
+            value.classList.add("pulse");
+
+            setTimeout(() => {
+                value.classList.remove("pulse");
+            }, 500);
+
+        });
+
+    });
 
 });
-
-
-/* =========================================
-   MOBILE MENU
-   ========================================= */
-
-const menuButton =
-    document.getElementById("menuButton");
-
-const navLinks =
-    document.getElementById("navLinks");
-
-
-if (menuButton && navLinks) {
-
-    menuButton.addEventListener(
-        "click",
-        function() {
-
-            navLinks.classList.toggle("mobile-open");
-
-        }
-    );
-
-}
-
-
-/* =========================================
-   CONTACT FORM
-   ========================================= */
-
-const contactForm =
-    document.getElementById("contactForm");
-
-const successMessage =
-    document.getElementById("successMessage");
-
-
-if (contactForm && successMessage) {
-
-    contactForm.addEventListener(
-        "submit",
-        function(event) {
-
-            event.preventDefault();
-
-            successMessage.style.display =
-                "block";
-
-            contactForm.reset();
-
-        }
-    );
-
-}

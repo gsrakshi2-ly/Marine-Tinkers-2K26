@@ -3,822 +3,17 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<title>Ocean × Eco-Tech</title>
 
-    <title>Ocean × Eco-Tech</title>
-
-
-    <style>
-
-        /* =========================
-           BASIC
-        ========================= */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-
-            font-family: Arial, sans-serif;
-
-            scroll-behavior: smooth;
-        }
-
-
-        body {
-            background: #F7FBFC;
-            color: #063B5C;
-        }
-
-
-        a {
-            text-decoration: none;
-        }
-
-
-        /* =========================
-           NAVBAR
-        ========================= */
-
-        nav {
-
-            height: 72px;
-            width: 100%;
-
-            background: #063B5C;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            padding: 0 6%;
-
-            position: fixed;
-            top: 0;
-
-            z-index: 1000;
-        }
-
-
-        .logo {
-
-            color: white;
-
-            font-size: 21px;
-
-            font-weight: bold;
-        }
-
-
-        .logo span {
-            color: #20C7C9;
-        }
-
-
-        nav ul {
-
-            display: flex;
-
-            gap: 22px;
-
-            list-style: none;
-        }
-
-
-        nav ul li a {
-
-            color: white;
-
-            font-size: 14px;
-
-            transition: 0.3s;
-        }
-
-
-        nav ul li a:hover,
-        nav ul li a.active {
-
-            color: #20C7C9;
-        }
-
-
-        .nav-btn {
-
-            background: #20C7C9;
-
-            color: #063B5C;
-
-            padding: 10px 18px;
-
-            border-radius: 25px;
-
-            font-weight: bold;
-
-            transition: 0.3s;
-        }
-
-
-        .nav-btn:hover {
-
-            background: #B9F3E4;
-
-            transform: translateY(-2px);
-        }
-
-
-
-        /* =========================
-           HERO
-        ========================= */
-
-        .hero {
-
-            min-height: 650px;
-
-            margin-top: 72px;
-
-            padding: 100px 7%;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            text-align: center;
-
-            color: white;
-
-            position: relative;
-
-            overflow: hidden;
-
-
-            background:
-
-                radial-gradient(
-                    circle at 20% 30%,
-                    rgba(32,199,201,0.20),
-                    transparent 30%
-                ),
-
-                radial-gradient(
-                    circle at 80% 70%,
-                    rgba(185,243,228,0.15),
-                    transparent 30%
-                ),
-
-                linear-gradient(
-                    135deg,
-                    #063B5C,
-                    #087A9A
-                );
-        }
-
-
-        .hero-content {
-
-            max-width: 850px;
-
-            position: relative;
-
-            z-index: 2;
-        }
-
-
-        .hero-icon {
-
-            font-size: 80px;
-
-            margin-bottom: 20px;
-
-            animation:
-                floating 3s ease-in-out infinite;
-        }
-
-
-        @keyframes floating {
-
-            0%, 100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-15px);
-            }
-        }
-
-
-        .hero h1 {
-
-            font-size: clamp(
-                42px,
-                7vw,
-                70px
-            );
-
-            line-height: 1.1;
-
-            margin-bottom: 22px;
-        }
-
-
-        .hero h1 span {
-
-            color: #20C7C9;
-        }
-
-
-        .hero p {
-
-            max-width: 720px;
-
-            margin: auto;
-
-            color: #E0F4F7;
-
-            font-size: 17px;
-
-            line-height: 1.8;
-        }
-
-
-        /* =========================
-           HERO BUTTONS
-        ========================= */
-
-        .hero-buttons {
-
-            margin-top: 32px;
-
-            display: flex;
-
-            justify-content: center;
-
-            gap: 15px;
-
-            flex-wrap: wrap;
-        }
-
-
-        .primary-btn,
-        .secondary-btn {
-
-            padding: 14px 25px;
-
-            border-radius: 28px;
-
-            font-weight: bold;
-
-            transition: 0.3s;
-        }
-
-
-        .primary-btn {
-
-            background: #20C7C9;
-
-            color: #063B5C;
-        }
-
-
-        .secondary-btn {
-
-            border: 1px solid
-                rgba(255,255,255,0.5);
-
-            color: white;
-        }
-
-
-        .primary-btn:hover,
-        .secondary-btn:hover {
-
-            transform: translateY(-4px);
-        }
-
-
-        /* =========================
-           BUBBLES
-        ========================= */
-
-        .bubble {
-
-            position: absolute;
-
-            border: 2px solid
-                rgba(255,255,255,0.18);
-
-            border-radius: 50%;
-
-            animation:
-                bubbleFloat 7s ease-in-out infinite;
-        }
-
-
-        .bubble1 {
-
-            width: 40px;
-            height: 40px;
-
-            left: 10%;
-            top: 25%;
-        }
-
-
-        .bubble2 {
-
-            width: 80px;
-            height: 80px;
-
-            right: 10%;
-            top: 20%;
-        }
-
-
-        .bubble3 {
-
-            width: 25px;
-            height: 25px;
-
-            left: 25%;
-            bottom: 15%;
-        }
-
-
-        .bubble4 {
-
-            width: 50px;
-            height: 50px;
-
-            right: 28%;
-            bottom: 12%;
-        }
-
-
-        @keyframes bubbleFloat {
-
-            0%, 100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-25px);
-            }
-        }
-
-
-
-        /* =========================
-           SECTION
-        ========================= */
-
-        section {
-
-            padding: 80px 7%;
-        }
-
-
-        .section-title {
-
-            text-align: center;
-
-            margin-bottom: 45px;
-        }
-
-
-        .section-title h2 {
-
-            font-size: 38px;
-
-            margin-bottom: 12px;
-        }
-
-
-        .section-title p {
-
-            color: #607D8B;
-        }
-
-
-
-        /* =========================
-           FEATURE CARDS
-        ========================= */
-
-        .feature-grid {
-
-            max-width: 1150px;
-
-            margin: auto;
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 22px;
-        }
-
-
-        .feature-card {
-
-            background: white;
-
-            padding: 30px 25px;
-
-            border-radius: 22px;
-
-            box-shadow:
-                0 8px 25px
-                rgba(6,59,92,0.08);
-
-            transition: 0.35s;
-        }
-
-
-        .feature-card:hover {
-
-            transform:
-                translateY(-8px);
-
-            box-shadow:
-                0 16px 35px
-                rgba(6,59,92,0.14);
-        }
-
-
-        .feature-icon {
-
-            font-size: 42px;
-
-            margin-bottom: 15px;
-        }
-
-
-        .feature-card h3 {
-
-            margin-bottom: 10px;
-
-            font-size: 20px;
-        }
-
-
-        .feature-card p {
-
-            color: #607D8B;
-
-            font-size: 14px;
-
-            line-height: 1.7;
-        }
-
-
-
-        /* =========================
-           SENSOR PLACEHOLDER
-        ========================= */
-
-        .sensor-section {
-
-            background: #EAF9F7;
-        }
-
-
-        .sensor-box {
-
-            max-width: 950px;
-
-            margin: auto;
-
-            background: white;
-
-            padding: 35px;
-
-            border-radius: 25px;
-
-            box-shadow:
-                0 10px 30px
-                rgba(6,59,92,0.08);
-
-            text-align: center;
-        }
-
-
-        .sensor-box-icon {
-
-            font-size: 55px;
-
-            margin-bottom: 15px;
-        }
-
-
-        .sensor-box h3 {
-
-            font-size: 25px;
-
-            margin-bottom: 10px;
-        }
-
-
-        .sensor-box p {
-
-            color: #607D8B;
-
-            max-width: 650px;
-
-            margin: auto;
-
-            line-height: 1.7;
-        }
-
-
-        .sensor-status {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            gap: 8px;
-
-            margin-top: 20px;
-
-            padding: 9px 17px;
-
-            border-radius: 25px;
-
-            background: #FFF7E8;
-
-            color: #946C27;
-
-            font-size: 13px;
-
-            font-weight: bold;
-        }
-
-
-        .status-dot {
-
-            width: 9px;
-
-            height: 9px;
-
-            background: #E3A72F;
-
-            border-radius: 50%;
-        }
-
-
-
-        /* =========================
-           MISSION
-        ========================= */
-
-        .mission {
-
-            background: #063B5C;
-
-            color: white;
-
-            text-align: center;
-        }
-
-
-        .mission h2 {
-
-            font-size: 38px;
-
-            margin-bottom: 15px;
-        }
-
-
-        .mission > p {
-
-            max-width: 700px;
-
-            margin: auto;
-
-            color: #D4E9ED;
-
-            line-height: 1.8;
-        }
-
-
-        .mission-grid {
-
-            max-width: 1000px;
-
-            margin: 40px auto 0;
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 20px;
-        }
-
-
-        .mission-card {
-
-            background:
-                rgba(255,255,255,0.08);
-
-            padding: 28px 20px;
-
-            border-radius: 20px;
-
-            transition: 0.3s;
-        }
-
-
-        .mission-card:hover {
-
-            transform:
-                translateY(-7px);
-
-            background:
-                rgba(255,255,255,0.14);
-        }
-
-
-        .mission-card div {
-
-            font-size: 40px;
-
-            margin-bottom: 12px;
-        }
-
-
-        .mission-card h3 {
-
-            margin-bottom: 8px;
-        }
-
-
-        .mission-card p {
-
-            color: #D4E9ED;
-
-            font-size: 13px;
-
-            line-height: 1.6;
-        }
-
-
-
-        /* =========================
-           CTA
-        ========================= */
-
-        .cta {
-
-            background: #B9F3E4;
-
-            text-align: center;
-        }
-
-
-        .cta h2 {
-
-            font-size: 36px;
-
-            margin-bottom: 15px;
-        }
-
-
-        .cta p {
-
-            max-width: 650px;
-
-            margin: auto auto 25px;
-
-            color: #355968;
-
-            line-height: 1.7;
-        }
-
-
-        .cta-btn {
-
-            display: inline-block;
-
-            background: #063B5C;
-
-            color: white;
-
-            padding: 14px 26px;
-
-            border-radius: 28px;
-
-            font-weight: bold;
-
-            transition: 0.3s;
-        }
-
-
-        .cta-btn:hover {
-
-            background: #20AEB0;
-
-            transform:
-                translateY(-3px);
-        }
-
-
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-
-            background: #042D46;
-
-            color: white;
-
-            padding: 35px 6%;
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-        }
-
-
-        footer span {
-
-            color: #20C7C9;
-        }
-
-
-
-        /* =========================
-           RESPONSIVE
-        ========================= */
-
-        @media(max-width: 900px) {
-
-            nav ul {
-
-                display: none;
-            }
-
-
-            .feature-grid,
-            .mission-grid {
-
-                grid-template-columns:
-                    1fr 1fr;
-            }
-
-        }
-
-
-        @media(max-width: 600px) {
-
-            .hero h1 {
-
-                font-size: 40px;
-            }
-
-
-            .feature-grid,
-            .mission-grid {
-
-                grid-template-columns:
-                    1fr;
-            }
-
-
-            footer {
-
-                flex-direction: column;
-
-                gap: 15px;
-
-                text-align: center;
-            }
-
-        }
-
-    </style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
-
 <body>
 
-
-<!-- =========================
-     NAVBAR
-========================= -->
 
 <nav>
 
@@ -826,136 +21,68 @@
         🌊 OCEAN <span>× ECO-TECH</span>
     </div>
 
-
     <ul>
-
-        <li>
-            <a
-                href="index.html"
-                class="active"
-            >
-                Home
-            </a>
-        </li>
-
-
-        <li>
-            <a href="dashboard.html">
-                Live Data
-            </a>
-        </li>
-
-
-        <li>
-            <a href="map.html">
-                Map
-            </a>
-        </li>
-
-
-        <li>
-            <a href="solutions.html">
-                Solutions
-            </a>
-        </li>
-
-
-        <li>
-            <a href="impact.html">
-                Impact
-            </a>
-        </li>
-
-
-        <li>
-            <a href="about.html">
-                About
-            </a>
-        </li>
-
-
-        <li>
-            <a href="contact.html">
-                Get Involved
-            </a>
-        </li>
-
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="dashboard.html">Live Data</a></li>
+        <li><a href="map.html">Map</a></li>
+        <li><a href="solutions.html">Solutions</a></li>
+        <li><a href="impact.html">Impact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Get Involved</a></li>
     </ul>
 
-
-    <a
-        href="contact.html"
-        class="nav-btn"
-    >
-        Join Us 🌱
+    <a href="map.html" class="nav-btn">
+        Explore Map
     </a>
+
+    <button class="menu-toggle">☰</button>
 
 </nav>
 
 
-
-<!-- =========================
-     HERO
-========================= -->
-
 <header class="hero">
-
 
     <div class="bubble bubble1"></div>
     <div class="bubble bubble2"></div>
     <div class="bubble bubble3"></div>
     <div class="bubble bubble4"></div>
 
-
     <div class="hero-content">
-
 
         <div class="hero-icon">
             🌊
         </div>
 
-
         <h1>
-
-            Protecting Our Oceans
-
-            <br>
-
-            <span>
-                Through Smart Innovation
-            </span>
-
+            Technology for a
+            <span>Cleaner Ocean</span>
         </h1>
 
-
         <p>
-
-            Ocean × Eco-Tech combines marine protection,
-            smart technology and sustainable innovation
-            to create a cleaner and healthier future
-            for our oceans.
-
+            Ocean × Eco-Tech combines environmental awareness,
+            smart sensing and technology to create a safer,
+            cleaner and more sustainable marine environment.
         </p>
 
+        <div class="hero-actions">
 
-        <div class="hero-buttons">
-
-
-            <a
-                href="dashboard.html"
-                class="primary-btn"
-            >
-                📊 Explore Live Data
+            <a href="dashboard.html"
+               class="btn btn-primary">
+                View Live Data
             </a>
 
-
-            <a
-                href="map.html"
-                class="secondary-btn"
-            >
-                🗺️ Explore Ocean Map
+            <a href="map.html"
+               class="btn btn-secondary">
+                Explore World Map
             </a>
 
+        </div>
+
+        <div class="status">
+
+            <span class="status-dot"></span>
+
+            Prototype System — Development Mode
 
         </div>
 
@@ -964,147 +91,69 @@
 </header>
 
 
-
-<!-- =========================
-     FEATURES
-========================= -->
-
 <section>
 
-
     <div class="section-title">
 
         <h2>
-            🌍 Our Eco-Tech Mission
+            🌐 One System. Many Possibilities.
         </h2>
 
-
         <p>
-            Technology, sustainability and marine protection
-            working together.
+            A technology-focused approach to monitoring,
+            detecting and responding to ocean pollution.
         </p>
 
     </div>
 
 
+    <div class="grid">
 
-    <div class="feature-grid">
+        <div class="card">
 
-
-        <div class="feature-card">
-
-            <div class="feature-icon">
-                📊
-            </div>
+            <div class="card-icon">♻️</div>
 
             <h3>
-                Live Ocean Data
+                Smart Waste Detection
             </h3>
 
             <p>
-                A dedicated dashboard will display
-                environmental information once the
-                physical sensors are connected.
+                Identify waste collected by the prototype
+                and prepare the system for intelligent
+                environmental monitoring.
             </p>
 
         </div>
 
 
+        <div class="card">
 
-        <div class="feature-card">
-
-            <div class="feature-icon">
-                🗺️
-            </div>
+            <div class="card-icon">📡</div>
 
             <h3>
-                Interactive Ocean Map
+                Sensor Monitoring
             </h3>
 
             <p>
-                Explore monitoring zones and visualize
-                areas where the Ocean × Eco-Tech system
-                could operate.
+                Connect sensors and a microcontroller to
+                collect meaningful environmental information.
             </p>
 
         </div>
 
 
+        <div class="card">
 
-        <div class="feature-card">
-
-            <div class="feature-icon">
-                📡
-            </div>
+            <div class="card-icon">🌊</div>
 
             <h3>
-                Smart Monitoring
+                Ocean Awareness
             </h3>
 
             <p>
-                Our future sensor system will monitor
-                environmental conditions and waste
-                collected by the prototype.
-            </p>
-
-        </div>
-
-
-
-        <div class="feature-card">
-
-            <div class="feature-icon">
-                ♻️
-            </div>
-
-            <h3>
-                Eco-Tech Solutions
-            </h3>
-
-            <p>
-                Explore technological ideas designed
-                to reduce floating waste and encourage
-                responsible waste management.
-            </p>
-
-        </div>
-
-
-
-        <div class="feature-card">
-
-            <div class="feature-icon">
-                🐠
-            </div>
-
-            <h3>
-                Marine-Life Protection
-            </h3>
-
-            <p>
-                The project considers marine life by
-                designing safety systems that can
-                eventually work with the prototype.
-            </p>
-
-        </div>
-
-
-
-        <div class="feature-card">
-
-            <div class="feature-icon">
-                🌱
-            </div>
-
-            <h3>
-                Environmental Impact
-            </h3>
-
-            <p>
-                Track the project's development,
-                environmental goals and potential
-                contribution to cleaner waterways.
+                Transform environmental information into
+                an interface that makes ocean protection
+                easier to understand.
             </p>
 
         </div>
@@ -1113,215 +162,39 @@
 
 </section>
 
-
-
-<!-- =========================
-     SENSOR STATUS
-========================= -->
-
-<section class="sensor-section">
-
-
-    <div class="section-title">
-
-        <h2>
-            📡 Smart Sensor Monitoring
-        </h2>
-
-
-        <p>
-            Hardware integration will be added in a later layer.
-        </p>
-
-    </div>
-
-
-
-    <div class="sensor-box">
-
-
-        <div class="sensor-box-icon">
-            🔌
-        </div>
-
-
-        <h3>
-            Sensor System Not Connected
-        </h3>
-
-
-        <p>
-
-            The web application is currently running
-            independently from the physical prototype.
-            When the Arduino and sensors are connected,
-            this section can receive real-time information.
-
-        </p>
-
-
-        <div class="sensor-status">
-
-            <span class="status-dot"></span>
-
-            Awaiting Hardware Connection
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     MISSION
-========================= -->
-
-<section class="mission">
-
-
-    <h2>
-        🐠 Protect. Monitor. Innovate.
-    </h2>
-
-
-    <p>
-
-        Ocean × Eco-Tech is designed around a simple idea:
-        combine environmental awareness with practical
-        technology to help tackle floating marine waste.
-
-    </p>
-
-
-
-    <div class="mission-grid">
-
-
-        <div class="mission-card">
-
-            <div>
-                ♻️
-            </div>
-
-            <h3>
-                Reduce Waste
-            </h3>
-
-            <p>
-                Encourage better waste management
-                and reduce the amount of waste
-                reaching waterways.
-            </p>
-
-        </div>
-
-
-
-        <div class="mission-card">
-
-            <div>
-                📡
-            </div>
-
-            <h3>
-                Monitor
-            </h3>
-
-            <p>
-                Build a future monitoring system
-                capable of collecting useful
-                environmental information.
-            </p>
-
-        </div>
-
-
-
-        <div class="mission-card">
-
-            <div>
-                🐠
-            </div>
-
-            <h3>
-                Protect Marine Life
-            </h3>
-
-            <p>
-                Develop the prototype with
-                marine-life safety as an important
-                design consideration.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     CTA
-========================= -->
 
 <section class="cta">
 
-
     <h2>
-        🌱 Explore the Project
+        Ready to explore?
     </h2>
 
-
     <p>
-
-        Learn how our prototype, technology,
-        environmental goals and future sensor
-        system come together.
-
+        See how the Ocean × Eco-Tech monitoring system
+        could connect hardware, data and environmental action.
     </p>
 
-
-    <a
-        href="about.html"
-        class="cta-btn"
-    >
-        Learn More →
+    <a href="dashboard.html" class="btn">
+        Open Dashboard →
     </a>
 
 </section>
 
 
-
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer>
 
-
     <div>
-
-        🌊 OCEAN
-        <span>
-            × ECO-TECH
-        </span>
-
+        🌊 OCEAN <span>× ECO-TECH</span>
     </div>
 
-
     <div>
-
         © 2026 Ocean × Eco-Tech
-
     </div>
-
 
 </footer>
 
 
-</body>
+<script src="app.js"></script>
 
+</body>
 </html>

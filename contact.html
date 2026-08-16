@@ -4,714 +4,16 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Get Involved | Ocean × Eco-Tech</title>
 
-<style>
-
-/* ================= BASIC ================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-    scroll-behavior: smooth;
-}
-
-body {
-    background: #F7FBFC;
-    color: #063B5C;
-}
-
-a {
-    text-decoration: none;
-}
-
-
-/* ================= NAVBAR ================= */
-
-nav {
-    height: 72px;
-    width: 100%;
-
-    background: #063B5C;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 6%;
-
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-}
-
-.logo {
-    color: white;
-    font-size: 21px;
-    font-weight: bold;
-}
-
-.logo span {
-    color: #20C7C9;
-}
-
-nav ul {
-    display: flex;
-    gap: 22px;
-    list-style: none;
-}
-
-nav ul li a {
-    color: white;
-    font-size: 14px;
-    transition: .3s;
-}
-
-nav ul li a:hover,
-nav ul li a.active {
-    color: #20C7C9;
-}
-
-.nav-btn {
-    background: #20C7C9;
-    color: #063B5C;
-
-    padding: 10px 18px;
-
-    border-radius: 25px;
-
-    font-weight: bold;
-}
-
-
-/* ================= HERO ================= */
-
-.hero {
-    margin-top: 72px;
-
-    min-height: 450px;
-
-    padding: 90px 7%;
-
-    background:
-        linear-gradient(
-            135deg,
-            #063B5C,
-            #087A9A
-        );
-
-    color: white;
-
-    text-align: center;
-
-    position: relative;
-
-    overflow: hidden;
-}
-
-.hero-icon {
-    font-size: 78px;
-
-    margin-bottom: 15px;
-
-    animation:
-        floating 3s ease-in-out infinite;
-}
-
-@keyframes floating {
-
-    0%,100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-15px);
-    }
-
-}
-
-.hero h1 {
-    font-size: 52px;
-    margin-bottom: 18px;
-}
-
-.hero h1 span {
-    color: #20C7C9;
-}
-
-.hero p {
-    max-width: 720px;
-
-    margin: auto;
-
-    color: #E0F4F7;
-
-    line-height: 1.8;
-
-    font-size: 17px;
-}
-
-
-/* ================= BUBBLES ================= */
-
-.bubble {
-    position: absolute;
-
-    border: 2px solid rgba(255,255,255,.22);
-
-    border-radius: 50%;
-
-    animation:
-        bubbleFloat 6s ease-in-out infinite;
-}
-
-.bubble1 {
-    width: 35px;
-    height: 35px;
-
-    left: 12%;
-    top: 100px;
-}
-
-.bubble2 {
-    width: 70px;
-    height: 70px;
-
-    right: 12%;
-    top: 90px;
-}
-
-.bubble3 {
-    width: 20px;
-    height: 20px;
-
-    left: 25%;
-    bottom: 60px;
-}
-
-.bubble4 {
-    width: 45px;
-    height: 45px;
-
-    right: 28%;
-    bottom: 45px;
-}
-
-@keyframes bubbleFloat {
-
-    0%,100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-25px);
-    }
-
-}
-
-
-/* ================= SECTION ================= */
-
-section {
-    padding: 80px 7%;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 45px;
-}
-
-.section-title h2 {
-    font-size: 38px;
-    margin-bottom: 12px;
-}
-
-.section-title p {
-    color: #607D8B;
-}
-
-
-/* ================= CONTACT CARDS ================= */
-
-.contact-grid {
-    max-width: 1100px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap: 22px;
-}
-
-.contact-card {
-    background: white;
-
-    padding: 30px 25px;
-
-    border-radius: 22px;
-
-    text-align: center;
-
-    box-shadow:
-        0 8px 25px
-        rgba(6,59,92,.08);
-
-    transition: .35s;
-}
-
-.contact-card:hover {
-
-    transform:
-        translateY(-10px);
-
-    box-shadow:
-        0 17px 35px
-        rgba(6,59,92,.14);
-}
-
-.contact-icon {
-    font-size: 45px;
-
-    margin-bottom: 15px;
-}
-
-.contact-card h3 {
-    margin-bottom: 10px;
-}
-
-.contact-card p {
-    color: #607D8B;
-
-    line-height: 1.6;
-
-    font-size: 14px;
-}
-
-
-/* ================= FORM ================= */
-
-.form-section {
-    background: #EAF9F7;
-}
-
-.form-container {
-
-    max-width: 1000px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns:
-        .8fr 1.2fr;
-
-    gap: 40px;
-
-    align-items: start;
-}
-
-
-/* LEFT SIDE */
-
-.form-info {
-    padding: 20px;
-}
-
-.form-info h2 {
-
-    font-size: 34px;
-
-    margin-bottom: 18px;
-}
-
-.form-info h2 span {
-    color: #20AEB0;
-}
-
-.form-info p {
-
-    color: #607D8B;
-
-    line-height: 1.8;
-
-    margin-bottom: 20px;
-}
-
-.form-info ul {
-    list-style: none;
-}
-
-.form-info li {
-
-    padding: 12px 0;
-
-    color: #355968;
-}
-
-
-/* ================= FORM BOX ================= */
-
-.contact-form {
-
-    background: white;
-
-    padding: 35px;
-
-    border-radius: 25px;
-
-    box-shadow:
-        0 10px 30px
-        rgba(6,59,92,.08);
-}
-
-.form-group {
-    margin-bottom: 18px;
-}
-
-.form-group label {
-
-    display: block;
-
-    margin-bottom: 7px;
-
-    font-weight: bold;
-
-    font-size: 14px;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select {
-
-    width: 100%;
-
-    border: 1px solid #D5E7EA;
-
-    padding: 13px 15px;
-
-    border-radius: 12px;
-
-    outline: none;
-
-    font-size: 14px;
-
-    color: #063B5C;
-
-    background: #F9FCFD;
-
-    transition: .3s;
-}
-
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-
-    border-color: #20C7C9;
-
-    box-shadow:
-        0 0 0 3px
-        rgba(32,199,201,.12);
-}
-
-.form-group textarea {
-
-    height: 130px;
-
-    resize: vertical;
-}
-
-
-/* ================= BUTTON ================= */
-
-.submit-btn {
-
-    width: 100%;
-
-    border: none;
-
-    padding: 14px;
-
-    border-radius: 25px;
-
-    background: #063B5C;
-
-    color: white;
-
-    font-size: 15px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: .3s;
-}
-
-.submit-btn:hover {
-
-    background: #20AEB0;
-
-    transform:
-        translateY(-2px);
-}
-
-
-/* ================= SUCCESS ================= */
-
-.success {
-
-    display: none;
-
-    margin-top: 18px;
-
-    padding: 14px;
-
-    background: #EAF9F7;
-
-    color: #087A70;
-
-    border-radius: 12px;
-
-    text-align: center;
-
-    font-weight: bold;
-}
-
-
-/* ================= JOIN ================= */
-
-.join {
-
-    background: #063B5C;
-
-    color: white;
-
-    text-align: center;
-}
-
-.join h2 {
-
-    font-size: 38px;
-
-    margin-bottom: 15px;
-}
-
-.join > p {
-
-    max-width: 700px;
-
-    margin:
-        auto auto 40px;
-
-    color: #D4E9ED;
-
-    line-height: 1.8;
-}
-
-.join-grid {
-
-    max-width: 1000px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap: 20px;
-}
-
-.join-card {
-
-    background:
-        rgba(255,255,255,.08);
-
-    padding: 30px 20px;
-
-    border-radius: 20px;
-
-    transition: .3s;
-}
-
-.join-card:hover {
-
-    transform:
-        translateY(-8px);
-
-    background:
-        rgba(255,255,255,.14);
-}
-
-.join-card div {
-
-    font-size: 42px;
-
-    margin-bottom: 13px;
-}
-
-.join-card h3 {
-
-    margin-bottom: 8px;
-}
-
-.join-card p {
-
-    color: #D4E9ED;
-
-    font-size: 13px;
-
-    line-height: 1.6;
-}
-
-
-/* ================= FINAL CTA ================= */
-
-.final-cta {
-
-    background: #B9F3E4;
-
-    text-align: center;
-}
-
-.final-cta h2 {
-
-    font-size: 36px;
-
-    margin-bottom: 15px;
-}
-
-.final-cta p {
-
-    max-width: 650px;
-
-    margin:
-        auto auto 25px;
-
-    color: #355968;
-
-    line-height: 1.7;
-}
-
-.home-btn {
-
-    display: inline-block;
-
-    padding: 14px 26px;
-
-    background: #063B5C;
-
-    color: white;
-
-    border-radius: 28px;
-
-    font-weight: bold;
-
-    transition: .3s;
-}
-
-.home-btn:hover {
-
-    background: #20AEB0;
-
-    transform:
-        translateY(-3px);
-}
-
-
-/* ================= FOOTER ================= */
-
-footer {
-
-    background: #042D46;
-
-    color: white;
-
-    padding: 35px 6%;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-}
-
-footer span {
-    color: #20C7C9;
-}
-
-
-/* ================= RESPONSIVE ================= */
-
-@media(max-width:900px) {
-
-    nav ul {
-        display: none;
-    }
-
-    .contact-grid {
-        grid-template-columns:
-            1fr 1fr;
-    }
-
-    .form-container {
-        grid-template-columns:
-            1fr;
-    }
-
-    .join-grid {
-        grid-template-columns:
-            1fr;
-    }
-
-}
-
-@media(max-width:600px) {
-
-    .hero h1 {
-        font-size: 38px;
-    }
-
-    .contact-grid {
-        grid-template-columns:
-            1fr;
-    }
-
-    .section-title h2 {
-        font-size: 30px;
-    }
-
-    .form-info h2 {
-        font-size: 30px;
-    }
-
-    footer {
-
-        flex-direction: column;
-
-        gap: 15px;
-
-        text-align: center;
-    }
-
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
-
 <body>
 
-
-<!-- ================= NAVBAR ================= -->
 
 <nav>
 
@@ -719,428 +21,104 @@ footer span {
         🌊 OCEAN <span>× ECO-TECH</span>
     </div>
 
-
     <ul>
-
-        <li>
-            <a href="index.html">
-                Home
-            </a>
-        </li>
-
-        <li>
-            <a href="dashboard.html">
-                Live Data
-            </a>
-        </li>
-
-        <li>
-            <a href="map.html">
-                Map
-            </a>
-        </li>
-
-        <li>
-            <a href="solutions.html">
-                Solutions
-            </a>
-        </li>
-
-        <li>
-            <a href="impact.html">
-                Impact
-            </a>
-        </li>
-
-        <li>
-            <a href="about.html">
-                About
-            </a>
-        </li>
-
-        <li>
-            <a
-                href="contact.html"
-                class="active"
-            >
-                Get Involved
-            </a>
-        </li>
-
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Live Data</a></li>
+        <li><a href="map.html">Map</a></li>
+        <li><a href="solutions.html">Solutions</a></li>
+        <li><a href="impact.html">Impact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Get Involved</a></li>
     </ul>
 
-
-    <a
-        href="#message"
-        class="nav-btn"
-    >
-        Join Us 🌱
+    <a href="index.html" class="nav-btn">
+        Home
     </a>
 
 </nav>
 
 
-
-<!-- ================= HERO ================= -->
-
 <header class="hero">
 
-    <div class="bubble bubble1"></div>
+    <div class="hero-content">
 
-    <div class="bubble bubble2"></div>
+        <div class="hero-icon">
+            🤝
+        </div>
 
-    <div class="bubble bubble3"></div>
+        <h1>
+            Get
+            <span>Involved</span>
+        </h1>
 
-    <div class="bubble bubble4"></div>
+        <p>
+            Ocean conservation is stronger when technology,
+            creativity and people work together.
+        </p>
 
-
-    <div class="hero-icon">
-        🌊
     </div>
-
-
-    <h1>
-
-        Join the
-        <span>Mission</span>
-
-    </h1>
-
-
-    <p>
-
-        Have an idea, suggestion or question about
-        Ocean × Eco-Tech?
-
-        Share it with us and become part of the journey
-        toward cleaner and healthier oceans.
-
-    </p>
 
 </header>
 
 
-
-<!-- ================= CONTACT OPTIONS ================= -->
-
 <section>
-
 
     <div class="section-title">
 
         <h2>
-            💬 Connect With the Project
+            🌱 Join the Mission
         </h2>
 
-
         <p>
-            There are many ways to contribute to ocean conservation.
+            Explore, learn, build and contribute to
+            technology for a cleaner ocean.
         </p>
 
     </div>
 
 
-    <div class="contact-grid">
+    <div class="grid">
 
+        <div class="card">
 
-        <div class="contact-card">
-
-            <div class="contact-icon">
+            <div class="card-icon">
                 💡
             </div>
 
             <h3>
-                Share an Idea
+                Share Ideas
             </h3>
 
             <p>
-                Have a creative idea for improving our
-                project? We'd love to hear it.
+                Suggest new environmental technology
+                concepts and improvements.
             </p>
 
         </div>
 
 
+        <div class="card">
 
-        <div class="contact-card">
-
-            <div class="contact-icon">
-                🌱
+            <div class="card-icon">
+                🔧
             </div>
 
             <h3>
-                Support the Mission
+                Build
             </h3>
 
             <p>
-                Learn about sustainable habits and
-                ways to help protect our oceans.
+                Experiment with electronics,
+                sensors and software.
             </p>
 
         </div>
 
 
+        <div class="card">
 
-        <div class="contact-card">
-
-            <div class="contact-icon">
-                🤝
-            </div>
-
-            <h3>
-                Collaborate
-            </h3>
-
-            <p>
-                Work together with students,
-                communities and innovators
-                on environmental ideas.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= FORM ================= -->
-
-<section
-    class="form-section"
-    id="message"
->
-
-
-    <div class="form-container">
-
-
-        <div class="form-info">
-
-            <h2>
-
-                Let's Make a
-                <span>Difference</span>
-
-            </h2>
-
-
-            <p>
-
-                Your feedback can help us improve
-                the project and explore new ideas
-                for protecting our oceans.
-
-            </p>
-
-
-            <ul>
-
-                <li>
-                    🌊 Explore ocean technology
-                </li>
-
-                <li>
-                    ♻️ Share environmental ideas
-                </li>
-
-                <li>
-                    🐠 Support marine protection
-                </li>
-
-                <li>
-                    🌱 Encourage sustainable choices
-                </li>
-
-            </ul>
-
-        </div>
-
-
-
-        <form
-            class="contact-form"
-            id="contactForm"
-        >
-
-
-            <div class="form-group">
-
-                <label for="name">
-                    Your Name
-                </label>
-
-                <input
-                    type="text"
-                    id="name"
-                    placeholder="Enter your name"
-                    required
-                >
-
-            </div>
-
-
-
-            <div class="form-group">
-
-                <label for="email">
-                    Email
-                </label>
-
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="Enter your email"
-                    required
-                >
-
-            </div>
-
-
-
-            <div class="form-group">
-
-                <label for="topic">
-                    Topic
-                </label>
-
-
-                <select id="topic">
-
-                    <option>
-                        Project Feedback
-                    </option>
-
-                    <option>
-                        Environmental Idea
-                    </option>
-
-                    <option>
-                        Collaboration
-                    </option>
-
-                    <option>
-                        General Question
-                    </option>
-
-                </select>
-
-            </div>
-
-
-
-            <div class="form-group">
-
-                <label for="messageText">
-                    Message
-                </label>
-
-
-                <textarea
-                    id="messageText"
-                    placeholder="Write your message..."
-                    required
-                ></textarea>
-
-            </div>
-
-
-
-            <button
-                type="submit"
-                class="submit-btn"
-            >
-
-                🌊 Send Message
-
-            </button>
-
-
-            <div
-                class="success"
-                id="successMessage"
-            >
-
-                ✅ Thank you! Your message has been
-                recorded for this demo.
-
-            </div>
-
-        </form>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= JOIN ================= -->
-
-<section class="join">
-
-
-    <h2>
-        🌍 Everyone Can Help
-    </h2>
-
-
-    <p>
-
-        Protecting the ocean isn't only the responsibility
-        of scientists and engineers.
-
-        Students, families, communities and organizations
-        can all contribute.
-
-    </p>
-
-
-    <div class="join-grid">
-
-
-        <div class="join-card">
-
-            <div>
-                🧴
-            </div>
-
-            <h3>
-                Reduce Plastic
-            </h3>
-
-            <p>
-                Choose reusable alternatives and avoid
-                unnecessary single-use plastic.
-            </p>
-
-        </div>
-
-
-
-        <div class="join-card">
-
-            <div>
-                ♻️
-            </div>
-
-            <h3>
-                Recycle
-            </h3>
-
-            <p>
-                Dispose of waste responsibly so that
-                less material reaches waterways.
-            </p>
-
-        </div>
-
-
-
-        <div class="join-card">
-
-            <div>
-                📢
+            <div class="card-icon">
+                🌊
             </div>
 
             <h3>
@@ -1148,9 +126,8 @@ footer span {
             </h3>
 
             <p>
-                Share knowledge about ocean pollution
-                and encourage others to make sustainable
-                choices.
+                Encourage conversations about ocean
+                pollution and sustainable technology.
             </p>
 
         </div>
@@ -1160,102 +137,19 @@ footer span {
 </section>
 
 
-
-<!-- ================= FINAL CTA ================= -->
-
-<section class="final-cta">
-
-
-    <h2>
-
-        🐠 Together, We Can Protect Our Oceans
-
-    </h2>
-
-
-    <p>
-
-        Innovation gives us new tools.
-        Awareness gives us direction.
-        Working together gives us the power
-        to create meaningful change.
-
-    </p>
-
-
-    <a
-        href="index.html"
-        class="home-btn"
-    >
-
-        🌊 Back to Home
-
-    </a>
-
-</section>
-
-
-
-<!-- ================= FOOTER ================= -->
-
 <footer>
 
     <div>
-
-        🌊 OCEAN
-        <span>
-            × ECO-TECH
-        </span>
-
+        🌊 OCEAN <span>× ECO-TECH</span>
     </div>
 
-
     <div>
-
         © 2026 Ocean × Eco-Tech
-
     </div>
 
 </footer>
 
-
-
-<!-- ================= JAVASCRIPT ================= -->
-
-<script>
-
-const form =
-    document.getElementById("contactForm");
-
-const success =
-    document.getElementById("successMessage");
-
-
-form.addEventListener(
-    "submit",
-    function(event) {
-
-        event.preventDefault();
-
-        success.style.display = "block";
-
-        form.reset();
-
-        setTimeout(
-            function() {
-
-                success.style.display = "none";
-
-            },
-            5000
-        );
-
-    }
-);
-
-</script>
-
+<script src="app.js"></script>
 
 </body>
-
 </html>
