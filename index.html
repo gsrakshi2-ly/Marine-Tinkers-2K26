@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,126 +12,97 @@
 
 <body>
 
-<!-- =========================
-     NAVBAR
-========================= -->
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
-<nav class="navbar">
+<nav>
 
     <a href="index.html" class="logo">
         🌊 OCEAN <span>× ECO-TECH</span>
     </a>
 
-    <ul class="nav-links">
+    <ul>
 
         <li>
-            <a href="index.html" class="active">Home</a>
+            <a href="index.html" class="active">
+                Home
+            </a>
         </li>
 
         <li>
-            <a href="dashboard.html">Live Data</a>
+            <a href="livedata.html">
+                Live Data
+            </a>
         </li>
 
         <li>
-            <a href="map.html">Map</a>
+            <a href="map.html">
+                Map
+            </a>
         </li>
 
         <li>
-            <a href="solutions.html">Solutions</a>
+            <a href="solutions.html">
+                Solutions
+            </a>
         </li>
 
         <li>
-            <a href="impact.html">Impact</a>
+            <a href="impact.html">
+                Impact
+            </a>
         </li>
 
         <li>
-            <a href="about.html">About</a>
+            <a href="about.html">
+                About
+            </a>
         </li>
 
         <li>
-            <a href="contact.html">Get Involved</a>
+            <a href="contact.html">
+                Get Involved
+            </a>
         </li>
 
     </ul>
 
-    <a href="map.html" class="nav-button">
+    <a href="map.html" class="nav-btn">
         Explore Map →
     </a>
 
 </nav>
 
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- =====================================================
+     MAIN
+===================================================== -->
 
-<header class="hero">
+<main>
 
-    <div class="hero-glow glow-one"></div>
-    <div class="hero-glow glow-two"></div>
 
-    <div class="bubble bubble-one"></div>
-    <div class="bubble bubble-two"></div>
-    <div class="bubble bubble-three"></div>
+<!-- =====================================================
+     HERO / MISSION
+===================================================== -->
+
+<section class="hero">
 
     <div class="hero-content">
 
-        <div class="hero-badge">
-            🌊 STUDENT-DRIVEN OCEAN INNOVATION
+        <div class="hero-icon">
+            🌊
         </div>
 
-        <h1>
-            Technology for a
-            <span>Cleaner Ocean.</span>
-        </h1>
-
-        <p>
-            Ocean × Eco-Tech is a student-developed environmental
-            technology project exploring how smart systems can help
-            detect, collect, monitor and understand marine waste.
+        <p class="hero-label">
+            🌱 OUR MISSION
         </p>
 
-        <div class="hero-actions">
-
-            <a href="map.html" class="primary-button">
-                🗺️ Explore the World Map
-            </a>
-
-            <a href="about.html" class="secondary-button">
-                Discover the Project
-            </a>
-
-        </div>
-
-        <div class="hero-status">
-
-            <span class="status-indicator"></span>
-
-            Prototype development in progress
-
-        </div>
-
-    </div>
-
-</header>
-
-
-<!-- =========================
-     INTRODUCTION
-========================= -->
-
-<section class="intro-section">
-
-    <div class="section-heading">
-
-        <span class="eyebrow">
-            🌱 OUR MISSION
-        </span>
-
-        <h2>
+        <h1>
             Turning an environmental challenge
-            into an opportunity for innovation.
-        </h2>
+            into an opportunity for
+            <span>innovation.</span>
+        </h1>
 
         <p>
             Marine pollution affects ecosystems, wildlife and
@@ -140,14 +112,52 @@
             safety at the centre of the design.
         </p>
 
+        <div class="hero-actions">
+
+            <a href="solutions.html" class="btn btn-primary">
+                Explore Our Solutions →
+            </a>
+
+            <a href="about.html" class="btn btn-secondary">
+                Discover the Project
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CORE FEATURES
+===================================================== -->
+
+<section class="solutions-section">
+
+    <div class="section-title">
+
+        <h2>
+            Designed for cleaner oceans.
+        </h2>
+
+        <p>
+            Ocean × Eco-Tech brings together waste collection,
+            marine safety and technology to explore a practical
+            approach to marine pollution.
+        </p>
+
     </div>
 
 
-    <div class="feature-grid">
+    <div class="solutions-grid">
 
-        <article class="feature-card">
 
-            <div class="feature-icon">
+        <!-- WASTE COLLECTION -->
+
+        <article class="solution-card">
+
+            <div class="icon-box">
                 ♻️
             </div>
 
@@ -160,16 +170,20 @@
                 marine waste and organise it for further handling.
             </p>
 
-            <a href="solutions.html">
-                Explore solutions →
+            <br>
+
+            <a href="solutions.html" class="btn btn-secondary">
+                Explore Solutions →
             </a>
 
         </article>
 
 
-        <article class="feature-card">
+        <!-- MARINE SAFETY -->
 
-            <div class="feature-icon">
+        <article class="solution-card">
+
+            <div class="icon-box">
                 🐠
             </div>
 
@@ -179,19 +193,24 @@
 
             <p>
                 The concept considers marine life and aims to make
-                environmental protection part of the collection process.
+                environmental protection an important part of the
+                collection process.
             </p>
 
-            <a href="about.html">
-                Learn about the concept →
+            <br>
+
+            <a href="prototype.html" class="btn btn-secondary">
+                Learn About the Concept →
             </a>
 
         </article>
 
 
-        <article class="feature-card">
+        <!-- SMART MONITORING -->
 
-            <div class="feature-icon">
+        <article class="solution-card">
+
+            <div class="icon-box">
                 📡
             </div>
 
@@ -200,12 +219,15 @@
             </h3>
 
             <p>
-                The application is prepared to display real hardware
-                information when the prototype sensors are connected.
+                The application is prepared to display real
+                hardware information when the prototype sensors
+                are connected.
             </p>
 
-            <a href="dashboard.html">
-                View live data →
+            <br>
+
+            <a href="livedata.html" class="btn btn-secondary">
+                View Live Data →
             </a>
 
         </article>
@@ -215,58 +237,160 @@
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      OCEAN HEALTH
-========================= -->
+===================================================== -->
 
-<section class="health-section">
+<section class="dashboard">
 
-    <div class="health-card">
+    <div class="section-title">
 
-        <div class="health-content">
+        <h2>
+            🌊 Ocean Health
+        </h2>
 
-            <span class="eyebrow light">
-                🌊 OCEAN HEALTH
-            </span>
+        <p>
+            This section will become a real-time environmental
+            dashboard when the required hardware and data sources
+            are connected.
+        </p>
 
-            <h2>
-                A score that will grow
-                with real data.
-            </h2>
-
-            <p>
-                Ocean × Eco-Tech does not generate or invent
-                environmental measurements. The Ocean Health Score
-                will become meaningful only when verified data is
-                available from the project or trusted sources.
-            </p>
-
-            <a href="dashboard.html" class="light-button">
-                View Live Data →
-            </a>
-
-        </div>
+    </div>
 
 
-        <div class="health-display">
+    <div class="dashboard-grid">
 
-            <div class="score-ring">
 
-                <div class="score-inner">
+        <article class="card dashboard-card">
 
-                    <strong>—</strong>
+            <div class="icon-box">
+                🌊
+            </div>
 
-                    <span>
-                        Awaiting Data
-                    </span>
+            <h3>
+                Ocean Health Score
+            </h3>
 
+            <div class="data-empty">
+                Waiting for verified environmental data.
+            </div>
+
+        </article>
+
+
+        <article class="card dashboard-card">
+
+            <div class="icon-box">
+                ♻️
+            </div>
+
+            <h3>
+                Waste Monitoring
+            </h3>
+
+            <div class="data-empty">
+                No hardware data connected yet.
+            </div>
+
+        </article>
+
+
+        <article class="card dashboard-card">
+
+            <div class="icon-box">
+                🐠
+            </div>
+
+            <h3>
+                Marine Safety
+            </h3>
+
+            <div class="data-empty">
+                Awaiting real prototype information.
+            </div>
+
+        </article>
+
+
+        <article class="card dashboard-card">
+
+            <div class="icon-box">
+                📡
+            </div>
+
+            <h3>
+                Sensor Connection
+            </h3>
+
+            <div class="data-empty">
+                Prototype sensors are not connected yet.
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     WORLD MAP
+===================================================== -->
+
+<section class="map-section">
+
+    <div class="section-title">
+
+        <h2>
+            🌍 Live World Map
+        </h2>
+
+        <p>
+            Explore the world's oceans and continents. Real
+            monitoring information will appear here once verified
+            data sources are connected.
+        </p>
+
+    </div>
+
+
+    <div class="world-map-container">
+
+        <div id="worldMap">
+
+            <div class="map-placeholder">
+
+                <div class="map-placeholder-icon">
+                    🌍
                 </div>
 
+                <h3>
+                    World Ocean Map
+                </h3>
+
+                <p>
+                    No live monitoring points are displayed yet.
+                </p>
+
             </div>
 
-            <p>
-                No measurement available
-            </p>
+        </div>
+
+
+        <div class="map-legend">
+
+            <div class="legend-item">
+                <span class="legend-dot"></span>
+                Verified data point
+            </div>
+
+            <div class="legend-item">
+                🌊 Ocean
+            </div>
+
+            <div class="legend-item">
+                🌍 Continent
+            </div>
 
         </div>
 
@@ -275,140 +399,229 @@
 </section>
 
 
-<!-- =========================
-     MISSION MODE
-========================= -->
+<!-- =====================================================
+     PROJECT APPROACH
+===================================================== -->
 
-<section class="mission-section">
+<section class="build-section">
 
-    <div class="section-heading">
-
-        <span class="eyebrow">
-            🎯 MISSION MODE
-        </span>
+    <div class="section-title">
 
         <h2>
-            Small actions can support
-            a bigger mission.
+            💡 From idea to prototype
         </h2>
 
         <p>
-            Mission Mode provides a simple way to follow the
-            project's environmental goals without pretending
-            that sensor data exists before the hardware is ready.
+            Our project combines environmental thinking with
+            technology and engineering to explore how floating
+            marine waste could be collected more responsibly.
         </p>
 
     </div>
 
 
-    <div class="mission-grid">
+    <div class="build-grid">
 
-        <div class="mission-card">
 
-            <span class="mission-number">
-                01
-            </span>
+        <article class="build-card">
 
-            <div>
-                <h3>
-                    Observe
-                </h3>
-
-                <p>
-                    Identify marine waste and understand
-                    the environment around it.
-                </p>
+            <div class="icon">
+                🔎
             </div>
 
-        </div>
+            <h3>
+                Identify
+            </h3>
+
+            <p>
+                Explore the problem of floating marine waste and
+                understand the challenges involved in collecting it.
+            </p>
+
+        </article>
 
 
-        <div class="mission-card">
+        <article class="build-card">
 
-            <span class="mission-number">
-                02
-            </span>
-
-            <div>
-                <h3>
-                    Report
-                </h3>
-
-                <p>
-                    Record waste observations through
-                    the reporting system.
-                </p>
+            <div class="icon">
+                ⚙️
             </div>
 
-        </div>
+            <h3>
+                Design
+            </h3>
+
+            <p>
+                Develop a prototype concept that brings together
+                collection, sorting and environmental safety.
+            </p>
+
+        </article>
 
 
-        <div class="mission-card">
+        <article class="build-card">
 
-            <span class="mission-number">
-                03
-            </span>
-
-            <div>
-                <h3>
-                    Innovate
-                </h3>
-
-                <p>
-                    Explore technology that could support
-                    cleaner and safer oceans.
-                </p>
+            <div class="icon">
+                🌱
             </div>
 
-        </div>
+            <h3>
+                Improve
+            </h3>
+
+            <p>
+                Use testing and future real-world data to improve
+                the system as the prototype develops.
+            </p>
+
+        </article>
 
     </div>
 
 </section>
 
 
-<!-- =========================
-     WORLD MAP PREVIEW
-========================= -->
+<!-- =====================================================
+     WHY IT MATTERS
+===================================================== -->
 
-<section class="map-preview-section">
+<section class="impact-section">
 
-    <div class="map-preview">
+    <div class="section-title">
 
-        <div class="map-preview-content">
+        <h2>
+            🌱 Why it matters
+        </h2>
 
-            <span class="eyebrow light">
-                🗺️ GLOBAL VIEW
-            </span>
+        <p>
+            Marine waste is an environmental challenge that can
+            affect ecosystems, wildlife and coastal communities.
+            Our project explores one possible technology-based
+            approach to the problem.
+        </p>
 
-            <h2>
-                Explore the world's oceans.
-            </h2>
+    </div>
+
+
+    <div class="impact-grid">
+
+
+        <article class="impact-card">
+
+            <div class="icon-box">
+                🌊
+            </div>
+
+            <h3>
+                Cleaner Waters
+            </h3>
 
             <p>
-                Discover the global environment in which marine
-                pollution occurs and explore the Ocean × Eco-Tech
-                monitoring concept.
+                Exploring methods of collecting floating waste
+                can contribute to discussions about cleaner
+                aquatic environments.
             </p>
 
-            <a href="map.html" class="light-button">
-                Open World Map →
+        </article>
+
+
+        <article class="impact-card">
+
+            <div class="icon-box">
+                🐢
+            </div>
+
+            <h3>
+                Marine Protection
+            </h3>
+
+            <p>
+                Marine safety is considered throughout the
+                prototype concept, with protection of marine
+                life treated as an important design consideration.
+            </p>
+
+        </article>
+
+
+        <article class="impact-card">
+
+            <div class="icon-box">
+                💻
+            </div>
+
+            <h3>
+                Technology for Good
+            </h3>
+
+            <p>
+                The project demonstrates how technology and
+                environmental awareness can be brought together
+                to explore real-world problems.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CALL TO ACTION
+===================================================== -->
+
+<section class="contact-section">
+
+    <div class="contact-container">
+
+        <div class="contact-card">
+
+            <div class="icon-box">
+                📸
+            </div>
+
+            <h3>
+                Report Marine Waste
+            </h3>
+
+            <p>
+                Have you spotted floating waste? You can record
+                a waste report through the application. Reports
+                are stored locally until an online reporting
+                system is connected.
+            </p>
+
+            <br>
+
+            <a href="contact.html" class="btn btn-primary">
+                Report Waste →
             </a>
 
         </div>
 
 
-        <div class="map-symbol">
+        <div class="contact-card">
 
-            <div class="map-circle">
-
-                🌍
-
+            <div class="icon-box">
+                🤝
             </div>
 
-            <span>
-                GLOBAL OCEAN VIEW
-            </span>
+            <h3>
+                Get Involved
+            </h3>
+
+            <p>
+                Follow the development of Ocean × Eco-Tech and
+                learn more about the prototype, its goals and
+                future possibilities.
+            </p>
+
+            <br>
+
+            <a href="about.html" class="btn btn-secondary">
+                Learn More →
+            </a>
 
         </div>
 
@@ -417,180 +630,32 @@
 </section>
 
 
-<!-- =========================
-     QUICK FEATURES
-========================= -->
-
-<section class="quick-section">
-
-    <div class="section-heading">
-
-        <span class="eyebrow">
-            ✨ EXPLORE THE APP
-        </span>
-
-        <h2>
-            Built around the project,
-            not imaginary data.
-        </h2>
-
-    </div>
+</main>
 
 
-    <div class="quick-grid">
-
-        <a href="solutions.html" class="quick-card">
-
-            <span>♻️</span>
-
-            <div>
-                <h3>
-                    Waste Log
-                </h3>
-
-                <p>
-                    Keep track of recorded waste information.
-                </p>
-            </div>
-
-            <b>→</b>
-
-        </a>
-
-
-        <a href="contact.html" class="quick-card">
-
-            <span>📸</span>
-
-            <div>
-                <h3>
-                    Waste Reporting
-                </h3>
-
-                <p>
-                    Submit a waste observation or report.
-                </p>
-            </div>
-
-            <b>→</b>
-
-        </a>
-
-
-        <a href="impact.html" class="quick-card">
-
-            <span>🌱</span>
-
-            <div>
-                <h3>
-                    Impact & Achievements
-                </h3>
-
-                <p>
-                    Follow the project's development and achievements.
-                </p>
-            </div>
-
-            <b>→</b>
-
-        </a>
-
-
-        <a href="dashboard.html" class="quick-card">
-
-            <span>📊</span>
-
-            <div>
-                <h3>
-                    Live Data
-                </h3>
-
-                <p>
-                    View real prototype data when hardware is connected.
-                </p>
-            </div>
-
-            <b>→</b>
-
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     FINAL CTA
-========================= -->
-
-<section class="final-cta">
-
-    <div>
-
-        <span class="eyebrow light">
-            🌊 OCEAN × ECO-TECH
-        </span>
-
-        <h2>
-            Technology begins with
-            understanding the problem.
-        </h2>
-
-        <p>
-            Explore the project, follow its development and
-            discover how technology can become part of a
-            more responsible relationship with our oceans.
-        </p>
-
-        <a href="about.html" class="light-button">
-            Meet the Project →
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
+<!-- =====================================================
      FOOTER
-========================= -->
+===================================================== -->
 
 <footer>
 
-    <div class="footer-brand">
-
+    <div>
         🌊 OCEAN <span>× ECO-TECH</span>
-
-        <p>
-            Student-driven innovation for cleaner oceans.
-        </p>
-
     </div>
 
-
-    <div class="footer-links">
-
-        <a href="index.html">Home</a>
-        <a href="dashboard.html">Live Data</a>
-        <a href="map.html">Map</a>
-        <a href="solutions.html">Solutions</a>
-        <a href="impact.html">Impact</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Get Involved</a>
-
-    </div>
-
-
-    <div class="footer-bottom">
-
+    <div>
         © 2026 Ocean × Eco-Tech
-
     </div>
 
 </footer>
 
 
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
 <script src="app.js"></script>
 
 </body>
 </html>
+```
