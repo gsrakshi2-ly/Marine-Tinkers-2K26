@@ -1,59 +1,100 @@
 /* =========================================================
-   OCEAN × ECO-TECH
-   APP.JS
-   MAP + GLOBAL INTERACTIONS
-   ========================================================= */
+   🌊 OCEAN × ECO-TECH
+   APP.JS — REAL DATA ONLY
+========================================================= */
+
+"use strict";
 
 
 /* =========================================================
-   MOBILE NAVIGATION
-   ========================================================= */
+   1. GLOBAL STATE
+========================================================= */
 
-const menuToggle =
-    document.getElementById("menuToggle");
+const OceanEcoTech = {
 
-const navLinks =
-    document.getElementById("navLinks");
+    hardwareConnected: false,
 
+    sensorData: null,
 
-if (menuToggle && navLinks) {
+    map: null,
 
-    menuToggle.addEventListener(
-        "click",
-        () => {
+    mapMarkers: [],
 
-            navLinks.classList.toggle(
-                "active"
-            );
+    storageKey: "oceanEcoTechWasteReports"
 
-            menuToggle.textContent =
-                navLinks.classList.contains(
-                    "active"
-                )
-                    ? "✕"
-                    : "☰";
-
-        }
-    );
+};
 
 
-    document
-        .querySelectorAll(".nav-links a")
+/* =========================================================
+   2. START APPLICATION
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    initializeNavigation();
+
+    initializeActiveNavigation();
+
+    initializeRevealAnimations();
+
+    initializeHardwareState();
+
+    initializeWasteReporting();
+
+    renderWasteHistory();
+
+    initializeButtons();
+
+    initializeCuteEffects();
+
+});
+
+
+/* =========================================================
+   3. RESPONSIVE NAVIGATION
+========================================================= */
+
+function initializeNavigation() {
+
+    const menuButton =
+        document.querySelector(".menu-toggle");
+
+    const nav =
+        document.querySelector("nav");
+
+    if (!menuButton || !nav) return;
+
+    menuButton.addEventListener("click", () => {
+
+        const opened =
+            nav.classList.toggle("open");
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            opened
+        );
+
+        menuButton.textContent =
+            opened ? "✕" : "☰";
+
+    });
+
+
+    nav.querySelectorAll("a")
         .forEach(link => {
 
-            link.addEventListener(
-                "click",
-                () => {
+            link.addEventListener("click", () => {
 
-                    navLinks.classList.remove(
-                        "active"
-                    );
+                nav.classList.remove("open");
 
-                    menuToggle.textContent =
-                        "☰";
+                menuButton.textContent = "☰";
 
-                }
-            );
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            });
 
         });
 
@@ -61,475 +102,916 @@ if (menuToggle && navLinks) {
 
 
 /* =========================================================
-   WORLD MAP
-   ========================================================= */
+   4. ACTIVE NAVIGATION
+========================================================= */
 
-let worldMap = null;
+function initializeActiveNavigation() {
 
+    const currentPage =
+        window.location.pathname
+            .split("/")
+            .pop()
+            .toLowerCase();
 
-if (
-    document.getElementById(
-        "worldMap"
-    )
-) {
 
-    worldMap = L.map(
-        "worldMap",
-        {
+    document.querySelectorAll(
+        ".nav-links a"
+    ).forEach(link => {
 
-            center: [
-                20,
-                0
-            ],
+        const href =
+            link.getAttribute("href");
 
-            zoom: 2,
+        if (!href) return;
 
-            minZoom: 2,
-
-            maxZoom: 19,
-
-            zoomControl: true,
-
-            scrollWheelZoom: true,
-
-            doubleClickZoom: true,
-
-            touchZoom: true,
-
-            dragging: true,
-
-            zoomSnap: 0.5,
-
-            zoomDelta: 0.5,
-
-            worldCopyJump: true
-
-        }
-    );
-
-
-    /* =====================================================
-       REAL STREET / ROAD MAP
-       ===================================================== */
-
-    const streetMap =
-        L.tileLayer(
-            "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-            {
-
-                maxZoom: 19,
-
-                attribution:
-                    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-
-            }
-        );
-
-
-    streetMap.addTo(
-        worldMap
-    );
-
-
-    /* =====================================================
-       OCEAN-STYLE BASE LAYER
-       ===================================================== */
-
-    const oceanMap =
-        L.tileLayer(
-            "https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png",
-            {
-
-                maxZoom: 19,
-
-                attribution:
-                    '&copy; OpenStreetMap contributors'
-
-            }
-        );
-
-
-    /* =====================================================
-       LAYER CONTROL
-       ===================================================== */
-
-    const baseMaps = {
-
-        "🗺️ Street Map":
-            streetMap,
-
-        "🌊 Ocean Map":
-            oceanMap
-
-    };
-
-
-    L.control
-        .layers(
-            baseMaps,
-            null,
-            {
-                position:
-                    "topright"
-            }
-        )
-        .addTo(
-            worldMap
-        );
-
-
-    /* =====================================================
-       SCALE
-       ===================================================== */
-
-    L.control
-        .scale(
-            {
-                metric: true,
-                imperial: true
-            }
-        )
-        .addTo(
-            worldMap
-        );
-
-
-    /* =====================================================
-       CONTINENT COLOUR DATA
-       ===================================================== */
-
-    const continentColors = {
-
-        Asia:
-            "#159AAB",
-
-        Europe:
-            "#72D6D8",
-
-        Africa:
-            "#BFE8DD",
-
-        NorthAmerica:
-            "#8CC8C5",
-
-        SouthAmerica:
-            "#4FA7A9",
-
-        Oceania:
-            "#5DB7B9",
-
-        Antarctica:
-            "#D8EFE9"
-
-    };
-
-
-    /* =====================================================
-       CONTINENT POLYGONS
-       
-       These are intentionally simplified geographic
-       overlays for visual continent colour coding.
-       They do NOT represent sensor data.
-       ===================================================== */
-
-    const continents = {
-
-        Asia: [
-            [
-                [80, 25],
-                [100, 35],
-                [120, 45],
-                [145, 50],
-                [150, 30],
-                [135, 5],
-                [120, 5],
-                [100, 10],
-                [80, 25]
-            ]
-        ],
-
-        Europe: [
-            [
-                [-10, 35],
-                [10, 45],
-                [30, 55],
-                [50, 50],
-                [35, 35],
-                [10, 35],
-                [-10, 35]
-            ]
-        ],
-
-        Africa: [
-            [
-                [-20, 35],
-                [10, 37],
-                [40, 30],
-                [50, 5],
-                [35, -35],
-                [5, -35],
-                [-15, 0],
-                [-20, 35]
-            ]
-        ],
-
-        NorthAmerica: [
-            [
-                [-170, 65],
-                [-140, 70],
-                [-100, 70],
-                [-60, 55],
-                [-55, 30],
-                [-80, 15],
-                [-105, 25],
-                [-120, 45],
-                [-150, 50],
-                [-170, 65]
-            ]
-        ],
-
-        SouthAmerica: [
-            [
-                [-80, 12],
-                [-55, 8],
-                [-35, -5],
-                [-45, -25],
-                [-55, -55],
-                [-75, -45],
-                [-80, -15],
-                [-80, 12]
-            ]
-        ],
-
-        Oceania: [
-            [
-                [110, -10],
-                [155, -10],
-                [155, -40],
-                [125, -40],
-                [110, -10]
-            ]
-        ],
-
-        Antarctica: [
-            [
-                [-180, -60],
-                [180, -60],
-                [180, -90],
-                [-180, -90],
-                [-180, -60]
-            ]
-        ]
-
-    };
-
-
-    /* =====================================================
-       CONTINENT OVERLAYS
-       ===================================================== */
-
-    const continentLayers = {};
-
-
-    Object.entries(
-        continents
-    ).forEach(
-        ([name, coordinates]) => {
-
-            continentLayers[name] =
-                L.polygon(
-                    coordinates,
-                    {
-
-                        color:
-                            continentColors[
-                                name
-                            ],
-
-                        fillColor:
-                            continentColors[
-                                name
-                            ],
-
-                        fillOpacity:
-                            0.22,
-
-                        weight:
-                            1.5,
-
-                        opacity:
-                            0.65,
-
-                        interactive:
-                            false
-
-                    }
-                )
-                .addTo(
-                    worldMap
-                );
-
-        }
-    );
-
-
-    /* =====================================================
-       VERIFIED MONITORING DATA
-       
-       IMPORTANT:
-       Empty by default.
-       
-       Do NOT add invented locations.
-       ===================================================== */
-
-    let verifiedMonitoringPoints = [];
-
-
-    /* =====================================================
-       LOAD VERIFIED POINTS
-       
-       If another part of the application stores real
-       verified GPS points in localStorage, they can be
-       displayed automatically.
-       ===================================================== */
-
-    try {
-
-        const storedPoints =
-            JSON.parse(
-                localStorage.getItem(
-                    "verifiedMonitoringPoints"
-                ) || "[]"
-            );
+        const page =
+            href
+                .split("/")
+                .pop()
+                .toLowerCase();
 
 
         if (
-            Array.isArray(
-                storedPoints
+            page === currentPage ||
+            (
+                currentPage === "" &&
+                page === "index.html"
             )
         ) {
 
-            verifiedMonitoringPoints =
-                storedPoints;
+            link.classList.add("active");
 
         }
 
-    } catch (error) {
+    });
 
-        verifiedMonitoringPoints = [];
+}
+
+
+/* =========================================================
+   5. SCROLL REVEAL
+========================================================= */
+
+function initializeRevealAnimations() {
+
+    const elements =
+        document.querySelectorAll(".reveal");
+
+    if (!elements.length) return;
+
+
+    if (
+        !("IntersectionObserver" in window)
+    ) {
+
+        elements.forEach(element => {
+
+            element.classList.add("visible");
+
+        });
+
+        return;
 
     }
 
 
-    /* =====================================================
-       DISPLAY VERIFIED POINTS
-       ===================================================== */
+    const observer =
+        new IntersectionObserver(
+            entries => {
 
-    verifiedMonitoringPoints.forEach(
-        point => {
+                entries.forEach(entry => {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        entry.target
+                            .classList
+                            .add("visible");
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+    elements.forEach(element => {
+
+        observer.observe(element);
+
+    });
+
+}
+
+
+/* =========================================================
+   6. HARDWARE STATE
+========================================================= */
+
+function initializeHardwareState() {
+
+    /*
+       IMPORTANT:
+
+       There is NO simulated hardware state.
+
+       The default state is always:
+
+       📡 Awaiting Hardware Data
+    */
+
+
+    OceanEcoTech.hardwareConnected =
+        false;
+
+    OceanEcoTech.sensorData =
+        null;
+
+
+    updateHardwareInterface();
+
+}
+
+
+/* =========================================================
+   7. HARDWARE UI
+========================================================= */
+
+function updateHardwareInterface() {
+
+    document.querySelectorAll(
+        "[data-hardware-status]"
+    ).forEach(element => {
+
+        if (
+            OceanEcoTech.hardwareConnected
+        ) {
+
+            element.textContent =
+                "📡 Hardware Connected";
+
+        } else {
+
+            element.textContent =
+                "📡 Awaiting Hardware";
+
+        }
+
+    });
+
+
+    document.querySelectorAll(
+        "[data-awaiting-message]"
+    ).forEach(element => {
+
+        if (
+            OceanEcoTech.hardwareConnected
+        ) {
+
+            element.textContent =
+                "Real sensor data is available.";
+
+        } else {
+
+            element.textContent =
+                "This feature will become available when the prototype's sensors are connected.";
+
+        }
+
+    });
+
+}
+
+
+/* =========================================================
+   8. RECEIVE REAL SENSOR DATA
+========================================================= */
+
+function receiveSensorData(data) {
+
+    /*
+       This function NEVER creates data.
+
+       It only accepts data supplied by
+       the actual hardware system.
+    */
+
+
+    if (
+        !data ||
+        typeof data !== "object"
+    ) {
+
+        return;
+
+    }
+
+
+    OceanEcoTech.sensorData =
+        data;
+
+    OceanEcoTech.hardwareConnected =
+        true;
+
+
+    updateHardwareInterface();
+
+    displayRealSensorData(data);
+
+    processRealAlerts(data);
+
+}
+
+
+/* =========================================================
+   9. DISPLAY REAL SENSOR DATA
+========================================================= */
+
+function displayRealSensorData(data) {
+
+    document.querySelectorAll(
+        "[data-sensor]"
+    ).forEach(element => {
+
+        const sensor =
+            element.dataset.sensor;
+
+
+        if (
+            Object.prototype.hasOwnProperty
+                .call(data, sensor)
+        ) {
+
+            const value =
+                data[sensor];
+
 
             if (
-                typeof point.lat !==
-                    "number" ||
-                typeof point.lng !==
-                    "number"
+                value !== null &&
+                value !== undefined
             ) {
 
-                return;
+                element.textContent =
+                    String(value);
 
             }
 
+        }
 
-            const marker =
-                L.circleMarker(
-                    [
-                        point.lat,
-                        point.lng
-                    ],
-                    {
+    });
 
-                        radius:
-                            8,
-
-                        color:
-                            "#FFD700",
-
-                        fillColor:
-                            "#FFD700",
-
-                        fillOpacity:
-                            0.95,
-
-                        weight:
-                            3
-
-                    }
-                )
-                .addTo(
-                    worldMap
-                );
+}
 
 
-            marker.bindPopup(`
+/* =========================================================
+   10. REAL SENSOR ALERTS ONLY
+========================================================= */
 
-                <div>
+function processRealAlerts(data) {
 
-                    <div class="popup-title">
-                        📍 Verified Monitoring Point
-                    </div>
+    /*
+       No automatic/fake warnings.
 
-                    <div>
-                        ${
-                            point.name ||
-                            "Ocean × Eco-Tech"
-                        }
-                    </div>
+       Alerts can only appear if the
+       real hardware system supplies one.
+    */
 
-                    <div class="popup-status">
-                        Verified project data
-                    </div>
+
+    if (
+        !data.alert
+    ) {
+
+        return;
+
+    }
+
+
+    const alertBox =
+        document.querySelector(
+            "[data-smart-alert]"
+        );
+
+
+    if (!alertBox) return;
+
+
+    alertBox.textContent =
+        String(data.alert);
+
+
+    alertBox.hidden = false;
+
+}
+
+
+/* =========================================================
+   11. WASTE REPORTING
+========================================================= */
+
+function initializeWasteReporting() {
+
+    document.querySelectorAll(
+        "[data-waste-report-form]"
+    ).forEach(form => {
+
+        form.addEventListener(
+            "submit",
+            event => {
+
+                event.preventDefault();
+
+                createWasteReport(form);
+
+            }
+        );
+
+    });
+
+}
+
+
+/* =========================================================
+   12. CREATE REAL USER REPORT
+========================================================= */
+
+function createWasteReport(form) {
+
+    const formData =
+        new FormData(form);
+
+
+    const location =
+        cleanInput(
+            formData.get("location")
+        );
+
+
+    const wasteType =
+        cleanInput(
+            formData.get("wasteType")
+        );
+
+
+    const description =
+        cleanInput(
+            formData.get("description")
+        );
+
+
+    const quantity =
+        cleanInput(
+            formData.get("quantity")
+        );
+
+
+    if (
+        !location ||
+        !wasteType
+    ) {
+
+        showFormMessage(
+            form,
+            "Please enter the location and waste type.",
+            "warning"
+        );
+
+        return;
+
+    }
+
+
+    /*
+       This record represents an actual
+       report created by the user.
+
+       No environmental statistics
+       are invented.
+    */
+
+    const report = {
+
+        id: generateID(),
+
+        date:
+            new Date().toISOString(),
+
+        location,
+
+        wasteType,
+
+        description,
+
+        quantity,
+
+        status: "Reported"
+
+    };
+
+
+    saveWasteReport(report);
+
+    form.reset();
+
+
+    showFormMessage(
+        form,
+        "♻️ Your waste report has been recorded.",
+        "success"
+    );
+
+}
+
+
+/* =========================================================
+   13. SAVE REPORT
+========================================================= */
+
+function saveWasteReport(report) {
+
+    const reports =
+        getWasteReports();
+
+
+    reports.push(report);
+
+
+    localStorage.setItem(
+        OceanEcoTech.storageKey,
+        JSON.stringify(reports)
+    );
+
+
+    renderWasteHistory();
+
+}
+
+
+/* =========================================================
+   14. GET REPORTS
+========================================================= */
+
+function getWasteReports() {
+
+    const saved =
+        localStorage.getItem(
+            OceanEcoTech.storageKey
+        );
+
+
+    if (!saved) {
+
+        return [];
+
+    }
+
+
+    try {
+
+        const reports =
+            JSON.parse(saved);
+
+
+        return Array.isArray(reports)
+            ? reports
+            : [];
+
+    }
+
+    catch {
+
+        return [];
+
+    }
+
+}
+
+
+/* =========================================================
+   15. WASTE HISTORY
+========================================================= */
+
+function renderWasteHistory() {
+
+    const containers =
+        document.querySelectorAll(
+            "[data-waste-history]"
+        );
+
+
+    if (!containers.length) return;
+
+
+    const reports =
+        getWasteReports();
+
+
+    containers.forEach(container => {
+
+        container.innerHTML = "";
+
+
+        if (!reports.length) {
+
+            container.innerHTML = `
+
+                <div class="awaiting-hardware">
+
+                    <div class="icon">♻️</div>
+
+                    <h3>
+                        No Collection History Yet
+                    </h3>
+
+                    <p>
+                        Reports created through
+                        Waste Reporting will appear here.
+                    </p>
 
                 </div>
 
-            `);
+            `;
+
+            return;
 
         }
+
+
+        reports
+            .slice()
+            .reverse()
+            .forEach(report => {
+
+                const item =
+                    document.createElement("div");
+
+
+                item.className =
+                    "timeline-item";
+
+
+                item.innerHTML = `
+
+                    <h3>
+                        ♻️
+                        ${escapeHTML(
+                            report.wasteType
+                        )}
+                    </h3>
+
+                    <p>
+                        📍
+                        ${escapeHTML(
+                            report.location
+                        )}
+                    </p>
+
+                    <p>
+                        📅
+                        ${formatDate(
+                            report.date
+                        )}
+                    </p>
+
+                    ${
+                        report.quantity
+                            ? `
+                                <p>
+                                    📦
+                                    ${escapeHTML(
+                                        report.quantity
+                                    )}
+                                </p>
+                              `
+                            : ""
+                    }
+
+                    ${
+                        report.description
+                            ? `
+                                <p>
+                                    ${escapeHTML(
+                                        report.description
+                                    )}
+                                </p>
+                              `
+                            : ""
+                    }
+
+                `;
+
+
+                container.appendChild(item);
+
+            });
+
+    });
+
+}
+
+
+/* =========================================================
+   16. CLEAR LOCAL HISTORY
+========================================================= */
+
+function clearWasteHistory() {
+
+    localStorage.removeItem(
+        OceanEcoTech.storageKey
     );
 
 
-    /* =====================================================
-       MAP ZOOM EVENT
-       ===================================================== */
+    renderWasteHistory();
 
-    worldMap.on(
-        "zoomend",
-        () => {
+}
 
-            const zoom =
-                worldMap.getZoom();
 
-            document.title =
-                `Map • Zoom ${zoom.toFixed(
-                    1
-                )} | Ocean × Eco-Tech`;
+/* =========================================================
+   17. MAP CONNECTION
+========================================================= */
 
-        }
+function registerMap(mapInstance) {
+
+    if (!mapInstance) return;
+
+
+    OceanEcoTech.map =
+        mapInstance;
+
+}
+
+
+/* =========================================================
+   18. VERIFIED MAP MARKER
+========================================================= */
+
+function addVerifiedMonitoringPoint(
+    longitude,
+    latitude,
+    title
+) {
+
+    /*
+       This function only accepts coordinates
+       supplied by a real/verified source.
+
+       It does NOT generate coordinates.
+    */
+
+
+    if (
+        !OceanEcoTech.map ||
+        typeof longitude !== "number" ||
+        typeof latitude !== "number"
+    ) {
+
+        return;
+
+    }
+
+
+    if (
+        typeof maplibregl === "undefined"
+    ) {
+
+        return;
+
+    }
+
+
+    const marker =
+        new maplibregl.Marker()
+            .setLngLat([
+                longitude,
+                latitude
+            ])
+            .setPopup(
+                new maplibregl.Popup()
+                    .setHTML(`
+                        <strong>
+                            📍
+                            ${escapeHTML(
+                                title ||
+                                "Verified Monitoring Point"
+                            )}
+                        </strong>
+                    `)
+            )
+            .addTo(
+                OceanEcoTech.map
+            );
+
+
+    OceanEcoTech.mapMarkers.push(
+        marker
     );
 
+}
 
-    /* =====================================================
-       MAP RESIZE
-       ===================================================== */
 
-    window.addEventListener(
-        "resize",
-        () => {
+/* =========================================================
+   19. CLEAR MAP MARKERS
+========================================================= */
 
-            if (worldMap) {
+function clearMapMarkers() {
 
-                worldMap.invalidateSize();
+    OceanEcoTech.mapMarkers
+        .forEach(marker => {
+
+            marker.remove();
+
+        });
+
+
+    OceanEcoTech.mapMarkers = [];
+
+}
+
+
+/* =========================================================
+   20. FORM MESSAGE
+========================================================= */
+
+function showFormMessage(
+    form,
+    message,
+    type
+) {
+
+    const oldMessage =
+        form.querySelector(
+            ".form-message"
+        );
+
+
+    if (oldMessage) {
+
+        oldMessage.remove();
+
+    }
+
+
+    const box =
+        document.createElement("div");
+
+
+    box.className =
+        "form-message";
+
+
+    box.textContent =
+        message;
+
+
+    box.style.marginBottom =
+        "15px";
+
+    box.style.padding =
+        "12px 15px";
+
+    box.style.borderRadius =
+        "12px";
+
+    box.style.fontSize =
+        "0.65rem";
+
+
+    if (type === "warning") {
+
+        box.style.background =
+            "#FFF4DD";
+
+        box.style.color =
+            "#8A6B12";
+
+    } else {
+
+        box.style.background =
+            "#E1F7ED";
+
+        box.style.color =
+            "#16805B";
+
+    }
+
+
+    form.prepend(box);
+
+
+    setTimeout(() => {
+
+        box.remove();
+
+    }, 5000);
+
+}
+
+
+/* =========================================================
+   21. BUTTONS
+========================================================= */
+
+function initializeButtons() {
+
+    document.querySelectorAll(
+        "[data-scroll-to]"
+    ).forEach(button => {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                const target =
+                    document.querySelector(
+                        button.dataset.scrollTo
+                    );
+
+
+                if (!target) return;
+
+
+                target.scrollIntoView({
+                    behavior: "smooth"
+                });
 
             }
+        );
+
+    });
+
+
+    document.querySelectorAll(
+        "[data-go-back]"
+    ).forEach(button => {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                window.history.back();
+
+            }
+        );
+
+    });
+
+}
+
+
+/* =========================================================
+   22. CUTE OCEAN BUBBLES
+========================================================= */
+
+function initializeCuteEffects() {
+
+    const hero =
+        document.querySelector(".hero");
+
+
+    if (!hero) return;
+
+
+    const bubbles = [
+
+        ["bubble-small", "10%", "30%"],
+
+        ["bubble-medium", "82%", "25%"],
+
+        ["bubble-small", "72%", "70%"],
+
+        ["bubble-large", "92%", "55%"]
+
+    ];
+
+
+    bubbles.forEach(
+        ([size, left, top]) => {
+
+            const bubble =
+                document.createElement("div");
+
+
+            bubble.className =
+                `bubble ${size}`;
+
+
+            bubble.style.left =
+                left;
+
+            bubble.style.top =
+                top;
+
+
+            hero.appendChild(
+                bubble
+            );
 
         }
     );
@@ -538,74 +1020,108 @@ if (
 
 
 /* =========================================================
-   SCROLL REVEAL
-   ========================================================= */
+   23. UTILITIES
+========================================================= */
 
-const revealElements =
-    document.querySelectorAll(
-        ".reveal"
+function generateID() {
+
+    return (
+        Date.now().toString(36) +
+        Math.random()
+            .toString(36)
+            .slice(2, 8)
     );
 
-
-if (
-    "IntersectionObserver"
-    in window
-) {
-
-    const observer =
-        new IntersectionObserver(
-            entries => {
-
-                entries.forEach(
-                    entry => {
-
-                        if (
-                            entry.isIntersecting
-                        ) {
-
-                            entry.target
-                                .classList
-                                .add(
-                                    "visible"
-                                );
-
-                            observer.unobserve(
-                                entry.target
-                            );
-
-                        }
-
-                    }
-                );
-
-            },
-            {
-                threshold:
-                    0.1
-            }
-        );
+}
 
 
-    revealElements.forEach(
-        element => {
+function cleanInput(value) {
 
-            observer.observe(
-                element
-            );
+    if (
+        value === null ||
+        value === undefined
+    ) {
 
-        }
-    );
+        return "";
 
-} else {
+    }
 
-    revealElements.forEach(
-        element => {
 
-            element.classList.add(
-                "visible"
-            );
+    return String(value).trim();
 
+}
+
+
+function escapeHTML(value) {
+
+    return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+
+}
+
+
+function formatDate(value) {
+
+    const date =
+        new Date(value);
+
+
+    if (
+        Number.isNaN(
+            date.getTime()
+        )
+    ) {
+
+        return "Date unavailable";
+
+    }
+
+
+    return date.toLocaleDateString(
+        undefined,
+        {
+            day: "numeric",
+            month: "short",
+            year: "numeric"
         }
     );
 
 }
+
+
+/* =========================================================
+   24. PUBLIC HARDWARE API
+========================================================= */
+
+window.OceanEcoTechAPI = {
+
+    receiveSensorData,
+
+    registerMap,
+
+    addVerifiedMonitoringPoint,
+
+    clearMapMarkers,
+
+    getWasteReports,
+
+    clearWasteHistory
+
+};
+
+
+/* =========================================================
+   🌊 APPLICATION READY
+========================================================= */
+
+console.log(
+    "🌊 Ocean × Eco-Tech loaded — Real Data Only."
+);
+
+console.log(
+    "📡 Hardware: Awaiting Hardware Data"
+);
