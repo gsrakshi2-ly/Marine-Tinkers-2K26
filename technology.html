@@ -3,207 +3,1866 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>Technology | Ocean × Eco-Tech</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<link rel="stylesheet" href="style.css">
+    <title>Technology | Ocean × Eco-Tech</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <style>
+
+        /* =====================================================
+           TECHNOLOGY HERO
+        ===================================================== */
+
+        .technology-hero {
+
+            padding:
+                145px 0 70px;
+
+            color:
+                var(--white);
+
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(21,154,171,0.25),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    var(--deep-blue),
+                    var(--ocean-blue)
+                );
+
+        }
+
+
+        .technology-hero h1 {
+
+            max-width:
+                900px;
+
+            margin-bottom:
+                16px;
+
+            font-family:
+                "Poppins",
+                Arial,
+                sans-serif;
+
+            font-size:
+                clamp(
+                    2.4rem,
+                    5vw,
+                    4rem
+                );
+
+            line-height:
+                1.08;
+
+        }
+
+
+        .technology-hero h1 span {
+
+            color:
+                var(--gold);
+
+        }
+
+
+        .technology-hero p {
+
+            max-width:
+                800px;
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.72
+                );
+
+            font-size:
+                0.9rem;
+
+            line-height:
+                1.8;
+
+        }
+
+
+        /* =====================================================
+           TECHNOLOGY INTRO
+        ===================================================== */
+
+        .technology-intro {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1.15fr 0.85fr;
+
+            gap:
+                25px;
+
+        }
+
+
+        .technology-card {
+
+            padding:
+                30px;
+
+            background:
+                var(--white);
+
+            border:
+                1px solid
+                rgba(
+                    3,
+                    27,
+                    46,
+                    0.07
+                );
+
+            border-radius:
+                var(--radius);
+
+            box-shadow:
+                var(--shadow);
+
+            transition:
+                var(--transition);
+
+        }
+
+
+        .technology-card:hover {
+
+            transform:
+                translateY(-5px);
+
+            box-shadow:
+                var(--shadow-hover);
+
+        }
+
+
+        .technology-icon {
+
+            width:
+                55px;
+
+            height:
+                55px;
+
+            display:
+                grid;
+
+            place-items:
+                center;
+
+            margin-bottom:
+                17px;
+
+            border-radius:
+                16px;
+
+            background:
+                var(--soft-seafoam);
+
+            font-size:
+                1.55rem;
+
+        }
+
+
+        .technology-card h3 {
+
+            margin-bottom:
+                9px;
+
+            font-size:
+                1rem;
+
+        }
+
+
+        .technology-card p {
+
+            color:
+                var(--text-muted);
+
+            font-size:
+                0.72rem;
+
+            line-height:
+                1.8;
+
+        }
+
+
+        /* =====================================================
+           TECHNOLOGY GRID
+        ===================================================== */
+
+        .tech-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap:
+                18px;
+
+        }
+
+
+        .tech-item {
+
+            position:
+                relative;
+
+            padding:
+                25px;
+
+            background:
+                var(--white);
+
+            border:
+                1px solid
+                rgba(
+                    3,
+                    27,
+                    46,
+                    0.07
+                );
+
+            border-radius:
+                18px;
+
+            box-shadow:
+                var(--shadow);
+
+            transition:
+                var(--transition);
+
+        }
+
+
+        .tech-item:hover {
+
+            transform:
+                translateY(-5px);
+
+        }
+
+
+        .tech-item-icon {
+
+            width:
+                45px;
+
+            height:
+                45px;
+
+            display:
+                grid;
+
+            place-items:
+                center;
+
+            margin-bottom:
+                15px;
+
+            border-radius:
+                13px;
+
+            background:
+                var(--soft-seafoam);
+
+            font-size:
+                1.25rem;
+
+        }
+
+
+        .tech-item h3 {
+
+            margin-bottom:
+                7px;
+
+            font-size:
+                0.82rem;
+
+        }
+
+
+        .tech-item p {
+
+            color:
+                var(--text-muted);
+
+            font-size:
+                0.66rem;
+
+            line-height:
+                1.75;
+
+        }
+
+
+        /* =====================================================
+           STATUS TAGS
+        ===================================================== */
+
+        .tech-tag {
+
+            display:
+                inline-block;
+
+            margin-top:
+                15px;
+
+            padding:
+                5px 9px;
+
+            border-radius:
+                20px;
+
+            font-size:
+                0.56rem;
+
+            font-weight:
+                800;
+
+            letter-spacing:
+                0.03em;
+
+        }
+
+
+        .tag-planned {
+
+            color:
+                var(--gold-soft);
+
+            background:
+                rgba(
+                    255,
+                    215,
+                    0,
+                    0.1
+                );
+
+            border:
+                1px solid
+                rgba(
+                    230,
+                    190,
+                    138,
+                    0.4
+                );
+
+        }
+
+
+        .tag-ready {
+
+            color:
+                var(--aqua);
+
+            background:
+                rgba(
+                    21,
+                    154,
+                    171,
+                    0.08
+                );
+
+            border:
+                1px solid
+                rgba(
+                    21,
+                    154,
+                    171,
+                    0.2
+                );
+
+        }
+
+
+        /* =====================================================
+           SYSTEM ARCHITECTURE
+        ===================================================== */
+
+        .architecture {
+
+            max-width:
+                950px;
+
+            margin:
+                auto;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            gap:
+                12px;
+
+            flex-wrap:
+                wrap;
+
+        }
+
+
+        .architecture-box {
+
+            min-width:
+                150px;
+
+            padding:
+                22px 18px;
+
+            text-align:
+                center;
+
+            background:
+                var(--white);
+
+            border:
+                1px solid
+                rgba(
+                    3,
+                    27,
+                    46,
+                    0.08
+                );
+
+            border-radius:
+                16px;
+
+            box-shadow:
+                var(--shadow);
+
+        }
+
+
+        .architecture-box .emoji {
+
+            display:
+                block;
+
+            margin-bottom:
+                8px;
+
+            font-size:
+                1.5rem;
+
+        }
+
+
+        .architecture-box h3 {
+
+            font-size:
+                0.7rem;
+
+        }
+
+
+        .architecture-arrow {
+
+            color:
+                var(--gold);
+
+            font-size:
+                1.3rem;
+
+            font-weight:
+                900;
+
+        }
+
+
+        /* =====================================================
+           SENSING SYSTEM
+        ===================================================== */
+
+        .sensor-table {
+
+            overflow:
+                hidden;
+
+            background:
+                var(--white);
+
+            border-radius:
+                18px;
+
+            box-shadow:
+                var(--shadow);
+
+            border:
+                1px solid
+                rgba(
+                    3,
+                    27,
+                    46,
+                    0.07
+                );
+
+        }
+
+
+        .sensor-row {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1.1fr 1.5fr 0.8fr;
+
+            gap:
+                20px;
+
+            padding:
+                18px 22px;
+
+            border-bottom:
+                1px solid
+                rgba(
+                    3,
+                    27,
+                    46,
+                    0.06
+                );
+
+            font-size:
+                0.68rem;
+
+        }
+
+
+        .sensor-row:last-child {
+
+            border-bottom:
+                none;
+
+        }
+
+
+        .sensor-row.header {
+
+            background:
+                var(--deep-blue);
+
+            color:
+                var(--white);
+
+            font-weight:
+                800;
+
+        }
+
+
+        .sensor-row:not(.header) {
+
+            color:
+                var(--text-muted);
+
+        }
+
+
+        .sensor-status {
+
+            font-weight:
+                800;
+
+            color:
+                var(--gold-soft);
+
+        }
+
+
+        /* =====================================================
+           DIGITAL PLATFORM
+        ===================================================== */
+
+        .platform-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap:
+                15px;
+
+        }
+
+
+        .platform-card {
+
+            padding:
+                22px;
+
+            background:
+                var(--white);
+
+            border-radius:
+                16px;
+
+            box-shadow:
+                var(--shadow);
+
+            text-align:
+                center;
+
+        }
+
+
+        .platform-card span {
+
+            display:
+                block;
+
+            margin-bottom:
+                10px;
+
+            font-size:
+                1.5rem;
+
+        }
+
+
+        .platform-card h3 {
+
+            margin-bottom:
+                5px;
+
+            font-size:
+                0.72rem;
+
+        }
+
+
+        .platform-card p {
+
+            color:
+                var(--text-muted);
+
+            font-size:
+                0.6rem;
+
+            line-height:
+                1.6;
+
+        }
+
+
+        /* =====================================================
+           DATA TRANSPARENCY
+        ===================================================== */
+
+        .transparency-box {
+
+            padding:
+                30px;
+
+            border-radius:
+                20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(
+                        255,
+                        215,
+                        0,
+                        0.12
+                    ),
+                    rgba(
+                        230,
+                        190,
+                        138,
+                        0.04
+                    )
+                );
+
+            border:
+                1px solid
+                rgba(
+                    230,
+                    190,
+                    138,
+                    0.5
+                );
+
+        }
+
+
+        .transparency-box h3 {
+
+            margin-bottom:
+                10px;
+
+            font-size:
+                1rem;
+
+        }
+
+
+        .transparency-box p {
+
+            color:
+                var(--text-muted);
+
+            font-size:
+                0.72rem;
+
+            line-height:
+                1.8;
+
+        }
+
+
+        .transparency-list {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap:
+                10px;
+
+            margin-top:
+                18px;
+
+        }
+
+
+        .transparency-list div {
+
+            padding:
+                10px 13px;
+
+            border-radius:
+                10px;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.65
+                );
+
+            color:
+                var(--text-muted);
+
+            font-size:
+                0.63rem;
+
+        }
+
+
+        /* =====================================================
+           TEAM NOTE
+        ===================================================== */
+
+        .team-note {
+
+            padding:
+                30px;
+
+            border:
+                1px solid
+                rgba(
+                    230,
+                    190,
+                    138,
+                    0.55
+                );
+
+            border-radius:
+                20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(
+                        255,
+                        215,
+                        0,
+                        0.12
+                    ),
+                    rgba(
+                        255,
+                        215,
+                        0,
+                        0.03
+                    )
+                );
+
+        }
+
+
+        .team-note h3 {
+
+            margin-bottom:
+                9px;
+
+            font-size:
+                1rem;
+
+        }
+
+
+        .team-note p {
+
+            color:
+                var(--text-muted);
+
+            font-size:
+                0.72rem;
+
+            line-height:
+                1.8;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 950px) {
+
+            .technology-intro {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .tech-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+
+            .platform-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .tech-grid,
+            .platform-grid,
+            .transparency-list {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .sensor-table {
+
+                overflow-x:
+                    auto;
+
+            }
+
+
+            .sensor-row {
+
+                min-width:
+                    600px;
+
+            }
+
+
+            .architecture-arrow {
+
+                transform:
+                    rotate(90deg);
+
+            }
+
+        }
+
+    </style>
 
 </head>
+
 
 <body>
 
 
-<nav>
+    <!-- =====================================================
+         NAVIGATION
+    ===================================================== -->
 
-    <div class="logo">
-        🌊 OCEAN <span>× ECO-TECH</span>
-    </div>
+    <header class="navbar">
 
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="dashboard.html">Live Data</a></li>
-        <li><a href="map.html">Map</a></li>
-        <li><a href="solutions.html">Solutions</a></li>
-        <li><a href="impact.html">Impact</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Get Involved</a></li>
-    </ul>
+        <div class="nav-container">
 
-    <a href="prototype.html" class="nav-btn">
-        Prototype
-    </a>
+            <a
+                href="index.html"
+                class="logo"
+            >
 
-</nav>
+                <span class="logo-icon">
+                    🌊
+                </span>
+
+                Ocean × Eco-Tech
+
+            </a>
 
 
-<header class="hero">
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation"
+            >
+                ☰
+            </button>
 
-    <div class="hero-content">
 
-        <div class="hero-icon">
-            ⚙️
+            <nav>
+
+                <ul
+                    class="nav-links"
+                    id="navLinks"
+                >
+
+                    <li>
+                        <a href="index.html">
+                            🏠 Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="dashboard.html">
+                            📊 Dashboard
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="analytics.html">
+                            📈 Analytics
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="live-data.html">
+                            📡 Live Data
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="map.html">
+                            🗺️ Map
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="prototype.html">
+                            🛠️ Prototype
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="technology.html"
+                            class="active"
+                        >
+                            ⚙️ Technology
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="solutions.html">
+                            ♻️ Solutions
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="impact.html">
+                            🌱 Impact
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">
+                            ℹ️ About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            📸 Get Involved
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
         </div>
 
-        <h1>
-            Ocean
-            <span>Technology</span>
-        </h1>
-
-        <p>
-            Exploring how embedded electronics,
-            sensors and software can work together
-            for environmental monitoring.
-        </p>
-
-    </div>
-
-</header>
+    </header>
 
 
-<section>
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
 
-    <div class="section-title">
+    <section class="technology-hero">
 
-        <h2>
-            Technology Stack
-        </h2>
+        <div class="container">
 
-        <p>
-            A modular architecture allows the prototype
-            to evolve as new sensors and features are added.
-        </p>
+            <span class="eyebrow">
+                ⚙️ Ocean × Eco-Tech
+            </span>
 
-    </div>
-
-
-    <div class="grid">
-
-        <div class="card">
-
-            <div class="card-icon">
-                🧠
-            </div>
-
-            <h3>
-                Microcontroller
-            </h3>
+            <h1>
+                Technology Behind the
+                <span>Mission</span>
+            </h1>
 
             <p>
-                Controls sensors and processes incoming
-                measurements from the physical system.
+                Ocean × Eco-Tech combines a physical marine-waste
+                collection concept with a digital monitoring platform.
+                The system is designed to collect, process and document
+                information responsibly while keeping sensor-dependent
+                functions unavailable until real hardware data exists.
             </p>
 
         </div>
 
+    </section>
 
-        <div class="card">
 
-            <div class="card-icon">
-                📏
+    <!-- =====================================================
+         OVERVIEW
+    ===================================================== -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <span class="section-label">
+                    🌊 Technology Overview
+                </span>
+
+                <h2>
+                    One System, Multiple Technologies
+                </h2>
+
+                <p>
+                    The project brings together mechanical design,
+                    electronics, sensing, communication and web
+                    development into one student-built environmental
+                    technology concept.
+                </p>
+
             </div>
 
-            <h3>
-                Distance Sensor
-            </h3>
 
-            <p>
-                Can be used to identify objects and
-                estimate distance.
+            <div class="technology-intro">
+
+
+                <article class="technology-card reveal">
+
+                    <div class="technology-icon">
+                        🚤
+                    </div>
+
+                    <h3>
+                        Physical Collection Technology
+                    </h3>
+
+                    <p>
+                        The floating prototype is designed around a
+                        collection mechanism capable of directing
+                        floating waste into a designated storage area.
+                        Propulsion and structural components are intended
+                        to support controlled movement while maintaining
+                        stability on the water.
+                    </p>
+
+                </article>
+
+
+                <article class="technology-card reveal">
+
+                    <div class="technology-icon">
+                        💻
+                    </div>
+
+                    <h3>
+                        Digital Monitoring Technology
+                    </h3>
+
+                    <p>
+                        The web application provides interfaces for live
+                        hardware data, geographic visualization, waste
+                        reporting, collection history, project progress
+                        and future analytics.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CORE TECHNOLOGIES
+    ===================================================== -->
+
+    <section class="section section-seafoam">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <span class="section-label">
+                    🔧 Core Technology
+                </span>
+
+                <h2>
+                    System Components
+                </h2>
+
+                <p>
+                    Each technology has a specific role within the
+                    proposed architecture.
+                </p>
+
+            </div>
+
+
+            <div class="tech-grid">
+
+
+                <article class="tech-item reveal">
+
+                    <div class="tech-item-icon">
+                        🧠
+                    </div>
+
+                    <h3>
+                        Microcontroller
+                    </h3>
+
+                    <p>
+                        Acts as the central control unit for connected
+                        sensors, motors and other electronic components.
+                    </p>
+
+                    <span class="tech-tag tag-planned">
+                        HARDWARE INTEGRATION
+                    </span>
+
+                </article>
+
+
+                <article class="tech-item reveal">
+
+                    <div class="tech-item-icon">
+                        ⚙️
+                    </div>
+
+                    <h3>
+                        Propulsion
+                    </h3>
+
+                    <p>
+                        Motor-driven propulsion is intended to provide
+                        movement and basic directional control for the
+                        floating platform.
+                    </p>
+
+                    <span class="tech-tag tag-planned">
+                        PROTOTYPE
+                    </span>
+
+                </article>
+
+
+                <article class="tech-item reveal">
+
+                    <div class="tech-item-icon">
+                        📏
+                    </div>
+
+                    <h3>
+                        Distance Detection
+                    </h3>
+
+                    <p>
+                        Distance sensors can be integrated to detect
+                        nearby objects and assist with navigation.
+                    </p>
+
+                    <span class="tech-tag tag-planned">
+                        SENSOR-DEPENDENT
+                    </span>
+
+                </article>
+
+
+                <article class="tech-item reveal">
+
+                    <div class="tech-item-icon">
+                        🐠
+                    </div>
+
+                    <h3>
+                        Marine-Life Safety
+                    </h3>
+
+                    <p>
+                        A planned detection layer is intended to help
+                        identify nearby marine life and support safer
+                        operation.
+                    </p>
+
+                    <span class="tech-tag tag-planned">
+                        DEVELOPMENT
+                    </span>
+
+                </article>
+
+
+                <article class="tech-item reveal">
+
+                    <div class="tech-item-icon">
+                        ♻️
+                    </div>
+
+                    <h3>
+                        Waste Sorting
+                    </h3>
+
+                    <p>
+                        The proposed system separates collected material
+                        into designated waste compartments according to
+                        the project's sorting approach.
+                    </p>
+
+                    <span class="tech-tag tag-planned">
+                        PROTOTYPE
+                    </span>
+
+                </article>
+
+
+                <article class="tech-item reveal">
+
+                    <div class="tech-item-icon">
+                        📍
+                    </div>
+
+                    <h3>
+                        GPS Positioning
+                    </h3>
+
+                    <p>
+                        GPS integration can provide the verified
+                        geographical position of the prototype when
+                        suitable hardware is connected.
+                    </p>
+
+                    <span class="tech-tag tag-planned">
+                        FUTURE DATA
+                    </span>
+
+                </article>
+
+
+                <article class="tech-item reveal">
+
+                    <div class="tech-item-icon">
+                        📡
+                    </div>
+
+                    <h3>
+                        Wireless Communication
+                    </h3>
+
+                    <p>
+                        A suitable communication method can transfer
+                        verified hardware information between the
+                        prototype and the digital platform.
+                    </p>
+
+                    <span class="tech-tag tag-planned">
+                        INTEGRATION
+                    </span>
+
+                </article>
+
+
+                <article class="tech-item reveal">
+
+                    <div class="tech-item-icon">
+                        🌐
+                    </div>
+
+                    <h3>
+                        Web Technology
+                    </h3>
+
+                    <p>
+                        HTML, CSS and JavaScript form the foundation of
+                        the responsive monitoring and reporting interface.
+                    </p>
+
+                    <span class="tech-tag tag-ready">
+                        WEB PLATFORM
+                    </span>
+
+                </article>
+
+
+                <article class="tech-item reveal">
+
+                    <div class="tech-item-icon">
+                        🗺️
+                    </div>
+
+                    <h3>
+                        Interactive Mapping
+                    </h3>
+
+                    <p>
+                        The map interface provides geographic
+                        visualization and can display verified monitoring
+                        locations when real coordinates become available.
+                    </p>
+
+                    <span class="tech-tag tag-ready">
+                        AVAILABLE
+                    </span>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SYSTEM ARCHITECTURE
+    ===================================================== -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <span class="section-label">
+                    🔗 Architecture
+                </span>
+
+                <h2>
+                    From Hardware to Information
+                </h2>
+
+                <p>
+                    The intended technology pipeline connects physical
+                    collection hardware with verified digital records.
+                </p>
+
+            </div>
+
+
+            <div class="architecture reveal">
+
+
+                <div class="architecture-box">
+
+                    <span class="emoji">
+                        🌊
+                    </span>
+
+                    <h3>
+                        Marine Environment
+                    </h3>
+
+                </div>
+
+
+                <span class="architecture-arrow">
+                    →
+                </span>
+
+
+                <div class="architecture-box">
+
+                    <span class="emoji">
+                        🚤
+                    </span>
+
+                    <h3>
+                        Prototype
+                    </h3>
+
+                </div>
+
+
+                <span class="architecture-arrow">
+                    →
+                </span>
+
+
+                <div class="architecture-box">
+
+                    <span class="emoji">
+                        📡
+                    </span>
+
+                    <h3>
+                        Sensors
+                    </h3>
+
+                </div>
+
+
+                <span class="architecture-arrow">
+                    →
+                </span>
+
+
+                <div class="architecture-box">
+
+                    <span class="emoji">
+                        📶
+                    </span>
+
+                    <h3>
+                        Communication
+                    </h3>
+
+                </div>
+
+
+                <span class="architecture-arrow">
+                    →
+                </span>
+
+
+                <div class="architecture-box">
+
+                    <span class="emoji">
+                        💻
+                    </span>
+
+                    <h3>
+                        Web Platform
+                    </h3>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SENSOR TECHNOLOGY
+    ===================================================== -->
+
+    <section class="section section-seafoam">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <span class="section-label">
+                    📡 Sensor Technology
+                </span>
+
+                <h2>
+                    Hardware Data Status
+                </h2>
+
+                <p>
+                    Sensor functions are shown transparently so that
+                    proposed capabilities are never mistaken for actual
+                    measurements.
+                </p>
+
+            </div>
+
+
+            <div class="sensor-table reveal">
+
+
+                <div class="sensor-row header">
+
+                    <div>
+                        Technology
+                    </div>
+
+                    <div>
+                        Intended Purpose
+                    </div>
+
+                    <div>
+                        Status
+                    </div>
+
+                </div>
+
+
+                <div class="sensor-row">
+
+                    <div>
+                        📏 Distance Sensor
+                    </div>
+
+                    <div>
+                        Detect nearby objects and assist navigation.
+                    </div>
+
+                    <div class="sensor-status">
+                        Awaiting Hardware
+                    </div>
+
+                </div>
+
+
+                <div class="sensor-row">
+
+                    <div>
+                        🐠 Marine-Life Detection
+                    </div>
+
+                    <div>
+                        Support safer operation around marine life.
+                    </div>
+
+                    <div class="sensor-status">
+                        Awaiting Hardware
+                    </div>
+
+                </div>
+
+
+                <div class="sensor-row">
+
+                    <div>
+                        📍 GPS
+                    </div>
+
+                    <div>
+                        Provide the verified prototype position.
+                    </div>
+
+                    <div class="sensor-status">
+                        Awaiting Hardware
+                    </div>
+
+                </div>
+
+
+                <div class="sensor-row">
+
+                    <div>
+                        📊 Environmental Sensors
+                    </div>
+
+                    <div>
+                        Provide environmental measurements when
+                        compatible hardware is connected.
+                    </div>
+
+                    <div class="sensor-status">
+                        Awaiting Hardware
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         DIGITAL PLATFORM
+    ===================================================== -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <span class="section-label">
+                    💻 Digital Technology
+                </span>
+
+                <h2>
+                    The Web Platform
+                </h2>
+
+                <p>
+                    The digital side of Ocean × Eco-Tech remains useful
+                    even while the physical hardware is being developed.
+                </p>
+
+            </div>
+
+
+            <div class="platform-grid">
+
+
+                <article class="platform-card reveal">
+
+                    <span>
+                        📡
+                    </span>
+
+                    <h3>
+                        Live Data
+                    </h3>
+
+                    <p>
+                        Displays real sensor measurements once hardware
+                        is connected.
+                    </p>
+
+                </article>
+
+
+                <article class="platform-card reveal">
+
+                    <span>
+                        🗺️
+                    </span>
+
+                    <h3>
+                        Mapping
+                    </h3>
+
+                    <p>
+                        Provides interactive geographic visualization.
+                    </p>
+
+                </article>
+
+
+                <article class="platform-card reveal">
+
+                    <span>
+                        ♻️
+                    </span>
+
+                    <h3>
+                        Waste Records
+                    </h3>
+
+                    <p>
+                        Stores actual reports and collection records.
+                    </p>
+
+                </article>
+
+
+                <article class="platform-card reveal">
+
+                    <span>
+                        📊
+                    </span>
+
+                    <h3>
+                        Analytics
+                    </h3>
+
+                    <p>
+                        Visualizes measurable project data when
+                        sufficient records exist.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TRANSPARENCY
+    ===================================================== -->
+
+    <section class="section section-seafoam">
+
+        <div class="container">
+
+            <div class="transparency-box reveal">
+
+                <h3>
+                    🛡️ Data Transparency
+                </h3>
+
+                <p>
+                    Ocean × Eco-Tech does not generate fictional sensor
+                    measurements. Until the physical system provides
+                    verified information, sensor-dependent features
+                    remain clearly marked as unavailable.
+                </p>
+
+
+                <div class="transparency-list">
+
+                    <div>
+                        📡 Live sensor readings — Awaiting Hardware
+                    </div>
+
+                    <div>
+                        📏 Distance measurements — Awaiting Hardware
+                    </div>
+
+                    <div>
+                        📍 GPS position — Awaiting Hardware
+                    </div>
+
+                    <div>
+                        🐠 Marine-life detection — Awaiting Hardware
+                    </div>
+
+                    <div>
+                        📊 Sensor-generated graphs — Awaiting Data
+                    </div>
+
+                    <div>
+                        🚨 Sensor-based alerts — Awaiting Data
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TEAM NOTE
+    ===================================================== -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="team-note reveal">
+
+                <h3>
+                    ✨ Note from the Team
+                </h3>
+
+                <p>
+                    Ocean × Eco-Tech is a student-developed prototype
+                    created to explore practical approaches to marine
+                    waste management. Under controlled testing
+                    conditions, the prototype has demonstrated
+                    approximately 90% accuracy, while continued
+                    development, independent validation and real-world
+                    testing remain essential before broader deployment.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                🌊 Ocean
+                <span>×</span>
+                Eco-Tech
+
+            </div>
+
+            <p class="footer-copy">
+                Student-developed environmental technology prototype.
             </p>
 
         </div>
 
-
-        <div class="card">
-
-            <div class="card-icon">
-                📍
-            </div>
-
-            <h3>
-                GPS
-            </h3>
-
-            <p>
-                Provides location information for
-                mapping and monitoring.
-            </p>
-
-        </div>
+    </footer>
 
 
-        <div class="card">
-
-            <div class="card-icon">
-                📶
-            </div>
-
-            <h3>
-                Communication
-            </h3>
-
-            <p>
-                Future hardware can transmit measurements
-                to the web application.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">
-                💻
-            </div>
-
-            <h3>
-                Web Dashboard
-            </h3>
-
-            <p>
-                Displays sensor readings and system status.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">
-                🌐
-            </div>
-
-            <h3>
-                World Map
-            </h3>
-
-            <p>
-                Visualizes monitoring locations using
-                geographic coordinates.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<footer>
-
-    <div>
-        🌊 OCEAN <span>× ECO-TECH</span>
-    </div>
-
-    <div>
-        © 2026 Ocean × Eco-Tech
-    </div>
-
-</footer>
-
-<script src="app.js"></script>
+    <script src="app.js"></script>
 
 </body>
+
 </html>

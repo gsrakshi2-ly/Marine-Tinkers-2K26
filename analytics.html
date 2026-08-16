@@ -1,161 +1,1302 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics | Ocean × Eco-Tech</title>
 
-<title>Analytics | Ocean × Eco-Tech</title>
+    <link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet" href="style.css">
+    <style>
+        /* ================= ANALYTICS PAGE ================= */
 
+        .analytics-hero {
+            padding: 145px 0 75px;
+            color: var(--white);
+
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(21,154,171,0.25),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    var(--deep-blue),
+                    var(--ocean-blue)
+                );
+        }
+
+        .analytics-hero h1 {
+            max-width: 850px;
+            margin-bottom: 15px;
+
+            font-family: "Poppins", Arial, sans-serif;
+            font-size: clamp(2.4rem, 5vw, 4rem);
+            line-height: 1.08;
+        }
+
+        .analytics-hero h1 span {
+            color: var(--gold);
+        }
+
+        .analytics-hero p {
+            max-width: 760px;
+
+            color: rgba(255,255,255,0.7);
+
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+
+        /* ================= ANALYTICS CARDS ================= */
+
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .analytics-card {
+            padding: 24px;
+
+            background: var(--white);
+
+            border:
+                1px solid
+                rgba(3,27,46,0.07);
+
+            border-radius: var(--radius);
+
+            box-shadow: var(--shadow);
+
+            transition: var(--transition);
+        }
+
+        .analytics-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .analytics-icon {
+            width: 45px;
+            height: 45px;
+
+            display: grid;
+            place-items: center;
+
+            margin-bottom: 14px;
+
+            border-radius: 13px;
+
+            background: var(--soft-seafoam);
+
+            font-size: 1.3rem;
+        }
+
+        .analytics-card h3 {
+            margin-bottom: 6px;
+
+            font-size: 0.82rem;
+        }
+
+        .analytics-number {
+            color: var(--aqua);
+
+            font-size: 1.7rem;
+            font-weight: 800;
+        }
+
+        .analytics-description {
+            margin-top: 5px;
+
+            color: var(--text-muted);
+
+            font-size: 0.66rem;
+        }
+
+
+        /* ================= DATA NOTICE ================= */
+
+        .data-notice {
+            margin-top: 28px;
+            padding: 24px 27px;
+
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,215,0,0.12),
+                    rgba(255,215,0,0.035)
+                );
+
+            border:
+                1px solid
+                rgba(230,190,138,0.6);
+
+            border-radius: var(--radius);
+        }
+
+        .data-notice-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .data-notice h3 {
+            margin-bottom: 5px;
+
+            font-size: 0.9rem;
+        }
+
+        .data-notice p {
+            color: var(--text-muted);
+
+            font-size: 0.7rem;
+            line-height: 1.75;
+        }
+
+
+        /* ================= ANALYTICS PANELS ================= */
+
+        .analytics-panels {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 20px;
+        }
+
+        .analytics-panel {
+            padding: 28px;
+
+            background: var(--white);
+
+            border:
+                1px solid
+                rgba(3,27,46,0.07);
+
+            border-radius: var(--radius);
+
+            box-shadow: var(--shadow);
+        }
+
+        .analytics-panel h3 {
+            margin-bottom: 7px;
+
+            font-family:
+                "Poppins",
+                Arial,
+                sans-serif;
+
+            font-size: 1rem;
+        }
+
+        .analytics-panel > p {
+            margin-bottom: 22px;
+
+            color: var(--text-muted);
+
+            font-size: 0.7rem;
+        }
+
+
+        /* ================= EMPTY CHART ================= */
+
+        .empty-chart {
+            min-height: 260px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            padding: 25px;
+
+            border:
+                1px dashed
+                rgba(3,27,46,0.15);
+
+            border-radius: 17px;
+
+            background:
+                var(--soft-seafoam);
+
+            text-align: center;
+        }
+
+        .empty-chart-icon {
+            margin-bottom: 12px;
+
+            font-size: 2rem;
+        }
+
+        .empty-chart h4 {
+            margin-bottom: 5px;
+
+            font-size: 0.85rem;
+        }
+
+        .empty-chart p {
+            max-width: 350px;
+
+            color: var(--text-muted);
+
+            font-size: 0.68rem;
+            line-height: 1.7;
+        }
+
+
+        /* ================= PROGRESS ================= */
+
+        .progress-list {
+            display: grid;
+            gap: 17px;
+        }
+
+        .progress-item {
+            display: grid;
+            gap: 7px;
+        }
+
+        .progress-top {
+            display: flex;
+            justify-content: space-between;
+
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        .progress-top span:last-child {
+            color: var(--gold-soft);
+        }
+
+        .progress-bar {
+            height: 8px;
+
+            overflow: hidden;
+
+            border-radius: 20px;
+
+            background:
+                var(--soft-seafoam);
+        }
+
+        .progress-bar span {
+            display: block;
+
+            width: 0%;
+
+            height: 100%;
+
+            border-radius: inherit;
+
+            background:
+                var(--aqua);
+
+            transition:
+                width 1s ease;
+        }
+
+
+        /* ================= REPORT ANALYTICS ================= */
+
+        .report-summary {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 12px;
+
+            margin-bottom: 25px;
+        }
+
+        .report-stat {
+            padding: 16px;
+
+            border-radius: 14px;
+
+            background:
+                var(--soft-seafoam);
+
+            text-align: center;
+        }
+
+        .report-stat strong {
+            display: block;
+
+            color: var(--aqua);
+
+            font-size: 1.25rem;
+        }
+
+        .report-stat span {
+            color: var(--text-muted);
+
+            font-size: 0.62rem;
+        }
+
+
+        /* ================= SENSOR ANALYTICS ================= */
+
+        .sensor-list {
+            display: grid;
+            gap: 10px;
+        }
+
+        .sensor-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 13px 15px;
+
+            border-radius: 12px;
+
+            background:
+                var(--soft-seafoam);
+
+            font-size: 0.7rem;
+        }
+
+        .sensor-status {
+            color: var(--gold-soft);
+
+            font-weight: 800;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        .analytics-footer {
+            margin-top: 10px;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 1000px) {
+
+            .analytics-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .analytics-panels {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .analytics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .report-summary {
+                grid-template-columns: 1fr;
+            }
+
+            .data-notice {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 
-<nav>
+    <!-- ================= NAVIGATION ================= -->
 
-    <div class="logo">
-        🌊 OCEAN <span>× ECO-TECH</span>
-    </div>
+    <header class="navbar">
 
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="dashboard.html">Live Data</a></li>
-        <li><a href="map.html">Map</a></li>
-        <li><a href="solutions.html">Solutions</a></li>
-        <li><a href="impact.html">Impact</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Get Involved</a></li>
-    </ul>
+        <div class="nav-container">
 
-    <a href="dashboard.html" class="nav-btn">
-        Dashboard
-    </a>
+            <a href="index.html" class="logo">
 
-</nav>
+                <span class="logo-icon">
+                    🌊
+                </span>
+
+                Ocean × Eco-Tech
+
+            </a>
 
 
-<header class="hero">
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation"
+            >
+                ☰
+            </button>
 
-    <div class="hero-content">
 
-        <div class="hero-icon">
-            📊
+            <nav>
+
+                <ul class="nav-links" id="navLinks">
+
+                    <li>
+                        <a href="index.html">
+                            🏠 Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="dashboard.html">
+                            📊 Dashboard
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="live-data.html">
+                            📡 Live Data
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="map.html">
+                            🗺️ Map
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="solutions.html">
+                            ♻️ Solutions
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="impact.html">
+                            🌱 Impact
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">
+                            ℹ️ About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            📸 Get Involved
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
         </div>
 
-        <h1>
-            Ocean
-            <span>Analytics</span>
-        </h1>
-
-        <p>
-            A future interface for turning sensor
-            measurements into useful environmental insights.
-        </p>
-
-    </div>
-
-</header>
+    </header>
 
 
-<section class="data-section">
+    <!-- ================= HERO ================= -->
 
-    <div class="section-title">
+    <section class="analytics-hero">
 
-        <h2>
-            📈 Analytics Dashboard
-        </h2>
+        <div class="container">
 
-        <p>
-            Charts and statistics will become active
-            once real sensor data is available.
-        </p>
+            <span class="eyebrow">
+                📊 Verified Project Analytics
+            </span>
 
-    </div>
+            <h1>
+                Project
+                <span>Analytics</span>
+            </h1>
+
+            <p>
+                Monitor documented project activity, waste reports and
+                development progress in one place. Sensor-generated
+                analytics remain unavailable until real prototype
+                hardware is connected.
+            </p>
+
+        </div>
+
+    </section>
 
 
-    <div class="data-grid">
+    <main>
 
 
-        <div class="data-card">
+        <!-- ================= OVERVIEW ================= -->
 
-            <h3>
-                Waste Collection
-            </h3>
+        <section class="section">
 
-            <div class="empty">
+            <div class="container">
 
-                <div>
+                <div class="section-heading reveal">
 
-                    <div class="empty-icon">
-                        ♻️
+                    <span class="section-label">
+                        🌊 Overview
+                    </span>
+
+                    <h2>
+                        What the Data Shows
+                    </h2>
+
+                    <p>
+                        This page distinguishes between information that
+                        can be calculated from actual user activity and
+                        measurements that require physical prototype
+                        sensors.
+                    </p>
+
+                </div>
+
+
+                <div class="analytics-grid">
+
+
+                    <article class="analytics-card reveal">
+
+                        <div class="analytics-icon">
+                            ♻️
+                        </div>
+
+                        <h3>
+                            Waste Reports
+                        </h3>
+
+                        <div
+                            class="analytics-number"
+                            id="totalReports"
+                        >
+                            0
+                        </div>
+
+                        <p class="analytics-description">
+                            Reports actually submitted through the
+                            reporting system.
+                        </p>
+
+                    </article>
+
+
+                    <article class="analytics-card reveal">
+
+                        <div class="analytics-icon">
+                            📋
+                        </div>
+
+                        <h3>
+                            Logged Entries
+                        </h3>
+
+                        <div
+                            class="analytics-number"
+                            id="totalLogs"
+                        >
+                            0
+                        </div>
+
+                        <p class="analytics-description">
+                            Waste records stored by the application.
+                        </p>
+
+                    </article>
+
+
+                    <article class="analytics-card reveal">
+
+                        <div class="analytics-icon">
+                            🗺️
+                        </div>
+
+                        <h3>
+                            Monitoring Points
+                        </h3>
+
+                        <div
+                            class="analytics-number"
+                            id="monitoringPoints"
+                        >
+                            0
+                        </div>
+
+                        <p class="analytics-description">
+                            Verified monitoring points currently
+                            recorded by the system.
+                        </p>
+
+                    </article>
+
+
+                    <article class="analytics-card reveal">
+
+                        <div class="analytics-icon">
+                            📡
+                        </div>
+
+                        <h3>
+                            Sensor Status
+                        </h3>
+
+                        <div
+                            class="analytics-number"
+                            style="font-size:1rem;"
+                        >
+                            Awaiting Hardware
+                        </div>
+
+                        <p class="analytics-description">
+                            No sensor-generated analytics are available.
+                        </p>
+
+                    </article>
+
+                </div>
+
+
+                <div class="data-notice reveal">
+
+                    <div class="data-notice-icon">
+                        ✨
                     </div>
 
-                    <strong>
-                        Awaiting Data
-                    </strong>
+                    <div>
 
-                    <span>
-                        No collection measurements available.
-                    </span>
+                        <h3>
+                            Data Integrity Notice
+                        </h3>
+
+                        <p>
+                            Ocean × Eco-Tech does not generate placeholder
+                            environmental measurements. Ocean health,
+                            distance, marine-life detection, GPS and
+                            sensor graphs will only become available when
+                            verified prototype data is received.
+                        </p>
+
+                    </div>
 
                 </div>
 
             </div>
 
-        </div>
+        </section>
 
 
-        <div class="data-card">
+        <!-- ================= REPORT ANALYTICS ================= -->
 
-            <h3>
-                Sensor Trends
-            </h3>
+        <section
+            class="section section-seafoam"
+        >
 
-            <div class="empty">
+            <div class="container">
 
-                <div>
+                <div class="section-heading reveal">
 
-                    <div class="empty-icon">
-                        📡
-                    </div>
-
-                    <strong>
-                        Awaiting Sensor Data
-                    </strong>
-
-                    <span>
-                        Connect the prototype to begin analysis.
+                    <span class="section-label">
+                        ♻️ Waste Activity
                     </span>
+
+                    <h2>
+                        Reporting Analytics
+                    </h2>
+
+                    <p>
+                        These figures are calculated only from reports
+                        and logs actually created within the application.
+                    </p>
+
+                </div>
+
+
+                <div class="analytics-panels">
+
+
+                    <!-- REPORT SUMMARY -->
+
+                    <article class="analytics-panel reveal">
+
+                        <h3>
+                            📸 Waste Reporting Summary
+                        </h3>
+
+                        <p>
+                            Current activity recorded by the reporting
+                            system.
+                        </p>
+
+
+                        <div class="report-summary">
+
+                            <div class="report-stat">
+
+                                <strong id="summaryReports">
+                                    0
+                                </strong>
+
+                                <span>
+                                    Reports
+                                </span>
+
+                            </div>
+
+
+                            <div class="report-stat">
+
+                                <strong id="summaryLogs">
+                                    0
+                                </strong>
+
+                                <span>
+                                    Logs
+                                </span>
+
+                            </div>
+
+
+                            <div class="report-stat">
+
+                                <strong id="summaryLocations">
+                                    0
+                                </strong>
+
+                                <span>
+                                    Locations
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="empty-chart">
+
+                            <div class="empty-chart-icon">
+                                📊
+                            </div>
+
+                            <h4>
+                                Activity Visualization
+                            </h4>
+
+                            <p id="chartMessage">
+                                More real records are required before
+                                meaningful activity trends can be shown.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PROJECT DEVELOPMENT -->
+
+                    <article class="analytics-panel reveal">
+
+                        <h3>
+                            🛠️ Project Development
+                        </h3>
+
+                        <p>
+                            Current development areas of the student
+                            prototype.
+                        </p>
+
+
+                        <div class="progress-list">
+
+                            <div class="progress-item">
+
+                                <div class="progress-top">
+
+                                    <span>
+                                        💻 Web Platform
+                                    </span>
+
+                                    <span>
+                                        Active
+                                    </span>
+
+                                </div>
+
+                                <div class="progress-bar">
+                                    <span
+                                        style="width:70%;"
+                                    ></span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="progress-item">
+
+                                <div class="progress-top">
+
+                                    <span>
+                                        🗺️ Map Interface
+                                    </span>
+
+                                    <span>
+                                        Active
+                                    </span>
+
+                                </div>
+
+                                <div class="progress-bar">
+                                    <span
+                                        style="width:70%;"
+                                    ></span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="progress-item">
+
+                                <div class="progress-top">
+
+                                    <span>
+                                        ♻️ Reporting System
+                                    </span>
+
+                                    <span>
+                                        Active
+                                    </span>
+
+                                </div>
+
+                                <div class="progress-bar">
+                                    <span
+                                        style="width:70%;"
+                                    ></span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="progress-item">
+
+                                <div class="progress-top">
+
+                                    <span>
+                                        📡 Hardware Integration
+                                    </span>
+
+                                    <span>
+                                        Awaiting Hardware
+                                    </span>
+
+                                </div>
+
+                                <div class="progress-bar">
+                                    <span
+                                        style="width:0%;"
+                                    ></span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
 
                 </div>
 
             </div>
 
+        </section>
+
+
+        <!-- ================= SENSOR ANALYTICS ================= -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <span class="section-label">
+                        📡 Hardware Analytics
+                    </span>
+
+                    <h2>
+                        Sensor Data
+                    </h2>
+
+                    <p>
+                        The following measurements are reserved for
+                        verified prototype hardware data.
+                    </p>
+
+                </div>
+
+
+                <div class="analytics-panel reveal">
+
+                    <div class="sensor-list">
+
+
+                        <div class="sensor-row">
+
+                            <span>
+                                🌊 Ocean Health Score
+                            </span>
+
+                            <span class="sensor-status">
+                                Awaiting Hardware
+                            </span>
+
+                        </div>
+
+
+                        <div class="sensor-row">
+
+                            <span>
+                                📏 Distance Measurements
+                            </span>
+
+                            <span class="sensor-status">
+                                Awaiting Hardware
+                            </span>
+
+                        </div>
+
+
+                        <div class="sensor-row">
+
+                            <span>
+                                🐠 Marine-Life Detection
+                            </span>
+
+                            <span class="sensor-status">
+                                Awaiting Hardware
+                            </span>
+
+                        </div>
+
+
+                        <div class="sensor-row">
+
+                            <span>
+                                📍 GPS Position
+                            </span>
+
+                            <span class="sensor-status">
+                                Awaiting Hardware
+                            </span>
+
+                        </div>
+
+
+                        <div class="sensor-row">
+
+                            <span>
+                                📈 Sensor Graphs
+                            </span>
+
+                            <span class="sensor-status">
+                                Awaiting Hardware
+                            </span>
+
+                        </div>
+
+
+                        <div class="sensor-row">
+
+                            <span>
+                                🚨 Sensor-Based Alerts
+                            </span>
+
+                            <span class="sensor-status">
+                                Awaiting Hardware
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TEAM NOTE ================= -->
+
+        <section class="section section-seafoam">
+
+            <div class="container">
+
+                <div class="team-note reveal">
+
+                    <h3>
+                        ✨ Note from the Team
+                    </h3>
+
+                    <p>
+                        Ocean × Eco-Tech is a student-developed prototype
+                        designed to explore practical approaches to marine
+                        waste management. Under controlled testing
+                        conditions, the prototype has demonstrated
+                        approximately 90% accuracy, while continued
+                        development and real-world validation remain
+                        essential before broader deployment.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                🌊 Ocean
+                <span>×</span>
+                Eco-Tech
+            </div>
+
+            <p class="footer-copy">
+                Student-developed environmental technology prototype.
+            </p>
+
         </div>
 
-
-    </div>
-
-</section>
+    </footer>
 
 
-<footer>
+    <!-- ================= JAVASCRIPT ================= -->
 
-    <div>
-        🌊 OCEAN <span>× ECO-TECH</span>
-    </div>
+    <script>
 
-    <div>
-        © 2026 Ocean × Eco-Tech
-    </div>
+        /* ================= MOBILE MENU ================= */
 
-</footer>
+        const menuToggle =
+            document.getElementById("menuToggle");
 
-<script src="app.js"></script>
+        const navLinks =
+            document.getElementById("navLinks");
+
+
+        menuToggle.addEventListener("click", () => {
+
+            navLinks.classList.toggle("active");
+
+            menuToggle.textContent =
+                navLinks.classList.contains("active")
+                    ? "✕"
+                    : "☰";
+
+        });
+
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(link => {
+
+                link.addEventListener("click", () => {
+
+                    navLinks.classList.remove("active");
+
+                    menuToggle.textContent = "☰";
+
+                });
+
+            });
+
+
+        /* ================= SAFE LOCAL DATA ================= */
+
+        function getStoredArray(key) {
+
+            try {
+
+                const data =
+                    JSON.parse(
+                        localStorage.getItem(key)
+                        || "[]"
+                    );
+
+                return Array.isArray(data)
+                    ? data
+                    : [];
+
+            } catch {
+
+                return [];
+
+            }
+
+        }
+
+
+        /* ================= REPORT ANALYTICS ================= */
+
+        function updateAnalytics() {
+
+            const reports =
+                getStoredArray(
+                    "oceanWasteReports"
+                );
+
+            const logs =
+                getStoredArray(
+                    "oceanWasteLogs"
+                );
+
+            const locations = new Set();
+
+
+            reports.forEach(report => {
+
+                if (report.location) {
+                    locations.add(
+                        String(report.location)
+                    );
+                }
+
+            });
+
+
+            logs.forEach(log => {
+
+                if (log.location) {
+                    locations.add(
+                        String(log.location)
+                    );
+                }
+
+            });
+
+
+            const totalReports =
+                document.getElementById(
+                    "totalReports"
+                );
+
+            const totalLogs =
+                document.getElementById(
+                    "totalLogs"
+                );
+
+            const monitoringPoints =
+                document.getElementById(
+                    "monitoringPoints"
+                );
+
+
+            totalReports.textContent =
+                reports.length;
+
+            totalLogs.textContent =
+                logs.length;
+
+            monitoringPoints.textContent =
+                locations.size;
+
+
+            document.getElementById(
+                "summaryReports"
+            ).textContent =
+                reports.length;
+
+
+            document.getElementById(
+                "summaryLogs"
+            ).textContent =
+                logs.length;
+
+
+            document.getElementById(
+                "summaryLocations"
+            ).textContent =
+                locations.size;
+
+
+            const chartMessage =
+                document.getElementById(
+                    "chartMessage"
+                );
+
+
+            if (
+                reports.length === 0 &&
+                logs.length === 0
+            ) {
+
+                chartMessage.textContent =
+                    "No waste reports or logs have been recorded yet. Activity trends will appear after real records are created.";
+
+            } else {
+
+                chartMessage.textContent =
+                    "Analytics are based on the actual reports and logs currently stored by the application.";
+
+            }
+
+        }
+
+
+        /* ================= REVEAL ANIMATION ================= */
+
+        const revealElements =
+            document.querySelectorAll(
+                ".reveal"
+            );
+
+
+        const observer =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            entry.target.classList.add(
+                                "visible"
+                            );
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.1
+                }
+            );
+
+
+        revealElements.forEach(element => {
+
+            observer.observe(element);
+
+        });
+
+
+        /* ================= INITIALIZE ================= */
+
+        updateAnalytics();
+
+    </script>
 
 </body>
 </html>

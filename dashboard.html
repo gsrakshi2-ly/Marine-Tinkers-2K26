@@ -1,402 +1,1409 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Ocean × Eco-Tech</title>
 
-<title>Live Data | Ocean × Eco-Tech</title>
+    <style>
 
-<link rel="stylesheet" href="style.css">
+        :root {
+            --deep-blue: #031B2E;
+            --ocean-blue: #063A5B;
+            --aqua: #159AAB;
+            --seafoam: #BFE8DD;
+            --soft-seafoam: #E8F7F3;
+            --white: #FFFFFF;
+            --off-white: #F5FBFA;
+            --text-dark: #082333;
+            --text-muted: #617985;
 
+            /* ONLY GOLD ACCENTS */
+            --gold: #FFD700;
+            --gold-soft: #E6BE8A;
+
+            --shadow: 0 18px 45px rgba(3,27,46,0.12);
+            --radius: 22px;
+            --transition: 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--off-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(3,27,46,0.96);
+            backdrop-filter: blur(14px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .nav-container {
+            width: min(1200px, 92%);
+            min-height: 75px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            color: white;
+            font-size: 1rem;
+            font-weight: 800;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 13px;
+
+            background: linear-gradient(
+                135deg,
+                var(--gold),
+                var(--gold-soft)
+            );
+
+            color: var(--deep-blue);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 5px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            padding: 10px 12px;
+
+            color: rgba(255,255,255,0.72);
+
+            font-size: 0.78rem;
+            font-weight: 600;
+
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: white;
+        }
+
+        .nav-links .active {
+            color: var(--gold-soft);
+        }
+
+        .menu-toggle {
+            display: none;
+
+            border: none;
+            background: transparent;
+
+            color: white;
+            font-size: 1.6rem;
+
+            cursor: pointer;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            padding: 135px 0 60px;
+
+            color: white;
+
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(21,154,171,0.25),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    var(--deep-blue),
+                    var(--ocean-blue)
+                );
+        }
+
+        .container {
+            width: min(1200px, 92%);
+            margin: auto;
+        }
+
+        .eyebrow {
+            display: inline-block;
+
+            padding: 7px 13px;
+            margin-bottom: 15px;
+
+            border: 1px solid rgba(255,215,0,0.45);
+            border-radius: 30px;
+
+            color: var(--gold);
+
+            background: rgba(255,215,0,0.06);
+
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            max-width: 850px;
+
+            font-size: clamp(2.4rem,5vw,4rem);
+            line-height: 1.08;
+
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            max-width: 760px;
+
+            color: rgba(255,255,255,0.7);
+
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        /* ================= SECTION ================= */
+
+        .section {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            margin-bottom: 30px;
+        }
+
+        .section-title span {
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: var(--gold-soft);
+
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+
+        .section-title h2 {
+            font-size: clamp(1.7rem,4vw,2.5rem);
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            max-width: 700px;
+
+            color: var(--text-muted);
+
+            font-size: 0.8rem;
+        }
+
+        /* ================= STATUS GRID ================= */
+
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 16px;
+        }
+
+        .status-card {
+            padding: 23px;
+
+            background: white;
+
+            border: 1px solid rgba(3,27,46,0.07);
+            border-radius: var(--radius);
+
+            box-shadow: var(--shadow);
+
+            transition: var(--transition);
+        }
+
+        .status-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .status-icon {
+            width: 45px;
+            height: 45px;
+
+            display: grid;
+            place-items: center;
+
+            margin-bottom: 15px;
+
+            border-radius: 13px;
+
+            background: var(--soft-seafoam);
+
+            font-size: 1.25rem;
+        }
+
+        .status-card h3 {
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+        }
+
+        .status-value {
+            color: var(--aqua);
+
+            font-size: 0.78rem;
+            font-weight: 800;
+        }
+
+        .awaiting {
+            color: var(--gold-soft);
+        }
+
+        .status-card p {
+            margin-top: 6px;
+
+            color: var(--text-muted);
+
+            font-size: 0.67rem;
+        }
+
+        /* ================= HARDWARE ================= */
+
+        .hardware-card {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 20px;
+
+            padding: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--deep-blue),
+                    var(--ocean-blue)
+                );
+
+            border-radius: var(--radius);
+
+            color: white;
+
+            box-shadow: var(--shadow);
+        }
+
+        .hardware-content h3 {
+            margin-bottom: 10px;
+
+            font-size: 1.35rem;
+        }
+
+        .hardware-content p {
+            max-width: 650px;
+
+            color: rgba(255,255,255,0.68);
+
+            font-size: 0.75rem;
+            line-height: 1.8;
+        }
+
+        .hardware-status {
+            margin-top: 20px;
+
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 9px 14px;
+
+            border: 1px solid rgba(255,215,0,0.4);
+            border-radius: 30px;
+
+            color: var(--gold);
+
+            background: rgba(255,215,0,0.07);
+
+            font-size: 0.7rem;
+            font-weight: 800;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+
+            background: var(--gold);
+        }
+
+        .hardware-list {
+            display: grid;
+            gap: 10px;
+        }
+
+        .hardware-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 12px 14px;
+
+            border-radius: 12px;
+
+            background: rgba(255,255,255,0.06);
+
+            font-size: 0.7rem;
+        }
+
+        .hardware-item span:last-child {
+            color: var(--gold-soft);
+            font-weight: 700;
+        }
+
+        /* ================= DATA PANEL ================= */
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 18px;
+        }
+
+        .data-card {
+            min-height: 180px;
+
+            padding: 25px;
+
+            background: white;
+
+            border-radius: var(--radius);
+
+            border: 1px solid rgba(3,27,46,0.07);
+
+            box-shadow: var(--shadow);
+        }
+
+        .data-card .icon {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .data-card h3 {
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+        }
+
+        .data-placeholder {
+            padding: 10px 12px;
+
+            border-radius: 10px;
+
+            background: var(--soft-seafoam);
+
+            color: var(--text-muted);
+
+            font-size: 0.68rem;
+        }
+
+        /* ================= QUICK ACTIONS ================= */
+
+        .actions {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 18px;
+        }
+
+        .action {
+            padding: 23px;
+
+            background: white;
+
+            border-radius: 18px;
+
+            border: 1px solid rgba(3,27,46,0.07);
+
+            box-shadow: var(--shadow);
+
+            transition: var(--transition);
+        }
+
+        .action:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold-soft);
+        }
+
+        .action-icon {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .action h3 {
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+        }
+
+        .action p {
+            color: var(--text-muted);
+            font-size: 0.68rem;
+            margin-bottom: 15px;
+        }
+
+        .action a {
+            display: inline-block;
+
+            color: var(--aqua);
+
+            font-size: 0.68rem;
+            font-weight: 800;
+        }
+
+        .action a:hover {
+            color: var(--gold-soft);
+        }
+
+        /* ================= NOTE ================= */
+
+        .note {
+            padding: 25px 28px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,215,0,0.14),
+                    rgba(255,215,0,0.04)
+                );
+
+            border: 1px solid rgba(230,190,138,0.6);
+
+            border-radius: var(--radius);
+        }
+
+        .note h3 {
+            margin-bottom: 8px;
+
+            font-size: 1rem;
+        }
+
+        .note p {
+            color: var(--text-muted);
+
+            font-size: 0.74rem;
+            line-height: 1.8;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            padding: 35px 0;
+
+            background: #021522;
+            color: white;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-brand {
+            font-weight: 800;
+        }
+
+        .footer-brand span {
+            color: var(--gold);
+        }
+
+        .footer p {
+            color: rgba(255,255,255,0.45);
+            font-size: 0.68rem;
+        }
+
+        /* ================= ANIMATION ================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 1000px) {
+
+            .nav-links {
+                position: absolute;
+
+                top: 75px;
+                left: 0;
+
+                width: 100%;
+
+                display: none;
+                flex-direction: column;
+
+                padding: 15px 4%;
+
+                background: rgba(3,27,46,0.98);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .status-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .hardware-card {
+                grid-template-columns: 1fr;
+            }
+
+            .data-grid,
+            .actions {
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            .section {
+                padding: 55px 0;
+            }
+
+            .status-grid,
+            .data-grid,
+            .actions {
+                grid-template-columns: 1fr;
+            }
+
+            .hardware-card {
+                padding: 23px;
+            }
+
+            .footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+    </style>
 </head>
 
 <body>
 
+    <!-- ================= NAVIGATION ================= -->
 
-<nav>
+    <header class="navbar">
 
-    <div class="logo">
-        🌊 OCEAN <span>× ECO-TECH</span>
-    </div>
+        <div class="nav-container">
 
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="dashboard.html" class="active">Live Data</a></li>
-        <li><a href="map.html">Map</a></li>
-        <li><a href="solutions.html">Solutions</a></li>
-        <li><a href="impact.html">Impact</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Get Involved</a></li>
-    </ul>
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌊</span>
+                Ocean × Eco-Tech
+            </a>
 
-    <a href="map.html" class="nav-btn">
-        View Map
-    </a>
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation"
+            >
+                ☰
+            </button>
 
-    <button class="menu-toggle">☰</button>
+            <nav>
 
-</nav>
+                <ul class="nav-links" id="navLinks">
 
+                    <li>
+                        <a href="index.html">
+                            🏠 Home
+                        </a>
+                    </li>
 
-<header class="hero">
+                    <li>
+                        <a href="dashboard.html" class="active">
+                            📊 Dashboard
+                        </a>
+                    </li>
 
-    <div class="bubble bubble1"></div>
-    <div class="bubble bubble2"></div>
-    <div class="bubble bubble3"></div>
-    <div class="bubble bubble4"></div>
+                    <li>
+                        <a href="live-data.html">
+                            📡 Live Data
+                        </a>
+                    </li>
 
-    <div class="hero-content">
+                    <li>
+                        <a href="map.html">
+                            🗺️ Map
+                        </a>
+                    </li>
 
-        <div class="hero-icon">
-            📡
+                    <li>
+                        <a href="solutions.html">
+                            ♻️ Solutions
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="impact.html">
+                            🌱 Impact
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">
+                            ℹ️ About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            📸 Get Involved
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
         </div>
 
-        <h1>
-            Live Ocean
-            <span>Data</span>
-        </h1>
-
-        <p>
-            A smart environmental monitoring interface
-            designed to receive real information from
-            the Ocean × Eco-Tech prototype.
-        </p>
-
-        <div class="status">
-
-            <span class="status-dot"></span>
-
-            Hardware Not Connected
-
-        </div>
-
-    </div>
-
-</header>
+    </header>
 
 
-<section>
+    <!-- ================= HERO ================= -->
 
-    <div class="section-title">
+    <section class="hero">
 
-        <h2>
-            📊 Sensor Monitoring
-        </h2>
+        <div class="container">
 
-        <p>
-            These values are prepared for future hardware
-            integration with the prototype.
-        </p>
-
-    </div>
-
-
-    <div class="sensor-grid">
-
-
-        <div class="card">
-
-            <div class="card-icon">
-                ♻️
-            </div>
-
-            <div class="sensor-label">
-                WASTE DETECTION
-            </div>
-
-            <div class="sensor-value"
-                 data-sensor>
-                Awaiting Data
-            </div>
-
-            <span class="waiting">
-                SENSOR REQUIRED
+            <span class="eyebrow">
+                📊 Project Dashboard
             </span>
 
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">
-                📏
-            </div>
-
-            <div class="sensor-label">
-                OBJECT DISTANCE
-            </div>
-
-            <div class="sensor-value"
-                 data-sensor>
-                Awaiting Data
-            </div>
-
-            <span class="waiting">
-                SENSOR REQUIRED
-            </span>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">
-                🐠
-            </div>
-
-            <div class="sensor-label">
-                MARINE LIFE
-            </div>
-
-            <div class="sensor-value"
-                 data-sensor>
-                Awaiting Data
-            </div>
-
-            <span class="waiting">
-                SENSOR REQUIRED
-            </span>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">
-                📍
-            </div>
-
-            <div class="sensor-label">
-                COLLECTOR LOCATION
-            </div>
-
-            <div class="sensor-value">
-                GPS Unavailable
-            </div>
-
-            <span class="waiting">
-                GPS REQUIRED
-            </span>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="data-section">
-
-    <div class="section-title">
-
-        <h2>
-            📈 Environmental Data
-        </h2>
-
-        <p>
-            Data visualization will activate when actual
-            sensor measurements are received.
-        </p>
-
-    </div>
-
-
-    <div class="data-grid">
-
-
-        <div class="data-card">
-
-            <h3>
-                🌊 Sensor Readings
-            </h3>
+            <h1>
+                Ocean × Eco-Tech
+                <span>Dashboard</span>
+            </h1>
 
             <p>
-                No environmental measurements have
-                been received yet.
+                A central overview of the project's current development,
+                hardware readiness, reporting activity and verified data.
+                Sensor-dependent information remains unavailable until
+                the prototype hardware is connected.
             </p>
 
-            <div class="empty">
+        </div>
 
-                <div>
+    </section>
 
-                    <div class="empty-icon">
-                        📊
-                    </div>
 
-                    <strong>
-                        Awaiting Real Sensor Data
-                    </strong>
+    <main>
+
+        <!-- ================= PROJECT STATUS ================= -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="section-title reveal">
 
                     <span>
-                        Connect the prototype hardware
-                        to begin collecting measurements.
+                        🌊 Overview
                     </span>
+
+                    <h2>
+                        Project Status
+                    </h2>
+
+                    <p>
+                        This dashboard separates currently available
+                        project information from measurements that require
+                        physical prototype hardware.
+                    </p>
+
+                </div>
+
+
+                <div class="status-grid">
+
+                    <article class="status-card reveal">
+
+                        <div class="status-icon">
+                            🛠️
+                        </div>
+
+                        <h3>
+                            Prototype
+                        </h3>
+
+                        <div class="status-value">
+                            In Development
+                        </div>
+
+                        <p>
+                            Hardware and software components are being
+                            developed and integrated.
+                        </p>
+
+                    </article>
+
+
+                    <article class="status-card reveal">
+
+                        <div class="status-icon">
+                            📡
+                        </div>
+
+                        <h3>
+                            Sensor System
+                        </h3>
+
+                        <div class="status-value awaiting">
+                            Awaiting Hardware
+                        </div>
+
+                        <p>
+                            No sensor readings are displayed until the
+                            hardware is connected.
+                        </p>
+
+                    </article>
+
+
+                    <article class="status-card reveal">
+
+                        <div class="status-icon">
+                            🗺️
+                        </div>
+
+                        <h3>
+                            World Map
+                        </h3>
+
+                        <div class="status-value">
+                            Available
+                        </div>
+
+                        <p>
+                            The map interface can operate independently
+                            from prototype sensors.
+                        </p>
+
+                    </article>
+
+
+                    <article class="status-card reveal">
+
+                        <div class="status-icon">
+                            ♻️
+                        </div>
+
+                        <h3>
+                            Waste Reports
+                        </h3>
+
+                        <div
+                            class="status-value"
+                            id="reportStatus"
+                        >
+                            0 Reports
+                        </div>
+
+                        <p>
+                            Displays actual reports created through the
+                            reporting system.
+                        </p>
+
+                    </article>
 
                 </div>
 
             </div>
 
-        </div>
+        </section>
 
 
-        <div class="data-card">
+        <!-- ================= HARDWARE ================= -->
 
-            <h3>
-                ⚠️ System Alerts
-            </h3>
+        <section
+            class="section"
+            style="background: var(--soft-seafoam);"
+        >
+
+            <div class="container">
+
+                <div class="section-title reveal">
+
+                    <span>
+                        📡 Hardware
+                    </span>
+
+                    <h2>
+                        Sensor Readiness
+                    </h2>
+
+                    <p>
+                        Sensor-dependent features are intentionally kept
+                        inactive until real prototype hardware provides
+                        verified measurements.
+                    </p>
+
+                </div>
+
+
+                <div class="hardware-card reveal">
+
+                    <div class="hardware-content">
+
+                        <h3>
+                            📡 Awaiting Hardware Data
+                        </h3>
+
+                        <p>
+                            The monitoring dashboard is ready to receive
+                            verified prototype data. Until the sensors are
+                            connected, the system will not display
+                            invented distance measurements, environmental
+                            readings, marine-life detections or
+                            sensor-generated alerts.
+                        </p>
+
+                        <div class="hardware-status">
+
+                            <span class="status-dot"></span>
+
+                            Hardware Not Connected
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="hardware-list">
+
+                        <div class="hardware-item">
+
+                            <span>
+                                📏 Distance
+                            </span>
+
+                            <span>
+                                Awaiting
+                            </span>
+
+                        </div>
+
+                        <div class="hardware-item">
+
+                            <span>
+                                🐠 Marine Detection
+                            </span>
+
+                            <span>
+                                Awaiting
+                            </span>
+
+                        </div>
+
+                        <div class="hardware-item">
+
+                            <span>
+                                📍 GPS Position
+                            </span>
+
+                            <span>
+                                Awaiting
+                            </span>
+
+                        </div>
+
+                        <div class="hardware-item">
+
+                            <span>
+                                📊 Sensor Graphs
+                            </span>
+
+                            <span>
+                                Awaiting
+                            </span>
+
+                        </div>
+
+                        <div class="hardware-item">
+
+                            <span>
+                                🚨 Smart Alerts
+                            </span>
+
+                            <span>
+                                Awaiting
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= LIVE DATA ================= -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="section-title reveal">
+
+                    <span>
+                        📊 Verified Data
+                    </span>
+
+                    <h2>
+                        Live Monitoring
+                    </h2>
+
+                    <p>
+                        These panels are reserved for real measurements
+                        generated by connected prototype hardware.
+                    </p>
+
+                </div>
+
+
+                <div class="data-grid">
+
+                    <article class="data-card reveal">
+
+                        <div class="icon">
+                            🌊
+                        </div>
+
+                        <h3>
+                            Ocean Health
+                        </h3>
+
+                        <div class="data-placeholder">
+                            📡 Awaiting Hardware Data
+                        </div>
+
+                    </article>
+
+
+                    <article class="data-card reveal">
+
+                        <div class="icon">
+                            📏
+                        </div>
+
+                        <h3>
+                            Distance Measurement
+                        </h3>
+
+                        <div class="data-placeholder">
+                            📡 Awaiting Hardware Data
+                        </div>
+
+                    </article>
+
+
+                    <article class="data-card reveal">
+
+                        <div class="icon">
+                            🐠
+                        </div>
+
+                        <h3>
+                            Marine-Life Detection
+                        </h3>
+
+                        <div class="data-placeholder">
+                            📡 Awaiting Hardware Data
+                        </div>
+
+                    </article>
+
+
+                    <article class="data-card reveal">
+
+                        <div class="icon">
+                            📍
+                        </div>
+
+                        <h3>
+                            Prototype Location
+                        </h3>
+
+                        <div class="data-placeholder">
+                            📡 Awaiting Hardware Data
+                        </div>
+
+                    </article>
+
+
+                    <article class="data-card reveal">
+
+                        <div class="icon">
+                            📈
+                        </div>
+
+                        <h3>
+                            Sensor Graphs
+                        </h3>
+
+                        <div class="data-placeholder">
+                            📡 Awaiting Hardware Data
+                        </div>
+
+                    </article>
+
+
+                    <article class="data-card reveal">
+
+                        <div class="icon">
+                            🚨
+                        </div>
+
+                        <h3>
+                            Sensor Alerts
+                        </h3>
+
+                        <div class="data-placeholder">
+                            📡 Awaiting Hardware Data
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= QUICK ACTIONS ================= -->
+
+        <section
+            class="section"
+            style="background: var(--soft-seafoam);"
+        >
+
+            <div class="container">
+
+                <div class="section-title reveal">
+
+                    <span>
+                        ⚡ Quick Access
+                    </span>
+
+                    <h2>
+                        Explore the Project
+                    </h2>
+
+                    <p>
+                        Use these sections to explore features that can
+                        already operate without physical sensors.
+                    </p>
+
+                </div>
+
+
+                <div class="actions">
+
+                    <article class="action reveal">
+
+                        <div class="action-icon">
+                            🗺️
+                        </div>
+
+                        <h3>
+                            World Map
+                        </h3>
+
+                        <p>
+                            Explore the project's global monitoring
+                            interface.
+                        </p>
+
+                        <a href="map.html">
+                            Open Map →
+                        </a>
+
+                    </article>
+
+
+                    <article class="action reveal">
+
+                        <div class="action-icon">
+                            ♻️
+                        </div>
+
+                        <h3>
+                            Waste Log
+                        </h3>
+
+                        <p>
+                            View actual waste records created by the
+                            project's reporting system.
+                        </p>
+
+                        <a href="solutions.html">
+                            View Waste Log →
+                        </a>
+
+                    </article>
+
+
+                    <article class="action reveal">
+
+                        <div class="action-icon">
+                            📸
+                        </div>
+
+                        <h3>
+                            Report Waste
+                        </h3>
+
+                        <p>
+                            Document an observed waste issue through the
+                            project's reporting system.
+                        </p>
+
+                        <a href="contact.html">
+                            Get Involved →
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TEAM NOTE ================= -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="note reveal">
+
+                    <h3>
+                        ✨ Note from the Team
+                    </h3>
+
+                    <p>
+                        Ocean × Eco-Tech is a student-developed prototype
+                        created to explore practical marine-waste solutions;
+                        while the system remains under development, our
+                        prototype has demonstrated approximately 90%
+                        accuracy under controlled testing conditions.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container footer">
+
+            <div class="footer-brand">
+                🌊 Ocean <span>×</span> Eco-Tech
+            </div>
 
             <p>
-                Alerts will be generated from actual
-                hardware readings.
+                Student-developed environmental technology prototype.
             </p>
 
-            <div class="empty">
-
-                <div>
-
-                    <div class="empty-icon">
-                        🔔
-                    </div>
-
-                    <strong>
-                        No Sensor Alerts
-                    </strong>
-
-                    <span>
-                        The system is waiting for hardware.
-                    </span>
-
-                </div>
-
-            </div>
-
         </div>
 
-    </div>
-
-</section>
+    </footer>
 
 
-<section>
+    <script>
 
-    <div class="dark-panel">
+        /* ================= MOBILE MENU ================= */
 
-        <h2>
-            📡 Smart Sensor Network
-        </h2>
+        const menuToggle =
+            document.getElementById("menuToggle");
 
-        <p>
-            The planned connection between the prototype,
-            sensors and application.
-        </p>
+        const navLinks =
+            document.getElementById("navLinks");
 
 
-        <div class="grid">
+        menuToggle.addEventListener("click", () => {
+
+            navLinks.classList.toggle("active");
+
+            const opened =
+                navLinks.classList.contains("active");
+
+            menuToggle.textContent =
+                opened ? "✕" : "☰";
+
+        });
 
 
-            <div class="card">
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(link => {
 
-                <div class="card-icon">
-                    01
-                </div>
+                link.addEventListener("click", () => {
 
-                <h3>
-                    Waste Detection
-                </h3>
+                    navLinks.classList.remove("active");
 
-                <p>
-                    Detect and classify collected waste.
-                </p>
+                    menuToggle.textContent = "☰";
 
-                <span class="waiting">
-                    WAITING FOR HARDWARE
-                </span>
+                });
 
-            </div>
+            });
 
 
-            <div class="card">
+        /* ================= REPORT COUNT ================= */
 
-                <div class="card-icon">
-                    02
-                </div>
+        function updateReportCount() {
 
-                <h3>
-                    Distance Detection
-                </h3>
-
-                <p>
-                    Detect nearby objects and distance.
-                </p>
-
-                <span class="waiting">
-                    WAITING FOR HARDWARE
-                </span>
-
-            </div>
+            const reports =
+                JSON.parse(
+                    localStorage.getItem(
+                        "oceanWasteReports"
+                    ) || "[]"
+                );
 
 
-            <div class="card">
-
-                <div class="card-icon">
-                    03
-                </div>
-
-                <h3>
-                    GPS
-                </h3>
-
-                <p>
-                    Track the prototype's location.
-                </p>
-
-                <span class="waiting">
-                    GPS REQUIRED
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
+            const reportStatus =
+                document.getElementById(
+                    "reportStatus"
+                );
 
 
-<section class="cta">
+            reportStatus.textContent =
+                `${reports.length} ${
+                    reports.length === 1
+                        ? "Report"
+                        : "Reports"
+                }`;
 
-    <h2>
-        🗺️ Explore the Ocean Map
-    </h2>
-
-    <p>
-        View the global monitoring environment and
-        planned Ocean × Eco-Tech monitoring locations.
-    </p>
-
-    <a href="map.html" class="btn">
-        Open World Map →
-    </a>
-
-</section>
+        }
 
 
-<footer>
+        /* ================= SCROLL ANIMATION ================= */
 
-    <div>
-        🌊 OCEAN <span>× ECO-TECH</span>
-    </div>
-
-    <div>
-        © 2026 Ocean × Eco-Tech
-    </div>
-
-</footer>
+        const revealElements =
+            document.querySelectorAll(".reveal");
 
 
-<script src="app.js"></script>
+        const observer =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add(
+                                "visible"
+                            );
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.1
+                }
+            );
+
+
+        revealElements.forEach(element => {
+            observer.observe(element);
+        });
+
+
+        /* ================= INITIALIZE ================= */
+
+        updateReportCount();
+
+    </script>
 
 </body>
 </html>

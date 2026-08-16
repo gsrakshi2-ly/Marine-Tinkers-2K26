@@ -3,198 +3,2083 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>Ocean × Eco-Tech</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<link rel="stylesheet" href="style.css">
+    <meta
+        name="description"
+        content="Ocean × Eco-Tech — a student-developed marine waste collection and environmental monitoring prototype."
+    >
+
+    <title>Ocean × Eco-Tech | Home</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <style>
+
+        /* =====================================================
+           HOME HERO
+        ===================================================== */
+
+        .home-hero {
+
+            position:
+                relative;
+
+            min-height:
+                720px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            overflow:
+                hidden;
+
+            color:
+                var(--white);
+
+            background:
+                radial-gradient(
+                    circle at 75% 30%,
+                    rgba(
+                        21,
+                        154,
+                        171,
+                        0.28
+                    ),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    var(--deep-blue),
+                    var(--ocean-blue)
+                );
+
+        }
+
+
+        .home-hero::before {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            width:
+                550px;
+
+            height:
+                550px;
+
+            right:
+                -180px;
+
+            top:
+                50px;
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.08
+                );
+
+            border-radius:
+                50%;
+
+            box-shadow:
+                0 0 0 70px
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.025
+                ),
+                0 0 0 140px
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.018
+                );
+
+            animation:
+                floatOrb 8s ease-in-out infinite;
+
+        }
+
+
+        .home-hero::after {
+
+            content:
+                "🌊";
+
+            position:
+                absolute;
+
+            right:
+                12%;
+
+            bottom:
+                12%;
+
+            opacity:
+                0.08;
+
+            font-size:
+                13rem;
+
+            animation:
+                floatEmoji 7s ease-in-out infinite;
+
+        }
+
+
+        @keyframes floatOrb {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0);
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(-25px);
+
+            }
+
+        }
+
+
+        @keyframes floatEmoji {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(-18px)
+                    rotate(4deg);
+
+            }
+
+        }
+
+
+        .hero-content {
+
+            position:
+                relative;
+
+            z-index:
+                2;
+
+            max-width:
+                850px;
+
+        }
+
+
+        .hero-badge {
+
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            gap:
+                8px;
+
+            margin-bottom:
+                20px;
+
+            padding:
+                8px 13px;
+
+            border:
+                1px solid
+                rgba(
+                    230,
+                    190,
+                    138,
+                    0.5
+                );
+
+            border-radius:
+                30px;
+
+            background:
+                rgba(
+                    255,
+                    215,
+                    0,
+                    0.08
+                );
+
+            color:
+                var(--gold);
+
+            font-size:
+                0.65rem;
+
+            font-weight:
+                800;
+
+            letter-spacing:
+                0.04em;
+
+        }
+
+
+        .hero-content h1 {
+
+            max-width:
+                900px;
+
+            margin-bottom:
+                22px;
+
+            font-family:
+                "Poppins",
+                Arial,
+                sans-serif;
+
+            font-size:
+                clamp(
+                    3rem,
+                    7vw,
+                    5.8rem
+                );
+
+            line-height:
+                0.98;
+
+            letter-spacing:
+                -0.04em;
+
+        }
+
+
+        .hero-content h1 span {
+
+            color:
+                var(--gold);
+
+        }
+
+
+        .hero-content > p {
+
+            max-width:
+                720px;
+
+            margin-bottom:
+                30px;
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.73
+                );
+
+            font-size:
+                0.9rem;
+
+            line-height:
+                1.9;
+
+        }
+
+
+        .hero-buttons {
+
+            display:
+                flex;
+
+            gap:
+                12px;
+
+            flex-wrap:
+                wrap;
+
+        }
+
+
+        .hero-btn {
+
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            gap:
+                8px;
+
+            padding:
+                13px 20px;
+
+            border-radius:
+                12px;
+
+            font-size:
+                0.7rem;
+
+            font-weight:
+                800;
+
+            text-decoration:
+                none;
+
+            transition:
+                var(--transition);
+
+        }
+
+
+        .hero-btn-primary {
+
+            background:
+                var(--gold);
+
+            color:
+                var(--deep-blue);
+
+        }
+
+
+        .hero-btn-primary:hover {
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 10px 25px
+                rgba(
+                    255,
+                    215,
+                    0,
+                    0.2
+                );
+
+        }
+
+
+        .hero-btn-secondary {
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.2
+                );
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.06
+                );
+
+            color:
+                var(--white);
+
+        }
+
+
+        .hero-btn-secondary:hover {
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.12
+                );
+
+            transform:
+                translateY(-3px);
+
+        }
+
+
+        /* =====================================================
+           HERO QUICK STATS
+        ===================================================== */
+
+        .hero-status-row {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            max-width:
+                720px;
+
+            margin-top:
+                45px;
+
+            border-top:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.1
+                );
+
+        }
+
+
+        .hero-status {
+
+            padding:
+                18px 18px 0 0;
+
+        }
+
+
+        .hero-status:not(:first-child) {
+
+            padding-left:
+                18px;
+
+            border-left:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.1
+                );
+
+        }
+
+
+        .hero-status strong {
+
+            display:
+                block;
+
+            margin-bottom:
+                4px;
+
+            color:
+                var(--white);
+
+            font-size:
+                0.78rem;
+
+        }
+
+
+        .hero-status span {
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.5
+                );
+
+            font-size:
+                0.6rem;
+
+        }
+
+
+        /* =====================================================
+           OCEAN HEALTH
+        ===================================================== */
+
+        .health-card {
+
+            position:
+                relative;
+
+            overflow:
+                hidden;
+
+            padding:
+                30px;
+
+            border-radius:
+                22px;
+
+            background:
+                var(--white);
+
+            box-shadow:
+                var(--shadow);
+
+        }
+
+
+        .health-card::before {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            width:
+                180px;
+
+            height:
+                180px;
+
+            right:
+                -70px;
+
+            top:
+                -70px;
+
+            border:
+                25px solid
+                rgba(
+                    21,
+                    154,
+                    171,
+                    0.07
+                );
+
+            border-radius:
+                50%;
+
+        }
+
+
+        .health-header {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                space-between;
+
+            gap:
+                20px;
+
+            margin-bottom:
+                20px;
+
+        }
+
+
+        .health-header h3 {
+
+            font-size:
+                1rem;
+
+        }
+
+
+        .health-state {
+
+            padding:
+                6px 10px;
+
+            border-radius:
+                20px;
+
+            background:
+                rgba(
+                    255,
+                    215,
+                    0,
+                    0.1
+                );
+
+            color:
+                var(--gold-soft);
+
+            font-size:
+                0.58rem;
+
+            font-weight:
+                800;
+
+        }
+
+
+        .health-score {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                22px;
+
+        }
+
+
+        .health-circle {
+
+            width:
+                105px;
+
+            height:
+                105px;
+
+            display:
+                grid;
+
+            place-items:
+                center;
+
+            flex-shrink:
+                0;
+
+            border:
+                8px solid
+                rgba(
+                    21,
+                    154,
+                    171,
+                    0.12
+                );
+
+            border-radius:
+                50%;
+
+        }
+
+
+        .health-circle span {
+
+            font-size:
+                1.3rem;
+
+            color:
+                var(--deep-blue);
+
+        }
+
+
+        .health-text h4 {
+
+            margin-bottom:
+                6px;
+
+            font-size:
+                0.82rem;
+
+        }
+
+
+        .health-text p {
+
+            color:
+                var(--text-muted);
+
+            font-size:
+                0.65rem;
+
+            line-height:
+                1.7;
+
+        }
+
+
+        /* =====================================================
+           MISSION MODE
+        ===================================================== */
+
+        .mission-card {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap:
+                30px;
+
+            align-items:
+                center;
+
+            padding:
+                35px;
+
+            border-radius:
+                22px;
+
+            color:
+                var(--white);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--deep-blue),
+                    var(--ocean-blue)
+                );
+
+            box-shadow:
+                var(--shadow);
+
+        }
+
+
+        .mission-card h3 {
+
+            margin-bottom:
+                10px;
+
+            font-size:
+                1.3rem;
+
+        }
+
+
+        .mission-card p {
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.65
+                );
+
+            font-size:
+                0.7rem;
+
+            line-height:
+                1.8;
+
+        }
+
+
+        .mission-list {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap:
+                10px;
+
+        }
+
+
+        .mission-item {
+
+            padding:
+                13px;
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.09
+                );
+
+            border-radius:
+                12px;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.04
+                );
+
+            font-size:
+                0.63rem;
+
+        }
+
+
+        /* =====================================================
+           MAP PREVIEW
+        ===================================================== */
+
+        .map-preview {
+
+            position:
+                relative;
+
+            height:
+                390px;
+
+            overflow:
+                hidden;
+
+            border-radius:
+                22px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0B3048,
+                    #116B79
+                );
+
+            box-shadow:
+                var(--shadow);
+
+        }
+
+
+        .map-preview::before {
+
+            content:
+                "🌍";
+
+            position:
+                absolute;
+
+            left:
+                50%;
+
+            top:
+                50%;
+
+            transform:
+                translate(
+                    -50%,
+                    -50%
+                );
+
+            opacity:
+                0.12;
+
+            font-size:
+                18rem;
+
+        }
+
+
+        .map-preview-overlay {
+
+            position:
+                absolute;
+
+            left:
+                20px;
+
+            right:
+                20px;
+
+            bottom:
+                20px;
+
+            padding:
+                18px;
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.1
+                );
+
+            border-radius:
+                15px;
+
+            background:
+                rgba(
+                    3,
+                    27,
+                    46,
+                    0.72
+                );
+
+            backdrop-filter:
+                blur(12px);
+
+        }
+
+
+        .map-preview-overlay h3 {
+
+            margin-bottom:
+                5px;
+
+            color:
+                var(--white);
+
+            font-size:
+                0.8rem;
+
+        }
+
+
+        .map-preview-overlay p {
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.58
+                );
+
+            font-size:
+                0.62rem;
+
+            line-height:
+                1.6;
+
+        }
+
+
+        /* =====================================================
+           HOME FEATURE GRID
+        ===================================================== */
+
+        .home-feature-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap:
+                17px;
+
+        }
+
+
+        .home-feature {
+
+            padding:
+                25px;
+
+            background:
+                var(--white);
+
+            border:
+                1px solid
+                rgba(
+                    3,
+                    27,
+                    46,
+                    0.07
+                );
+
+            border-radius:
+                18px;
+
+            box-shadow:
+                var(--shadow);
+
+            transition:
+                var(--transition);
+
+        }
+
+
+        .home-feature:hover {
+
+            transform:
+                translateY(-5px);
+
+            box-shadow:
+                var(--shadow-hover);
+
+        }
+
+
+        .home-feature-icon {
+
+            width:
+                45px;
+
+            height:
+                45px;
+
+            display:
+                grid;
+
+            place-items:
+                center;
+
+            margin-bottom:
+                15px;
+
+            border-radius:
+                13px;
+
+            background:
+                var(--soft-seafoam);
+
+            font-size:
+                1.25rem;
+
+        }
+
+
+        .home-feature h3 {
+
+            margin-bottom:
+                7px;
+
+            font-size:
+                0.82rem;
+
+        }
+
+
+        .home-feature p {
+
+            color:
+                var(--text-muted);
+
+            font-size:
+                0.65rem;
+
+            line-height:
+                1.75;
+
+        }
+
+
+        /* =====================================================
+           SMART ALERT
+        ===================================================== */
+
+        .alert-card {
+
+            display:
+                flex;
+
+            align-items:
+                flex-start;
+
+            gap:
+                15px;
+
+            padding:
+                20px;
+
+            border:
+                1px solid
+                rgba(
+                    230,
+                    190,
+                    138,
+                    0.5
+                );
+
+            border-radius:
+                16px;
+
+            background:
+                rgba(
+                    255,
+                    215,
+                    0,
+                    0.07
+                );
+
+        }
+
+
+        .alert-icon {
+
+            flex-shrink:
+                0;
+
+            width:
+                42px;
+
+            height:
+                42px;
+
+            display:
+                grid;
+
+            place-items:
+                center;
+
+            border-radius:
+                12px;
+
+            background:
+                rgba(
+                    255,
+                    215,
+                    0,
+                    0.12
+                );
+
+            font-size:
+                1.1rem;
+
+        }
+
+
+        .alert-card h3 {
+
+            margin-bottom:
+                5px;
+
+            font-size:
+                0.78rem;
+
+        }
+
+
+        .alert-card p {
+
+            color:
+                var(--text-muted);
+
+            font-size:
+                0.63rem;
+
+            line-height:
+                1.7;
+
+        }
+
+
+        /* =====================================================
+           TEAM NOTE
+        ===================================================== */
+
+        .team-note {
+
+            padding:
+                30px;
+
+            border:
+                1px solid
+                rgba(
+                    230,
+                    190,
+                    138,
+                    0.55
+                );
+
+            border-radius:
+                20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(
+                        255,
+                        215,
+                        0,
+                        0.12
+                    ),
+                    rgba(
+                        255,
+                        215,
+                        0,
+                        0.03
+                    )
+                );
+
+        }
+
+
+        .team-note h3 {
+
+            margin-bottom:
+                9px;
+
+            font-size:
+                1rem;
+
+        }
+
+
+        .team-note p {
+
+            color:
+                var(--text-muted);
+
+            font-size:
+                0.72rem;
+
+            line-height:
+                1.8;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .home-feature-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+
+            .mission-card {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            .home-hero {
+
+                min-height:
+                    650px;
+
+            }
+
+
+            .hero-status-row {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .hero-status,
+            .hero-status:not(:first-child) {
+
+                padding:
+                    12px 0;
+
+                border-left:
+                    none;
+
+                border-bottom:
+                    1px solid
+                    rgba(
+                        255,
+                        255,
+                        255,
+                        0.08
+                    );
+
+            }
+
+
+            .home-feature-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .mission-list {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .health-score {
+
+                align-items:
+                    flex-start;
+
+            }
+
+        }
+
+    </style>
 
 </head>
+
 
 <body>
 
 
-<nav>
+    <!-- =====================================================
+         NAVIGATION
+    ===================================================== -->
 
-    <div class="logo">
-        🌊 OCEAN <span>× ECO-TECH</span>
-    </div>
+    <header class="navbar">
 
-    <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="dashboard.html">Live Data</a></li>
-        <li><a href="map.html">Map</a></li>
-        <li><a href="solutions.html">Solutions</a></li>
-        <li><a href="impact.html">Impact</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Get Involved</a></li>
-    </ul>
-
-    <a href="map.html" class="nav-btn">
-        Explore Map
-    </a>
-
-    <button class="menu-toggle">☰</button>
-
-</nav>
+        <div class="nav-container">
 
 
-<header class="hero">
+            <a
+                href="index.html"
+                class="logo"
+            >
 
-    <div class="bubble bubble1"></div>
-    <div class="bubble bubble2"></div>
-    <div class="bubble bubble3"></div>
-    <div class="bubble bubble4"></div>
+                <span class="logo-icon">
+                    🌊
+                </span>
 
-    <div class="hero-content">
+                Ocean × Eco-Tech
 
-        <div class="hero-icon">
-            🌊
-        </div>
-
-        <h1>
-            Technology for a
-            <span>Cleaner Ocean</span>
-        </h1>
-
-        <p>
-            Ocean × Eco-Tech combines environmental awareness,
-            smart sensing and technology to create a safer,
-            cleaner and more sustainable marine environment.
-        </p>
-
-        <div class="hero-actions">
-
-            <a href="dashboard.html"
-               class="btn btn-primary">
-                View Live Data
             </a>
 
-            <a href="map.html"
-               class="btn btn-secondary">
-                Explore World Map
-            </a>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation"
+            >
+                ☰
+            </button>
+
+
+            <nav>
+
+                <ul
+                    class="nav-links"
+                    id="navLinks"
+                >
+
+                    <li>
+                        <a
+                            href="index.html"
+                            class="active"
+                        >
+                            🏠 Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="dashboard.html">
+                            📊 Dashboard
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="analytics.html">
+                            📈 Analytics
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="live-data.html">
+                            📡 Live Data
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="map.html">
+                            🗺️ Map
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="prototype.html">
+                            🛠️ Prototype
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="technology.html">
+                            ⚙️ Technology
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="solutions.html">
+                            ♻️ Solutions
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="impact.html">
+                            🌱 Impact
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">
+                            ℹ️ About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            📸 Get Involved
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
 
         </div>
 
-        <div class="status">
+    </header>
 
-            <span class="status-dot"></span>
 
-            Prototype System — Development Mode
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <section class="home-hero">
+
+        <div class="container">
+
+            <div class="hero-content">
+
+
+                <div class="hero-badge">
+
+                    🌊
+                    Student Marine Innovation
+
+                </div>
+
+
+                <h1>
+
+                    Technology for
+                    <span>Cleaner Oceans.</span>
+
+                </h1>
+
+
+                <p>
+
+                    Ocean × Eco-Tech is a student-developed marine
+                    waste collection and monitoring prototype designed
+                    to explore how physical collection technology and
+                    digital environmental tools can work together for
+                    cleaner aquatic environments.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="prototype.html"
+                        class="hero-btn hero-btn-primary"
+                    >
+
+                        🛠️
+                        Explore Prototype
+
+                    </a>
+
+
+                    <a
+                        href="map.html"
+                        class="hero-btn hero-btn-secondary"
+                    >
+
+                        🗺️
+                        Explore Map
+
+                    </a>
+
+                </div>
+
+
+                <div class="hero-status-row">
+
+
+                    <div class="hero-status">
+
+                        <strong>
+                            📡 Awaiting Hardware
+                        </strong>
+
+                        <span>
+                            Live sensor connection
+                        </span>
+
+                    </div>
+
+
+                    <div class="hero-status">
+
+                        <strong>
+                            🌍 Global Interface
+                        </strong>
+
+                        <span>
+                            Interactive world map
+                        </span>
+
+                    </div>
+
+
+                    <div class="hero-status">
+
+                        <strong>
+                            ♻️ Waste Focused
+                        </strong>
+
+                        <span>
+                            Collection & reporting
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
 
         </div>
 
-    </div>
-
-</header>
+    </section>
 
 
-<section>
+    <!-- =====================================================
+         OCEAN HEALTH SCORE
+    ===================================================== -->
 
-    <div class="section-title">
+    <section class="section">
 
-        <h2>
-            🌐 One System. Many Possibilities.
-        </h2>
-
-        <p>
-            A technology-focused approach to monitoring,
-            detecting and responding to ocean pollution.
-        </p>
-
-    </div>
+        <div class="container">
 
 
-    <div class="grid">
+            <div class="section-heading reveal">
 
-        <div class="card">
+                <span class="section-label">
+                    🌊 Ocean Health
+                </span>
 
-            <div class="card-icon">♻️</div>
+                <h2>
+                    Ocean Health Score
+                </h2>
 
-            <h3>
-                Smart Waste Detection
-            </h3>
+                <p>
+                    Environmental health measurements will only be
+                    calculated when verified sensor data becomes
+                    available.
+                </p>
 
-            <p>
-                Identify waste collected by the prototype
-                and prepare the system for intelligent
-                environmental monitoring.
+            </div>
+
+
+            <div class="health-card reveal">
+
+
+                <div class="health-header">
+
+                    <h3>
+                        📊 Current Data Status
+                    </h3>
+
+                    <span class="health-state">
+                        AWAITING HARDWARE
+                    </span>
+
+                </div>
+
+
+                <div class="health-score">
+
+
+                    <div class="health-circle">
+
+                        <span>
+                            —
+                        </span>
+
+                    </div>
+
+
+                    <div class="health-text">
+
+                        <h4>
+                            No score available yet
+                        </h4>
+
+                        <p>
+                            Ocean × Eco-Tech will not display a
+                            fabricated environmental score. Once
+                            appropriate sensors are connected and
+                            validated, real measurements can be used to
+                            calculate project-specific indicators.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         MISSION MODE
+    ===================================================== -->
+
+    <section class="section section-seafoam">
+
+        <div class="container">
+
+
+            <div class="mission-card reveal">
+
+
+                <div>
+
+                    <span class="section-label">
+                        🚀 Mission Mode
+                    </span>
+
+                    <h3>
+                        From Collection to Action
+                    </h3>
+
+                    <p>
+                        The project's mission is to combine practical
+                        marine-waste collection with responsible
+                        documentation, future sensor monitoring and
+                        accessible environmental information.
+                    </p>
+
+                </div>
+
+
+                <div class="mission-list">
+
+
+                    <div class="mission-item">
+                        🚤 Collect floating waste
+                    </div>
+
+
+                    <div class="mission-item">
+                        ♻️ Organise collected material
+                    </div>
+
+
+                    <div class="mission-item">
+                        📡 Connect verified sensors
+                    </div>
+
+
+                    <div class="mission-item">
+                        🗺️ Monitor verified locations
+                    </div>
+
+
+                    <div class="mission-item">
+                        📸 Document waste
+                    </div>
+
+
+                    <div class="mission-item">
+                        🌊 Support cleaner oceans
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         MAP PREVIEW
+    ===================================================== -->
+
+    <section class="section">
+
+        <div class="container">
+
+
+            <div class="section-heading reveal">
+
+                <span class="section-label">
+                    🗺️ Global View
+                </span>
+
+                <h2>
+                    Explore the World
+                </h2>
+
+                <p>
+                    The interactive map provides a global geographic
+                    interface and can display verified monitoring
+                    locations once hardware data becomes available.
+                </p>
+
+            </div>
+
+
+            <div class="map-preview reveal">
+
+
+                <div class="map-preview-overlay">
+
+                    <h3>
+                        🌍 Interactive World Map
+                    </h3>
+
+                    <p>
+                        Zoom, pan and explore geographic areas. Verified
+                        project monitoring points will be added only when
+                        genuine location data exists.
+                    </p>
+
+                    <br>
+
+                    <a
+                        href="map.html"
+                        class="hero-btn hero-btn-primary"
+                    >
+                        Open Full Map →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FEATURES
+    ===================================================== -->
+
+    <section class="section section-seafoam">
+
+        <div class="container">
+
+
+            <div class="section-heading reveal">
+
+                <span class="section-label">
+                    ✨ Explore the Platform
+                </span>
+
+                <h2>
+                    What You Can Do
+                </h2>
+
+                <p>
+                    The digital platform remains useful even while the
+                    physical prototype is being developed.
+                </p>
+
+            </div>
+
+
+            <div class="home-feature-grid">
+
+
+                <article class="home-feature reveal">
+
+                    <div class="home-feature-icon">
+                        📡
+                    </div>
+
+                    <h3>
+                        Live Data
+                    </h3>
+
+                    <p>
+                        View real sensor measurements once compatible
+                        hardware is connected and verified.
+                    </p>
+
+                </article>
+
+
+                <article class="home-feature reveal">
+
+                    <div class="home-feature-icon">
+                        🛠️
+                    </div>
+
+                    <h3>
+                        Prototype
+                    </h3>
+
+                    <p>
+                        Learn about the marine waste collection system,
+                        workflow and development process.
+                    </p>
+
+                </article>
+
+
+                <article class="home-feature reveal">
+
+                    <div class="home-feature-icon">
+                        ⚙️
+                    </div>
+
+                    <h3>
+                        Technology
+                    </h3>
+
+                    <p>
+                        Explore the sensing, propulsion, communication
+                        and web technologies behind the project.
+                    </p>
+
+                </article>
+
+
+                <article class="home-feature reveal">
+
+                    <div class="home-feature-icon">
+                        ♻️
+                    </div>
+
+                    <h3>
+                        Solutions
+                    </h3>
+
+                    <p>
+                        Explore proposed collection workflows and
+                        maintain a record of actual waste logs.
+                    </p>
+
+                </article>
+
+
+                <article class="home-feature reveal">
+
+                    <div class="home-feature-icon">
+                        🌱
+                    </div>
+
+                    <h3>
+                        Impact
+                    </h3>
+
+                    <p>
+                        Understand the project's environmental goals and
+                        track measurable impact when real data exists.
+                    </p>
+
+                </article>
+
+
+                <article class="home-feature reveal">
+
+                    <div class="home-feature-icon">
+                        📸
+                    </div>
+
+                    <h3>
+                        Get Involved
+                    </h3>
+
+                    <p>
+                        Submit waste reports, feedback, suggestions and
+                        other useful information.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SMART ALERT
+    ===================================================== -->
+
+    <section class="section">
+
+        <div class="container">
+
+
+            <div class="alert-card reveal">
+
+
+                <div class="alert-icon">
+                    🚨
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Smart Alerts
+                    </h3>
+
+                    <p>
+                        Sensor-based alerts are currently inactive.
+                        Alerts will only be generated when connected
+                        hardware provides verified data that meets the
+                        project's defined conditions.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PROJECT INTRODUCTION
+    ===================================================== -->
+
+    <section class="section section-seafoam">
+
+        <div class="container">
+
+
+            <div class="section-heading reveal">
+
+                <span class="section-label">
+                    💙 About the Project
+                </span>
+
+                <h2>
+                    Technology With a Purpose
+                </h2>
+
+                <p>
+                    Marine pollution requires practical solutions as
+                    well as reliable information. Ocean × Eco-Tech was
+                    created as a student innovation project to explore
+                    how a physical waste collection prototype can be
+                    supported by a transparent digital platform.
+                </p>
+
+                <p>
+                    Rather than presenting unverified numbers as facts,
+                    the system is designed to distinguish clearly between
+                    project goals, proposed capabilities, user-created
+                    records and measurements generated by real hardware.
+                </p>
+
+            </div>
+
+
+            <div class="team-note reveal">
+
+                <h3>
+                    ✨ Note from the Team
+                </h3>
+
+                <p>
+                    Ocean × Eco-Tech is a student-developed prototype
+                    created to explore practical approaches to marine
+                    waste management. Under controlled testing
+                    conditions, the prototype has demonstrated
+                    approximately 90% accuracy, while continued
+                    development, independent validation and real-world
+                    testing remain essential before broader deployment.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer>
+
+        <div class="footer-container">
+
+
+            <div class="footer-brand">
+
+                🌊 Ocean
+                <span>×</span>
+                Eco-Tech
+
+            </div>
+
+
+            <p class="footer-copy">
+
+                Student-developed environmental technology prototype.
+
             </p>
 
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">📡</div>
-
-            <h3>
-                Sensor Monitoring
-            </h3>
-
-            <p>
-                Connect sensors and a microcontroller to
-                collect meaningful environmental information.
-            </p>
 
         </div>
 
-
-        <div class="card">
-
-            <div class="card-icon">🌊</div>
-
-            <h3>
-                Ocean Awareness
-            </h3>
-
-            <p>
-                Transform environmental information into
-                an interface that makes ocean protection
-                easier to understand.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
+    </footer>
 
 
-<section class="cta">
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
 
-    <h2>
-        Ready to explore?
-    </h2>
-
-    <p>
-        See how the Ocean × Eco-Tech monitoring system
-        could connect hardware, data and environmental action.
-    </p>
-
-    <a href="dashboard.html" class="btn">
-        Open Dashboard →
-    </a>
-
-</section>
-
-
-<footer>
-
-    <div>
-        🌊 OCEAN <span>× ECO-TECH</span>
-    </div>
-
-    <div>
-        © 2026 Ocean × Eco-Tech
-    </div>
-
-</footer>
-
-
-<script src="app.js"></script>
+    <script src="app.js"></script>
 
 </body>
+
 </html>

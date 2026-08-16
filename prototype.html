@@ -3,153 +3,1839 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>Prototype | Ocean × Eco-Tech</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<link rel="stylesheet" href="style.css">
+    <title>Prototype | Ocean × Eco-Tech</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <style>
+
+        /* =====================================================
+           PROTOTYPE PAGE
+        ===================================================== */
+
+        .prototype-hero {
+
+            padding:
+                145px 0 70px;
+
+            color:
+                var(--white);
+
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(21,154,171,0.25),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    var(--deep-blue),
+                    var(--ocean-blue)
+                );
+
+        }
+
+
+        .prototype-hero h1 {
+
+            max-width:
+                900px;
+
+            margin-bottom:
+                16px;
+
+            font-family:
+                "Poppins",
+                Arial,
+                sans-serif;
+
+            font-size:
+                clamp(
+                    2.4rem,
+                    5vw,
+                    4rem
+                );
+
+            line-height:
+                1.08;
+
+        }
+
+
+        .prototype-hero h1 span {
+
+            color:
+                var(--gold);
+
+        }
+
+
+        .prototype-hero p {
+
+            max-width:
+                780px;
+
+            color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.72
+                );
+
+            font-size:
+                0.9rem;
+
+            line-height:
+                1.8;
+
+        }
+
+
+        /* =====================================================
+           PROTOTYPE INTRO
+        ===================================================== */
+
+        .prototype-intro {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1.2fr 0.8fr;
+
+            gap:
+                25px;
+
+        }
+
+
+        .prototype-card {
+
+            padding:
+                30px;
+
+            background:
+                var(--white);
+
+            border:
+                1px solid
+                rgba(
+                    3,
+                    27,
+                    46,
+                    0.07
+                );
+
+            border-radius:
+                var(--radius);
+
+            box-shadow:
+                var(--shadow);
+
+            transition:
+                var(--transition);
+
+        }
+
+
+        .prototype-card:hover {
+
+            transform:
+                translateY(-5px);
+
+            box-shadow:
+                var(--shadow-hover);
+
+        }
+
+
+        .prototype-card h3 {
+
+            margin-bottom:
+                10px;
+
+            font-size:
+                1rem;
+
+        }
+
+
+        .prototype-card p {
+
+            color:
+                var(--text-muted);
+
+            font-size:
+                0.74rem;
+
+            line-height:
+                1.8;
+
+        }
+
+
+        .prototype-icon {
+
+            width:
+                52px;
+
+            height:
+                52px;
+
+            display:
+                grid;
+
+            place-items:
+                center;
+
+            margin-bottom:
+                16px;
+
+            border-radius:
+                15px;
+
+            background:
+                var(--soft-seafoam);
+
+            font-size:
+                1.5rem;
+
+        }
+
+
+        /* =====================================================
+           STATUS
+        ===================================================== */
+
+        .hardware-status {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                10px;
+
+            margin-top:
+                18px;
+
+            padding:
+                13px 15px;
+
+            border-radius:
+                12px;
+
+            background:
+                rgba(
+                    255,
+                    215,
+                    0,
+                    0.08
+                );
+
+            border:
+                1px solid
+                rgba(
+                    230,
+                    190,
+                    138,
+                    0.45
+                );
+
+            color:
+                var(--gold-soft);
+
+            font-size:
+                0.7rem;
+
+            font-weight:
+                800;
+
+        }
+
+
+        .status-dot {
+
+            width:
+                9px;
+
+            height:
+                9px;
+
+            border-radius:
+                50%;
+
+            background:
+                var(--gold);
+
+        }
+
+
+        /* =====================================================
+           SYSTEM WORKFLOW
+        ===================================================== */
+
+        .workflow {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(5, 1fr);
+
+            gap:
+                15px;
+
+        }
+
+
+        .workflow-step {
+
+            position:
+                relative;
+
+            padding:
+                25px 18px;
+
+            background:
+                var(--white);
+
+            border:
+                1px solid
+                rgba(
+                    3,
+                    27,
+                    46,
+                    0.07
+                );
+
+            border-radius:
+                17px;
+
+            box-shadow:
+                var(--shadow);
+
+            text-align:
+                center;
+
+            transition:
+                var(--transition);
+
+        }
+
+
+        .workflow-step:hover {
+
+            transform:
+                translateY(-5px);
+
+        }
+
+
+        .workflow-number {
+
+            width:
+                35px;
+
+            height:
+                35px;
+
+            display:
+                grid;
+
+            place-items:
+                center;
+
+            margin:
+                0 auto 12px;
+
+            border-radius:
+                50%;
+
+            background:
+                var(--deep-blue);
+
+            color:
+                var(--white);
+
+            font-size:
+                0.7rem;
+
+            font-weight:
+                800;
+
+        }
+
+
+        .workflow-step .emoji {
+
+            display:
+                block;
+
+            margin-bottom:
+                10px;
+
+            font-size:
+                1.6rem;
+
+        }
+
+
+        .workflow-step h3 {
+
+            margin-bottom:
+                6px;
+
+            font-size:
+                0.78rem;
+
+        }
+
+
+        .workflow-step p {
+
+            color:
+                var(--text-muted);
+
+            font-size:
+                0.62rem;
+
+            line-height:
+                1.6;
+
+        }
+
+
+        /* =====================================================
+           COMPONENTS
+        ===================================================== */
+
+        .component-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap:
+                17px;
+
+        }
+
+
+        .component {
+
+            display:
+                flex;
+
+            align-items:
+                flex-start;
+
+            gap:
+                14px;
+
+            padding:
+                20px;
+
+            background:
+                var(--white);
+
+            border:
+                1px solid
+                rgba(
+                    3,
+                    27,
+                    46,
+                    0.07
+                );
+
+            border-radius:
+                15px;
+
+            box-shadow:
+                var(--shadow);
+
+            transition:
+                var(--transition);
+
+        }
+
+
+        .component:hover {
+
+            transform:
+                translateY(-4px);
+
+        }
+
+
+        .component-icon {
+
+            flex-shrink:
+                0;
+
+            width:
+                43px;
+
+            height:
+                43px;
+
+            display:
+                grid;
+
+            place-items:
+                center;
+
+            border-radius:
+                12px;
+
+            background:
+                var(--soft-seafoam);
+
+            font-size:
+                1.2rem;
+
+        }
+
+
+        .component h3 {
+
+            margin-bottom:
+                4px;
+
+            font-size:
+                0.76rem;
+
+        }
+
+
+        .component p {
+
+            color:
+                var(--text-muted);
+
+            font-size:
+                0.63rem;
+
+            line-height:
+                1.6;
+
+        }
+
+
+        /* =====================================================
+           FEATURES
+        ===================================================== */
+
+        .feature-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap:
+                18px;
+
+        }
+
+
+        .feature {
+
+            padding:
+                25px;
+
+            border-radius:
+                18px;
+
+            background:
+                var(--white);
+
+            border:
+                1px solid
+                rgba(
+                    3,
+                    27,
+                    46,
+                    0.07
+                );
+
+            box-shadow:
+                var(--shadow);
+
+        }
+
+
+        .feature h3 {
+
+            margin-bottom:
+                8px;
+
+            font-size:
+                0.9rem;
+
+        }
+
+
+        .feature p {
+
+            color:
+                var(--text-muted);
+
+            font-size:
+                0.68rem;
+
+            line-height:
+                1.8;
+
+        }
+
+
+        /* =====================================================
+           HARDWARE DATA NOTICE
+        ===================================================== */
+
+        .hardware-notice {
+
+            padding:
+                30px;
+
+            border-radius:
+                20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(
+                        255,
+                        215,
+                        0,
+                        0.12
+                    ),
+                    rgba(
+                        230,
+                        190,
+                        138,
+                        0.04
+                    )
+                );
+
+            border:
+                1px solid
+                rgba(
+                    230,
+                    190,
+                    138,
+                    0.55
+                );
+
+        }
+
+
+        .hardware-notice h3 {
+
+            margin-bottom:
+                8px;
+
+            font-size:
+                1rem;
+
+        }
+
+
+        .hardware-notice p {
+
+            color:
+                var(--text-muted);
+
+            font-size:
+                0.72rem;
+
+            line-height:
+                1.8;
+
+        }
+
+
+        /* =====================================================
+           DEVELOPMENT TIMELINE
+        ===================================================== */
+
+        .timeline {
+
+            position:
+                relative;
+
+            max-width:
+                850px;
+
+            margin:
+                auto;
+
+        }
+
+
+        .timeline::before {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            left:
+                20px;
+
+            top:
+                0;
+
+            bottom:
+                0;
+
+            width:
+                2px;
+
+            background:
+                rgba(
+                    21,
+                    154,
+                    171,
+                    0.2
+                );
+
+        }
+
+
+        .timeline-item {
+
+            position:
+                relative;
+
+            display:
+                grid;
+
+            grid-template-columns:
+                40px 1fr;
+
+            gap:
+                18px;
+
+            margin-bottom:
+                25px;
+
+        }
+
+
+        .timeline-dot {
+
+            position:
+                relative;
+
+            z-index:
+                2;
+
+            width:
+                40px;
+
+            height:
+                40px;
+
+            display:
+                grid;
+
+            place-items:
+                center;
+
+            border-radius:
+                50%;
+
+            background:
+                var(--deep-blue);
+
+            color:
+                var(--white);
+
+            font-size:
+                0.75rem;
+
+            font-weight:
+                800;
+
+        }
+
+
+        .timeline-content {
+
+            padding:
+                18px 20px;
+
+            background:
+                var(--white);
+
+            border-radius:
+                15px;
+
+            box-shadow:
+                var(--shadow);
+
+        }
+
+
+        .timeline-content h3 {
+
+            margin-bottom:
+                5px;
+
+            font-size:
+                0.8rem;
+
+        }
+
+
+        .timeline-content p {
+
+            color:
+                var(--text-muted);
+
+            font-size:
+                0.65rem;
+
+            line-height:
+                1.7;
+
+        }
+
+
+        /* =====================================================
+           TEAM NOTE
+        ===================================================== */
+
+        .team-note {
+
+            padding:
+                30px;
+
+            border:
+                1px solid
+                rgba(
+                    230,
+                    190,
+                    138,
+                    0.55
+                );
+
+            border-radius:
+                20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(
+                        255,
+                        215,
+                        0,
+                        0.12
+                    ),
+                    rgba(
+                        255,
+                        215,
+                        0,
+                        0.03
+                    )
+                );
+
+        }
+
+
+        .team-note h3 {
+
+            margin-bottom:
+                9px;
+
+            font-size:
+                1rem;
+
+        }
+
+
+        .team-note p {
+
+            color:
+                var(--text-muted);
+
+            font-size:
+                0.72rem;
+
+            line-height:
+                1.8;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 950px) {
+
+            .prototype-intro {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+            .workflow {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+            .component-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .workflow,
+            .component-grid,
+            .feature-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+            .prototype-card,
+            .hardware-notice,
+            .team-note {
+
+                padding:
+                    22px;
+
+            }
+
+        }
+
+    </style>
 
 </head>
+
 
 <body>
 
 
-<nav>
+    <!-- =====================================================
+         NAVIGATION
+    ===================================================== -->
 
-    <div class="logo">
-        🌊 OCEAN <span>× ECO-TECH</span>
-    </div>
+    <header class="navbar">
 
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="dashboard.html">Live Data</a></li>
-        <li><a href="map.html">Map</a></li>
-        <li><a href="solutions.html">Solutions</a></li>
-        <li><a href="impact.html">Impact</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Get Involved</a></li>
-    </ul>
-
-    <a href="technology.html" class="nav-btn">
-        Technology
-    </a>
-
-</nav>
+        <div class="nav-container">
 
 
-<header class="hero">
+            <a
+                href="index.html"
+                class="logo"
+            >
 
-    <div class="hero-content">
+                <span class="logo-icon">
+                    🌊
+                </span>
 
-        <div class="hero-icon">
-            🔧
+                Ocean × Eco-Tech
+
+            </a>
+
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation"
+            >
+                ☰
+            </button>
+
+
+            <nav>
+
+                <ul
+                    class="nav-links"
+                    id="navLinks"
+                >
+
+                    <li>
+                        <a href="index.html">
+                            🏠 Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="dashboard.html">
+                            📊 Dashboard
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="analytics.html">
+                            📈 Analytics
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="live-data.html">
+                            📡 Live Data
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="map.html">
+                            🗺️ Map
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="solutions.html">
+                            ♻️ Solutions
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="impact.html">
+                            🌱 Impact
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">
+                            ℹ️ About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            📸 Get Involved
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
         </div>
 
-        <h1>
-            The
-            <span>Prototype</span>
-        </h1>
-
-        <p>
-            A concept for an intelligent ocean waste
-            collection and environmental monitoring system.
-        </p>
-
-    </div>
-
-</header>
+    </header>
 
 
-<section>
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
 
-    <div class="section-title">
+    <section class="prototype-hero">
 
-        <h2>
-            Prototype Architecture
-        </h2>
+        <div class="container">
 
-        <p>
-            The physical system can be developed around
-            a microcontroller, sensors and communication.
-        </p>
+            <span class="eyebrow">
+                🛠️ Student Innovation
+            </span>
 
-    </div>
-
-
-    <div class="grid">
-
-        <div class="card">
-
-            <div class="card-icon">
-                🧠
-            </div>
-
-            <h3>
-                Microcontroller
-            </h3>
+            <h1>
+                Meet the
+                <span>Prototype</span>
+            </h1>
 
             <p>
-                Acts as the central controller connecting
-                sensors and the application.
+                Ocean × Eco-Tech is a student-developed marine waste
+                collection concept designed to explore how practical
+                hardware and digital monitoring can work together to
+                support cleaner aquatic environments.
             </p>
 
         </div>
 
+    </section>
 
-        <div class="card">
 
-            <div class="card-icon">
-                📡
+    <!-- =====================================================
+         INTRODUCTION
+    ===================================================== -->
+
+    <section class="section">
+
+        <div class="container">
+
+
+            <div class="section-heading reveal">
+
+                <span class="section-label">
+                    🌊 The System
+                </span>
+
+                <h2>
+                    How Ocean × Eco-Tech Works
+                </h2>
+
+                <p>
+                    The prototype combines a floating collection
+                    mechanism with sensing, sorting and digital
+                    reporting concepts. The system is being developed
+                    progressively, with hardware-based functions
+                    becoming available as the relevant components are
+                    integrated and tested.
+                </p>
+
             </div>
 
-            <h3>
-                Sensors
-            </h3>
 
-            <p>
-                Sensors can detect distance, objects,
-                location and environmental conditions.
+            <div class="prototype-intro">
+
+
+                <article class="prototype-card reveal">
+
+                    <div class="prototype-icon">
+                        🚤
+                    </div>
+
+                    <h3>
+                        Marine Waste Collector
+                    </h3>
+
+                    <p>
+                        The proposed platform is designed to move across
+                        the water surface and collect floating waste.
+                        Collected material can then be directed toward
+                        separate compartments according to the intended
+                        sorting workflow.
+                    </p>
+
+                    <div class="hardware-status">
+
+                        <span class="status-dot"></span>
+
+                        Prototype hardware integration in progress
+
+                    </div>
+
+                </article>
+
+
+                <article class="prototype-card reveal">
+
+                    <div class="prototype-icon">
+                        📡
+                    </div>
+
+                    <h3>
+                        Digital Monitoring
+                    </h3>
+
+                    <p>
+                        The accompanying web application provides the
+                        interface for future sensor information, verified
+                        locations, waste records, reporting and project
+                        analytics.
+                    </p>
+
+                    <div class="hardware-status">
+
+                        <span class="status-dot"></span>
+
+                        Awaiting Hardware Data
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         WORKFLOW
+    ===================================================== -->
+
+    <section class="section section-seafoam">
+
+        <div class="container">
+
+
+            <div class="section-heading reveal">
+
+                <span class="section-label">
+                    ⚙️ Workflow
+                </span>
+
+                <h2>
+                    Collection Workflow
+                </h2>
+
+                <p>
+                    The intended operating sequence of the prototype,
+                    from movement through collection and reporting.
+                </p>
+
+            </div>
+
+
+            <div class="workflow">
+
+
+                <article class="workflow-step reveal">
+
+                    <div class="workflow-number">
+                        01
+                    </div>
+
+                    <span class="emoji">
+                        🚤
+                    </span>
+
+                    <h3>
+                        Navigate
+                    </h3>
+
+                    <p>
+                        The platform moves across the designated water
+                        area.
+                    </p>
+
+                </article>
+
+
+                <article class="workflow-step reveal">
+
+                    <div class="workflow-number">
+                        02
+                    </div>
+
+                    <span class="emoji">
+                        🌊
+                    </span>
+
+                    <h3>
+                        Identify
+                    </h3>
+
+                    <p>
+                        Relevant sensors can assist with environmental
+                        and object detection once connected.
+                    </p>
+
+                </article>
+
+
+                <article class="workflow-step reveal">
+
+                    <div class="workflow-number">
+                        03
+                    </div>
+
+                    <span class="emoji">
+                        ♻️
+                    </span>
+
+                    <h3>
+                        Collect
+                    </h3>
+
+                    <p>
+                        Floating waste is directed toward the collection
+                        area.
+                    </p>
+
+                </article>
+
+
+                <article class="workflow-step reveal">
+
+                    <div class="workflow-number">
+                        04
+                    </div>
+
+                    <span class="emoji">
+                        🗂️
+                    </span>
+
+                    <h3>
+                        Sort
+                    </h3>
+
+                    <p>
+                        The intended system separates collected material
+                        into appropriate waste compartments.
+                    </p>
+
+                </article>
+
+
+                <article class="workflow-step reveal">
+
+                    <div class="workflow-number">
+                        05
+                    </div>
+
+                    <span class="emoji">
+                        📊
+                    </span>
+
+                    <h3>
+                        Record
+                    </h3>
+
+                    <p>
+                        Verified information can be transferred to the
+                        digital monitoring platform.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         COMPONENTS
+    ===================================================== -->
+
+    <section class="section">
+
+        <div class="container">
+
+
+            <div class="section-heading reveal">
+
+                <span class="section-label">
+                    🔧 Hardware
+                </span>
+
+                <h2>
+                    Prototype Components
+                </h2>
+
+                <p>
+                    The following component categories form part of the
+                    prototype's intended hardware architecture.
+                </p>
+
+            </div>
+
+
+            <div class="component-grid">
+
+
+                <article class="component reveal">
+
+                    <div class="component-icon">
+                        🧠
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Microcontroller
+                        </h3>
+
+                        <p>
+                            Provides the control logic for connected
+                            hardware and prototype functions.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="component reveal">
+
+                    <div class="component-icon">
+                        ⚙️
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Propulsion System
+                        </h3>
+
+                        <p>
+                            Supports controlled movement of the floating
+                            platform.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="component reveal">
+
+                    <div class="component-icon">
+                        📏
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Distance Sensors
+                        </h3>
+
+                        <p>
+                            Intended for detecting nearby objects and
+                            assisting navigation when operational.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="component reveal">
+
+                    <div class="component-icon">
+                        ♻️
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Waste Collection System
+                        </h3>
+
+                        <p>
+                            Mesh or basket-based structure designed to
+                            capture floating waste.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="component reveal">
+
+                    <div class="component-icon">
+        🐠
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Marine-Life Detection
+                        </h3>
+
+                        <p>
+                            A planned safety feature intended to help
+                            identify nearby marine life.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="component reveal">
+
+                    <div class="component-icon">
+                        📍
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Location System
+                        </h3>
+
+                        <p>
+                            Intended to provide verified hardware
+                            positioning when GPS integration is active.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CORE FEATURES
+    ===================================================== -->
+
+    <section class="section section-seafoam">
+
+        <div class="container">
+
+
+            <div class="section-heading reveal">
+
+                <span class="section-label">
+                    ✨ Design Goals
+                </span>
+
+                <h2>
+                    Built for Responsible Monitoring
+                </h2>
+
+                <p>
+                    The system is designed around transparency: the
+                    application should clearly distinguish between
+                    proposed functionality and verified hardware data.
+                </p>
+
+            </div>
+
+
+            <div class="feature-grid">
+
+
+                <article class="feature reveal">
+
+                    <h3>
+                        📡 Real Sensor Data
+                    </h3>
+
+                    <p>
+                        Sensor dashboards will display measurements only
+                        after compatible prototype hardware is connected
+                        and verified.
+                    </p>
+
+                </article>
+
+
+                <article class="feature reveal">
+
+                    <h3>
+                        📍 Verified Locations
+                    </h3>
+
+                    <p>
+                        GPS monitoring points will only be displayed when
+                        a real hardware location is available.
+                    </p>
+
+                </article>
+
+
+                <article class="feature reveal">
+
+                    <h3>
+                        ♻️ Waste Documentation
+                    </h3>
+
+                    <p>
+                        Users can document waste through the reporting
+                        system while collection history can be built from
+                        actual records.
+                    </p>
+
+                </article>
+
+
+                <article class="feature reveal">
+
+                    <h3>
+                        🛡️ Transparent Analytics
+                    </h3>
+
+                    <p>
+                        Project analytics will distinguish recorded
+                        activity from sensor-dependent environmental
+                        measurements.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         DEVELOPMENT
+    ===================================================== -->
+
+    <section class="section">
+
+        <div class="container">
+
+
+            <div class="section-heading reveal">
+
+                <span class="section-label">
+                    🚀 Development
+                </span>
+
+                <h2>
+                    Prototype Progress
+                </h2>
+
+                <p>
+                    Ocean × Eco-Tech is being developed through
+                    progressive hardware and software stages.
+                </p>
+
+            </div>
+
+
+            <div class="timeline">
+
+
+                <div class="timeline-item reveal">
+
+                    <div class="timeline-dot">
+                        01
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <h3>
+                            💡 Concept
+                        </h3>
+
+                        <p>
+                            Development began with the concept of a
+                            floating platform capable of assisting with
+                            marine waste collection.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item reveal">
+
+                    <div class="timeline-dot">
+                        02
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <h3>
+                            🛠️ Prototype Design
+                        </h3>
+
+                        <p>
+                            The physical structure, collection mechanism,
+                            propulsion concept and sensing architecture
+                            were planned.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item reveal">
+
+                    <div class="timeline-dot">
+                        03
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <h3>
+                            💻 Digital Platform
+                        </h3>
+
+                        <p>
+                            The Ocean × Eco-Tech web application was
+                            developed to provide monitoring, mapping,
+                            reporting and project information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item reveal">
+
+                    <div class="timeline-dot">
+                        04
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <h3>
+                            📡 Hardware Integration
+                        </h3>
+
+                        <p>
+                            Sensor and communication integration remains
+                            an ongoing development stage.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item reveal">
+
+                    <div class="timeline-dot">
+                        05
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <h3>
+                            🌊 Testing & Validation
+                        </h3>
+
+                        <p>
+                            Further controlled testing and real-world
+                            validation will be required before the system
+                            can be considered for broader deployment.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         HARDWARE NOTICE
+    ===================================================== -->
+
+    <section class="section section-seafoam">
+
+        <div class="container">
+
+            <div class="hardware-notice reveal">
+
+                <h3>
+                    📡 Hardware Data Status
+                </h3>
+
+                <p>
+                    <strong>Awaiting Hardware Data.</strong>
+                    Sensor-dependent features such as distance
+                    measurements, marine-life detection, GPS position,
+                    real-time environmental measurements and
+                    sensor-generated graphs will remain unavailable
+                    until the corresponding prototype hardware is
+                    connected and verified.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TEAM NOTE
+    ===================================================== -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="team-note reveal">
+
+                <h3>
+                    ✨ Note from the Team
+                </h3>
+
+                <p>
+                    Ocean × Eco-Tech is a student-developed prototype
+                    created to explore practical approaches to marine
+                    waste management. Under controlled testing
+                    conditions, the prototype has demonstrated
+                    approximately 90% accuracy, while continued
+                    development, independent validation and real-world
+                    testing remain essential before broader deployment.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                🌊 Ocean
+                <span>×</span>
+                Eco-Tech
+
+            </div>
+
+            <p class="footer-copy">
+
+                Student-developed environmental technology prototype.
+
             </p>
 
         </div>
 
-
-        <div class="card">
-
-            <div class="card-icon">
-                📱
-            </div>
-
-            <h3>
-                Application
-            </h3>
-
-            <p>
-                The dashboard provides an interface for
-                monitoring information from the system.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
+    </footer>
 
 
-<footer>
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
 
-    <div>
-        🌊 OCEAN <span>× ECO-TECH</span>
-    </div>
+    <script src="app.js"></script>
 
-    <div>
-        © 2026 Ocean × Eco-Tech
-    </div>
-
-</footer>
-
-<script src="app.js"></script>
 
 </body>
+
 </html>

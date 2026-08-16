@@ -1,169 +1,1466 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="Ocean × Eco-Tech — environmental impact and project achievements."
+    >
 
-<title>Impact | Ocean × Eco-Tech</title>
+    <title>Impact | Ocean × Eco-Tech</title>
 
-<link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        :root {
+            --deep-blue: #031B2E;
+            --ocean-blue: #063A5B;
+            --aqua: #159AAB;
+            --light-aqua: #72D6D8;
+            --seafoam: #BFE8DD;
+            --soft-seafoam: #E8F7F3;
+            --white: #FFFFFF;
+            --off-white: #F5FBFA;
+
+            /* ONLY GOLD ACCENT */
+            --gold: #FFD700;
+            --gold-soft: #D4AF37;
+
+            --text-dark: #082333;
+            --text-muted: #617985;
+
+            --shadow: 0 18px 45px rgba(3, 27, 46, 0.12);
+            --radius: 22px;
+            --transition: 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: var(--off-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ================= NAV ================= */
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(3, 27, 46, 0.95);
+            backdrop-filter: blur(16px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .nav-container {
+            width: min(1200px, 92%);
+            min-height: 76px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            color: white;
+            font-family: "Poppins", sans-serif;
+            font-weight: 800;
+            font-size: 1.05rem;
+            white-space: nowrap;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 13px;
+
+            background: linear-gradient(
+                135deg,
+                var(--gold),
+                var(--gold-soft)
+            );
+
+            color: var(--deep-blue);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            position: relative;
+
+            padding: 10px 12px;
+
+            color: rgba(255,255,255,0.75);
+
+            font-size: 0.82rem;
+            font-weight: 600;
+
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            color: white;
+        }
+
+        .nav-links .active {
+            color: var(--gold-soft);
+        }
+
+        .nav-links a::after {
+            content: "";
+
+            position: absolute;
+            left: 12px;
+            right: 12px;
+            bottom: 3px;
+
+            height: 2px;
+
+            background: var(--gold);
+
+            transform: scaleX(0);
+
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links .active::after {
+            transform: scaleX(1);
+        }
+
+        .nav-cta {
+            border: 1px solid var(--gold);
+            border-radius: 30px;
+        }
+
+        .nav-cta::after {
+            display: none;
+        }
+
+        .nav-cta:hover {
+            background: var(--gold);
+            color: var(--deep-blue) !important;
+        }
+
+        .menu-toggle {
+            display: none;
+
+            border: none;
+            background: none;
+
+            color: white;
+            font-size: 1.7rem;
+
+            cursor: pointer;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            position: relative;
+
+            padding: 145px 0 80px;
+
+            color: white;
+
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(21,154,171,0.25),
+                    transparent 32%
+                ),
+                linear-gradient(
+                    135deg,
+                    var(--deep-blue),
+                    var(--ocean-blue)
+                );
+
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "🌍";
+
+            position: absolute;
+            right: 5%;
+            bottom: -55px;
+
+            font-size: 12rem;
+
+            opacity: 0.05;
+        }
+
+        .hero-container {
+            width: min(1200px,92%);
+            margin: auto;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+
+            padding: 8px 14px;
+            margin-bottom: 18px;
+
+            border: 1px solid rgba(255,215,0,0.45);
+            border-radius: 30px;
+
+            background: rgba(255,215,0,0.07);
+
+            color: var(--gold);
+
+            font-size: 0.72rem;
+            font-weight: 800;
+
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .hero h1 {
+            font-family: "Poppins", sans-serif;
+
+            font-size: clamp(2.5rem,5vw,4.2rem);
+            line-height: 1.08;
+
+            letter-spacing: -0.04em;
+
+            margin-bottom: 17px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            max-width: 800px;
+
+            color: rgba(255,255,255,0.7);
+
+            font-size: 0.95rem;
+            line-height: 1.85;
+        }
+
+        /* ================= GENERAL ================= */
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .container {
+            width: min(1200px,92%);
+            margin: auto;
+        }
+
+        .heading {
+            max-width: 760px;
+            margin-bottom: 35px;
+        }
+
+        .label {
+            display: inline-block;
+
+            margin-bottom: 8px;
+
+            color: var(--gold-soft);
+
+            font-size: 0.73rem;
+            font-weight: 800;
+
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+
+        .heading h2 {
+            font-family: "Poppins", sans-serif;
+
+            color: var(--deep-blue);
+
+            font-size: clamp(1.9rem,4vw,2.8rem);
+
+            line-height: 1.15;
+
+            margin-bottom: 12px;
+        }
+
+        .heading p {
+            color: var(--text-muted);
+            font-size: 0.87rem;
+        }
+
+        /* ================= IMPACT CARDS ================= */
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 20px;
+        }
+
+        .impact-card {
+            position: relative;
+
+            padding: 30px;
+
+            background: white;
+
+            border-radius: var(--radius);
+
+            border: 1px solid rgba(3,27,46,0.07);
+
+            box-shadow: var(--shadow);
+
+            overflow: hidden;
+
+            transition: var(--transition);
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .impact-card::after {
+            content: "";
+
+            position: absolute;
+
+            width: 100px;
+            height: 100px;
+
+            right: -45px;
+            bottom: -45px;
+
+            border-radius: 50%;
+
+            background: var(--soft-seafoam);
+
+            z-index: 0;
+        }
+
+        .impact-icon {
+            width: 54px;
+            height: 54px;
+
+            display: grid;
+            place-items: center;
+
+            margin-bottom: 18px;
+
+            border-radius: 16px;
+
+            background: var(--soft-seafoam);
+
+            font-size: 1.5rem;
+
+            position: relative;
+            z-index: 1;
+        }
+
+        .impact-card h3 {
+            position: relative;
+            z-index: 1;
+
+            font-family: "Poppins", sans-serif;
+
+            color: var(--deep-blue);
+
+            font-size: 1.05rem;
+
+            margin-bottom: 9px;
+        }
+
+        .impact-card p {
+            position: relative;
+            z-index: 1;
+
+            color: var(--text-muted);
+
+            font-size: 0.76rem;
+            line-height: 1.8;
+        }
+
+        /* ================= DATA INTEGRITY ================= */
+
+        .data-box {
+            margin-top: 25px;
+
+            padding: 25px 28px;
+
+            border-radius: var(--radius);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--deep-blue),
+                    var(--ocean-blue)
+                );
+
+            color: white;
+
+            box-shadow: var(--shadow);
+        }
+
+        .data-box-top {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+
+            margin-bottom: 10px;
+        }
+
+        .data-icon {
+            width: 42px;
+            height: 42px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 12px;
+
+            background: rgba(255,215,0,0.1);
+
+            border: 1px solid rgba(255,215,0,0.35);
+        }
+
+        .data-box h3 {
+            font-family: "Poppins", sans-serif;
+            font-size: 1rem;
+        }
+
+        .data-box p {
+            color: rgba(255,255,255,0.67);
+
+            font-size: 0.76rem;
+            line-height: 1.8;
+        }
+
+        /* ================= ACHIEVEMENTS ================= */
+
+        .achievements {
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            gap: 14px;
+        }
+
+        .achievement {
+            padding: 25px 18px;
+
+            text-align: center;
+
+            background: white;
+
+            border-radius: 18px;
+
+            border: 1px solid rgba(3,27,46,0.07);
+
+            box-shadow: var(--shadow);
+
+            transition: var(--transition);
+        }
+
+        .achievement:hover {
+            transform: translateY(-5px);
+        }
+
+        .achievement-icon {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+        }
+
+        .achievement h3 {
+            font-family: "Poppins", sans-serif;
+
+            color: var(--deep-blue);
+
+            font-size: 0.83rem;
+
+            margin-bottom: 7px;
+        }
+
+        .achievement p {
+            color: var(--text-muted);
+
+            font-size: 0.65rem;
+            line-height: 1.65;
+        }
+
+        /* ================= PROGRESS ================= */
+
+        .progress-panel {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 25px;
+
+            padding: 30px;
+
+            background: var(--soft-seafoam);
+
+            border-radius: var(--radius);
+        }
+
+        .progress-intro h3 {
+            font-family: "Poppins", sans-serif;
+
+            color: var(--deep-blue);
+
+            font-size: 1.25rem;
+
+            margin-bottom: 10px;
+        }
+
+        .progress-intro p {
+            color: var(--text-muted);
+
+            font-size: 0.76rem;
+            line-height: 1.8;
+        }
+
+        .progress-list {
+            display: grid;
+            gap: 14px;
+        }
+
+        .progress-item {
+            padding: 15px;
+
+            background: white;
+
+            border-radius: 14px;
+
+            border: 1px solid rgba(3,27,46,0.06);
+        }
+
+        .progress-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+
+            margin-bottom: 8px;
+        }
+
+        .progress-top span:first-child {
+            color: var(--deep-blue);
+
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        .status {
+            color: var(--gold-soft);
+
+            font-size: 0.65rem;
+            font-weight: 800;
+        }
+
+        .progress-bar {
+            height: 6px;
+
+            border-radius: 20px;
+
+            background: #E6F1EF;
+
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            width: 100%;
+            height: 100%;
+
+            background: linear-gradient(
+                90deg,
+                var(--aqua),
+                var(--light-aqua)
+            );
+
+            border-radius: inherit;
+        }
+
+        /* ================= NOTE ================= */
+
+        .team-note {
+            position: relative;
+
+            padding: 32px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,215,0,0.13),
+                    rgba(255,215,0,0.04)
+                );
+
+            border: 1px solid rgba(212,175,55,0.55);
+
+            border-radius: var(--radius);
+
+            overflow: hidden;
+        }
+
+        .team-note::before {
+            content: "✦";
+
+            position: absolute;
+
+            right: 25px;
+            top: 13px;
+
+            color: var(--gold);
+
+            font-size: 3rem;
+
+            opacity: 0.18;
+        }
+
+        .team-note h3 {
+            font-family: "Poppins", sans-serif;
+
+            color: var(--deep-blue);
+
+            font-size: 1.2rem;
+
+            margin-bottom: 10px;
+        }
+
+        .team-note p {
+            max-width: 850px;
+
+            color: var(--text-muted);
+
+            font-size: 0.8rem;
+            line-height: 1.85;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            padding: 35px 0;
+
+            background: #021522;
+
+            color: white;
+        }
+
+        .footer-container {
+            width: min(1200px,92%);
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-brand {
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+        }
+
+        .footer-brand span {
+            color: var(--gold);
+        }
+
+        .footer-copy {
+            color: rgba(255,255,255,0.45);
+            font-size: 0.7rem;
+        }
+
+        /* ================= ANIMATION ================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 1000px) {
+
+            .nav-links {
+                position: absolute;
+
+                top: 76px;
+                left: 0;
+
+                width: 100%;
+
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+
+                padding: 15px 4%;
+
+                background: rgba(3,27,46,0.98);
+                backdrop-filter: blur(15px);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .achievements {
+                grid-template-columns: repeat(3,1fr);
+            }
+
+            .progress-panel {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            .hero {
+                padding: 125px 0 60px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .achievements {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .progress-panel,
+            .team-note,
+            .data-box {
+                padding: 22px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 430px) {
+
+            .achievements {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
+    <!-- ================= NAVIGATION ================= -->
 
-<nav>
+    <header class="navbar">
 
-    <div class="logo">
-        🌊 OCEAN <span>× ECO-TECH</span>
-    </div>
+        <div class="nav-container">
 
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="dashboard.html">Live Data</a></li>
-        <li><a href="map.html">Map</a></li>
-        <li><a href="solutions.html">Solutions</a></li>
-        <li><a href="impact.html" class="active">Impact</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Get Involved</a></li>
-    </ul>
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌊</span>
+                Ocean × Eco-Tech
+            </a>
 
-    <a href="dashboard.html" class="nav-btn">
-        Live Data
-    </a>
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open navigation"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
 
-</nav>
+            <nav>
 
+                <ul class="nav-links" id="navLinks">
 
-<header class="hero">
+                    <li>
+                        <a href="index.html">
+                            🏠 Home
+                        </a>
+                    </li>
 
-    <div class="hero-content">
+                    <li>
+                        <a href="live-data.html">
+                            📡 Live Data
+                        </a>
+                    </li>
 
-        <div class="hero-icon">
-            🌍
+                    <li>
+                        <a href="map.html">
+                            🗺️ Map
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="solutions.html">
+                            ♻️ Solutions
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="impact.html"
+                            class="active"
+                        >
+                            🌱 Impact
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">
+                            ℹ️ About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="contact.html"
+                            class="nav-cta"
+                        >
+                            📸 Get Involved
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
         </div>
 
-        <h1>
-            Measuring
-            <span>Impact</span>
-        </h1>
-
-        <p>
-            Turning environmental technology into
-            measurable information and meaningful action.
-        </p>
-
-    </div>
-
-</header>
+    </header>
 
 
-<section>
+    <!-- ================= HERO ================= -->
 
-    <div class="section-title">
+    <section class="hero">
 
-        <h2>
-            🌱 Potential Impact Areas
-        </h2>
+        <div class="hero-container">
 
-        <p>
-            The platform is designed around measurable
-            environmental and technological outcomes.
-        </p>
+            <span class="eyebrow">
+                🌱 Impact & Achievements
+            </span>
 
-    </div>
-
-
-    <div class="grid">
-
-        <div class="card">
-
-            <div class="card-icon">
-                ♻️
-            </div>
-
-            <h3>
-                Waste Awareness
-            </h3>
+            <h1>
+                Measuring <span>Real Impact</span>
+            </h1>
 
             <p>
-                Help visualize the scale and location
-                of marine waste collection.
+                Ocean × Eco-Tech is designed to support practical
+                marine-waste management through prototype development,
+                responsible waste documentation and future sensor-based
+                monitoring. The project separates its intended impact
+                from measurements that can only be reported after real
+                hardware data becomes available.
             </p>
 
         </div>
 
+    </section>
 
-        <div class="card">
 
-            <div class="card-icon">
-                🌊
+    <main>
+
+        <!-- ================= ENVIRONMENTAL IMPACT ================= -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="heading reveal">
+
+                    <span class="label">
+                        🌍 Environmental Impact
+                    </span>
+
+                    <h2>
+                        Designed for Cleaner Oceans
+                    </h2>
+
+                    <p>
+                        The project's environmental contribution is
+                        centered on reducing the presence of floating
+                        waste, improving documentation and encouraging
+                        responsible approaches to marine conservation.
+                    </p>
+
+                </div>
+
+
+                <div class="impact-grid">
+
+                    <article class="impact-card reveal">
+
+                        <div class="impact-icon">
+                            🌍
+                        </div>
+
+                        <h3>
+                            Environmental Impact
+                        </h3>
+
+                        <p>
+                            Ocean × Eco-Tech aims to support cleaner
+                            aquatic environments by developing a system
+                            that can assist with floating-waste collection
+                            and structured environmental documentation.
+                        </p>
+
+                    </article>
+
+
+                    <article class="impact-card reveal">
+
+                        <div class="impact-icon">
+                            ♻️
+                        </div>
+
+                        <h3>
+                            Waste Collection Impact
+                        </h3>
+
+                        <p>
+                            Actual waste quantities can be recorded once
+                            collection activities take place. The platform
+                            does not display estimated collection totals
+                            before real records exist.
+                        </p>
+
+                    </article>
+
+
+                    <article class="impact-card reveal">
+
+                        <div class="impact-icon">
+                            🐠
+                        </div>
+
+                        <h3>
+                            Marine-Life Protection
+                        </h3>
+
+                        <p>
+                            The project considers marine ecosystems during
+                            prototype development, with the goal of
+                            reducing operational risks and supporting more
+                            responsible waste-collection practices.
+                        </p>
+
+                    </article>
+
+
+                    <article class="impact-card reveal">
+
+                        <div class="impact-icon">
+                            📊
+                        </div>
+
+                        <h3>
+                            Project Impact
+                        </h3>
+
+                        <p>
+                            Measurable project results will be presented
+                            only when verified records or operational
+                            hardware data are available.
+                        </p>
+
+                    </article>
+
+                </div>
+
+
+                <div class="data-box reveal">
+
+                    <div class="data-box-top">
+
+                        <div class="data-icon">
+                            📡
+                        </div>
+
+                        <h3>
+                            Data Integrity Comes First
+                        </h3>
+
+                    </div>
+
+                    <p>
+                        No environmental statistics, sensor readings,
+                        collection totals or marine-life detections are
+                        fabricated. The platform clearly distinguishes
+                        project goals and progress from measurements that
+                        require real-world hardware or verified records.
+                    </p>
+
+                </div>
+
             </div>
 
-            <h3>
-                Ocean Protection
-            </h3>
+        </section>
 
-            <p>
-                Encourage practical approaches to
-                reducing ocean pollution.
-            </p>
+
+        <!-- ================= PROJECT PROGRESS ================= -->
+
+        <section
+            class="section"
+            style="background: var(--soft-seafoam);"
+        >
+
+            <div class="container">
+
+                <div class="heading reveal">
+
+                    <span class="label">
+                        📈 Project Progress
+                    </span>
+
+                    <h2>
+                        Building the System Step by Step
+                    </h2>
+
+                    <p>
+                        These progress areas describe development work,
+                        not environmental measurements or fabricated
+                        performance statistics.
+                    </p>
+
+                </div>
+
+
+                <div class="progress-panel reveal">
+
+                    <div class="progress-intro">
+
+                        <h3>
+                            🛠️ Development Focus
+                        </h3>
+
+                        <p>
+                            Ocean × Eco-Tech is being developed as a
+                            student prototype combining a physical
+                            collection concept with a digital monitoring
+                            and reporting platform.
+                        </p>
+
+                    </div>
+
+
+                    <div class="progress-list">
+
+                        <div class="progress-item">
+
+                            <div class="progress-top">
+
+                                <span>
+                                    🛠️ Prototype Development
+                                </span>
+
+                                <span class="status">
+                                    IN DEVELOPMENT
+                                </span>
+
+                            </div>
+
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="progress-item">
+
+                            <div class="progress-top">
+
+                                <span>
+                                    💻 Web Application
+                                </span>
+
+                                <span class="status">
+                                    IN DEVELOPMENT
+                                </span>
+
+                            </div>
+
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="progress-item">
+
+                            <div class="progress-top">
+
+                                <span>
+                                    🗺️ World Map Integration
+                                </span>
+
+                                <span class="status">
+                                    DEVELOPING
+                                </span>
+
+                            </div>
+
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="progress-item">
+
+                            <div class="progress-top">
+
+                                <span>
+                                    📡 Hardware Integration
+                                </span>
+
+                                <span class="status">
+                                    AWAITING HARDWARE
+                                </span>
+
+                            </div>
+
+                            <div class="progress-bar">
+                                <div
+                                    class="progress-fill"
+                                    style="width: 25%;"
+                                ></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ACHIEVEMENTS ================= -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="heading reveal">
+
+                    <span class="label">
+                        🏆 Achievements
+                    </span>
+
+                    <h2>
+                        What We Have Built
+                    </h2>
+
+                    <p>
+                        The achievements below represent development
+                        milestones reached by the project rather than
+                        claimed environmental outcomes.
+                    </p>
+
+                </div>
+
+
+                <div class="achievements">
+
+                    <article class="achievement reveal">
+
+                        <div class="achievement-icon">
+                            🛠️
+                        </div>
+
+                        <h3>
+                            Prototype Development
+                        </h3>
+
+                        <p>
+                            Progress made in designing and developing
+                            the Ocean × Eco-Tech prototype.
+                        </p>
+
+                    </article>
+
+
+                    <article class="achievement reveal">
+
+                        <div class="achievement-icon">
+                            💻
+                        </div>
+
+                        <h3>
+                            Web App Development
+                        </h3>
+
+                        <p>
+                            Development of the monitoring and reporting
+                            platform for the project.
+                        </p>
+
+                    </article>
+
+
+                    <article class="achievement reveal">
+
+                        <div class="achievement-icon">
+                            🗺️
+                        </div>
+
+                        <h3>
+                            World Map Integration
+                        </h3>
+
+                        <p>
+                            Creation of an interactive global monitoring
+                            interface for future verified data.
+                        </p>
+
+                    </article>
+
+
+                    <article class="achievement reveal">
+
+                        <div class="achievement-icon">
+                            ♻️
+                        </div>
+
+                        <h3>
+                            Waste Reporting
+                        </h3>
+
+                        <p>
+                            Development of functionality for documenting
+                            observed or collected waste.
+                        </p>
+
+                    </article>
+
+
+                    <article class="achievement reveal">
+
+                        <div class="achievement-icon">
+                            👩‍🎓
+                        </div>
+
+                        <h3>
+                            Student Innovation
+                        </h3>
+
+                        <p>
+                            Development of an interdisciplinary
+                            student-led environmental technology project.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TEAM NOTE ================= -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="team-note reveal">
+
+                    <h3>
+                        ✨ Note from the Team
+                    </h3>
+
+                    <p>
+                        Ocean × Eco-Tech is a student-developed prototype
+                        created to explore practical marine-waste
+                        solutions; while the system is still under
+                        development, our prototype has demonstrated
+                        approximately 90% accuracy in its current
+                        controlled testing.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                🌊 Ocean <span>×</span> Eco-Tech
+            </div>
+
+            <div class="footer-copy">
+                Student-developed environmental technology prototype.
+            </div>
 
         </div>
 
-
-        <div class="card">
-
-            <div class="card-icon">
-                📊
-            </div>
-
-            <h3>
-                Data Awareness
-            </h3>
-
-            <p>
-                Convert sensor measurements into
-                understandable information.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
+    </footer>
 
 
-<section class="cta">
+    <script>
 
-    <h2>
-        Every data point matters.
-    </h2>
+        /* ================= MOBILE MENU ================= */
 
-    <p>
-        The goal is to connect environmental awareness
-        with practical technology.
-    </p>
+        const menuToggle =
+            document.getElementById("menuToggle");
 
-</section>
+        const navLinks =
+            document.getElementById("navLinks");
+
+        menuToggle.addEventListener("click", () => {
+
+            const isOpen =
+                navLinks.classList.toggle("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                isOpen
+            );
+
+            menuToggle.textContent =
+                isOpen ? "✕" : "☰";
+
+        });
 
 
-<footer>
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(link => {
 
-    <div>
-        🌊 OCEAN <span>× ECO-TECH</span>
-    </div>
+                link.addEventListener("click", () => {
 
-    <div>
-        © 2026 Ocean × Eco-Tech
-    </div>
+                    navLinks.classList.remove("active");
 
-</footer>
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
 
-<script src="app.js"></script>
+                    menuToggle.textContent = "☰";
+
+                });
+
+            });
+
+
+        /* ================= SCROLL ANIMATION ================= */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+        const observer =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add(
+                                "visible"
+                            );
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.1
+                }
+            );
+
+
+        revealElements.forEach(element => {
+            observer.observe(element);
+        });
+
+    </script>
 
 </body>
 </html>
