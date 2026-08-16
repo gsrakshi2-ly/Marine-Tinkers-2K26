@@ -4,11 +4,7 @@
 <head>
 
 <meta charset="UTF-8">
-
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Eco-Tech Solutions | Ocean × Eco-Tech</title>
 
@@ -27,17 +23,11 @@ body {
     color: #063B5C;
 }
 
-a {
-    text-decoration: none;
-}
-
-
 /* ================= NAVBAR ================= */
 
 nav {
     height: 72px;
     width: 100%;
-
     background: #063B5C;
 
     display: flex;
@@ -69,6 +59,7 @@ nav ul {
 
 nav ul li a {
     color: white;
+    text-decoration: none;
     font-size: 14px;
     transition: .3s;
 }
@@ -83,22 +74,20 @@ nav ul li a.active {
     color: #063B5C;
 
     padding: 10px 18px;
-
     border-radius: 25px;
 
+    text-decoration: none;
     font-weight: bold;
 }
-
 
 /* ================= HERO ================= */
 
 .hero {
-
     margin-top: 72px;
 
-    min-height: 450px;
+    min-height: 440px;
 
-    padding: 85px 7%;
+    padding: 90px 7%;
 
     background:
         linear-gradient(
@@ -112,13 +101,11 @@ nav ul li a.active {
     text-align: center;
 
     position: relative;
-
     overflow: hidden;
 }
 
 .hero-icon {
-
-    font-size: 75px;
+    font-size: 78px;
 
     margin-bottom: 15px;
 
@@ -135,67 +122,52 @@ nav ul li a.active {
     50% {
         transform: translateY(-15px);
     }
+
 }
 
 .hero h1 {
-
-    font-size: 52px;
-
-    margin-bottom: 18px;
+    font-size: 50px;
+    margin-bottom: 15px;
 }
 
 .hero h1 span {
-
     color: #20C7C9;
 }
 
 .hero p {
-
     max-width: 720px;
-
     margin: auto;
 
     color: #E0F4F7;
 
     line-height: 1.8;
-
-    font-size: 17px;
 }
-
 
 /* ================= SECTION ================= */
 
 section {
-    padding: 80px 7%;
+    padding: 75px 7%;
 }
 
 .section-title {
-
     text-align: center;
-
     margin-bottom: 45px;
 }
 
 .section-title h2 {
-
-    font-size: 38px;
-
-    margin-bottom: 12px;
+    font-size: 36px;
+    margin-bottom: 10px;
 }
 
 .section-title p {
-
     color: #607D8B;
-
-    line-height: 1.6;
 }
-
 
 /* ================= SOLUTION CARDS ================= */
 
 .solution-grid {
 
-    max-width: 1150px;
+    max-width: 1100px;
 
     margin: auto;
 
@@ -216,8 +188,7 @@ section {
     border-radius: 23px;
 
     box-shadow:
-        0 8px 25px
-        rgba(6,59,92,.08);
+        0 8px 25px rgba(6,59,92,.08);
 
     transition: .35s;
 
@@ -228,46 +199,62 @@ section {
 
 .solution-card:hover {
 
-    transform:
-        translateY(-9px);
+    transform: translateY(-9px);
 
     box-shadow:
-        0 16px 35px
-        rgba(6,59,92,.14);
+        0 15px 35px rgba(6,59,92,.13);
+}
+
+.solution-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: #EAF9F7;
+
+    right: -35px;
+    top: -35px;
 }
 
 .solution-icon {
 
     font-size: 45px;
 
-    margin-bottom: 18px;
+    margin-bottom: 15px;
+
+    position: relative;
+
+    z-index: 2;
 }
 
 .solution-card h3 {
 
     margin-bottom: 10px;
-
-    font-size: 20px;
 }
 
 .solution-card p {
 
     color: #607D8B;
 
-    line-height: 1.7;
-
     font-size: 14px;
+
+    line-height: 1.7;
 }
 
+/* ================= FEATURED SOLUTION ================= */
 
-/* ================= PROTOTYPE ================= */
-
-.prototype {
+.featured {
 
     background: #EAF9F7;
 }
 
-.prototype-container {
+.featured-container {
 
     max-width: 1100px;
 
@@ -278,23 +265,23 @@ section {
     grid-template-columns:
         1fr 1fr;
 
-    gap: 35px;
+    gap: 40px;
 
     align-items: center;
 }
 
-.prototype-visual {
+.featured-visual {
 
-    min-height: 390px;
+    min-height: 350px;
+
+    border-radius: 25px;
 
     background:
         linear-gradient(
-            145deg,
+            135deg,
             #063B5C,
-            #087A9A
+            #20C7C9
         );
-
-    border-radius: 30px;
 
     display: flex;
 
@@ -302,146 +289,25 @@ section {
 
     justify-content: center;
 
-    position: relative;
-
-    overflow: hidden;
+    font-size: 120px;
 
     box-shadow:
-        0 12px 35px
-        rgba(6,59,92,.15);
+        0 12px 35px rgba(6,59,92,.12);
 }
 
-
-/* WATER */
-
-.wave {
-
-    position: absolute;
-
-    width: 650px;
-    height: 650px;
-
-    border-radius: 45%;
-
-    border: 2px solid
-        rgba(255,255,255,.12);
-
-    transform:
-        rotate(25deg);
-}
-
-
-/* BOAT */
-
-.collector {
-
-    width: 260px;
-    height: 105px;
-
-    background: #EAF9F7;
-
-    border-radius:
-        20px 20px 45px 45px;
-
-    position: relative;
-
-    z-index: 3;
-
-    box-shadow:
-        0 10px 25px
-        rgba(0,0,0,.25);
-}
-
-.collector::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 190px;
-    height: 55px;
-
-    background: #20C7C9;
-
-    left: 35px;
-    top: -28px;
-
-    border-radius: 18px 18px 8px 8px;
-}
-
-.collector::after {
-
-    content: "♻️";
-
-    position: absolute;
-
-    font-size: 34px;
-
-    left: 112px;
-    top: 20px;
-}
-
-
-/* PONTOONS */
-
-.pontoon {
-
-    position: absolute;
-
-    width: 45px;
-    height: 140px;
-
-    background: #B9F3E4;
-
-    border-radius: 20px;
-
-    top: -15px;
-}
-
-.pontoon.left {
-    left: -55px;
-}
-
-.pontoon.right {
-    right: -55px;
-}
-
-
-/* PROPELLERS */
-
-.propeller {
-
-    position: absolute;
+.featured-text h2 {
 
     font-size: 35px;
 
-    bottom: -35px;
+    margin-bottom: 15px;
 }
 
-.propeller.left {
-    left: 35px;
-}
-
-.propeller.right {
-    right: 35px;
-}
-
-
-/* PROTOTYPE TEXT */
-
-.prototype-info h2 {
-
-    font-size: 35px;
-
-    margin-bottom: 18px;
-}
-
-.prototype-info h2 span {
+.featured-text h2 span {
 
     color: #20AEB0;
 }
 
-.prototype-info p {
+.featured-text p {
 
     color: #607D8B;
 
@@ -450,27 +316,33 @@ section {
     margin-bottom: 20px;
 }
 
-.prototype-list {
+.feature-list {
 
     list-style: none;
 }
 
-.prototype-list li {
+.feature-list li {
 
-    padding: 10px 0;
+    padding: 12px 15px;
 
-    color: #355968;
+    background: white;
+
+    border-radius: 12px;
+
+    margin-bottom: 9px;
+
+    box-shadow:
+        0 4px 15px rgba(6,59,92,.05);
 }
 
+/* ================= SYSTEM ================= */
 
-/* ================= HOW IT WORKS ================= */
-
-.how {
+.system {
 
     background: white;
 }
 
-.steps {
+.system-grid {
 
     max-width: 1050px;
 
@@ -484,14 +356,20 @@ section {
     gap: 20px;
 }
 
-.step {
+.system-card {
 
     text-align: center;
 
-    padding: 25px 18px;
+    padding: 25px 15px;
+
+    border-radius: 20px;
+
+    background: #F7FBFC;
+
+    border: 1px solid #E2EEF0;
 }
 
-.step-number {
+.system-number {
 
     width: 55px;
     height: 55px;
@@ -510,17 +388,15 @@ section {
 
     justify-content: center;
 
-    font-size: 20px;
-
     font-weight: bold;
 }
 
-.step h3 {
+.system-card h3 {
 
-    margin-bottom: 9px;
+    margin-bottom: 8px;
 }
 
-.step p {
+.system-card p {
 
     color: #607D8B;
 
@@ -529,8 +405,7 @@ section {
     line-height: 1.6;
 }
 
-
-/* ================= FUTURE INTEGRATION ================= */
+/* ================= FUTURE ================= */
 
 .future {
 
@@ -552,8 +427,7 @@ section {
 
     max-width: 700px;
 
-    margin:
-        auto auto 35px;
+    margin: auto auto 40px;
 
     color: #D4E9ED;
 
@@ -579,7 +453,7 @@ section {
     background:
         rgba(255,255,255,.08);
 
-    padding: 25px;
+    padding: 28px 20px;
 
     border-radius: 20px;
 
@@ -588,16 +462,15 @@ section {
 
 .future-card:hover {
 
+    transform: translateY(-7px);
+
     background:
         rgba(255,255,255,.14);
-
-    transform:
-        translateY(-6px);
 }
 
 .future-card div {
 
-    font-size: 38px;
+    font-size: 42px;
 
     margin-bottom: 12px;
 }
@@ -609,13 +482,12 @@ section {
 
 .future-card p {
 
-    color: #B9DDE2;
+    color: #D4E9ED;
 
     font-size: 13px;
 
     line-height: 1.6;
 }
-
 
 /* ================= CTA ================= */
 
@@ -637,8 +509,7 @@ section {
 
     max-width: 650px;
 
-    margin:
-        auto auto 25px;
+    margin: auto auto 25px;
 
     color: #355968;
 
@@ -653,9 +524,11 @@ section {
 
     color: white;
 
-    padding: 14px 26px;
+    padding: 14px 25px;
 
-    border-radius: 28px;
+    border-radius: 27px;
+
+    text-decoration: none;
 
     font-weight: bold;
 
@@ -666,10 +539,8 @@ section {
 
     background: #20AEB0;
 
-    transform:
-        translateY(-3px);
+    transform: translateY(-3px);
 }
-
 
 /* ================= FOOTER ================= */
 
@@ -687,39 +558,34 @@ footer {
 }
 
 footer span {
-
     color: #20C7C9;
 }
 
-
 /* ================= RESPONSIVE ================= */
 
-@media(max-width:950px) {
+@media(max-width:900px) {
 
     nav ul {
         display: none;
     }
 
     .solution-grid {
-        grid-template-columns:
-            1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 
-    .prototype-container {
+    .featured-container {
         grid-template-columns: 1fr;
     }
 
-    .steps {
-        grid-template-columns:
-            1fr 1fr;
+    .system-grid {
+        grid-template-columns: 1fr 1fr;
     }
 
     .future-grid {
-        grid-template-columns:
-            1fr 1fr;
+        grid-template-columns: 1fr;
     }
-}
 
+}
 
 @media(max-width:600px) {
 
@@ -727,15 +593,8 @@ footer span {
         font-size: 38px;
     }
 
-    .solution-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .steps {
-        grid-template-columns: 1fr;
-    }
-
-    .future-grid {
+    .solution-grid,
+    .system-grid {
         grid-template-columns: 1fr;
     }
 
@@ -760,7 +619,10 @@ footer span {
 <nav>
 
     <div class="logo">
-        🌊 OCEAN <span>× ECO-TECH</span>
+
+        🌊 OCEAN
+        <span>× ECO-TECH</span>
+
     </div>
 
 
@@ -787,8 +649,7 @@ footer span {
         <li>
             <a
                 href="solutions.html"
-                class="active"
-            >
+                class="active">
                 Solutions
             </a>
         </li>
@@ -815,14 +676,14 @@ footer span {
 
 
     <a
-        href="dashboard.html"
-        class="nav-btn"
-    >
-        View Data 📡
+        href="contact.html"
+        class="nav-btn">
+
+        Join Us 🌱
+
     </a>
 
 </nav>
-
 
 
 <!-- ================= HERO ================= -->
@@ -830,9 +691,8 @@ footer span {
 <header class="hero">
 
     <div class="hero-icon">
-        ♻️
+        ⚙️
     </div>
-
 
     <h1>
 
@@ -841,33 +701,29 @@ footer span {
 
     </h1>
 
-
     <p>
 
-        Discover how engineering, smart technology and
-        environmental awareness can work together to reduce
-        aquatic waste and protect marine ecosystems.
+        Discover how smart technology, responsible
+        waste management and marine-safe design can
+        work together to create cleaner waterways.
 
     </p>
 
 </header>
 
 
-
 <!-- ================= SOLUTIONS ================= -->
 
 <section>
 
-
     <div class="section-title">
 
         <h2>
-            🌱 Our Approach
+            🌱 Our Solutions
         </h2>
 
-
         <p>
-            A technology-driven approach to cleaner waterways.
+            Technology concepts designed for a cleaner marine environment.
         </p>
 
     </div>
@@ -887,13 +743,14 @@ footer span {
             </h3>
 
             <p>
-                A floating prototype can help collect
-                waste from the surface of water and
-                direct it toward a collection area.
+
+                A floating collection system designed
+                to gather waste from the surface of
+                waterways.
+
             </p>
 
         </div>
-
 
 
         <div class="solution-card">
@@ -903,17 +760,18 @@ footer span {
             </div>
 
             <h3>
-                Smart Monitoring
+                Sensor Monitoring
             </h3>
 
             <p>
-                Sensors can eventually provide information
-                about the environment and the condition
-                around the collector.
+
+                Future sensors can provide information
+                about environmental conditions and
+                collected waste.
+
             </p>
 
         </div>
-
 
 
         <div class="solution-card">
@@ -927,33 +785,56 @@ footer span {
             </h3>
 
             <p>
-                Future safety systems can help detect
-                nearby marine life and allow the collector
-                to respond appropriately.
+
+                Safety systems can help identify nearby
+                marine life and reduce unnecessary
+                interaction with animals.
+
             </p>
 
         </div>
-
 
 
         <div class="solution-card">
 
             <div class="solution-icon">
-                🌊
+                🗺️
             </div>
 
             <h3>
-                Waterway Protection
+                Smart Mapping
             </h3>
 
             <p>
-                Removing floating waste can help reduce
-                the amount of pollution entering larger
-                aquatic ecosystems.
+
+                A digital map can eventually display
+                collection zones, monitoring locations
+                and environmental information.
+
             </p>
 
         </div>
 
+
+        <div class="solution-card">
+
+            <div class="solution-icon">
+                🤖
+            </div>
+
+            <h3>
+                Autonomous Movement
+            </h3>
+
+            <p>
+
+                Motors and control systems could allow
+                the prototype to move through selected
+                areas automatically.
+
+            </p>
+
+        </div>
 
 
         <div class="solution-card">
@@ -967,28 +848,11 @@ footer span {
             </h3>
 
             <p>
-                The project focuses on combining technology
-                with environmentally responsible design.
-            </p>
 
-        </div>
+                The project focuses on combining
+                technology with environmentally
+                responsible design.
 
-
-
-        <div class="solution-card">
-
-            <div class="solution-icon">
-                💡
-            </div>
-
-            <h3>
-                Student Innovation
-            </h3>
-
-            <p>
-                The project demonstrates how students can
-                use engineering and coding to explore
-                real-world environmental challenges.
             </p>
 
         </div>
@@ -998,79 +862,50 @@ footer span {
 </section>
 
 
+<!-- ================= FEATURED ================= -->
 
-<!-- ================= PROTOTYPE ================= -->
+<section class="featured">
 
-<section class="prototype">
-
-
-    <div class="prototype-container">
+    <div class="featured-container">
 
 
-        <div class="prototype-visual">
+        <div class="featured-visual">
 
-            <div class="wave"></div>
-
-            <div class="wave"></div>
-
-
-            <div class="collector">
-
-                <div class="pontoon left"></div>
-
-                <div class="pontoon right"></div>
-
-                <div class="propeller left">
-                    ⚙️
-                </div>
-
-                <div class="propeller right">
-                    ⚙️
-                </div>
-
-            </div>
+            🚤
+            <br>
 
         </div>
 
 
-
-        <div class="prototype-info">
+        <div class="featured-text">
 
             <h2>
 
-                Our
+                The
                 <span>Marine Waste Collector</span>
 
             </h2>
 
-
             <p>
 
-                The proposed prototype is a floating
-                eco-tech system designed to collect
-                surface waste while leaving room for
-                future smart monitoring and safety
-                features.
+                The central concept of Ocean × Eco-Tech
+                is a floating waste-collection prototype
+                designed to collect floating debris.
 
             </p>
 
-
-            <ul class="prototype-list">
+            <ul class="feature-list">
 
                 <li>
-                    🌊 Floating structure
+                    🌊 Floating collection structure
                 </li>
 
                 <li>
-                    ♻️ Waste collection system
+                    ♻️ Separate waste compartments
                 </li>
 
                 <li>
-                    ⚙️ Motorized movement
-                </li>
-
-                <li>
-                    📡 Future sensor integration
+                    📡 Space for future sensors
                 </li>
 
                 <li>
@@ -1078,7 +913,7 @@ footer span {
                 </li>
 
                 <li>
-                    📱 Future app connectivity
+                    📱 Future connection to the web app
                 </li>
 
             </ul>
@@ -1090,52 +925,70 @@ footer span {
 </section>
 
 
+<!-- ================= SYSTEM ================= -->
 
-<!-- ================= HOW IT WORKS ================= -->
-
-<section class="how">
-
+<section class="system">
 
     <div class="section-title">
 
         <h2>
-            ⚙️ How the Concept Works
+            ⚙️ How the System Works
         </h2>
 
-
         <p>
-            The basic workflow of the planned prototype.
+            The planned workflow of the prototype.
         </p>
 
     </div>
 
 
-    <div class="steps">
+    <div class="system-grid">
 
 
-        <div class="step">
+        <div class="system-card">
 
-            <div class="step-number">
+            <div class="system-number">
                 01
             </div>
 
             <h3>
-                Move
+                Detect
             </h3>
 
             <p>
-                The floating platform moves through
-                the selected water area.
+
+                Detect objects and environmental
+                conditions using appropriate hardware.
+
             </p>
 
         </div>
 
 
+        <div class="system-card">
 
-        <div class="step">
-
-            <div class="step-number">
+            <div class="system-number">
                 02
+            </div>
+
+            <h3>
+                Navigate
+            </h3>
+
+            <p>
+
+                Move the prototype toward areas
+                containing floating waste.
+
+            </p>
+
+        </div>
+
+
+        <div class="system-card">
+
+            <div class="system-number">
+                03
             </div>
 
             <h3>
@@ -1143,46 +996,30 @@ footer span {
             </h3>
 
             <p>
-                Surface waste is directed toward
-                the collection mechanism.
+
+                Guide waste into the collection
+                compartment.
+
             </p>
 
         </div>
 
 
+        <div class="system-card">
 
-        <div class="step">
-
-            <div class="step-number">
-                03
-            </div>
-
-            <h3>
-                Sort
-            </h3>
-
-            <p>
-                Future sensors can help identify
-                different categories of collected material.
-            </p>
-
-        </div>
-
-
-
-        <div class="step">
-
-            <div class="step-number">
+            <div class="system-number">
                 04
             </div>
 
             <h3>
-                Monitor
+                Report
             </h3>
 
             <p>
-                Future electronics can send information
+
+                Future hardware can send information
                 to the connected application.
+
             </p>
 
         </div>
@@ -1192,22 +1029,19 @@ footer span {
 </section>
 
 
-
 <!-- ================= FUTURE ================= -->
 
 <section class="future">
 
-
     <h2>
-        🔮 Future Technology Integration
+        🚀 Future Technology
     </h2>
-
 
     <p>
 
-        The application is being designed so that
-        hardware can be connected later without
-        rebuilding the entire interface.
+        The current website works without physical
+        sensors. These technologies can be connected
+        later as the prototype develops.
 
     </p>
 
@@ -1222,35 +1056,17 @@ footer span {
             </div>
 
             <h3>
-                Sensors
+                Real Sensor Data
             </h3>
 
             <p>
-                Environmental and detection sensors
-                can provide real-world measurements.
+
+                Replace demonstration information
+                with measurements from physical sensors.
+
             </p>
 
         </div>
-
-
-
-        <div class="future-card">
-
-            <div>
-                🤖
-            </div>
-
-            <h3>
-                Microcontroller
-            </h3>
-
-            <p>
-                A microcontroller such as Arduino can
-                process information from connected hardware.
-            </p>
-
-        </div>
-
 
 
         <div class="future-card">
@@ -1264,8 +1080,30 @@ footer span {
             </h3>
 
             <p>
-                Processed information can eventually
-                be sent to the Ocean × Eco-Tech application.
+
+                Connect the hardware to the web
+                application for remote monitoring.
+
+            </p>
+
+        </div>
+
+
+        <div class="future-card">
+
+            <div>
+                🧠
+            </div>
+
+            <h3>
+                Intelligent Decisions
+            </h3>
+
+            <p>
+
+                Use sensor information to help the
+                system make safer operational decisions.
+
             </p>
 
         </div>
@@ -1275,40 +1113,36 @@ footer span {
 </section>
 
 
-
 <!-- ================= CTA ================= -->
 
 <section class="cta">
 
-
     <h2>
-        📊 Explore the Live Dashboard
+        📊 Explore the Dashboard
     </h2>
-
 
     <p>
 
-        See where real sensor readings will appear
-        once the physical prototype is connected.
+        See how the application can display environmental
+        information before the physical sensors are connected.
 
     </p>
 
 
     <a
         href="dashboard.html"
-        class="cta-btn"
-    >
+        class="cta-btn">
+
         Open Dashboard →
+
     </a>
 
 </section>
 
 
-
 <!-- ================= FOOTER ================= -->
 
 <footer>
-
 
     <div>
 
@@ -1318,7 +1152,6 @@ footer span {
         </span>
 
     </div>
-
 
     <div>
 

@@ -84,6 +84,7 @@ nav ul li a.active {
 
 .hero {
     margin-top: 72px;
+
     min-height: 390px;
 
     padding: 80px 7%;
@@ -140,10 +141,10 @@ nav ul li a.active {
     line-height: 1.8;
 }
 
-/* ================= SECTION ================= */
+/* ================= MAP SECTION ================= */
 
 section {
-    padding: 70px 7%;
+    padding: 75px 7%;
 }
 
 .section-title {
@@ -160,46 +161,61 @@ section {
     color: #607D8B;
 }
 
-/* ================= MAP AREA ================= */
-
-.map-container {
-    max-width: 1100px;
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns: 1fr 280px;
-
-    gap: 25px;
-}
-
 /* ================= MAP ================= */
 
-.map-box {
-    min-height: 500px;
+.map-section {
+    background: #EAF9F7;
+}
 
-    background:
-        radial-gradient(
-            circle at 20% 30%,
-            #20C7C9 0,
-            #087A9A 2%,
-            #063B5C 45%,
-            #042D46 100%
-        );
+.map-container {
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 25px;
 
     border-radius: 25px;
+
+    box-shadow:
+        0 10px 30px rgba(6,59,92,.08);
+}
+
+.map {
+
+    height: 500px;
+
+    border-radius: 20px;
 
     position: relative;
 
     overflow: hidden;
 
-    box-shadow:
-        0 10px 30px rgba(6,59,92,.15);
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(32,199,201,.35) 0 2%,
+            transparent 2.5%
+        ),
+        radial-gradient(
+            circle at 70% 65%,
+            rgba(255,255,255,.12) 0 1%,
+            transparent 1.5%
+        ),
+        linear-gradient(
+            135deg,
+            #063B5C,
+            #087A9A,
+            #20AEB0
+        );
 }
 
 /* Ocean lines */
 
-.map-box::before {
+.map::before {
+
     content: "";
 
     position: absolute;
@@ -207,41 +223,23 @@ section {
     inset: 0;
 
     background:
-        repeating-radial-gradient(
-            ellipse at center,
-            transparent 0,
-            transparent 35px,
-            rgba(255,255,255,.07) 36px,
-            transparent 38px
+        repeating-linear-gradient(
+            25deg,
+            transparent 0px,
+            transparent 45px,
+            rgba(255,255,255,.08) 46px,
+            transparent 47px
         );
-}
-
-/* Map title */
-
-.map-title {
-    position: absolute;
-
-    top: 25px;
-    left: 25px;
-
-    background: rgba(255,255,255,.9);
-
-    padding: 12px 18px;
-
-    border-radius: 15px;
-
-    font-weight: bold;
-
-    z-index: 3;
 }
 
 /* ================= MAP MARKERS ================= */
 
 .marker {
+
     position: absolute;
 
-    width: 48px;
-    height: 48px;
+    width: 45px;
+    height: 45px;
 
     border-radius: 50%;
 
@@ -261,107 +259,80 @@ section {
     border: 4px solid rgba(255,255,255,.8);
 
     box-shadow:
-        0 0 0 8px rgba(32,199,201,.15);
+        0 5px 18px rgba(0,0,0,.25);
 
     transition: .3s;
-
-    z-index: 4;
 }
 
 .marker:hover {
-    transform: scale(1.2);
+
+    transform: scale(1.18);
 
     background: #B9F3E4;
 }
 
-/* marker positions */
-
 .marker1 {
-    left: 25%;
-    top: 35%;
+    left: 18%;
+    top: 28%;
 }
 
 .marker2 {
-    left: 52%;
-    top: 25%;
+    left: 42%;
+    top: 55%;
 }
 
 .marker3 {
-    right: 20%;
-    top: 48%;
+    right: 22%;
+    top: 25%;
 }
 
 .marker4 {
-    left: 38%;
-    bottom: 20%;
+    right: 30%;
+    bottom: 22%;
 }
 
 .marker5 {
-    right: 35%;
-    bottom: 15%;
+    left: 65%;
+    bottom: 30%;
 }
 
-/* ================= MAP INFO ================= */
+/* ================= MAP LABEL ================= */
 
-.map-info {
+.map-label {
 
-    background: white;
+    position: absolute;
 
-    padding: 25px;
+    background: rgba(6,59,92,.9);
 
-    border-radius: 22px;
+    color: white;
 
-    box-shadow:
-        0 8px 25px rgba(6,59,92,.08);
-}
+    padding: 10px 14px;
 
-.map-info h3 {
-    margin-bottom: 18px;
-}
+    border-radius: 12px;
 
-.location {
-
-    padding: 15px;
-
-    border-radius: 14px;
-
-    background: #F7FBFC;
-
-    margin-bottom: 12px;
-
-    cursor: pointer;
-
-    transition: .3s;
-}
-
-.location:hover {
-    background: #EAF9F7;
-    transform: translateX(4px);
-}
-
-.location strong {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.location span {
-    color: #607D8B;
     font-size: 12px;
+
+    display: none;
+
+    z-index: 5;
+}
+
+.map-label strong {
+    display: block;
+    margin-bottom: 3px;
 }
 
 /* ================= LEGEND ================= */
 
 .legend {
 
-    max-width: 1100px;
-
-    margin: 25px auto 0;
-
     display: flex;
 
     justify-content: center;
 
-    gap: 30px;
+    gap: 25px;
+
+    margin-top: 20px;
 
     flex-wrap: wrap;
 }
@@ -389,15 +360,11 @@ section {
     background: #20C7C9;
 }
 
-/* ================= INFO CARDS ================= */
+/* ================= ZONES ================= */
 
-.info-section {
-    background: #EAF9F7;
-}
+.zone-grid {
 
-.info-grid {
-
-    max-width: 1050px;
+    max-width: 1100px;
 
     margin: auto;
 
@@ -406,40 +373,98 @@ section {
     grid-template-columns:
         repeat(3,1fr);
 
-    gap: 20px;
+    gap: 22px;
 }
 
-.info-card {
+.zone-card {
 
     background: white;
 
     padding: 28px 23px;
 
-    border-radius: 20px;
+    border-radius: 22px;
 
     box-shadow:
-        0 7px 22px rgba(6,59,92,.07);
+        0 8px 25px rgba(6,59,92,.08);
 
     transition: .3s;
 }
 
-.info-card:hover {
-    transform: translateY(-7px);
+.zone-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 35px rgba(6,59,92,.13);
 }
 
-.info-icon {
-    font-size: 40px;
+.zone-icon {
+
+    font-size: 42px;
+
     margin-bottom: 13px;
 }
 
-.info-card h3 {
-    margin-bottom: 10px;
+.zone-card h3 {
+
+    margin-bottom: 9px;
 }
 
-.info-card p {
+.zone-card p {
+
     color: #607D8B;
-    line-height: 1.6;
+
     font-size: 14px;
+
+    line-height: 1.7;
+}
+
+.zone-status {
+
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 6px 11px;
+
+    border-radius: 15px;
+
+    background: #EAF9F7;
+
+    color: #087A70;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+/* ================= INFO ================= */
+
+.info {
+
+    background: #063B5C;
+
+    color: white;
+
+    text-align: center;
+}
+
+.info h2 {
+
+    font-size: 35px;
+
+    margin-bottom: 15px;
+}
+
+.info p {
+
+    max-width: 700px;
+
+    margin: auto;
+
+    color: #D4E9ED;
+
+    line-height: 1.8;
 }
 
 /* ================= CTA ================= */
@@ -453,7 +478,7 @@ section {
 
 .cta h2 {
 
-    font-size: 36px;
+    font-size: 35px;
 
     margin-bottom: 15px;
 }
@@ -522,11 +547,7 @@ footer span {
         display: none;
     }
 
-    .map-container {
-        grid-template-columns: 1fr;
-    }
-
-    .info-grid {
+    .zone-grid {
         grid-template-columns: 1fr 1fr;
     }
 
@@ -538,11 +559,11 @@ footer span {
         font-size: 38px;
     }
 
-    .map-box {
-        min-height: 400px;
+    .map {
+        height: 400px;
     }
 
-    .info-grid {
+    .zone-grid {
         grid-template-columns: 1fr;
     }
 
@@ -651,8 +672,8 @@ footer span {
 
     <p>
 
-        Explore demonstration monitoring zones
-        and visualize how an eco-tech network
+        Explore demonstration monitoring zones and
+        visualize how an Ocean × Eco-Tech network
         could monitor waterways.
 
     </p>
@@ -662,16 +683,16 @@ footer span {
 
 <!-- ================= MAP ================= -->
 
-<section>
+<section class="map-section">
 
     <div class="section-title">
 
         <h2>
-            🌊 Monitoring Zones
+            🌊 Monitoring Network
         </h2>
 
         <p>
-            Demonstration locations for the project concept.
+            Click a marker to explore a demonstration zone.
         </p>
 
     </div>
@@ -680,169 +701,90 @@ footer span {
     <div class="map-container">
 
 
-        <!-- MAP -->
-
-        <div class="map-box">
-
-            <div class="map-title">
-
-                📍 Ocean Monitoring Network
-
-            </div>
+        <div class="map" id="oceanMap">
 
 
             <div
                 class="marker marker1"
-                title="Zone Alpha">
+                onclick="showZone(1)">
 
-                01
+                📡
 
             </div>
 
 
             <div
                 class="marker marker2"
-                title="Zone Beta">
+                onclick="showZone(2)">
 
-                02
+                ♻️
 
             </div>
 
 
             <div
                 class="marker marker3"
-                title="Zone Gamma">
+                onclick="showZone(3)">
 
-                03
+                💧
 
             </div>
 
 
             <div
                 class="marker marker4"
-                title="Zone Delta">
+                onclick="showZone(4)">
 
-                04
+                🐠
 
             </div>
 
 
             <div
                 class="marker marker5"
-                title="Zone Epsilon">
+                onclick="showZone(5)">
 
-                05
+                🌱
+
+            </div>
+
+
+            <div
+                class="map-label"
+                id="mapLabel">
 
             </div>
 
         </div>
 
 
-        <!-- INFO -->
+        <div class="legend">
 
-        <div class="map-info">
+            <div class="legend-item">
 
-            <h3>
-                📡 Monitoring Zones
-            </h3>
+                <div class="legend-dot"></div>
 
-
-            <div class="location">
-
-                <strong>
-                    🟢 Zone Alpha
-                </strong>
-
-                <span>
-                    Water-quality monitoring
-                </span>
+                Monitoring Zone
 
             </div>
 
+            <div class="legend-item">
 
-            <div class="location">
-
-                <strong>
-                    🔵 Zone Beta
-                </strong>
-
-                <span>
-                    Floating-waste monitoring
-                </span>
+                📡 Sensor Concept
 
             </div>
 
+            <div class="legend-item">
 
-            <div class="location">
-
-                <strong>
-                    🟢 Zone Gamma
-                </strong>
-
-                <span>
-                    Environmental observation
-                </span>
+                ♻️ Waste Collection
 
             </div>
 
+            <div class="legend-item">
 
-            <div class="location">
-
-                <strong>
-                    🟡 Zone Delta
-                </strong>
-
-                <span>
-                    Prototype activity area
-                </span>
+                🐠 Marine Protection
 
             </div>
-
-
-            <div class="location">
-
-                <strong>
-                    🔵 Zone Epsilon
-                </strong>
-
-                <span>
-                    Future sensor zone
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- LEGEND -->
-
-    <div class="legend">
-
-        <div class="legend-item">
-
-            <div class="legend-dot"></div>
-
-            Monitoring Zone
-
-        </div>
-
-
-        <div class="legend-item">
-
-            <div class="legend-dot"></div>
-
-            Waste Monitoring
-
-        </div>
-
-
-        <div class="legend-item">
-
-            <div class="legend-dot"></div>
-
-            Future Sensor Area
 
         </div>
 
@@ -851,86 +793,196 @@ footer span {
 </section>
 
 
-<!-- ================= MAP INFO ================= -->
+<!-- ================= ZONES ================= -->
 
-<section class="info-section">
+<section>
 
     <div class="section-title">
 
         <h2>
-            🔎 What Can the Map Show?
+            📍 Monitoring Zones
         </h2>
 
         <p>
-            Possible information that could be added later.
+            Demonstration locations for the prototype concept.
         </p>
 
     </div>
 
 
-    <div class="info-grid">
+    <div class="zone-grid">
 
 
-        <div class="info-card">
+        <div class="zone-card">
 
-            <div class="info-icon">
-                ♻️
-            </div>
-
-            <h3>
-                Waste Hotspots
-            </h3>
-
-            <p>
-
-                Future sensor data could identify
-                areas where floating waste is detected.
-
-            </p>
-
-        </div>
-
-
-        <div class="info-card">
-
-            <div class="info-icon">
+            <div class="zone-icon">
                 📡
             </div>
 
             <h3>
-                Sensor Locations
+                Zone Alpha
             </h3>
 
             <p>
 
-                The map could display the location
-                and status of connected monitoring devices.
+                A conceptual monitoring area where
+                environmental sensors could collect
+                information.
 
             </p>
+
+            <span class="zone-status">
+                ● DEMO ZONE
+            </span>
 
         </div>
 
 
-        <div class="info-card">
+        <div class="zone-card">
 
-            <div class="info-icon">
+            <div class="zone-icon">
+                ♻️
+            </div>
+
+            <h3>
+                Zone Beta
+            </h3>
+
+            <p>
+
+                A conceptual collection zone focused
+                on identifying and collecting floating
+                waste.
+
+            </p>
+
+            <span class="zone-status">
+                ● COLLECTION
+            </span>
+
+        </div>
+
+
+        <div class="zone-card">
+
+            <div class="zone-icon">
+                💧
+            </div>
+
+            <h3>
+                Zone Gamma
+            </h3>
+
+            <p>
+
+                A future water-quality monitoring area
+                for measurements such as pH and
+                temperature.
+
+            </p>
+
+            <span class="zone-status">
+                ● FUTURE SENSOR
+            </span>
+
+        </div>
+
+
+        <div class="zone-card">
+
+            <div class="zone-icon">
                 🐠
             </div>
 
             <h3>
-                Marine Protection
+                Zone Delta
             </h3>
 
             <p>
 
-                Future versions could identify areas
-                requiring additional marine-life protection.
+                A marine-life protection concept where
+                safety detection could help the system
+                avoid animals.
 
             </p>
+
+            <span class="zone-status">
+                ● PROTECTION
+            </span>
+
+        </div>
+
+
+        <div class="zone-card">
+
+            <div class="zone-icon">
+                🌱
+            </div>
+
+            <h3>
+                Zone Epsilon
+            </h3>
+
+            <p>
+
+                A sustainability-focused zone for
+                environmental awareness and
+                responsible waste management.
+
+            </p>
+
+            <span class="zone-status">
+                ● ECO ZONE
+            </span>
+
+        </div>
+
+
+        <div class="zone-card">
+
+            <div class="zone-icon">
+                🤖
+            </div>
+
+            <h3>
+                Zone Zeta
+            </h3>
+
+            <p>
+
+                A future autonomous-operation zone
+                where the prototype could navigate
+                selected areas.
+
+            </p>
+
+            <span class="zone-status">
+                ● FUTURE
+            </span>
 
         </div>
 
     </div>
+
+</section>
+
+
+<!-- ================= INFO ================= -->
+
+<section class="info">
+
+    <h2>
+        📡 A Smarter View of Our Waterways
+    </h2>
+
+    <p>
+
+        This map is currently a visual prototype.
+        No real sensor or GPS data is connected yet.
+        Physical hardware can be integrated later to
+        provide real monitoring information.
+
+    </p>
 
 </section>
 
@@ -940,13 +992,13 @@ footer span {
 <section class="cta">
 
     <h2>
-        📡 View Environmental Data
+        📊 View the Dashboard
     </h2>
 
     <p>
 
-        Explore the dashboard concept and see how
-        future sensor readings could be displayed.
+        Explore the application's environmental
+        monitoring interface.
 
     </p>
 
@@ -982,6 +1034,89 @@ footer span {
     </div>
 
 </footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+function showZone(zone) {
+
+    const label =
+        document.getElementById("mapLabel");
+
+    const information = {
+
+        1: {
+            title: "Zone Alpha",
+            text: "Environmental monitoring concept"
+        },
+
+        2: {
+            title: "Zone Beta",
+            text: "Floating waste collection concept"
+        },
+
+        3: {
+            title: "Zone Gamma",
+            text: "Future water-quality monitoring"
+        },
+
+        4: {
+            title: "Zone Delta",
+            text: "Marine-life protection concept"
+        },
+
+        5: {
+            title: "Zone Epsilon",
+            text: "Sustainability monitoring zone"
+        }
+
+    };
+
+    label.innerHTML =
+        "<strong>" +
+        information[zone].title +
+        "</strong>" +
+        information[zone].text;
+
+    label.style.display = "block";
+
+    /*
+       Move the information box depending
+       on which marker was selected.
+    */
+
+    if (zone === 1) {
+        label.style.left = "25%";
+        label.style.top = "18%";
+    }
+
+    if (zone === 2) {
+        label.style.left = "48%";
+        label.style.top = "45%";
+    }
+
+    if (zone === 3) {
+        label.style.right = "12%";
+        label.style.left = "auto";
+        label.style.top = "15%";
+    }
+
+    if (zone === 4) {
+        label.style.right = "20%";
+        label.style.left = "auto";
+        label.style.top = "58%";
+    }
+
+    if (zone === 5) {
+        label.style.left = "60%";
+        label.style.top = "55%";
+    }
+
+}
+
+</script>
 
 
 </body>
