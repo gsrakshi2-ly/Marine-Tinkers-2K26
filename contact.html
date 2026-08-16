@@ -1,1850 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <title>Get Involved | Ocean × Eco-Tech</title>
+    <title>
+        Ocean × Eco-Tech | Get Involved
+    </title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+          href="style.css">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
-
-    <style>
-        :root {
-            --deep-blue: #031B2E;
-            --ocean-blue: #063A5B;
-            --aqua: #159AAB;
-            --light-aqua: #72D6D8;
-            --seafoam: #BFE8DD;
-            --soft-seafoam: #E8F7F3;
-            --white: #FFFFFF;
-            --off-white: #F5FBFA;
-
-            /* ONLY GOLD ACCENT */
-            --gold: #FFD700;
-            --gold-soft: #D4AF37;
-
-            --text-dark: #082333;
-            --text-muted: #617985;
-
-            --shadow: 0 18px 45px rgba(3,27,46,0.12);
-            --radius: 22px;
-            --transition: 0.3s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: "Inter", sans-serif;
-            background: var(--off-white);
-            color: var(--text-dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        button,
-        input,
-        textarea,
-        select {
-            font: inherit;
-        }
-
-        /* ================= NAVBAR ================= */
-
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-
-            background: rgba(3,27,46,0.95);
-            backdrop-filter: blur(16px);
-
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .nav-container {
-            width: min(1200px,92%);
-            min-height: 76px;
-            margin: auto;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-
-            color: white;
-            font-family: "Poppins", sans-serif;
-            font-weight: 800;
-            font-size: 1.05rem;
-            white-space: nowrap;
-        }
-
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-
-            display: grid;
-            place-items: center;
-
-            border-radius: 13px;
-
-            background: linear-gradient(
-                135deg,
-                var(--gold),
-                var(--gold-soft)
-            );
-
-            color: var(--deep-blue);
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-
-            list-style: none;
-        }
-
-        .nav-links a {
-            position: relative;
-
-            padding: 10px 12px;
-
-            color: rgba(255,255,255,0.75);
-
-            font-size: 0.82rem;
-            font-weight: 600;
-
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover,
-        .nav-links .active {
-            color: white;
-        }
-
-        .nav-links .active {
-            color: var(--gold-soft);
-        }
-
-        .nav-links a::after {
-            content: "";
-
-            position: absolute;
-            left: 12px;
-            right: 12px;
-            bottom: 3px;
-
-            height: 2px;
-
-            background: var(--gold);
-
-            transform: scaleX(0);
-
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover::after,
-        .nav-links .active::after {
-            transform: scaleX(1);
-        }
-
-        .nav-cta {
-            border: 1px solid var(--gold);
-            border-radius: 30px;
-        }
-
-        .nav-cta::after {
-            display: none;
-        }
-
-        .nav-cta:hover {
-            background: var(--gold);
-            color: var(--deep-blue) !important;
-        }
-
-        .menu-toggle {
-            display: none;
-
-            border: none;
-            background: none;
-
-            color: white;
-            font-size: 1.7rem;
-
-            cursor: pointer;
-        }
-
-        /* ================= HERO ================= */
-
-        .hero {
-            position: relative;
-
-            padding: 145px 0 75px;
-
-            color: white;
-
-            background:
-                radial-gradient(
-                    circle at 80% 20%,
-                    rgba(21,154,171,0.25),
-                    transparent 32%
-                ),
-                linear-gradient(
-                    135deg,
-                    var(--deep-blue),
-                    var(--ocean-blue)
-                );
-
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: "📸";
-
-            position: absolute;
-            right: 7%;
-            bottom: -40px;
-
-            font-size: 10rem;
-
-            opacity: 0.05;
-        }
-
-        .hero-container {
-            width: min(1200px,92%);
-            margin: auto;
-
-            position: relative;
-            z-index: 2;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-
-            padding: 8px 14px;
-            margin-bottom: 18px;
-
-            border: 1px solid rgba(255,215,0,0.45);
-            border-radius: 30px;
-
-            background: rgba(255,215,0,0.07);
-
-            color: var(--gold);
-
-            font-size: 0.72rem;
-            font-weight: 800;
-
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        .hero h1 {
-            font-family: "Poppins", sans-serif;
-
-            font-size: clamp(2.5rem,5vw,4.1rem);
-            line-height: 1.08;
-
-            letter-spacing: -0.04em;
-
-            margin-bottom: 17px;
-        }
-
-        .hero h1 span {
-            color: var(--gold);
-        }
-
-        .hero p {
-            max-width: 800px;
-
-            color: rgba(255,255,255,0.7);
-
-            font-size: 0.95rem;
-            line-height: 1.85;
-        }
-
-        /* ================= GENERAL ================= */
-
-        .section {
-            padding: 80px 0;
-        }
-
-        .container {
-            width: min(1200px,92%);
-            margin: auto;
-        }
-
-        .heading {
-            max-width: 780px;
-            margin-bottom: 35px;
-        }
-
-        .label {
-            display: inline-block;
-
-            margin-bottom: 8px;
-
-            color: var(--gold-soft);
-
-            font-size: 0.73rem;
-            font-weight: 800;
-
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-        }
-
-        .heading h2 {
-            font-family: "Poppins", sans-serif;
-
-            color: var(--deep-blue);
-
-            font-size: clamp(1.9rem,4vw,2.8rem);
-
-            line-height: 1.15;
-
-            margin-bottom: 12px;
-        }
-
-        .heading p {
-            color: var(--text-muted);
-            font-size: 0.87rem;
-        }
-
-        /* ================= REPORT INTRO ================= */
-
-        .report-intro {
-            display: grid;
-            grid-template-columns: 1fr 0.85fr;
-            gap: 25px;
-            align-items: stretch;
-        }
-
-        .info-card {
-            padding: 32px;
-
-            background: white;
-
-            border: 1px solid rgba(3,27,46,0.07);
-            border-radius: var(--radius);
-
-            box-shadow: var(--shadow);
-        }
-
-        .info-card h3 {
-            font-family: "Poppins", sans-serif;
-
-            color: var(--deep-blue);
-
-            font-size: 1.2rem;
-
-            margin-bottom: 13px;
-        }
-
-        .info-card p {
-            color: var(--text-muted);
-
-            font-size: 0.8rem;
-            line-height: 1.85;
-
-            margin-bottom: 12px;
-        }
-
-        .info-card p:last-child {
-            margin-bottom: 0;
-        }
-
-        .report-points {
-            margin-top: 20px;
-
-            display: grid;
-            gap: 10px;
-        }
-
-        .report-point {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-
-            padding: 11px 13px;
-
-            background: var(--soft-seafoam);
-
-            border-radius: 12px;
-
-            color: var(--text-dark);
-
-            font-size: 0.72rem;
-            font-weight: 600;
-        }
-
-        .report-point span {
-            font-size: 1rem;
-        }
-
-        .report-status {
-            padding: 32px;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    var(--deep-blue),
-                    var(--ocean-blue)
-                );
-
-            border-radius: var(--radius);
-
-            color: white;
-
-            box-shadow: var(--shadow);
-        }
-
-        .status-icon {
-            width: 52px;
-            height: 52px;
-
-            display: grid;
-            place-items: center;
-
-            margin-bottom: 18px;
-
-            border-radius: 15px;
-
-            background: rgba(255,215,0,0.1);
-
-            border: 1px solid rgba(255,215,0,0.35);
-
-            font-size: 1.4rem;
-        }
-
-        .report-status h3 {
-            font-family: "Poppins", sans-serif;
-
-            font-size: 1.2rem;
-
-            margin-bottom: 10px;
-        }
-
-        .report-status p {
-            color: rgba(255,255,255,0.68);
-
-            font-size: 0.78rem;
-            line-height: 1.8;
-        }
-
-        /* ================= FORMS ================= */
-
-        .form-wrapper {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 25px;
-        }
-
-        .form-card {
-            padding: 32px;
-
-            background: white;
-
-            border: 1px solid rgba(3,27,46,0.07);
-            border-radius: var(--radius);
-
-            box-shadow: var(--shadow);
-        }
-
-        .form-card h3 {
-            font-family: "Poppins", sans-serif;
-
-            color: var(--deep-blue);
-
-            font-size: 1.25rem;
-
-            margin-bottom: 8px;
-        }
-
-        .form-card > p {
-            color: var(--text-muted);
-
-            font-size: 0.74rem;
-
-            margin-bottom: 24px;
-        }
-
-        .form-grid {
-            display: grid;
-            grid-template-columns: repeat(2,1fr);
-            gap: 15px;
-        }
-
-        .field {
-            display: flex;
-            flex-direction: column;
-            gap: 7px;
-        }
-
-        .field.full {
-            grid-column: 1 / -1;
-        }
-
-        .field label {
-            color: var(--deep-blue);
-
-            font-size: 0.7rem;
-            font-weight: 700;
-        }
-
-        .field input,
-        .field select,
-        .field textarea {
-            width: 100%;
-
-            padding: 12px 14px;
-
-            border: 1px solid #D8E5E3;
-            border-radius: 11px;
-
-            background: #FBFEFD;
-
-            color: var(--text-dark);
-
-            font-size: 0.75rem;
-
-            outline: none;
-
-            transition: var(--transition);
-        }
-
-        .field input:focus,
-        .field select:focus,
-        .field textarea:focus {
-            border-color: var(--aqua);
-
-            box-shadow:
-                0 0 0 3px rgba(21,154,171,0.1);
-        }
-
-        .field textarea {
-            min-height: 130px;
-            resize: vertical;
-        }
-
-        .file-input {
-            padding: 10px !important;
-        }
-
-        .submit-btn {
-            width: 100%;
-
-            margin-top: 20px;
-            padding: 13px 20px;
-
-            border: 1px solid var(--gold);
-            border-radius: 12px;
-
-            background: var(--gold);
-
-            color: var(--deep-blue);
-
-            font-size: 0.78rem;
-            font-weight: 800;
-
-            cursor: pointer;
-
-            transition: var(--transition);
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-
-            box-shadow:
-                0 10px 25px rgba(255,215,0,0.2);
-        }
-
-        .form-message {
-            display: none;
-
-            margin-top: 14px;
-            padding: 12px 14px;
-
-            border-radius: 10px;
-
-            background: var(--soft-seafoam);
-
-            color: var(--text-dark);
-
-            font-size: 0.7rem;
-            font-weight: 600;
-        }
-
-        .form-message.show {
-            display: block;
-        }
-
-        /* ================= CONTACT CARD ================= */
-
-        .contact-card {
-            padding: 32px;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    var(--deep-blue),
-                    var(--ocean-blue)
-                );
-
-            border-radius: var(--radius);
-
-            color: white;
-
-            box-shadow: var(--shadow);
-        }
-
-        .contact-card h3 {
-            font-family: "Poppins", sans-serif;
-
-            font-size: 1.25rem;
-
-            margin-bottom: 10px;
-        }
-
-        .contact-card > p {
-            color: rgba(255,255,255,0.68);
-
-            font-size: 0.76rem;
-            line-height: 1.8;
-
-            margin-bottom: 25px;
-        }
-
-        .contact-items {
-            display: grid;
-            gap: 13px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-
-            padding: 13px;
-
-            border-radius: 13px;
-
-            background: rgba(255,255,255,0.055);
-
-            border: 1px solid rgba(255,255,255,0.07);
-        }
-
-        .contact-item-icon {
-            flex: 0 0 36px;
-
-            width: 36px;
-            height: 36px;
-
-            display: grid;
-            place-items: center;
-
-            border-radius: 10px;
-
-            background: rgba(255,215,0,0.1);
-
-            font-size: 0.95rem;
-        }
-
-        .contact-item h4 {
-            font-size: 0.72rem;
-            margin-bottom: 2px;
-        }
-
-        .contact-item p {
-            color: rgba(255,255,255,0.55);
-            font-size: 0.65rem;
-        }
-
-        /* ================= GET INVOLVED ================= */
-
-        .involvement-grid {
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            gap: 18px;
-        }
-
-        .involvement-card {
-            padding: 27px;
-
-            background: white;
-
-            border-radius: 18px;
-
-            border: 1px solid rgba(3,27,46,0.07);
-
-            box-shadow: var(--shadow);
-
-            transition: var(--transition);
-        }
-
-        .involvement-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .involvement-icon {
-            font-size: 1.6rem;
-            margin-bottom: 13px;
-        }
-
-        .involvement-card h3 {
-            font-family: "Poppins", sans-serif;
-
-            color: var(--deep-blue);
-
-            font-size: 0.95rem;
-
-            margin-bottom: 7px;
-        }
-
-        .involvement-card p {
-            color: var(--text-muted);
-
-            font-size: 0.72rem;
-            line-height: 1.75;
-        }
-
-        /* ================= TEAM NOTE ================= */
-
-        .team-note {
-            padding: 30px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(255,215,0,0.14),
-                    rgba(255,215,0,0.04)
-                );
-
-            border: 1px solid rgba(212,175,55,0.55);
-
-            border-radius: var(--radius);
-        }
-
-        .team-note h3 {
-            font-family: "Poppins", sans-serif;
-
-            color: var(--deep-blue);
-
-            font-size: 1.1rem;
-
-            margin-bottom: 8px;
-        }
-
-        .team-note p {
-            color: var(--text-muted);
-
-            font-size: 0.76rem;
-            line-height: 1.8;
-        }
-
-        /* ================= FOOTER ================= */
-
-        footer {
-            padding: 35px 0;
-
-            background: #021522;
-
-            color: white;
-        }
-
-        .footer-container {
-            width: min(1200px,92%);
-            margin: auto;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            gap: 20px;
-        }
-
-        .footer-brand {
-            font-family: "Poppins", sans-serif;
-            font-weight: 700;
-        }
-
-        .footer-brand span {
-            color: var(--gold);
-        }
-
-        .footer-copy {
-            color: rgba(255,255,255,0.45);
-            font-size: 0.7rem;
-        }
-
-        /* ================= ANIMATION ================= */
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(22px);
-
-            transition:
-                opacity 0.7s ease,
-                transform 0.7s ease;
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ================= RESPONSIVE ================= */
-
-        @media (max-width: 1000px) {
-
-            .nav-links {
-                position: absolute;
-
-                top: 76px;
-                left: 0;
-
-                width: 100%;
-
-                display: none;
-                flex-direction: column;
-                align-items: stretch;
-
-                padding: 15px 4%;
-
-                background: rgba(3,27,46,0.98);
-                backdrop-filter: blur(15px);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .report-intro,
-            .form-wrapper {
-                grid-template-columns: 1fr;
-            }
-
-            .involvement-grid {
-                grid-template-columns: repeat(2,1fr);
-            }
-        }
-
-        @media (max-width: 700px) {
-
-            .hero {
-                padding: 125px 0 60px;
-            }
-
-            .section {
-                padding: 60px 0;
-            }
-
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .field.full {
-                grid-column: auto;
-            }
-
-            .involvement-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .info-card,
-            .report-status,
-            .form-card,
-            .contact-card,
-            .team-note {
-                padding: 23px;
-            }
-
-            .footer-container {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
-    <!-- ================= NAVIGATION ================= -->
+<header class="site-header">
 
-    <header class="navbar">
+    <a href="index.html" class="logo">
+        🌊 Ocean × Eco-Tech
+    </a>
 
-        <div class="nav-container">
+    <button class="menu-toggle"
+            aria-label="Open navigation"
+            aria-expanded="false">
+        ☰
+    </button>
 
-            <a href="index.html" class="logo">
-                <span class="logo-icon">🌊</span>
-                Ocean × Eco-Tech
-            </a>
+    <nav>
 
-            <button
-                class="menu-toggle"
-                id="menuToggle"
-                aria-label="Open navigation"
-                aria-expanded="false"
-            >
-                ☰
-            </button>
+        <div class="nav-links">
 
-            <nav>
-
-                <ul class="nav-links" id="navLinks">
-
-                    <li>
-                        <a href="index.html">
-                            🏠 Home
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="live-data.html">
-                            📡 Live Data
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="map.html">
-                            🗺️ Map
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="solutions.html">
-                            ♻️ Solutions
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="impact.html">
-                            🌱 Impact
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="about.html">
-                            ℹ️ About
-                        </a>
-                    </li>
-
-                    <li>
-                        <a
-                            href="contact.html"
-                            class="nav-cta active"
-                        >
-                            📸 Get Involved
-                        </a>
-                    </li>
-
-                </ul>
-
-            </nav>
+            <a href="index.html">🏠 Home</a>
+            <a href="livedata.html">📡 Live Data</a>
+            <a href="map.html">🗺️ Map</a>
+            <a href="solutions.html">♻️ Solutions</a>
+            <a href="impact.html">🌱 Impact</a>
+            <a href="about.html">ℹ️ About</a>
+            <a href="contact.html">📸 Get Involved</a>
 
         </div>
 
-    </header>
+    </nav>
 
+</header>
 
-    <!-- ================= HERO ================= -->
 
-    <section class="hero">
+<main>
 
-        <div class="hero-container">
 
-            <span class="eyebrow">
-                📸 Get Involved
-            </span>
+<section class="page-hero">
 
-            <h1>
-                Help Us
-                <span>Document the Ocean</span>
-            </h1>
+    <div class="reveal">
 
-            <p>
-                Share information about marine waste, provide feedback
-                on the project or contribute observations that can help
-                build a clearer picture of environmental challenges.
-            </p>
+        <span class="eyebrow">
+            📸 GET INVOLVED
+        </span>
 
-        </div>
+        <h1>
+            Help Us Document Marine Waste
+        </h1>
 
-    </section>
+        <p>
+            Share genuine observations, suggestions and
+            feedback to help improve the Ocean × Eco-Tech
+            project.
+        </p>
 
+    </div>
 
-    <main>
+</section>
 
-        <!-- ================= WASTE REPORTING ================= -->
 
-        <section class="section">
+<section class="section">
 
-            <div class="container">
 
-                <div class="heading reveal">
+<div class="section-heading reveal">
 
-                    <span class="label">
-                        📸 Waste Reporting
-                    </span>
+    <span>📸 WASTE REPORTING</span>
 
-                    <h2>
-                        Report Marine Waste
-                    </h2>
+    <h2>
+        Report observed waste
+    </h2>
 
-                    <p>
-                        Use this form to document an observed waste
-                        situation. Reports can help organize environmental
-                        observations and may become part of the project's
-                        history once submitted.
-                    </p>
+    <p>
+        Use this form to document a real waste observation.
+        Submitted information is stored as a project record
+        and is not converted into fabricated environmental
+        statistics.
+    </p>
 
-                </div>
+</div>
 
 
-                <div class="report-intro">
+<form class="form-card reveal"
+      data-waste-report-form>
 
-                    <article class="info-card reveal">
 
-                        <h3>
-                            ♻️ What You Can Report
-                        </h3>
+    <label for="location">
+        📍 Location
+    </label>
 
-                        <p>
-                            Provide the information you know accurately.
-                            If a detail is unknown, simply leave it
-                            unspecified rather than estimating it.
-                        </p>
+    <input
+        id="location"
+        name="location"
+        type="text"
+        placeholder="Enter the observed location"
+        required
+    >
 
-                        <div class="report-points">
 
-                            <div class="report-point">
-                                <span>📍</span>
-                                Observed location
-                            </div>
+    <label for="wasteType">
+        ♻️ Waste Type
+    </label>
 
-                            <div class="report-point">
-                                <span>♻️</span>
-                                Type of waste
-                            </div>
+    <select
+        id="wasteType"
+        name="wasteType"
+        required
+    >
 
-                            <div class="report-point">
-                                <span>📏</span>
-                                Approximate amount, if known
-                            </div>
+        <option value="">
+            Select waste type
+        </option>
 
-                            <div class="report-point">
-                                <span>📝</span>
-                                Additional observations
-                            </div>
+        <option value="Plastic">
+            Plastic
+        </option>
 
-                        </div>
+        <option value="Organic Waste">
+            Organic Waste
+        </option>
 
-                    </article>
+        <option value="Metal">
+            Metal
+        </option>
 
+        <option value="Glass">
+            Glass
+        </option>
 
-                    <article class="report-status reveal">
+        <option value="Mixed Waste">
+            Mixed Waste
+        </option>
 
-                        <div class="status-icon">
-                            📊
-                        </div>
+        <option value="Other">
+            Other
+        </option>
 
-                        <h3>
-                            Responsible Reporting
-                        </h3>
+    </select>
 
-                        <p>
-                            Submitted reports are user-provided
-                            observations. They are not presented as
-                            verified sensor measurements unless they are
-                            independently confirmed by the project team.
-                        </p>
 
-                    </article>
+    <label for="quantity">
+        📦 Quantity
+    </label>
 
-                </div>
+    <input
+        id="quantity"
+        name="quantity"
+        type="text"
+        placeholder="Optional"
+    >
 
-            </div>
 
-        </section>
+    <label for="description">
+        📝 Description
+    </label>
 
+    <textarea
+        id="description"
+        name="description"
+        rows="5"
+        placeholder="Describe what you observed..."
+    ></textarea>
 
-        <!-- ================= REPORT FORM ================= -->
 
-        <section
-            class="section"
-            style="background: var(--soft-seafoam);"
-        >
+    <button
+        type="submit"
+        class="btn btn-primary">
 
-            <div class="container">
+        ♻️ Submit Waste Report
 
-                <div class="form-wrapper">
+    </button>
 
-                    <div class="form-card reveal">
+</form>
 
-                        <h3>
-                            📸 Submit a Waste Report
-                        </h3>
+</section>
 
-                        <p>
-                            Please provide as much accurate information
-                            as you can.
-                        </p>
 
+<section class="section soft-section">
 
-                        <form id="wasteForm">
 
-                            <div class="form-grid">
+<div class="section-heading reveal">
 
-                                <div class="field">
+    <span>💬 FEEDBACK</span>
 
-                                    <label for="reportName">
-                                        Your Name
-                                    </label>
+    <h2>
+        Share your thoughts
+    </h2>
 
-                                    <input
-                                        type="text"
-                                        id="reportName"
-                                        placeholder="Optional"
-                                    >
+    <p>
+        Feedback can help us improve the prototype, website
+        and overall project experience.
+    </p>
 
-                                </div>
+</div>
 
 
-                                <div class="field">
+<form class="form-card reveal">
 
-                                    <label for="wasteType">
-                                        Waste Type
-                                    </label>
 
-                                    <select id="wasteType" required>
+    <label for="name">
+        👤 Name
+    </label>
 
-                                        <option value="">
-                                            Select type
-                                        </option>
+    <input
+        id="name"
+        type="text"
+        placeholder="Your name"
+    >
 
-                                        <option>
-                                            Plastic
-                                        </option>
 
-                                        <option>
-                                            Fishing-related waste
-                                        </option>
+    <label for="email">
+        📧 Email
+    </label>
 
-                                        <option>
-                                            Organic waste
-                                        </option>
+    <input
+        id="email"
+        type="email"
+        placeholder="Your email"
+    >
 
-                                        <option>
-                                            Mixed waste
-                                        </option>
 
-                                        <option>
-                                            Other
-                                        </option>
+    <label for="feedback">
+        💭 Feedback
+    </label>
 
-                                    </select>
+    <textarea
+        id="feedback"
+        rows="5"
+        placeholder="Your suggestion or feedback..."
+    ></textarea>
 
-                                </div>
 
+    <button
+        type="button"
+        class="btn btn-secondary"
+        onclick="alert('Thank you for your feedback!')">
 
-                                <div class="field">
+        💙 Send Feedback
 
-                                    <label for="location">
-                                        Location
-                                    </label>
+    </button>
 
-                                    <input
-                                        type="text"
-                                        id="location"
-                                        placeholder="Where was it observed?"
-                                        required
-                                    >
+</form>
 
-                                </div>
+</section>
 
 
-                                <div class="field">
+</main>
 
-                                    <label for="amount">
-                                        Approximate Amount
-                                    </label>
 
-                                    <input
-                                        type="text"
-                                        id="amount"
-                                        placeholder="If known"
-                                    >
+<footer class="site-footer">
 
-                                </div>
+    <h3>
+        🌊 Ocean × Eco-Tech
+    </h3>
 
+    <p>
+        Every genuine observation can contribute to better
+        understanding. 🌱
+    </p>
 
-                                <div class="field full">
+</footer>
 
-                                    <label for="reportDescription">
-                                        Description
-                                    </label>
 
-                                    <textarea
-                                        id="reportDescription"
-                                        placeholder="Describe what you observed..."
-                                        required
-                                    ></textarea>
-
-                                </div>
-
-
-                                <div class="field full">
-
-                                    <label for="reportImage">
-                                        Photo
-                                    </label>
-
-                                    <input
-                                        class="file-input"
-                                        type="file"
-                                        id="reportImage"
-                                        accept="image/*"
-                                    >
-
-                                </div>
-
-                            </div>
-
-
-                            <button
-                                type="submit"
-                                class="submit-btn"
-                            >
-                                📤 Submit Waste Report
-                            </button>
-
-                            <div
-                                class="form-message"
-                                id="wasteMessage"
-                            >
-                                ✅ Report recorded locally for this
-                                prototype session.
-                            </div>
-
-                        </form>
-
-                    </div>
-
-
-                    <!-- ================= CONTACT ================= -->
-
-                    <aside class="contact-card reveal">
-
-                        <h3>
-                            💬 Contact & Feedback
-                        </h3>
-
-                        <p>
-                            Have a suggestion, question or idea for
-                            improving Ocean × Eco-Tech? Share your
-                            thoughts with the team.
-                        </p>
-
-
-                        <div class="contact-items">
-
-                            <div class="contact-item">
-
-                                <div class="contact-item-icon">
-                                    💡
-                                </div>
-
-                                <div>
-
-                                    <h4>
-                                        Project Suggestions
-                                    </h4>
-
-                                    <p>
-                                        Ideas for improving the prototype
-                                        or web platform.
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="contact-item">
-
-                                <div class="contact-item-icon">
-                                    🛠️
-                                </div>
-
-                                <div>
-
-                                    <h4>
-                                        Technical Feedback
-                                    </h4>
-
-                                    <p>
-                                        Tell us about usability,
-                                        functionality or design.
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="contact-item">
-
-                                <div class="contact-item-icon">
-                                    🌊
-                                </div>
-
-                                <div>
-
-                                    <h4>
-                                        Environmental Ideas
-                                    </h4>
-
-                                    <p>
-                                        Share practical ideas for
-                                        responsible marine conservation.
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </aside>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= FEEDBACK FORM ================= -->
-
-        <section class="section">
-
-            <div class="container">
-
-                <div class="heading reveal">
-
-                    <span class="label">
-                        💬 Feedback
-                    </span>
-
-                    <h2>
-                        Tell Us What You Think
-                    </h2>
-
-                    <p>
-                        Feedback helps us improve the student prototype
-                        and make the platform clearer and more useful.
-                    </p>
-
-                </div>
-
-
-                <div class="form-card reveal">
-
-                    <form id="feedbackForm">
-
-                        <div class="form-grid">
-
-                            <div class="field">
-
-                                <label for="feedbackName">
-                                    Name
-                                </label>
-
-                                <input
-                                    type="text"
-                                    id="feedbackName"
-                                    placeholder="Optional"
-                                >
-
-                            </div>
-
-
-                            <div class="field">
-
-                                <label for="feedbackType">
-                                    Feedback Type
-                                </label>
-
-                                <select id="feedbackType">
-
-                                    <option value="">
-                                        Select type
-                                    </option>
-
-                                    <option>
-                                        Suggestion
-                                    </option>
-
-                                    <option>
-                                        Question
-                                    </option>
-
-                                    <option>
-                                        Design feedback
-                                    </option>
-
-                                    <option>
-                                        Technical feedback
-                                    </option>
-
-                                </select>
-
-                            </div>
-
-
-                            <div class="field full">
-
-                                <label for="feedback">
-                                    Your Feedback
-                                </label>
-
-                                <textarea
-                                    id="feedback"
-                                    placeholder="Write your feedback here..."
-                                    required
-                                ></textarea>
-
-                            </div>
-
-                        </div>
-
-
-                        <button
-                            type="submit"
-                            class="submit-btn"
-                        >
-                            💙 Send Feedback
-                        </button>
-
-
-                        <div
-                            class="form-message"
-                            id="feedbackMessage"
-                        >
-                            ✅ Feedback saved locally for this prototype
-                            session.
-                        </div>
-
-                    </form>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= WAYS TO HELP ================= -->
-
-        <section
-            class="section"
-            style="background: var(--soft-seafoam);"
-        >
-
-            <div class="container">
-
-                <div class="heading reveal">
-
-                    <span class="label">
-                        🌱 Get Involved
-                    </span>
-
-                    <h2>
-                        Small Actions Can Contribute
-                    </h2>
-
-                    <p>
-                        The project encourages responsible observation,
-                        documentation and environmental awareness.
-                    </p>
-
-                </div>
-
-
-                <div class="involvement-grid">
-
-                    <article class="involvement-card reveal">
-
-                        <div class="involvement-icon">
-                            📸
-                        </div>
-
-                        <h3>
-                            Report Waste
-                        </h3>
-
-                        <p>
-                            Document visible marine waste using the
-                            reporting form and provide accurate
-                            information.
-                        </p>
-
-                    </article>
-
-
-                    <article class="involvement-card reveal">
-
-                        <div class="involvement-icon">
-                            💡
-                        </div>
-
-                        <h3>
-                            Share Ideas
-                        </h3>
-
-                        <p>
-                            Suggest improvements that could make the
-                            project more practical and responsible.
-                        </p>
-
-                    </article>
-
-
-                    <article class="involvement-card reveal">
-
-                        <div class="involvement-icon">
-                            🌊
-                        </div>
-
-                        <h3>
-                            Spread Awareness
-                        </h3>
-
-                        <p>
-                            Encourage responsible waste management and
-                            greater awareness of marine environments.
-                        </p>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= TEAM NOTE ================= -->
-
-        <section class="section">
-
-            <div class="container">
-
-                <div class="team-note reveal">
-
-                    <h3>
-                        ✨ Note from the Team
-                    </h3>
-
-                    <p>
-                        Ocean × Eco-Tech is a student-developed prototype
-                        created to explore practical marine-waste
-                        solutions; while the system remains under
-                        development, our prototype has demonstrated
-                        approximately 90% accuracy under controlled
-                        testing conditions.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer>
-
-        <div class="footer-container">
-
-            <div class="footer-brand">
-                🌊 Ocean <span>×</span> Eco-Tech
-            </div>
-
-            <div class="footer-copy">
-                Student-developed environmental technology prototype.
-            </div>
-
-        </div>
-
-    </footer>
-
-
-    <script>
-
-        /* ================= MOBILE NAV ================= */
-
-        const menuToggle =
-            document.getElementById("menuToggle");
-
-        const navLinks =
-            document.getElementById("navLinks");
-
-        menuToggle.addEventListener("click", () => {
-
-            const isOpen =
-                navLinks.classList.toggle("active");
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                isOpen
-            );
-
-            menuToggle.textContent =
-                isOpen ? "✕" : "☰";
-
-        });
-
-
-        document
-            .querySelectorAll(".nav-links a")
-            .forEach(link => {
-
-                link.addEventListener("click", () => {
-
-                    navLinks.classList.remove("active");
-
-                    menuToggle.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
-
-                    menuToggle.textContent = "☰";
-
-                });
-
-            });
-
-
-        /* ================= WASTE REPORT ================= */
-
-        const wasteForm =
-            document.getElementById("wasteForm");
-
-        const wasteMessage =
-            document.getElementById("wasteMessage");
-
-
-        wasteForm.addEventListener(
-            "submit",
-            function(event) {
-
-                event.preventDefault();
-
-                const report = {
-
-                    name:
-                        document.getElementById(
-                            "reportName"
-                        ).value,
-
-                    wasteType:
-                        document.getElementById(
-                            "wasteType"
-                        ).value,
-
-                    location:
-                        document.getElementById(
-                            "location"
-                        ).value,
-
-                    amount:
-                        document.getElementById(
-                            "amount"
-                        ).value,
-
-                    description:
-                        document.getElementById(
-                            "reportDescription"
-                        ).value,
-
-                    date:
-                        new Date().toISOString()
-
-                };
-
-
-                const reports =
-                    JSON.parse(
-                        localStorage.getItem(
-                            "oceanWasteReports"
-                        ) || "[]"
-                    );
-
-
-                reports.push(report);
-
-
-                localStorage.setItem(
-                    "oceanWasteReports",
-                    JSON.stringify(reports)
-                );
-
-
-                wasteMessage.classList.add("show");
-
-                wasteForm.reset();
-
-            }
-        );
-
-
-        /* ================= FEEDBACK ================= */
-
-        const feedbackForm =
-            document.getElementById("feedbackForm");
-
-        const feedbackMessage =
-            document.getElementById(
-                "feedbackMessage"
-            );
-
-
-        feedbackForm.addEventListener(
-            "submit",
-            function(event) {
-
-                event.preventDefault();
-
-                const feedback = {
-
-                    name:
-                        document.getElementById(
-                            "feedbackName"
-                        ).value,
-
-                    type:
-                        document.getElementById(
-                            "feedbackType"
-                        ).value,
-
-                    message:
-                        document.getElementById(
-                            "feedback"
-                        ).value,
-
-                    date:
-                        new Date().toISOString()
-
-                };
-
-
-                const feedbackList =
-                    JSON.parse(
-                        localStorage.getItem(
-                            "oceanFeedback"
-                        ) || "[]"
-                    );
-
-
-                feedbackList.push(feedback);
-
-
-                localStorage.setItem(
-                    "oceanFeedback",
-                    JSON.stringify(feedbackList)
-                );
-
-
-                feedbackMessage.classList.add(
-                    "show"
-                );
-
-                feedbackForm.reset();
-
-            }
-        );
-
-
-        /* ================= SCROLL REVEAL ================= */
-
-        const revealElements =
-            document.querySelectorAll(".reveal");
-
-
-        const observer =
-            new IntersectionObserver(
-                entries => {
-
-                    entries.forEach(entry => {
-
-                        if (entry.isIntersecting) {
-
-                            entry.target.classList.add(
-                                "visible"
-                            );
-
-                            observer.unobserve(
-                                entry.target
-                            );
-
-                        }
-
-                    });
-
-                },
-                {
-                    threshold: 0.1
-                }
-            );
-
-
-        revealElements.forEach(element => {
-            observer.observe(element);
-        });
-
-    </script>
+<script src="app.js"></script>
 
 </body>
 </html>
